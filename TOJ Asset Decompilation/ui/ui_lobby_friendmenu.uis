@@ -1,0 +1,72 @@
+﻿{
+	Flag = WINDOW
+	Pos = 10 10 76 66
+	!ImageFile = ui/createroom_bg.png
+	EnableBackColor = 1
+	BackColor = 255 255 255 200
+	3DEdge = 1
+}
+{
+	Flag = START_CHILD
+}
+	{
+		!유저정보
+		Flag = BUTTON
+		ID = 10090
+		Pos = 2 2 70 20
+		Text = 유저정보
+		TextColor = 0 0 0 255
+		EnableBackColor = 1
+		BackColor = 64 64 64 192
+		FocusBackColor = 138 128 128 192
+		PressedBackColor = 138 0 0 255
+		DisabledBackColor = 0 0 0 0 255
+		!ImageFile = ui/btn_ok_default.png
+		!FocusImageFile = ui/btn_ok_over.png
+		!PressedImageFile = ui/btn_ok_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		Option = DT_VCENTER DT_CENTER
+	}
+	{
+		!같이하기
+		Flag = BUTTON
+		ID = 10090
+		Pos = 2 22 70 20
+		Text = 같이하기
+		TextColor = 0 0 0 255
+		EnableBackColor = 1
+		BackColor = 64 64 64 192
+		FocusBackColor = 138 128 128 192
+		PressedBackColor = 138 0 0 255
+		DisabledBackColor = 0 0 0 0 255
+		!ImageFile = ui/btn_ok_default.png
+		!FocusImageFile = ui/btn_ok_over.png
+		!PressedImageFile = ui/btn_ok_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		Option = DT_VCENTER DT_CENTER
+	}
+	{
+		!친구삭제
+		Flag = BUTTON
+		ID = 10090
+		Pos = 2 42 70 20
+		Text = 친구삭제
+		TextColor = 0 0 0 255
+		EnableBackColor = 1
+		BackColor = 64 64 64 192
+		FocusBackColor = 138 128 128 192
+		PressedBackColor = 138 0 0 255
+		DisabledBackColor = 0 0 0 0 255
+		!ImageFile = ui/btn_ok_default.png
+		!FocusImageFile = ui/btn_ok_over.png
+		!PressedImageFile = ui/btn_ok_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		Option = DT_VCENTER DT_CENTER
+	}
+
+{
+	Flag = END_CHILD
+}

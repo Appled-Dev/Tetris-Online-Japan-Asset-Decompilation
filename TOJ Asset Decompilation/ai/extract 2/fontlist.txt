@@ -1,0 +1,151 @@
+{
+	Id = DEFAULT
+	Name = System
+	Width = 0
+	Height = 12
+	Weight = FW_SEMIBOLD
+	Italic = 0
+	!Charset = DEFAULT_CHARSET
+	!Charset = ANSI_CHARSET
+	!Charset = SHIFTJIS_CHARSET
+	!Charset = HANGUL_CHARSET
+}
+{
+	Id = UI0
+	Name = MS Gothic
+	Width = 0
+	Height = 13
+	Weight = FW_SEMIBOLD
+	Italic = 0
+	Charset = DEFAULT_CHARSET
+}
+{
+	Id = UI1
+	Name = Fixedsys
+	Width = 0
+	Height = 24
+	Weight = FW_SEMIBOLD
+	Italic = 0
+}
+{
+	Id = UI2
+	Name = MS Gothic
+	Width = 0
+	Height = 12
+	Weight = 0
+	Italic = 0
+}
+{
+	Id = UI3
+	Name = MS Gothic
+	Width = 0
+	Height = 12
+	Weight = FW_BOLD
+	Italic = 0
+}
+{
+	Id = UI10
+	Name = MS Gothic
+	Width = 0
+	Height = 24
+	Weight = FW_BOLD
+	Italic = 0
+}
+{
+	Id = UI11
+	Name = MS Gothic
+	Width = 0
+	Height = 26
+	Weight = FW_SEMIBOLD
+	Italic = 0
+}
+{
+	Id = UI12
+	FontFileName = Font/HATTEN.TTF
+	Name = Lucida Sans Unicode
+	Width = 0
+	Height = 24
+	Weight = FW_SEMIBOLD
+	Italic = 0
+}
+{
+	Id = UI13
+	FontFileName = Font/HATTEN.TTF
+	Name = Lucida Sans Unicode
+	Width = 0
+	Height = 36
+	Weight = FW_SEMIBOLD
+	Italic = 0
+}
+{
+	Id = UI14
+	FontFileName = Font/msgothic.ttc
+	Name = MS Gothic
+	Width = 0
+	Height = 20
+	Weight = FW_SEMIBOLD
+	Italic = 0
+}
+{
+	Id = UI15
+	FontFileName = Font/msgothic.ttc
+	Name = MS Gothic
+	Width = 0
+	Height = 14
+	Weight = FW_BOLD
+	Italic = 0
+}
+{
+	Id = UI16
+	FontFileName = Font/msgothic.ttc
+	Name = MS Gothic
+	Width = 0
+	Height = 14
+	Weight = 0
+	Italic = 0
+}
+{
+	Id = UI17
+	FontFileName = Font/msgothic.ttc
+	Name = MS Gothic
+	Width = 0
+	Height = 16
+	Weight = FW_BOLD
+	Italic = 0
+}
+{
+	Id = UI18
+	FontFileName = Font/msgothic.ttc
+	Name = MS Gothic
+	Width = 0
+	Height = 10
+	Weight = 0
+	Italic = 0
+}
+{
+	Id = UI19
+	FontFileName = Font/msgothic.ttc
+	Name = MS Gothic
+	Width = 0
+	Height = 10
+	Weight = 0
+	Italic = 0
+}
+{
+	Id = UI20
+	FontFileName = Font/msgothic.ttc
+	Name = MS Gothic
+	Width = 0
+	Height = 16
+	Weight = FW_SEMIBOLD
+	Italic = 0
+}
+{
+	Id = UI21
+	FontFileName = Font/HATTEN.TTF
+	Name = Lucida Sans Unicode
+	Width = 0
+	Height = 20
+	Weight = FW_SEMIBOLD
+	Italic = 0
+}

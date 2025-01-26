@@ -1,0 +1,1078 @@
+﻿{
+	Flag = COMMAND
+	Command = HELP_ADDR
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/multi.asp
+}
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	FileName = music/Lobby.ogg
+}
+
+{
+	Flag = DESKTOP_WINDOW
+	ID = 1
+	Pos = 0 0 800 600
+	ImageFile = UI/bg_multi.png
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+
+{
+	Flag = START_CHILD
+}
+	!현재채널표시
+	{
+		Flag = WINDOW
+		ID = 701
+		Pos = 34 46 0 0
+		ImageFileEx = ui/class_c_01.png,ui/class_c_02.png,ui/class_c_05.png,ui/class_c_04.png,ui/class_c_03.png
+	}
+	
+	!현재대기자표시（待機人数）
+	{
+		Flag = TEXTBOX
+		ID = 702
+		Pos = 700 46 70 18
+		TextColor = 90 90 90 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_RIGHT
+	}
+	
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 800 600
+		MaxTime = 400
+		ZOrder = 100 
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		TargetColor = 255 255 255 0
+	}
+	
+	!바로가기 (채널1 - のんびり클래스)
+	{
+		Flag = WINDOW
+		ID = 1001
+		Pos = 129 77 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		! Solo QuickStart
+		{
+			Flag = BUTTON
+			ID = 201
+			Pos = 0 0 184 58
+			ImageFile = ui/btn_solo_default.png
+			FocusImageFile = ui/btn_solo_over.png
+			PressedImageFile = ui/btn_solo_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		! Team QuickStart
+		{
+			Flag = BUTTON
+			ID = 202
+			Pos = 187 0 184 58
+			ImageFile = ui/btn_team_default.png
+			FocusImageFile = ui/btn_team_over.png
+			PressedImageFile = ui/btn_team_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_TEAM_QUICKSTART_BTN
+		}
+		! Create Room
+		{
+			Flag = BUTTON
+			ID = 205
+			Pos = 374 0 184 58
+			ImageFile = ui/btn_room_default.png
+			FocusImageFile = ui/btn_room_over.png
+			PressedImageFile = ui/btn_room_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		
+		!Tip Image
+		{
+			Flag = WINDOW
+			Pos = -3 -33 0 0
+			ImageFile = ui/lobby/class_tip_01.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!바로가기 (채널2 - ふつう클래스)
+	{
+		Flag = WINDOW
+		ID = 1002
+		Pos = 129 77 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		! Solo QuickStart
+		{
+			Flag = BUTTON
+			ID = 201
+			Pos = 0 0 184 58
+			ImageFile = ui/btn_solo_default.png
+			FocusImageFile = ui/btn_solo_over.png
+			PressedImageFile = ui/btn_solo_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		! Team QuickStart
+		{
+			Flag = BUTTON
+			ID = 202
+			Pos = 187 0 184 58
+			ImageFile = ui/btn_team_default.png
+			FocusImageFile = ui/btn_team_over.png
+			PressedImageFile = ui/btn_team_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_TEAM_QUICKSTART_BTN
+		}
+		! Create Room
+		{
+			Flag = BUTTON
+			ID = 205
+			Pos = 374 0 184 58
+			ImageFile = ui/btn_room_default.png
+			FocusImageFile = ui/btn_room_over.png
+			PressedImageFile = ui/btn_room_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		
+		!Tip Image
+		{
+			Flag = WINDOW
+			Pos = -3 -33 0 0
+			ImageFile = ui/lobby/class_tip_02.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!바로가기 (채널3 - 1on1모드)
+	{
+		Flag = WINDOW
+		ID = 1003
+		Pos = 129 77 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		! Solo QuickStart
+		{
+			Flag = BUTTON
+			ID = 201
+			Pos = 0 0 184 58
+			ImageFile = ui/btn_1on1quick_default.png
+			FocusImageFile = ui/btn_1on1quick_over.png
+			PressedImageFile = ui/btn_1on1quick_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			!ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		! Team QuickStart
+		{
+			Flag = BUTTON
+			ID = 202
+			Pos = 187 0 184 58
+			ImageFile = ui/btn_team_default.png
+			FocusImageFile = ui/btn_team_over.png
+			PressedImageFile = ui/btn_team_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			!ToolTip = $LOBBY_TEAM_QUICKSTART_BTN
+			Show = 0
+		}
+		! Create Room
+		{
+			Flag = BUTTON
+			ID = 205
+			Pos = 187 0 184 58
+			ImageFile = ui/btn_room_default.png
+			FocusImageFile = ui/btn_room_over.png
+			PressedImageFile = ui/btn_room_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		
+		!Tip Image
+		{
+			Flag = WINDOW
+			Pos = -3 -33 0 0
+			ImageFile = ui/lobby/class_tip_05.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!바로가기 (채널4 - 마스터 클래스)
+	{
+		Flag = WINDOW
+		ID = 1004
+		Pos = 129 77 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		! Solo QuickStart
+		{
+			Flag = BUTTON
+			ID = 201
+			Pos = 0 0 184 58
+			ImageFile = ui/btn_solo_default.png
+			FocusImageFile = ui/btn_solo_over.png
+			PressedImageFile = ui/btn_solo_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		! Team QuickStart
+		{
+			Flag = BUTTON
+			ID = 202
+			Pos = 187 0 184 58
+			ImageFile = ui/btn_team_default.png
+			FocusImageFile = ui/btn_team_over.png
+			PressedImageFile = ui/btn_team_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_TEAM_QUICKSTART_BTN
+		}
+		! Create Room
+		{
+			Flag = BUTTON
+			ID = 205
+			Pos = 374 0 184 58
+			ImageFile = ui/btn_room_default.png
+			FocusImageFile = ui/btn_room_over.png
+			PressedImageFile = ui/btn_room_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		
+		!Tip Image
+		{
+			Flag = WINDOW
+			Pos = -3 -33 0 0
+			ImageFile = ui/lobby/class_tip_04.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!바로가기 (채널5 - 아이템 모드)
+	{
+		Flag = WINDOW
+		ID = 1005
+		Pos = 129 77 0 0
+		Show = 0
+		ZOrder = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		! Solo QuickStart
+		{
+			Flag = BUTTON
+			ID = 201
+			Pos = 0 0 184 58
+			ImageFile = ui/btn_solo_default.png
+			FocusImageFile = ui/btn_solo_over.png
+			PressedImageFile = ui/btn_solo_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		! Team QuickStart
+		{
+			Flag = BUTTON
+			ID = 202
+			Pos = 187 0 184 58
+			ImageFile = ui/btn_team_default.png
+			FocusImageFile = ui/btn_team_over.png
+			PressedImageFile = ui/btn_team_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_TEAM_QUICKSTART_BTN
+		}
+		! Create Room
+		{
+			Flag = BUTTON
+			ID = 205
+			Pos = 374 0 184 58
+			ImageFile = ui/btn_room_default.png
+			FocusImageFile = ui/btn_room_over.png
+			PressedImageFile = ui/btn_room_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		
+		!Tip Image
+		{
+			Flag = WINDOW
+			Pos = -3 -33 0 0
+			ImageFile = ui/lobby/class_tip_03.png
+		}
+		
+		! Item Tool Tip BUTTON
+		{
+			Flag = BUTTON
+			ID = 116
+			Pos = 411 -32 120 19
+			ImageFile = ui/lobby/btn_itemrule_default.png
+			FocusImageFile = ui/lobby/btn_itemrule_over.png
+			PressedImageFile = ui/lobby/btn_itemrule_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 10
+			ToolTip = アイテムクラスのルール説明
+		}
+		
+		! Item Tool Tip WINDOW
+		{
+			Flag = WINDOW
+			ID = 11601
+			Pos = -36 -44 675 514
+			ImageFile = ui/item/itemrule_main.png
+			ZOrder = 10001
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Close BUTTON
+			{
+				Flag = BUTTON
+				ID = 116011
+				Pos = 632 10 26 29
+				ImageFile = ui/item/itemrule_closebtn_default.png
+				FocusImageFile = ui/item/itemrule_closebtn_over.png
+				PressedImageFile = ui/item/itemrule_closebtn_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!On/Off Check
+			{
+				Flag = BUTTON
+				ID = 116012
+				Pos = 559 17 68 20
+				IsCheckButton = 1
+				ImageFile = ui/item/onoff_btn_default.png
+				!FocusImageFile = ui/item/onoff_btn_default.png
+				PressedImageFile = ui/item/onoff_btn_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!Web Item note
+			{
+				Flag = BUTTON
+				ID = 116013
+				Pos = 338 470 193 30
+				IsCheckButton = 1
+				ImageFile = ui/item/itemrule_linkbtn_default.png
+				FocusImageFile = ui/item/itemrule_linkbtn_over.png
+				PressedImageFile = ui/item/itemrule_linkbtn_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!채널 바꾸기
+	{
+		Flag = WINDOW
+		Pos = 690 77 0 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			! Change Channel
+			Flag = BUTTON
+			ID = 301
+			Pos = 0 0 82 58
+			ImageFile = ui/btn_class_default.png
+			FocusImageFile = ui/btn_class_over.png
+			PressedImageFile = ui/btn_class_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!Multi 디폴트 설명
+	{
+		Flag = WINDOW
+		ID = 2001
+		Pos = 95 473 800 84
+		Show = 1
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			ImageFile = ui/entry_notice_4_0.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Solo QuickStart 설명
+	{
+		Flag = WINDOW
+		ID = 2011
+		Pos = 95 473 800 84
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			ImageFile = ui/entry_notice_4_1.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Team QuickStart 설명
+	{
+		Flag = WINDOW
+		ID = 2021
+		Pos = 95 473 800 84
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			ImageFile = ui/entry_notice_4_2.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Create Room 설명
+	{
+		Flag = WINDOW
+		ID = 2051
+		Pos = 95 473 800 84
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			ImageFile = ui/entry_notice_4_3.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Change Channel 설명
+	{
+		Flag = WINDOW
+		ID = 3011
+		Pos = 95 473 800 84
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			ImageFile = ui/entry_notice_4_4.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!BACK BUTTON
+	{
+		Flag = BUTTON
+		ID = 901
+		Pos = 676 572 94 27
+		ImageFile = %BottomBar%/btn_back_default.png
+		FocusImageFile = %BottomBar%/btn_back_over.png
+		PressedImageFile = %BottomBar%/btn_back_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_ESCAPE
+		ToolTip = $COMMON_PAGE_PREV
+	}
+	
+	! 룸 리스트 WINDOW
+	{
+		Flag = WINDOW
+		Pos = 28 145 0 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Pre Button
+		{
+			Flag = BUTTON
+			ID = 191
+			Pos = 116 293 173 26
+			ImageFile = ui/btn_prev_default.png
+			FocusImageFile = ui/btn_prev_over.png
+			PressedImageFile = ui/btn_prev_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		!Next Button
+		{
+			Flag = BUTTON
+			ID = 192
+			Pos = 464 293 173 26
+			ImageFile = ui/btn_next_default.png
+			FocusImageFile = ui/btn_next_over.png
+			PressedImageFile = ui/btn_next_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		!List All
+		{
+			Flag = BUTTON
+			ID = 1931
+			Pos = 296 293 161 26
+			ImageFile = ui/btn_list_default.png
+			FocusImageFile = ui/btn_list_over.png
+			PressedImageFile = ui/btn_list_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		
+		{
+			Flag = BUTTON
+			ID = 1932
+			Pos = 0 450 100 20
+			Text = List Waiting
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			Show = 0
+			3DEdge = 1
+		}
+		/*
+		{
+			Flag = BUTTON
+			ID = 1941
+			Pos = 0 450 100 20
+			Text = List NoItem
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			3DEdge = 1
+		}
+		{
+			Flag = BUTTON
+			ID = 1942
+			Pos = 0 450 100 20
+			Text = List Item
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			Show = 0
+			3DEdge = 1
+		}
+		*/
+		
+		
+		!방목록 1
+		{
+			Flag = WINDOW
+			ID = 101
+			Pos = 0 0 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 2
+		{
+			Flag = WINDOW
+			ID = 102
+			Pos = 249 0 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 3
+		{
+			Flag = WINDOW
+			ID = 103
+			Pos = 498 0 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 4
+		{
+			Flag = WINDOW
+			ID = 104
+			Pos = 0 96 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 5
+		{
+			Flag = WINDOW
+			ID = 105
+			Pos = 249 96 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 6
+		{
+			Flag = WINDOW
+			ID = 106
+			Pos = 498 96 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 7
+		{
+			Flag = WINDOW
+			ID = 107
+			Pos = 0 192 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 8
+		{
+			Flag = WINDOW
+			ID = 108
+			Pos = 249 192 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 9
+		{
+			Flag = WINDOW
+			ID = 109
+			Pos = 498 192 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!방만들기 다이얼로그
+	{
+		Flag = WINDOW
+		ID = 1010
+		Pos = 0 0 800 600
+		EnableBackColor = 1
+		BackColor = 0 0 0 60
+		Modal = 1
+		Show = 0
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = INCLUDE
+			FileName = UI/UI_Lobby_MakeRoom.uis
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!비번 입력 다이얼로그
+	{
+		Flag = WINDOW
+		ID = 1020
+		Pos = 0 0 800 600
+		EnableBackColor = 1
+		BackColor = 0 0 0 60
+		Modal = 1
+		Show = 0
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = INCLUDE
+			FileName = UI/UI_Lobby_InputRoomPassword.uis
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!프렌드 리스트
+	{
+		Flag = WINDOW
+		ID = 2100
+		Pos = 0 0 800 600
+		EnableBackColor = 1
+		BackColor = 0 0 0 60
+		Modal = 1
+		Show = 0
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = INCLUDE
+			FileName = UI/UI_Lobby_FriendList.uis
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!친구리스트 팝업
+	{
+		Flag = POPUPMENU_WINDOW
+		ID = 2200
+		Pos = 0 0 200 0
+		ItemHeight = 20
+		AutoResize = 1
+		Show = 0
+		EnableBackColor = 1
+		BackColor = 0 0 0 255
+		EnableBackColorEdge = 1
+		BackEdgeColor = 255 255 255 150
+		TitleTextBoxID = 22001
+		IsActive = 1
+		Item0Id = 1
+		Item0Text = $FRIEND_ITEM_0
+		Item1Id = 2
+		Item1Text = $FRIEND_ITEM_1
+		Item2Id = 3
+		Item2Text =  $FRIEND_ITEM_2
+		!Item3Id = 4
+		!Item3Text = 쪽지 보내기
+		ZOrder = $TOP_ZORDER
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TextBox
+			Pos = 0 -20 200 20
+			ID = 22001
+			TextColor = 255 255 255 255
+			BackColor = 0 0 0 255
+			EnableBackColor = 1
+			EnableBackColorEdge = 1
+			BackEdgeColor = 255 255 255 150
+			Option = DT_VCENTER DT_CENTER
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!초대 리스트 팝업
+	{
+		Flag = POPUPMENU_WINDOW
+		ID = 2300
+		Pos = 0 0 200 0
+		ItemHeight = 20
+		AutoResize = 1
+		Show = 0
+		EnableBackColor = 1
+		BackColor = 0 0 0 255
+		EnableBackColorEdge = 1
+		BackEdgeColor = 255 255 255 150
+		TitleTextBoxID = 23001
+		IsActive = 1
+		ZOrder = $TOP_ZORDER
+		Item0Id = 1
+		Item0Text = $FRIEND_INVITE_ITEM_0
+		Item1Id = 2
+		Item1Text = $FRIEND_INVITE_ITEM_1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TextBox
+			Pos = 0 -20 200 20
+			ID = 23001
+			TextColor = 255 255 255 255
+			BackColor = 0 0 0 255
+			EnableBackColor = 1
+			EnableBackColorEdge = 1
+			BackEdgeColor = 255 255 255 150
+			Option = DT_VCENTER DT_CENTER
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!채널 리스트
+	{
+		Flag = WINDOW
+		ID = 2400
+		Pos = 0 0 800 600
+		EnableBackColor = 1
+		BackColor = 0 0 0 60
+		Modal = 1
+		Show = 0
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = INCLUDE
+			FileName = UI/UI_Lobby_ChannelList.uis
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!방정보 MouseOver
+	{
+		Flag = WINDOW
+		ID = 1001001
+		Pos = 60 110 246 185
+		!EnableBackColor = 1
+		!BackColor = 100 100 100 130
+		ImageFile = ui/minishop_dialog_bg.png
+		IsPatternImage = 1
+		PatternImageSize = 10
+		Show = 0
+		Modal = 0
+		ZOrder = 10000
+	}
+	{
+		Flag = START_CHILD
+	}
+		!타이틀 이미지 WINDOW
+		{
+			Flag = WINDOW
+			Pos = 9 9 0 0
+			ImageFile = ui/roominfo_title.png
+		}
+		{
+			Flag = LISTVIEW
+			ID = 1001002
+			Pos = 13 40 220 140
+			!EnableBackColor = 1
+			!BackColor = 64 64 64 80
+			ItemHeight = 20
+			ColumnCount = 2
+			ColumnNameHeight = 20
+			
+			!Name
+			ColumnName0 =  \名前
+			ColumnNameTextFormat0 = DT_CENTER DT_TOP
+			ColumnNameTextColor0 = 95 95 95 255
+			ColumnNameTextFont0 = 0
+			ColumnOption0 = DT_WORD_ELLIPSIS DT_LEFT DT_TOP
+			ColumnNameOutlineTextColor0 = 180 180 180 255
+			EnableColumnNameOutline0 = 1
+			ColumnWidth0 = 170
+			ColumnTextColor0 = 95 95 95 255
+			EnableColumnOutline0 = 0
+			
+			!Level
+			ColumnName1 = Level
+			ColumnNameTextFormat1 = DT_CENTER DT_TOP
+			ColumnNameTextColor1 = 95 95 95 255
+			ColumnNameTextFont1 = 0
+			ColumnOption1 = DT_WORD_ELLIPSIS DT_CENTER DT_TOP
+			ColumnNameOutlineTextColor1 = 180 180 180 255
+			EnableColumnNameOutline1 = 1
+			ColumnWidth1 = 50
+			ColumnTextColor1 = 95 95 95 255
+			EnableColumnOutline1 = 0
+			
+			EnableDrawFocusRow = 0
+			EnableDrawSelectRow = 0
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

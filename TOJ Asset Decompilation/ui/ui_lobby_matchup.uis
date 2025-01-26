@@ -1,0 +1,70 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 1024 768
+	!EnableBackColor = 1
+	!BackColor = 255 255 255 20
+}
+{
+	Flag = START_CHILD
+}
+	!매칭 완료 메세지창
+	{
+		Flag = WINDOW
+		Pos = 367 140 290 140
+		Modal = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			ImageFile = ui/lobby/matching_success.png
+		}
+		
+		{
+		    !Countdown Window
+			Flag = WINDOW
+			ID = 181818181
+			Pos = 60 98 42 32
+			!EnableBackColor = 1
+			!BackColor = 100 100 0 100
+			ZOrder = 1000
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+			    !Countdown TEXT
+				Flag = TEXTBOX
+				ID = 1818181818
+				Pos = 0 0 42 32
+				Option = DT_VCENTER DT_CENTER
+				EnableImageFont = 1
+				ImageFontWidth = 20
+				!ImageFontList = ui/lobby/num_or_plus.png,ui/lobby/num_or_0.png,ui/lobby/num_or_1.png,ui/lobby/num_or_2.png,ui/lobby/num_or_3.png,%Single%/num_or_4.png,ui/lobby/num_or_5.png,ui/lobby/num_or_6.png,ui/lobby/num_or_7.png,ui/lobby/num_or_8.png,ui/lobby/num_or_9.png,ui/lobby/time-num_colon.png
+				ImageFontList = ,,,,,,,,,,,%Single%/num_or_plus.png,,,,,%Single%/num_or_0.png,%Single%/num_or_1.png,%Single%/num_or_2.png,%Single%/num_or_3.png,%Single%/num_or_4.png,%Single%/num_or_5.png,%Single%/num_or_6.png,%Single%/num_or_7.png,%Single%/num_or_8.png,%Single%/num_or_9.png,%Single%/time-num_colon.png
+				ZOrder = $TOP_ZORDER
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!Enter Room BUTTON
+		{
+			Flag = BUTTON
+			ID = 110
+			Pos = 107 50 76 50
+			ImageFile = ui/lobby/btn_enterroom_default.png
+			FocusImageFile = ui/lobby/btn_enterroom_over.png
+			PressedImageFile = ui/lobby/btn_enterroom_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_RETURN
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

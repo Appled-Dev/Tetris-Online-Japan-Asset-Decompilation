@@ -1,0 +1,453 @@
+﻿$XPOS = 400
+$YPOS = 300
+
+{
+	Flag = COMMAND
+	Command =HELP_ADDR
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/mainmenu.asp
+}
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	FileName = music/Select.ogg
+}
+
+{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	ImageFile = UI/bg_mainmenu.png
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 800 600
+		MaxTime = 400
+		ZOrder = 100000
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		TargetColor = 255 255 255 0
+	}
+	
+	/*
+	{
+ 		Flag = WINDOW_SPR2D
+ 		Pos = 124 35 0 0
+ 		FileName = mainvisual.SPR
+ 	}
+ 	*/
+	
+	/*
+	{
+		Flag = WINDOW
+		Pos = 230 64 0 0
+		ImageFile = ui/title.png
+		ZOrder = 10000
+	}
+	*/
+	
+	{
+		!FileVersion
+		Flag = TEXTBOX
+		Pos = 5 580 200 20
+		ID = 1101
+		TextColor = 255 255 255 255
+		Option = DT_LEFT | DT_TOP
+	}
+	
+	!Sound Station BUTTON
+	{
+		Flag = BUTTON
+		ID = 1800
+		!Pos = 11+14 74 210 40
+		Pos = 24 35 193 41
+		ImageFile = ui/btn_soundstation_default.png
+		FocusImageFile = ui/btn_soundstation_over.png
+		PressedImageFile = ui/btn_soundstation_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+	}
+	!Sound Station WINDOW
+	{
+		Flag = WINDOW
+		ID = 1801
+		!Pos = 11 23 243 326
+		Pos = 9 32 243 326
+		!EnableBackColor = 1
+		!BackColor = 0 0 0 255
+		ImageFile = ui/soundstation_bg.png
+		ZOrder = 10001
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW_IEXPLORER
+			ID = 1802
+			Pos = 10 30 223 242
+			!URL = http://www.tetrisonline.jp/_promo/sstation/index.html
+			!TransparentMouseEvent=1
+			Win32Mode = 1
+		}
+		
+		{
+			Flag = TEXTBOX
+			Pos = 62 284 140 20
+			Option = DT_LEFT DT_TOP
+			!Text = Tetris BGM On/Off
+			TextColor = 20 255 20 200
+			ZOrder = 1
+		}
+		{
+			!Music ON/OFF BUTTON
+			Flag = BUTTON
+			ID = 1803
+			Pos = 172 279 42 42
+			IsCheckButton = 1
+			ImageFile = ui/option_checkbtn_default.png
+			!FocusImageFile = ui/option_checkbtn_over.png
+			PressedImageFile = ui/option_checkbtn_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 1
+		}
+		{
+			Flag = TEXTBOX
+			Pos = 46 302 140 20
+			Option = DT_LEFT DT_TOP
+			!Text = Station Close
+			TextColor = 20 20 255 200
+			ZOrder = 1
+		}
+		{
+			!Close BUTTON
+			Flag = BUTTON
+			ID = 1804
+			Pos = 216 6 20 20
+			ImageFile = ui/common/btn_close_default.png
+			FocusImageFile = ui/common/btn_close_over.png
+			PressedImageFile = ui/common/btn_close_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_ESCAPE
+			ZOrder = 1
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Single Mode Button
+	{
+		Flag = BUTTON
+		ID = 300
+		Pos = 27 276 183 170
+		ImageFile = ui/main/btn_enter_01_default.png
+		FocusImageFile = ui/main/btn_enter_01_over.png
+		PressedImageFile = ui/main/btn_enter_01_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_1
+	}
+	!Multi Mode Button
+	{
+		Flag = BUTTON
+		ID = 400
+		Pos = 215 276 183 170
+		ImageFile = ui/main/btn_enter_02_default.png
+		FocusImageFile = ui/main/btn_enter_02_over.png
+		PressedImageFile = ui/main/btn_enter_02_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_2
+	}
+	!VS COM Mode Button
+	{
+		Flag = BUTTON
+		ID = 100
+		Pos = 403 276 183 170
+		ImageFile = ui/main/btn_enter_03_default.png
+		FocusImageFile = ui/main/btn_enter_03_over.png
+		PressedImageFile = ui/main/btn_enter_03_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_3
+	}
+	!Shop Button
+	{
+		Flag = BUTTON
+		ID = 500
+		Pos = 591 276 183 170
+		ImageFile = ui/main/btn_enter_04_default.png
+		FocusImageFile = ui/main/btn_enter_04_over.png
+		PressedImageFile = ui/main/btn_enter_04_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_4
+	}
+	!Premium Button
+	{
+		Flag = BUTTON
+		ID = 700
+		Pos = 591 76 183 170
+		ImageFile = ui/main/btn_enter_04_default.png
+		FocusImageFile = ui/main/btn_enter_04_over.png
+		PressedImageFile = ui/main/btn_enter_04_down.png
+		Show = 0
+	}
+	
+	!Shop 개편 안내
+	{
+		Flag = WINDOW_SPR2D
+		Pos = 606 138 0 0
+		FileName = entry_info_4.SPR
+		MotionName = main
+		ZOrder = 1
+		Show = 0
+	}
+	
+	/*
+	{
+		! CREDIT
+		Flag = BUTTON
+		ID = 600
+		Pos = 580 572 0 0
+		ImageFile = %BottomBar%/btn_credits_default.png
+		FocusImageFile = %BottomBar%/btn_credits_over.png
+		PressedImageFile = %BottomBar%/btn_credits_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+	}
+	*/
+	
+	{
+		! QUIT
+		Flag = BUTTON
+		ID = 9909
+		Pos = 676 572 94 27
+		ImageFile = %BottomBar%/btn_exit_default.png
+		FocusImageFile = %BottomBar%/btn_exit_over.png
+		PressedImageFile = %BottomBar%/btn_exit_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!ToolTip = $MAINMENU_EXIT
+	}
+	
+	
+	!Main 디폴트 설명 배너
+	{
+		Flag = WINDOW
+		ID = 1901
+		Pos = 0 470 800 100
+		ZOrder = 10000
+		Show = 1
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			ID = 19011
+			Pos = 0 0 0 0
+			!ImageFile = ui/entry_notice_1.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Main 싱글모드 설명 배너
+	{
+		Flag = WINDOW
+		ID = 1902
+		Pos = 0 470 800 100
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			!ImageFile = ui/entry_notice_2.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Main VS모드 설명 배너
+	{
+		Flag = WINDOW
+		ID = 1903
+		Pos = 0 470 800 100
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			!ImageFile = ui/entry_notice_3.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Main 멀티모드 설명 배너
+	{
+		Flag = WINDOW
+		ID = 1904
+		Pos = 0 470 800 100
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			!ImageFile = ui/entry_notice_4.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Main Shop 설명 배너
+	{
+		Flag = WINDOW
+		ID = 1906
+		Pos = 0 470 800 100
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			!ImageFile = ui/entry_notice_5.png
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!Banner WINDOW
+	{
+		Flag = WINDOW
+		Pos = 0 456 0 0
+		!EnableBackColor = 1
+		!BackColor = 50 0 0 60
+		ZOrder = 10001
+	}
+	{
+		Flag = START_CHILD
+	}
+		!PR
+		{
+			Flag = TEXTBOX
+			Pos = 0 4 800 10
+			Text = PR
+			TextColor = 90 90 90 255
+			Option = DT_CENTER DT_TOP
+			FontIndex = 2
+			!EnableBackColor = 1
+			!BackColor = 255 0 0 30
+		}
+		!Banner
+		{
+			Flag = WINDOW_IEXPLORER
+			ID = 2001
+			Pos = 36 14 728 90
+			Win32Mode = 1
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!남은 시간 안내 팝업
+	{
+		Flag = FADE_WINDOW
+		ID = 1905
+		Pos = 1 28 206 117
+		ZOrder = 10000
+		MaxTime = 30000
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		!유료/무료 사용 표시
+		{
+			Flag = TEXTBOX
+			ID = 190500
+			Pos = 18 25 186 20
+			!Text = 유료/무료 사용 표시
+			TextColor = 255 255 255 255
+			Option = DT_LEFT DT_VCENTER
+			FontIndex = 2
+			!EnableBackColor = 1
+			!BackColor = 255 0 0 128
+		}
+		!남은 시간 표시
+		{
+			Flag = TEXTBOX
+			ID = 190501
+			Pos = 9 46 186 25
+			!Text = 남은 시간 표시
+			TextColor = 255 255 255 255
+			Option = DT_CENTER DT_VCENTER
+			FontIndex = 2
+			!EnableBackColor = 1
+			!BackColor = 0 60 0 170
+			!EnableBackColorEdge = 1
+			!BackEdgeColor = 255 0 0 255
+		}
+		!티켓 구입 버튼
+		{
+			Flag = BUTTON
+			ID = 19051
+			Pos = 16 78 172 27
+			!Text = Buy Ticket
+			!TextColor = 255 255 255 255
+			EnableBackColor = 1
+			BackColor = 80 180 200 192
+			FocusBackColor = 60 128 150 192
+			PressedBackColor = 138 0 0 160
+			!ImageFile = 
+			!FocusImageFile = 
+			!PressedImageFile = 
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_ESCAPE
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

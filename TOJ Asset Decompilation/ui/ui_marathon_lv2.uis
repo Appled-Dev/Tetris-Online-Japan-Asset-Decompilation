@@ -1,0 +1,54 @@
+﻿!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! 프로그램에서 사용함
+$UI_BACK_FILE_NAME = %Back%/bg0002.uis
+!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+{
+		Flag = WINDOW
+		ID = 6697
+		Pos = 0 0 0 0
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = $UI_BACK_FILE_NAME
+	}
+
+{
+	Flag = END_CHILD
+}
+{
+	Flag = WINDOW
+	Pos = 0 0 0 0
+}
+{
+	Flag = START_CHILD
+}
+	{
+		!MATRIX
+		Flag = WINDOW
+		Pos = 28 59 376 450
+		ImageFile =  %Matrix%\Matrix18x18.png
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = INCLUDE
+		FileName = UI\UI_Marathon_Effects.uis
+	}
+	
+	{
+		Flag = INCLUDE
+		FileName = UI\UI_Marathon_Score.uis
+	}
+
+	{
+		Flag = INCLUDE
+		FileName = UI\UI_Marathon_Matrix.uis
+	}
+
+{
+
+	Flag = END_CHILD
+}

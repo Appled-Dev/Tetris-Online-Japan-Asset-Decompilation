@@ -1,0 +1,147 @@
+﻿{
+	Flag = WINDOW
+	ID = 1200
+	Pos = 0 0 800 600
+	EnableBackColor = 1
+	BackColor = 0 0 0 128
+	Modal = 1
+	Show = 0
+	ZOrder = $ZORDER_MODAL
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = WINDOW
+		Pos = 123 100 0 0
+		ImageFile = ui/multi_mapsel.png
+		!EnableBackColor = 1
+		!BackColor = 32 32 32 192
+		Modal = 1
+	}
+	
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = LISTVIEW
+			ID = 1201
+			Pos = 176 65 118 252
+			ColumnCount = 1
+			ColumnWidth0 = 118
+			ColumnOption0 = DT_VCENTER,DT_CENTER
+			ColumnTextColor0 = 0 0 0 255
+			EnableColumnOutline0 = 0
+			VScrollBarID = 120100
+			EnableVScrollBar = 1
+			!EnableDrawFocusRow = 1
+			!EnableDrawSelectRow = 1
+			!DrawFocusRowColor = 255 255 255 20
+			!DrawSelectRowColor = 195 195 195 50
+			ItemHeight = 28
+			ItemBorderSize = 12 7
+			!EnableBackColor = 1
+			!BackColor = 0 0 0 188
+			!EnableBackColorEdge = 1
+			!BackEdgeColor = 255 255 255 155
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			NormalRowImageFile = ui/multi_map-btn_1a.png
+			FocusRowImageFile = ui/multi_map-btn_1b.png
+			SelectRowImageFile = ui/multi_map-btn_1c.png
+		}
+		
+		!맵 샐랙트 스크롤 바
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = SCROLLBAR
+				ID = 120100
+				Pos = 50 -18 20 288
+				Style = VSCROLL
+				PrevButtonNormalImageFile = ui/multi_page-btn_1a.png
+				PrevButtonFocusImageFile = ui/multi_page-btn_1b.png
+				PrevButtonPressedImageFile = ui/multi_page-btn_1c.png
+				NextButtonNormalImageFile = ui/multi_page-btn_2a.png
+				NextButtonFocusImageFile = ui/multi_page-btn_2b.png
+				NextButtonPressedImageFile = ui/multi_page-btn_2c.png
+				!SliderBackColor = 128 128 128 40
+				!EnableSlider3DEdge = 1
+				EnableSlider = 0
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!OK BUTTON
+		{
+			Flag = BUTTON
+			ID = 1202
+			Pos = 236 361 78 27
+			ImageFile = ui/common/btn_ok_default.png
+			FocusImageFile = ui/common/btn_ok_over.png
+			PressedImageFile = ui/common/btn_ok_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!CANCEL BUTTON
+		{
+			Flag = BUTTON
+			ID = 1203
+			Pos = 321 361 78 27
+			ImageFile = ui/common/btn_cancel_default.png
+			FocusImageFile = ui/common/btn_cancel_over.png
+			PressedImageFile = ui/common/btn_cancel_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_ESCAPE
+		}
+		
+		{
+			Flag = WINDOW_MAP_VIEW
+			ID = 1204
+			Pos = 312 47 140 280
+			BlockSize = 14 14
+			TransparentMouseEvent = 1
+			!EnableBackColorEdge = 1
+			!BackEdgeColor = 100 255 255 155
+			MinoColor_Yellow = %Mino%/yel_tMino_30px.tga
+			MinoColor_LightBlue = %Mino%/blt_tMino_30px.tga
+			MinoColor_Purple = %Mino%/pur_tMino_30px.tga
+			MinoColor_Orange = %Mino%/or_tMino_30px.tga
+			MinoColor_DarkBlue = %Mino%/bdk_tMino_30px.tga
+			MinoColor_Green = %Mino%/grn_tMino_30px.tga
+			MinoColor_Red = %Mino%/red_tMino_30px.tga
+			MinoColor_Garbage = %Mino%/gry_tMino_30px.tga
+			MinoColor_Concrete = %Mino%/blk_tMino_30px.tga
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Random Mark
+			{
+				Flag = WINDOW
+				Pos = 0 0 0 0
+				ID = 12041
+				ImageFile = ui/randammark2.png
+				BackImageColor = 255 255 255 128
+			}
+		{
+			Flag = END_CHILD
+		}
+		{
+			Flag = TEXTBOX
+			Pos = 190 340 256 16
+			ID = 1205
+			!Text = 설명
+			TextColor = 0 0 0 192
+			Option = DT_VCENTER DT_CENTER
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

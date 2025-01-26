@@ -1,0 +1,464 @@
+﻿{
+	Flag = COMMAND
+	Command =HELP_ADDR
+if$GAMEMODE 2
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/single_timeatack.asp
+if$GAMEMODE 1
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/single_challenge.asp
+if$GAMEMODE 0
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/single_marathon.asp
+}
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	!FileName = 
+}
+{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 800 600
+		MaxTime = 400
+		ZOrder = 1000
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		TargetColor = 255 255 255 0
+	}
+	
+	/*
+	{
+		Flag = WINDOW_SMACKER
+		Pos = 458-2 47-1 320 240
+		FileName = IMAGE\movie\basic_01.bik
+		TransparentMouseEvent = 1
+		ZOrder = 900
+	}
+	*/
+	
+	!Pause Button
+	{
+		Flag = BUTTON
+		ID = 3112
+		Pos = 574 566 0 0
+		!Text = Pause
+		!EnableBackColor = 1
+		BackColor = 64 64 64 192
+		FocusBackColor = 138 128 128 192
+		PressedBackColor = 138 0 0 255
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_ESCAPE
+		ZOrder = $TOP_ZORDER
+	}
+	!Back Button
+	{
+		Flag = BUTTON
+		ID = 100
+		Pos = 676 562 100 31
+		ImageFile = %BottomBar%/btn_back_default.png
+		FocusImageFile = %BottomBar%/btn_back_over.png
+		PressedImageFile = %BottomBar%/btn_back_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = BACK
+		ZOrder = $TOP_ZORDER
+		ToolTip = $COMMON_PAGE_PREV
+	}
+	
+	!Guide Button
+	{
+		Flag = BUTTON
+		ID = 103
+		Pos = 8 528 70 65
+		ImageFile = ui/single/btn_operation_1.png
+		FocusImageFile = ui/single/btn_operation_2.png
+		PressedImageFile = ui/single/btn_operation_3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ZOrder = 1
+	}
+	
+	!Guide Window
+	{
+		Flag = WINDOW
+		ID = 1030
+		Pos = 27 466 0 0
+		ImageFile = ui/single/bg_operation.png
+		ZOrder = 2
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Web Link Button
+		{
+			Flag = BUTTON
+			ID = 10301
+			Pos = 18 92 174 28
+			ImageFile = ui/single/btn_webguide_1.png
+			FocusImageFile = ui/single/btn_webguide_2.png
+			PressedImageFile = ui/single/btn_webguide_3.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Close Button
+		{
+			Flag = BUTTON
+			ID = 10302
+			Pos = 365 10 21 21
+			ImageFile = ui/single/btn_operation_close_1.png
+			FocusImageFile = ui/single/btn_operation_close_2.png
+			PressedImageFile = ui/single/btn_operation_close_3.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Replay
+	{
+		Flag = WINDOW
+		Pos = 0 0 0 0
+		ID = 888
+		Show = 0
+		ZOrder = 400	
+	}
+	{
+		Flag = START_CHILD
+	}
+		!리플레이 정보
+		{
+			Flag = WINDOW
+			Pos = 4 29 240 40
+			ID = 8881
+			ZOrder = 400	
+			ImageFile = ui/replayinfo.png
+			Show = 1
+		}
+		
+		{
+			Flag = START_CHILD
+		}
+			!순위
+			{
+				Flag = TEXTBOX
+				ID = 88811
+				Pos = 6 16 40 15
+				TextColor = 255 255 255 255
+				Option = DT_VCENTER DT_CENTER
+			}
+			!리플레이 날짜
+			{
+				Flag = TEXTBOX
+				ID = 88812
+				Pos = 54 16 80 15
+				TextColor = 255 255 255 255
+				Option = DT_VCENTER DT_LEFT
+			}
+			!이름
+			{
+				Flag = TEXTBOX
+				ID = 88813
+				Pos = 136 16 158 15
+				TextColor = 255 255 255 255
+				Option = DT_VCENTER DT_CENTER
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!Replay Stop animation
+		{
+			Flag = WINDOW_SPR2D
+			ID = 8883
+			Pos = 2 66 0 0
+			ZOrder = 400
+			FileName = replaystop.SPR
+			Show = 0
+		}
+		!Replay animation
+		{
+			Flag = WINDOW_SPR2D
+			ID = 8882
+			Pos = 2 66 0 0
+			ZOrder = 400
+			FileName = replaymark.SPR
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Replay total time gauge
+			{
+				Flag = PROGRESSIVEBAR
+				ID = 88821
+				Pos = 4 35 4+98 5
+				Max = 98
+				Current =0
+				BarColor = 96 96 96 255
+				EnableBackColor = 1
+				BackColor = 19 214 250 255
+				AnimateSpeed = 1000
+				Mirror = 0
+				Vertical = 0
+				Show = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	{
+		Flag = WINDOW
+		ID = 101
+		Pos = 0 0 0 0
+	}
+	{
+	!101 에 붙을것을 우선 여기에 붙인다..
+		Flag = WINDOW
+		ID = 102
+		Pos = 0 0 0 0
+	}
+	!결과창
+	{
+		Flag = WINDOW
+		ID = 3000
+		Pos = 0 0 800 600
+		!BackColor = 0 0 0 255
+		!EnableBackColor = 1
+		Modal = 1
+		Show = 0
+		ZOrder = $TOP_ZORDER
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = FADE_WINDOW
+			Pos = 0 0 800 600
+			MaxTime = 1000
+			ZOrder = 100 
+			EnableBackColor = 1
+			BackColor = 0 0 0 0
+			TransparentMouseEvent = 1
+			TargetColor = 0 0 0 128
+			AutoHide = 0
+		}
+		{
+			Flag = WINDOW
+			Pos = 150 64 500 510
+			ImageFile = ui/single/result_window.png
+			Modal = 1
+			ZOrder = 400
+		}
+		{
+			Flag = START_CHILD
+		}
+			!CONGRATULATIONS
+			{
+				Flag = TEXTBOX
+				ID = 3001
+				Pos = 0 0 0 0
+				!Text =  *CONGRATULATIONS*
+				ImageFile = ui/single/result_congratulations.png
+				ShowSoundFile = MissionComplete.wav
+			}
+			{
+				Flag = START_CHILD
+			}
+				!Congratulations SPR
+				{
+					Flag = WINDOW_SPR2D
+					Pos = 50 0 0 0
+					FileName = results_con.SPR
+					ZOrder = 1000
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!GAME OVER
+			{
+				Flag = TEXTBOX
+				ID = 3002
+				Pos = 0 0 0 0
+				!Text = *GAME OVER*
+				ImageFile = ui/single/result_gameover.png
+				ShowSoundFile = Loss.wav
+			}
+			
+			!SCORE
+			{
+				Flag = TEXTBOX
+				ID = 3100
+				!Pos = 0 110 500 28
+				Pos = 0 96 500 28
+				TextColor = 0 0 0 255
+				Option = DT_CENTER
+				FontIndex = 12
+				!EnableBackColor = 1
+				!BackColor = 50 0 0 100
+			}
+			!RANK
+			{
+				Flag = TEXTBOX
+				ID = 3101
+				!Pos = 0 138 500 28
+				Pos = 0 124 500 28
+				TextColor = 0 0 0 255
+				Option = DT_CENTER
+				FontIndex = 12
+				!EnableBackColor = 1
+				!BackColor = 0 50 0 100
+			}
+			
+			!AGAIN Button
+			{
+				Flag = BUTTON
+				ID = 3110
+				Pos = 80 424 138 35
+				ImageFile = ui/training/btn_again_default.png
+				FocusImageFile = ui/training/btn_again_over.png
+				PressedImageFile = ui/training/btn_again_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				HotKey = KEYCODE_RETURN, JOYSTICK_UP
+				ZOrder = 200
+			}
+			!STOP Button
+			{
+				Flag = BUTTON
+				ID = 3111
+				Pos = 282 424 138 35
+				ImageFile = ui/training/btn_stop_default.png
+				FocusImageFile = ui/training/btn_stop_over.png
+				PressedImageFile = ui/training/btn_stop_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				HotKey = KEYCODE_ESCAPE
+				ZOrder = 200
+			}
+			!Endless Button
+			{
+				Flag = BUTTON
+				ID = 3113
+				Pos = 80 424 138 35
+				ImageFile = ui/btn_endless_default.png
+				FocusImageFile = ui/btn_endless_over.png
+				PressedImageFile = ui/btn_endless_down.png
+				DisabledImageFile = ui/btn_endless_disable.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				HotKey = KEYCODE_RETURN, JOYSTICK_UP
+				ZOrder = 200
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				!Endless 모드 안내2 (두번째 클리어 했을때)
+				{
+					Flag = WINDOW
+					Pos = 0 34 0 0
+					ImageFile = ui/endless_info2.png
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!Endless 모드 안내1 (처음 클리어 했을때)
+			{
+				Flag = WINDOW
+				ID = 3119
+				Pos = 80 458 0 0
+				ImageFile = ui/endless_info1.png
+				Show = 0
+			}
+			
+			!PR
+			{
+				Flag = TEXTBOX
+				Pos = 0 154 500 10
+				Text = PR
+				TextColor = 90 90 90 255
+				Option = DT_CENTER DT_TOP
+				FontIndex = 2
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 30
+			}
+			!Banner Window
+			{
+				Flag = WINDOW_IEXPLORER
+				ID = 3003
+				Pos = 100 164 300 250
+				Win32Mode = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+ 	}
+ 	
+	!READY
+	{
+		Flag = WINDOW_SPR2D
+		ID = 1061
+		Pos = 95 213 0 0
+		Show = 0
+		FileName = readygo2.spr
+		MotionName = ready2
+		SoundFile = %Voice%/22_Ready.wav
+		ZOrder = $TOP_ZORDER
+	}
+	!GO
+	{
+		Flag = WINDOW_SPR2D
+		ID = 1062
+		Pos = 75 214 0 0
+		Show = 0
+		FileName = readygo2.spr
+		MotionName = go2
+		SoundFile = %Voice%/23_Go.wav
+		ZOrder = $TOP_ZORDER
+	}
+	!+30초
+	{
+		Flag = WINDOW_SPR2D
+		ID = 1063
+		Pos = 116+230 235+250 0 0
+		Show = 0
+		FileName = timebonus.spr
+		MotionName = main
+		SoundFile = Sfx_3t2x.wav
+		ZOrder = $TOP_ZORDER
+	}
+	
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_Single_Pause.uis
+	}
+	
+{
+	Flag = END_CHILD
+}

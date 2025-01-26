@@ -1,0 +1,57 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 0 0
+	EnableBackColor = 0
+	BackColor = 255 255 255 255
+}
+{
+	Flag = START_CHILD
+}
+	!메세지창
+	{
+		Flag = WINDOW
+		Pos = 26 572 0 0
+		!EnableBackColor = 1
+		!BackColor = 0 0 0 255
+		ImageFile = UI/sysinfo.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Effect
+		{
+			Flag = WINDOW_SPR2D
+			Pos = 0 -5 0 0
+			FileName = sysinfo.SPR
+			MotionName = main
+			ZOrder = 1000
+		}
+		{
+			Flag = TEXTBOX
+			ID = 100
+			Pos = 110 2 635 22
+			TextColor = 255 255 255 255
+			!EnableBackColor = 1
+			!BackColor = 100 0 0 125
+			Option = DT_VCENTER,DT_LEFT
+			FontIndex = 2
+		}
+		{
+			Flag = BUTTON
+			ID = 110
+			Pos = 732 8 12 12
+			!Text = $OK
+			ImageFile = ui/sysinfo_btn1_1.png
+			FocusImageFile = ui/sysinfo_btn1_2.png
+			PressedImageFile = ui/sysinfo_btn1_3.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_SPACE,KEYCODE_RETURN,KEYCODE_Y
+			Show = 0
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

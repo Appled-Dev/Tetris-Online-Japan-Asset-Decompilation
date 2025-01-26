@@ -1,0 +1,568 @@
+﻿
+{
+	Flag = COMMAND
+	Command =HELP_ADDR
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/single.asp
+}
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	FileName = music/lobby.ogg
+}
+
+{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	ImageFile = UI/bg_single.png
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 800 600
+		MaxTime = 400
+		ZOrder = 100 
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		TargetColor = 255 255 255 0
+	}
+	
+	/*
+	{
+ 		Flag = WINDOW_SPR2D
+ 		Pos = 290 26 250 170
+ 		FileName = mainvisual.SPR
+ 		MotionName = main
+ 		TransparentMouseEvent = 1
+ 	}
+	*/
+	/*
+	!LogoWindow
+	{
+		Flag = WINDOW
+		Pos = 290 26 250 170
+		ImageFile = ui/mainvisual.png
+		TransparentMouseEvent = 1
+	}
+	*/
+	
+	{
+		Flag = WINDOW
+		ImageFile = UI/entry_subwindow_1.png
+		Pos = 23 24 300 82
+		Zorder = 100
+		!EnableBackColor = 1
+		!BackColor = 10 10 10 250
+		!EnableBackColorEdge = 1
+		!BackEdgeColor = 255 255 255 192
+		TransparentMouseEvent = 1
+	}
+	
+	!Hori
+	{
+		Flag = BUTTON
+		ID = 1001
+		Pos = 42 342 282 82
+		!EnableBackColor = 1
+		!BackColor = 64 64 64 192
+		!FocusBackColor = 138 128 128 192
+		!PressedBackColor = 138 0 0 255
+		ImageFile = ui/btn_marathon_default.png
+		FocusImageFile = ui/btn_marathon_over.png
+		PressedImageFile = ui/btn_marathon_down.png
+		DisabledImageFile = ui/btn_marathon_disable.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = マラソン
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		!ToolTip = レベル15を達成するまでのスコアを競うモードです
+		Enable = 1
+	}
+	!Challenge
+	{
+		Flag = BUTTON
+		ID = 1002
+		Pos = 42 244 282 82
+		!EnableBackColor = 1
+		!BackColor = 64 64 64 192
+		!FocusBackColor = 138 128 128 192
+		!PressedBackColor = 138 0 0 255
+		ImageFile = ui/btn_challenge_default.png
+		FocusImageFile = ui/btn_challenge_over.png
+		PressedImageFile = ui/btn_challenge_down.png
+		DisabledImageFile = ui/btn_challenge_disable.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = チャレンジ
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		!ToolTip = 制限時間内で得られるスコアを競うモードです
+		Enable = 1
+	}
+	!Time Attack
+	{
+		Flag = BUTTON
+		ID = 1003
+		Pos = 42 146 282 82
+		!EnableBackColor = 1
+		!BackColor = 64 64 64 192
+		!FocusBackColor = 138 128 128 192
+		!PressedBackColor = 138 0 0 255
+		ImageFile = ui/btn_timeattack_default.png
+		FocusImageFile = ui/btn_timeattack_over.png
+		PressedImageFile = ui/btn_timeattack_down.png
+		DisabledImageFile = ui/btn_timeattack_disable.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = タイムアタック
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		!ToolTip = 40ラインをクリアするまでのタイムを競うモードです
+		Enable = 1
+	}
+	
+	{
+		!Time Attack 설명
+		Flag = WINDOW
+		ID = 10031
+		Pos = 0 487 519 119
+		ImageFile = ui/entry_notice_2_01.png
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			Pos = 0 30 800 100
+			Text = $SINGLE_ENTRY_SPRINT
+			TextColor = 70 70 70 255
+			Option = DT_CENTER
+		}
+		
+	{
+		Flag = END_CHILD
+	}
+	
+	{
+		!Challenge 설명
+		Flag = WINDOW
+		ID = 10021
+		Pos = 0 487 519 119
+		ImageFile = ui/entry_notice_2_02.png
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			Pos = 0 30 800 100
+			Text = $SINGLE_ENTRY_CHALLENGE
+			TextColor = 70 70 70 255
+			Option = DT_CENTER
+		}
+		
+	{
+		Flag = END_CHILD
+	}
+	
+	{
+		!Marathon 설명
+		Flag = WINDOW
+		ID = 10011
+		Pos = 0 487 519 119
+		ImageFile = ui/entry_notice_2_03.png
+		ZOrder = 10000
+		Show = 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			Pos = 0 30 800 100
+			Text = $SINGLE_ENTRY_MARATHON
+			TextColor = 70 70 70 255
+			Option = DT_CENTER
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	{
+		!Main 설명
+		Flag = WINDOW
+		ID = 10041
+		Pos = 0 487 519 119
+		ImageFile = ui/entry_notice_2.png
+		ZOrder = 10000
+		Show = 1
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			Pos = 0 15 800 50
+			Text = $SINGLE_DEFAULT_NOTE
+			TextColor = 70 70 70 255
+			Option = DT_CENTER
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!-------------- ranking --------------!
+	{
+		Flag = WINDOW
+		Pos = 318 60 0 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Marathon, Challenge, TimeAttack Backimage
+		{
+			Flag = WINDOW
+			ID = 11150
+			ImageFile = ui/ranking_bg1t.png
+			ImageFileEx = ui/ranking_bg1m.png,ui/ranking_bg1c.png,ui/ranking_bg1t.png
+			Pos = 0 0 0 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Marathon Ranking BUTTON
+			{
+				Flag = BUTTON
+				ID = 1111
+				Pos = 302 38 136 24
+				!Text = マラソン
+				Option = DT_CENTER DT_TOP
+				FontIndex = 2
+				TextColor = 255 255 255 255
+				PressedTextColor = 255 0 0 255
+				!EnableBackColor = 1
+				!BackColor = 0 0 64 192
+				!FocusBackColor = 0 0 90 192
+				!PressedBackColor = 0 0 128 255
+				IsCheckButton = 1
+				NextTabOrderID = 1112
+				ImageFile = ui/ranking_tab1m3.png
+				FocusImageFile = ui/ranking_tab1m2.png
+				PressedImageFile = ui/ranking_tab1m1.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!Challenge Ranking BUTTON
+			{
+				Flag = BUTTON
+				ID = 1112
+				Pos = 164 38 136 24
+				!Text = チャレンジ
+				Option = DT_CENTER DT_TOP
+				FontIndex = 2
+				TextColor = 255 255 255 255
+				PressedTextColor = 255 0 0 255
+				!EnableBackColor = 1
+				!BackColor = 64 64 0 192
+				!FocusBackColor = 90 90 0 192
+				!PressedBackColor = 128 128 0 255
+				IsCheckButton = 1
+				NextTabOrderID = 1113
+				ImageFile = ui/ranking_tab1c3.png
+				FocusImageFile = ui/ranking_tab1c2.png
+				PressedImageFile = ui/ranking_tab1c1.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!TimeAttack Ranking BUTTON
+			{
+				Flag = BUTTON
+				ID = 1113
+				Pos = 26 38 136 24
+				!Text = タイムアタック
+				Option = DT_CENTER DT_TOP
+				FontIndex = 2
+				TextColor = 255 255 255 255
+				PressedTextColor = 255 0 0 255
+				!EnableBackColor = 1
+				!BackColor = 64 0 0 192
+				!FocusBackColor = 90 0 0 192
+				!PressedBackColor = 128 0 0 255
+				IsCheckButton = 1
+				NextTabOrderID = 1111
+				ImageFile = ui/ranking_tab1t3.png
+				FocusImageFile = ui/ranking_tab1t2.png
+				PressedImageFile = ui/ranking_tab1t1.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			
+			!Daily BUTTON
+			{
+				Flag = BUTTON
+				ID = 1101
+				Pos = 32 85 124 26
+				!Text = Daily
+				!TextColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 64 64 64 192
+				!FocusBackColor = 128 128 128 192
+				!PressedBackColor = 128 0 0 255
+				IsCheckButton = 1
+				NextTabOrderID = 1102
+				ImageFile = ui/ranking_tab2d3.png
+				FocusImageFile = ui/ranking_tab2d2.png
+				PressedImageFile = ui/ranking_tab2d1.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				ZOrder = 10
+			}
+			!Weekly BUTTON
+			{
+				Flag = BUTTON
+				ID = 1102
+				Pos = 170 85 124 26
+				!Text = Weekly
+				!TextColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 64 64 64 192
+				!FocusBackColor = 128 128 128 192
+				!PressedBackColor = 128 0 0 255
+				IsCheckButton = 1
+				NextTabOrderID = 1103
+				ImageFile = ui/ranking_tab2w3.png
+				FocusImageFile = ui/ranking_tab2w2.png
+				PressedImageFile = ui/ranking_tab2w1.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!Monthly BUTTON
+			{
+				Flag = BUTTON
+				ID = 1103
+				Pos = 308 85 124 26
+				!Text = Monthly
+				!TextColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 64 64 64 192
+				!FocusBackColor = 128 128 128 192
+				!PressedBackColor = 128 0 0 255
+				IsCheckButton = 1
+				NextTabOrderID = 1101
+				ImageFile = ui/ranking_tab2m3.png
+				FocusImageFile = ui/ranking_tab2m2.png
+				PressedImageFile = ui/ranking_tab2m1.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			
+			!Daily, Weekly, Monthly Backimage
+			{
+				Flag = WINDOW
+				ID = 1114
+				ImageFile = ui/ranking_bg2d.png
+				ImageFileEx = ui/ranking_bg2d.png,ui/ranking_bg2w.png,ui/ranking_bg2m.png
+				Pos = 32 112 0 0
+			}
+			{
+				Flag = LISTVIEW
+				ID = 1121
+				Pos = 43 123 380 200+20
+				!EnableBackColor = 1
+				!BackColor = 64 64 64 192
+				ItemHeight = 20
+				!ColumnCount = 5
+				ColumnCount = 6
+				ColumnNameHeight = 20
+				
+				!ranking
+				ColumnName0 = ランク
+				ColumnNameTextFormat0 = DT_CENTER DT_TOP
+				ColumnNameTextColor0 = 255 255 255 255
+				ColumnNameTextFont0 = 0
+				ColumnNameOutlineTextColor0 = 160 160 160 255
+				ColumnOption0 = DT_CENTER DT_TOP
+				EnableColumnNameOutline0 = 1
+				ColumnWidth0 = 40
+				ColumnTextColor0 = 63 63 63 255
+				EnableColumnOutline0 = 0
+				!ColumnBackColor0 = 0 150 0 255
+				
+				!name
+				ColumnName1 =  \名前
+				ColumnNameTextFormat1 = DT_CENTER DT_TOP
+				ColumnNameTextColor1 = 255 255 255 255
+				ColumnNameTextFont1 = 0
+				ColumnOption1 = DT_WORD_ELLIPSIS DT_CENTER DT_TOP
+				ColumnNameOutlineTextColor1 = 160 160 160 255
+				EnableColumnNameOutline1 = 1
+				ColumnWidth1 = 150
+				ColumnTextColor1 = 63 63 63 255
+				EnableColumnOutline1 = 0
+				!ColumnBackColor1 = 0 0 150 255
+				
+				!level
+				ColumnName2 = level
+				ColumnNameTextFormat2 = DT_CENTER DT_TOP
+				ColumnNameTextColor2 = 255 255 255 255
+				ColumnNameTextFont2 = 0
+				ColumnOption2 = DT_CENTER DT_TOP
+				ColumnNameOutlineTextColor2 = 160 160 160 255
+				EnableColumnNameOutline2 = 1
+				ColumnWidth2 = 0
+				ColumnTextColor2 = 63 63 63 255
+				EnableColumnOutline2 = 0
+				!ColumnBackColor2 = 150 0 0 255
+				
+				!score
+				ColumnName3 = スコア
+				ColumnNameTextFormat3 = DT_CENTER DT_TOP
+				ColumnNameTextColor3 = 255 255 255 255
+				ColumnNameTextFont3 = 0
+				ColumnOption3 = DT_CENTER DT_TOP						
+				ColumnNameOutlineTextColor3 = 160 160 160 255
+				EnableColumnNameOutline3 = 1
+				ColumnWidth3 = 90
+				ColumnTextColor3 = 63 63 63 255
+				EnableColumnOutline3 = 0
+				!ColumnBackColor3 = 0 150 0 255
+				
+				!line
+				ColumnName4 = ライン
+				ColumnNameTextFormat4 = DT_CENTER DT_TOP
+				ColumnNameTextColor4 = 255 255 255 255
+				ColumnNameTextFont4 = 0
+				ColumnOption4 = DT_CENTER DT_TOP
+				ColumnNameOutlineTextColor4 = 160 160 160 255
+				EnableColumnNameOutline4 = 1
+				ColumnWidth4 = 50
+				ColumnTextColor4 = 63 63 63 255
+				EnableColumnOutline4 = 0
+				!ColumnBackColor4 = 0 0 200 255
+				
+				!replay
+				ColumnName5 = REPLAY
+				ColumnNameTextFormat5 = DT_CENTER DT_TOP
+				ColumnNameTextColor5 = 255 255 255 255
+				ColumnNameTextFont5 = 0
+				ColumnOption5 = DT_CENTER DT_TOP
+				ColumnNameOutlineTextColor5 = 160 160 160 255
+				EnableColumnNameOutline5 = 1
+				ColumnWidth5 = 50
+				ColumnTextColor5 = 63 63 63 255
+				EnableColumnOutline5 = 0
+				!ColumnBackColor5 = 100 0 0 255
+				ButtonColumn5=1
+				ColumnImageFontList5 = ui/replay_button_1.png,ui/replay_button_2.png,ui/replay_button_3.png,ui/replay_button_4.png
+				EnableDrawFocusRow = 0
+				EnableDrawSelectRow = 0
+			}
+			{
+				Flag = BUTTON
+				ID = 1201
+				Pos = 114 391 108 24
+				!Text = PREV
+				!TextColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 64 64 64 192
+				!FocusBackColor = 128 128 128 192
+				FontIndex = 0
+				Option = DT_VCENTER DT_CENTER
+				ImageFile = ui/btn_ranking_prev_default.png
+				FocusImageFile = ui/btn_ranking_prev_over.png
+				PressedImageFile = ui/btn_ranking_prev_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 1202
+				Pos = 242 391 108 24
+				!Text = NEXT
+				!TextColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 64 64 64 192
+				!FocusBackColor = 128 128 128 192
+				FontIndex = 0
+				Option = DT_VCENTER DT_CENTER
+				ImageFile = ui/btn_ranking_next_default.png
+				FocusImageFile = ui/btn_ranking_next_over.png
+				PressedImageFile = ui/btn_ranking_next_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+		{
+			Flag = END_CHILD
+		}
+	
+	{
+		Flag = END_CHILD
+	}
+	
+	!----------------------------------------------------
+	
+	
+	!BACK BUTTON
+	{
+		Flag = BUTTON
+		ID = 5999
+		Pos = 676 572 94 27
+		ImageFile = %BottomBar%/btn_back_default.png
+		FocusImageFile = %BottomBar%/btn_back_over.png
+		PressedImageFile = %BottomBar%/btn_back_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = BACK
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		HotKey = KEYCODE_ESCAPE
+		Zorder = 10000
+		ToolTip = $COMMON_PAGE_PREV
+	}
+
+{
+	Flag = END_CHILD
+}

@@ -1,0 +1,702 @@
+﻿{
+	Flag = WINDOW_TETRIS_PEER
+	ID = 10001
+	Pos = 0 0 0 0
+	BlockSize = 8 8
+	!NextBlockSize = 6 6
+	NextBlockSize = 0 0
+	!HoldBlockSize = 6 6
+	HoldBlockSize = 0 0
+	PlayBlockPos = 0 0 8*10 8*20
+	HoldBlockPos = -40 -12 90 40
+	NextBlockPos0 = 56 -12 90 40
+	NextBlockPos1 = 56 16 90 40
+	NextBlockPos2 = 56 44 90 40
+	NextBlockPos3 = 56 72 90 40
+	NextBlockPos4 = 56 100 90 40
+	NextBlockPos5 = 56 128 90 40
+	
+	MinoColor_Yellow = %Mino%/yel_tMino_30px.tga
+	MinoColor_LightBlue = %Mino%/blt_tMino_30px.tga
+	MinoColor_Purple = %Mino%/pur_tMino_30px.tga
+	MinoColor_Orange = %Mino%/or_tMino_30px.tga
+	MinoColor_DarkBlue = %Mino%/bdk_tMino_30px.tga
+	MinoColor_Green = %Mino%/grn_tMino_30px.tga
+	MinoColor_Red = %Mino%/red_tMino_30px.tga
+	MinoColor_Garbage = %Mino%/gry_tMino_30px.tga
+	MinoColor_Concrete = %Mino%/blk_tMino_30px.tga
+	
+	!MinoColor_Yellow_Ghost = %Ghost%/yel_ghost_30px.tga
+	!MinoColor_LightBlue_Ghost = %Ghost%/blt_ghost_30px.tga
+	!MinoColor_Purple_Ghost = %Ghost%/pur_ghost_30px.tga
+	!MinoColor_Orange_Ghost = %Ghost%/or_ghost_30px.tga
+	!MinoColor_DarkBlue_Ghost = %Ghost%/bdk_ghost_30px.tga
+	!MinoColor_Green_Ghost = %Ghost%/grn_ghost_30px.tga
+	!MinoColor_Red_Ghost = %Ghost%/red_ghost_30px.tga
+}
+
+!ID Name
+{
+	Flag = TEXTBOX
+	ID = 10002
+	Pos = -12 -37 114 32
+	FontIndex = 2
+	TextColor = 0 0 0 255
+	ZOrder = 100
+	TransparentMouseEvent = 0
+	TextPos = 30 1 0 0
+	!EnableBackColor = 1
+	!BackColor = 255 0 0 128
+	Option = DT_WORD_ELLIPSIS DT_LEFT DT_TOP
+}
+
+!LV, RP Desc
+{
+	Flag = TEXTBOX
+	ID = 100021
+	Pos = 18 -21 100 16
+	!EnableBackColor = 1
+	!BackColor = 0 100 0 255
+	Text = LV
+	FontIndex = 2
+	TextColor = 0 0 0 255
+	ZOrder = 100
+	if$1VS1 1
+		Show = 0
+	if$1VS1 0
+		Show = 1
+}
+
+!Level, Rating 값을 같이 사용
+{
+	Flag = TEXTBOX
+	ID = 100022
+	Pos = 38 -21 100 16
+	!EnableBackColor = 1
+	!BackColor = 100 0 0 255
+	FontIndex = 2
+	TextColor = 0 0 0 255
+	ZOrder = 100
+	Show = 1
+}
+
+!Team Color
+{
+	Flag = WINDOW
+	Pos = -18 -40 0 0
+	ID = 10003
+	!EnableBackColor = 0
+	!BackColor = 32 32 32 192
+	ImageFileEx = %Multi%/multi_teamcolor0.png,%Multi%/multi_teamcolor1.png,%Multi%/multi_teamcolor2.png,%Multi%/multi_teamcolor3.png
+	TransparentMouseEvent = 1
+}
+
+!Target
+{
+	Flag = WINDOW_SPR2D
+	ID = 10004
+	Pos = 8 0 0 0
+	Show = 0
+	FileName = target.spr
+	MotionName = target2
+	ZOrder = 1000
+}
+
+!Result
+{
+	Flag = WINDOW
+	ID = 10005
+	Pos = 0 0 0 0
+	Show = 0
+	ImageFile = ui/multi_MRbaseS.png
+	BackImageColor = 255 255 255 128
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = WINDOW
+		ID = 100051
+		Pos = 20 20 0 0
+		ImageFileEx = ui/multi_Rank_01_s.png,ui/multi_Rank_02_s.png,ui/multi_Rank_03_s.png,ui/multi_Rank_04_s.png,ui/multi_Rank_05_s.png,ui/multi_Rank_06_s.png
+	}
+	!Result Rank
+	{
+		Flag = WINDOW
+		Pos = 0 300 0 0
+		ID = 100060
+		!EnableBackColor = 0
+		!BackColor = 32 32 32 192
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Exp DESC
+		{
+			Flag = TEXTBOX
+			Pos = 0 0 0 0
+			Text = EXP
+			TextColor = 255 255 255 255
+			Option = DT_VCENTER | DT_LEFT
+		}
+		!Exp
+		{
+			Flag = TEXTBOX
+			ID = 100061
+			Pos = 50 90 0 0
+			TextColor = 255 255 255 255
+			FontIndex = 0
+			Option = DT_VCENTER DT_RIGHT
+		}
+		!TP DESC
+		{
+			Flag = TEXTBOX
+			Pos = 10 120 0 0
+			Text = EXP
+			TextColor = 255 255 255 255
+			Option = DT_VCENTER | DT_LEFT
+		}
+		!TP
+		{
+			Flag = TEXTBOX
+			ID = 100062
+			Pos = 50 120 0 0
+			TextColor = 255 255 255 255
+			FontIndex = 0
+			Option = DT_VCENTER DT_RIGHT
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}
+
+!Queue Bar
+{
+	Flag = PROGRESSIVEBAR
+	ID = 10006
+	Pos = 85 0 5 160
+	Max = 10 * 20
+	Current = 0
+	BarColor = 255 0 0 255
+	DiffBarColor = 255 143 0 255
+	!EnableBackColor = 1
+	!BackColor = 255 255 255 255
+	AnimateSpeed = 1000
+	Mirror = 1
+	Vertical = 1
+}
+
+!Room Host Mark
+{
+	Flag = WINDOW_SPR2D
+	ID = 10007
+	Pos = -15 -38 0 0
+	FileName = host3.spr
+	MotionName = start
+	ZOrder = 200
+	Show = 0
+}
+
+!AI Bot Mark
+{
+	Flag = WINDOW_SPR2D
+	ID = 100071
+	Pos = -15 -38 0 0
+	FileName = host_ai.SPR
+	MotionName = start
+	ZOrder = 200
+	Show = 0
+}
+
+!Slot Number
+{
+	Flag = WINDOW
+	ID = 100072
+	Pos = -15 -38 0 0
+	ImageFileEx  = ui/item/no01.png,ui/item/no02.png,ui/item/no03.png,ui/item/no04.png,ui/item/no05.png,ui/item/no06.png
+	ZOrder = 200
+	Show = 1
+}
+
+!K.O Count
+{
+	Flag = WINDOW_SPR2D
+	ID = 10008
+	Pos = 61 -49 0 0
+	Show = 0
+	FileName = kocount2.spr
+	TransparentMouseEvent = 1
+	ZOrder = 200
+}
+!Chatting Box
+{
+	Flag = WINDOW
+	ID = 10009
+	Pos = -8 -10 0 0
+	ImageFile = %Multi%/chat_fukidashi.png
+	ZOrder = 101
+	Show = 0
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = LISTBOXW
+		ID = 100091
+		Pos = 0 10 103 72
+		Option = DT_LEFT DT_VCENTER
+		MaxLine = 3
+		BorderSize = 3
+		TextGap = 3
+		!ItemLifeTime = 0
+		!EnableBackColor = 1
+		!BackColor = 0 0 0 128
+		!EnableOutLineText = 1
+		!OutLineTextColor = 0 0 0 255
+		!EnableBackColorEdge = 1
+		!BackEdgeColor = 255 255 255 125
+		EnableCr = 0
+	}
+{
+	Flag = END_CHILD
+}
+
+!K.O Mark
+{
+	Flag = WINDOW_SPR2D
+	ID = 10010
+	Pos = 6 94 0 0
+	FileName = ko.SPR
+	Show = 0
+}
+
+!이모티콘
+{
+	Flag = WINDOW_SPR2D
+	ID = 10011
+	Pos = 17 -15 0 0
+	ZOrder = 10000
+	Show = 0
+}
+! 승수 마크
+{
+	Flag = TEXTBOX
+	ID = 10012
+	Pos = 2 100 150 130
+	TextColor = 255 255 255 255
+	FontIndex = 0
+	EnableImageFont = 1
+	!ImageFontWidth = 0
+	ImageFontList = ,,,,,,,,,,,,,,,,ui/winstar_50s.png,ui/winstar_10s.png,ui/winstar_05s.png,ui/winstar_01s.png
+	Option = DT_VCENTER DT_LEFT
+}
+
+!B2B
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000460
+	Pos = 10 -16 100 20
+	Show = 0
+	FileName = %EventFX%/backtoback_small.SPR
+	MotionName = backtoback_small
+	ZOrder = 200
+}
+!TETRIS
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000472
+	Pos = -4 15 100 20
+	Show = 0
+	FileName = %EventFX%/tetris.spr
+	MotionName = tetris
+}
+!Triple
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000471
+	Pos = 10 50 100 20
+	Show = 0
+	FileName = %EventFX%/triple.spr
+	MotionName = triple
+}
+!Double
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000470
+	Pos = 10 50 100 20
+	Show = 0
+	FileName = %EventFX%/double.spr
+	MotionName = double
+}
+!TSPIN Mini
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000484
+	Pos = 8 34 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin_small.spr
+	MotionName = T-SPIN MINI
+}
+!TSPIN Triple
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000483
+	Pos = 8 34 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin_small.spr
+	MotionName = T-SPIN Triple
+}
+!TSPIN Double
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000482
+	Pos = 8 34 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin_small.spr
+	MotionName = T-SPIN Double
+}
+!TSPIN Single
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000481
+	Pos = 8 34 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin_small.spr
+	MotionName = T-SPIN Single
+}
+!TSPIN
+{
+	Flag = WINDOW_SPR2D
+	ID = 1000480
+	Pos = 8 34 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin_small.spr
+	MotionName = T-SPIN
+}
+!REN
+{
+	Flag = WINDOW_SPR2D
+	ID = 100049
+	Pos = 16 66-54 50 20
+	Show = 0
+	FileName = %EventFX%/ren_small.spr
+}
+!Perfect Clear
+{
+	Flag = WINDOW_SPR2D
+	ID = 100052
+	Pos = -14 15 0 0
+	Show = 0
+	FileName = %EventFX%/perfectclear_small.SPR
+	MotionName = perfectclear_small
+}
+
+!==========Item Mode Effect==========
+
+!Plus
+{
+	Flag = WINDOW_SPR2D
+	ID = 200901
+	Pos = 9 74 0 0
+	Show = 0
+	FileName = item/plus_s.SPR
+	ZOrder = 100
+}
+!Erase
+{
+	Flag = WINDOW_SPR2D
+	ID = 200902
+	Pos = 2 20 0 0
+	Show = 0
+	FileName = item/erase_s.SPR
+	ZOrder = 100
+}
+!Steal
+{
+	Flag = WINDOW_SPR2D
+	ID = 200903
+	Pos = 10 30 0 0
+	Show = 0
+	FileName = item/steal_s.SPR
+	ZOrder = 100
+}
+!Next
+{
+	Flag = WINDOW_SPR2D
+	ID = 200904
+	Pos = 0 0 0 0
+	Show = 0
+	FileName = item/next.SPR
+	ZOrder = 100
+}
+!Hold
+{
+	Flag = WINDOW_SPR2D
+	ID = 200905
+	Pos = 0 0 0 0
+	Show = 0
+	FileName = item/hold.SPR
+	ZOrder = 100
+}
+!Rotate
+{
+	Flag = WINDOW_SPR2D
+	ID = 200906
+	Pos = 0 0 0 0
+	Show = 0
+	FileName = item/rotate.SPR
+	ZOrder = 100
+}
+!Harddrop
+{
+	Flag = WINDOW_SPR2D
+	ID = 200907
+	Pos = 0 0 0 0
+	Show = 0
+	FileName = item/harddrop.SPR
+	ZOrder = 100
+}
+!Speed
+{
+	Flag = WINDOW_SPR2D
+	ID = 200908
+	Pos = 4 10 0 0
+	Show = 0
+	FileName = item/speed_s.SPR
+	ZOrder = 100
+}
+!Dark
+{
+	Flag = WINDOW_SPR2D
+	ID = 200909
+	Pos = 0 0 0 0
+	Show = 0
+	FileName = item/dark_s.SPR
+	ZOrder = 99
+}
+!Heart
+{
+	Flag = WINDOW_SPR2D
+	ID = 200910
+	Pos = 5 109 0 0
+	Show = 0
+	FileName = item/heart_s.SPR
+	ZOrder = 100
+}
+!Twist
+{
+	Flag = WINDOW_SPR2D
+	ID = 200911
+	Pos = 0 70 0 0
+	Show = 0
+	FileName = item/twist_s.SPR
+	ZOrder = 100
+}
+!Laser
+{
+	Flag = WINDOW_SPR2D
+	ID = 200912
+	Pos = 1 0 0 0
+	Show = 0
+	FileName = item/laser_s.SPR
+	ZOrder = 100
+}
+!Missile
+{
+	Flag = WINDOW_SPR2D
+	ID = 200913
+	Pos = 6 56 0 0
+	Show = 0
+	FileName = item/missile_s.SPR
+	ZOrder = 100
+}
+!Snow
+{
+	Flag = WINDOW_SPR2D
+	ID = 200914
+	Pos = 0 0 0 0
+	Show = 0
+	FileName = item/snow_s.SPR
+	ZOrder = 100
+}
+!Bomb
+{
+	Flag = WINDOW_SPR2D
+	ID = 200915
+	Pos = 0 110 0 0
+	Show = 0
+	FileName = item/bomb_s.SPR
+	ZOrder = 100
+}
+!Minus
+{
+	Flag = WINDOW_SPR2D
+	ID = 200916
+	Pos = 10 90 0 0
+	Show = 0
+	FileName = item/minus_s.SPR
+	ZOrder = 100
+}
+!Summon
+{
+	Flag = WINDOW_SPR2D
+	ID = 200917
+	Pos = 0 0 0 0
+	Show = 0
+	FileName = item/summon_s.SPR
+	ZOrder = 100
+}
+!Cure
+{
+	Flag = WINDOW_SPR2D
+	ID = 200918
+	Pos = 1 10 0 0
+	Show = 0
+	FileName = item/cure_s.SPR
+	ZOrder = 100
+}
+!Cut
+{
+	Flag = WINDOW_SPR2D
+	ID = 200919
+	Pos = 0 50 0 0
+	Show = 0
+	FileName = item/cut_s.SPR
+	ZOrder = 100
+}
+!Push
+{
+	Flag = WINDOW_SPR2D
+	ID = 200920
+	Pos = 0 70 0 0
+	Show = 0
+	FileName = item/push_s.SPR
+	ZOrder = 100
+}
+!Drop
+{
+	Flag = WINDOW_SPR2D
+	ID = 200921
+	Pos = 8 -20 0 0
+	Show = 0
+	FileName = item/drop_s.SPR
+	ZOrder = 100
+}
+!Clear
+{
+	Flag = WINDOW_SPR2D
+	ID = 200922
+	Pos = 4 30 0 0
+	Show = 0
+	FileName = item/clear_s.SPR
+	ZOrder = 100
+}
+
+
+!=========상태 변화 표시=========
+
+!상태 변화 표시 WINDOW
+{
+	Flag = WINDOW
+	Pos = 0 162 0 0
+	!mageFile = ui/item/item_slot.png
+	ZOrder = 10
+}
+{
+	Flag = START_CHILD
+}
+	!Slot 1
+	{
+		Flag = WINDOW
+		ID = 200801
+		Pos = 0 0 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 2
+	{
+		Flag = WINDOW
+		ID = 200802
+		Pos = 18 0 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 3
+	{
+		Flag = WINDOW
+		ID = 200803
+		Pos = 36 0 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 4
+	{
+		Flag = WINDOW
+		ID = 200804
+		Pos = 54 0 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 5
+	{
+		Flag = WINDOW
+		ID = 200805
+		Pos = 72 0 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 6
+	{
+		Flag = WINDOW
+		ID = 200806
+		Pos = 0 18 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 7
+	{
+		Flag = WINDOW
+		ID = 200807
+		Pos = 18 18 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 8
+	{
+		Flag = WINDOW
+		ID = 200808
+		Pos = 36 18 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 9
+	{
+		Flag = WINDOW
+		ID = 200809
+		Pos = 54 18 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+	!Slot 10
+	{
+		Flag = WINDOW
+		ID = 200810
+		Pos = 72 18 0 0
+		ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_missile.png,ui/item/item_14_snow.png,ui/item/item_15_bomb.png,ui/item/item_16_minus.png,ui/item/item_17_summon.png,ui/item/item_18_cure.png,ui/item/item_19_cut.png,ui/item/item_20_push.png,ui/item/item_21_drop.png,ui/item/item_22_clear.png
+		!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+		Show = 0
+	}
+{
+	Flag = END_CHILD
+}

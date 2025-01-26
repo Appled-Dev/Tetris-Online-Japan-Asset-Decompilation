@@ -1,0 +1,253 @@
+﻿{
+	Flag = WINDOW
+	Pos = 200 38 400 540
+	ImageFile = ui/class_bg.png
+}
+{
+	Flag = START_CHILD
+}
+	!Channel List Window
+	{
+		Flag = WINDOW
+		Pos = 0 0 400 500
+	}
+	{
+		Flag = START_CHILD
+	}
+		!현재채널
+		{
+			Flag = WINDOW
+			ID = 200010
+			Pos = 129 35 0 0
+			ImageFileEx = ui/class_01.png,ui/class_02.png,ui/class_05.png,ui/class_04.png,ui/class_03.png
+		}
+		
+		!1번채널 버튼 のんびり
+		{
+			Flag = BUTTON
+			ID = 200011
+			Pos = 5 160 383 90
+			ImageFile = ui/btn_class01_default.png
+			FocusImageFile = ui/btn_class01_over.png
+			PressedImageFile = ui/btn_class01_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 10
+			ToolTip = はやい人おことわり、マイペースな人生
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 294 17 0 0
+				!ImageFile=ui/room_percent_bg.png
+			}
+			!Queue Bar
+			{
+				Flag = PROGRESSIVEBAR
+				ID = 2000111
+				Pos = 294 17 77 12
+				Max = 100
+				Current = 0
+				BarColor = 0 0 0 255
+				AnimateSpeed = 1000
+				Mirror = 0
+				Vertical = 0
+				ZOrder = 11
+				EnableImageBar = 1
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!2번채널 버튼 ふつう
+		{
+			Flag = BUTTON
+			ID = 200012
+			Pos = 5 253 383 90
+			ImageFile = ui/btn_class02_default.png
+			FocusImageFile = ui/btn_class02_over.png
+			PressedImageFile = ui/btn_class02_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 10
+			ToolTip = ふつうのテトリス、ふつうの人生
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 294 17 0 0
+				!ImageFile=ui/room_percent_bg.png
+			}
+			!Queue Bar
+			{
+				Flag = PROGRESSIVEBAR
+				ID = 2000121
+				Pos = 294 17 77 12
+				Max = 100
+				Current = 0
+				BarColor = 0 0 0 255
+				Mirror = 0
+				Vertical = 0
+				ZOrder = 11
+				EnableImageBar = 1
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!3번채널 버튼 ワンオンワン
+		{
+			Flag = BUTTON
+			ID = 200013
+			Pos = 5 439 383 90
+			ImageFile = ui/btn_class05_default.png
+			FocusImageFile = ui/btn_class05_over.png
+			PressedImageFile = ui/btn_class05_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 10
+			ToolTip = 真剣勝負、サムライ人生
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 294 17 0 0
+				!ImageFile=ui/room_percent_bg.png
+			}
+			!Queue Bar
+			{
+				Flag = PROGRESSIVEBAR
+				ID = 2000131
+				Pos = 294 17 77 12
+				Max = 100
+				Current = 0
+				BarColor = 0 0 0 255
+				Mirror = 0
+				Vertical = 0
+				ZOrder = 11
+				EnableImageBar = 1
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!4번채널 버튼 マスター
+		{
+			Flag = BUTTON
+			ID = 200014
+			Pos = 5 346 383 90
+			ImageFile = ui/btn_class04_default.png
+			FocusImageFile = ui/btn_class04_over.png
+			PressedImageFile = ui/btn_class04_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 10
+			ToolTip = スピードバトル、マッハな人生
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 294 17 0 0
+				!ImageFile=ui/room_percent_bg.png
+			}
+			!Queue Bar
+			{
+				Flag = PROGRESSIVEBAR
+				ID = 2000141
+				Pos = 294 17 77 12
+				Max = 100
+				Current = 0
+				BarColor = 0 0 0 255
+				Mirror = 0
+				Vertical = 0
+				ZOrder = 11
+				EnableImageBar = 1
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!5번채널 버튼 アイテム
+		{
+			Flag = BUTTON
+			ID = 200015
+			Pos = 5 67 383 90
+			ImageFile = ui/btn_class03_default.png
+			FocusImageFile = ui/btn_class03_over.png
+			PressedImageFile = ui/btn_class03_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 10
+			ToolTip = アイテムで楽しい、カオスな人生
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 294 17 0 0
+				!ImageFile=ui/room_percent_bg.png
+			}
+			!Queue Bar
+			{
+				Flag = PROGRESSIVEBAR
+				ID = 2000151
+				Pos = 294 17 77 12
+				Max = 100
+				Current = 0
+				BarColor = 0 0 0 255
+				Mirror = 0
+				Vertical = 0
+				ZOrder = 11
+				EnableImageBar = 1
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Close BUTTON
+	{
+		Flag = BUTTON
+		ID = 200099
+		Pos = 420 6 20 20
+		!Text = X
+		ImageFile = ui/common/btn_close_default.png
+		FocusImageFile = ui/common/btn_close_over.png
+		PressedImageFile = ui/common/btn_close_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ZOrder = 10
+		Show = 0
+	}
+	!Sub Close BUTTON
+	{
+		Flag = BUTTON
+		ID = 200099
+		Pos = 370 4 22 22
+		ImageFile = ui/lobby/btn_close_default.png
+		FocusImageFile = ui/lobby/btn_close_over.png
+		PressedImageFile = ui/lobby/btn_close_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_ESCAPE
+		ZOrder = 10
+	}
+{
+	Flag = END_CHILD
+}

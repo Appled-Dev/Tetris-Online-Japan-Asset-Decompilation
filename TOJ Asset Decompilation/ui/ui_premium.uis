@@ -1,0 +1,631 @@
+﻿
+{
+	Flag = COMMAND
+	Command =HELP_ADDR
+if$GAMEMODE 2
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/single_timeatack.asp
+if$GAMEMODE 1
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/single_challenge.asp
+if$GAMEMODE 0
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/single_marathon.asp
+}
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	FileName = music/Hori_Waiting.ogg
+}
+{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 800 600
+		MaxTime = 400
+		ZOrder = 1000
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		TargetColor = 255 255 255 0
+	}
+	{
+		Flag = WINDOW_SMACKER
+		Pos = 458-2 47-1 320 240
+		!FileName =IMAGE\movie\honda_mute.bik
+		FileName =IMAGE\movie\basic_01.bik
+		TransparentMouseEvent = 1
+		ZOrder = 900
+		Show = 0
+	}
+	/*
+	{
+		!LogoWindowBack
+		Flag = WINDOW
+		Pos = 456 46 321 240
+		!ImageFile = ui/entry_logo.png
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		ZOrder = 900
+		
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			!LogoWindowImage
+			Flag = WINDOW
+			Pos = 49 29 223 182
+			ImageFile = ui/entry_logo.png
+			!EnableBackColor = 1
+			!BackColor = 0 0 0 255
+			TransparentMouseEvent = 1
+		}
+	{
+		Flag = END_CHILD
+	}
+	*/
+	{
+		!back button
+		Flag = BUTTON
+		ID = 100
+		Pos = 676 562 94 27
+		ImageFile = ui/hori/btn_back_default.png
+		FocusImageFile = ui/hori/btn_back_over.png
+		PressedImageFile = ui/hori/btn_back_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = BACK
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		!HotKey = KEYCODE_ESCAPE
+		ZOrder = $TOP_ZORDER
+		ToolTip = $COMMON_PAGE_PREV
+	}
+
+	{
+		!코스선택 버튼 윈도우
+		Flag = WINDOW
+		Pos = 0 0 0 0
+		ID = 888
+		Show = 1
+		ZOrder = 400	
+	}
+	{
+		Flag = START_CHILD
+	}
+		!코스 선택 이미지
+		{
+			Flag = WINDOW
+			Pos = 44 120 0 0
+			ImageFile = ui/hori/courseselect_chara.png
+		}
+		
+		!게임 시작 버튼 (간단)
+		{
+			Flag = BUTTON
+			ID = 88800
+			Pos = 126 205 206 65
+			ImageFile = ui/hori/btn_easy_default.png
+			FocusImageFile = ui/hori/btn_easy_over.png
+			PressedImageFile = ui/hori/btn_easy_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 100000
+			HotKey = KEYCODE_1
+			!ToolTip = 簡単
+		}
+		!게임 시작 버튼 (보통)
+		{
+			Flag = BUTTON
+			ID = 88801
+			Pos = 126 270 206 65
+			ImageFile = ui/hori/btn_normal_default.png
+			FocusImageFile = ui/hori/btn_normal_over.png
+			PressedImageFile = ui/hori/btn_normal_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 100000
+			HotKey = KEYCODE_2
+			!ToolTip = 普通
+		}
+		!게임 시작 버튼 (어렵다)
+		{
+			Flag = BUTTON
+			ID = 88802
+			Pos = 126 335 206 65
+			ImageFile = ui/hori/btn_hard_default.png
+			FocusImageFile = ui/hori/btn_hard_over.png
+			PressedImageFile = ui/hori/btn_hard_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 100000
+			HotKey = KEYCODE_3
+			!ToolTip = 難しい
+		}
+		!게임 시작 버튼 (매우어렵다)
+		{
+			Flag = BUTTON
+			ID = 88803
+			Pos = 126 400 206 65
+			ImageFile = ui/hori/btn_veryhard_default.png
+			FocusImageFile = ui/hori/btn_veryhard_over.png
+			PressedImageFile = ui/hori/btn_veryhard_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 100000
+			HotKey = KEYCODE_4
+			!ToolTip = すごく難しい
+		}
+	{
+		Flag = END_CHILD
+	}
+
+	!휴식 화면 (중간결과)
+	{
+		Flag = WINDOW
+		ID = 999
+		Pos = 0 0 800 600
+		BackColor = 0 0 0 128
+		Modal = 1
+		!EnableBackColor = 1
+		Show = 0
+		ZOrder = $TOP_ZORDER
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = FADE_WINDOW
+			Pos = 0 0 800 600
+			MaxTime = 1000
+			ZOrder = 100 
+			EnableBackColor = 1
+			BackColor = 0 0 0 0
+			TransparentMouseEvent = 1
+			TargetColor = 0 0 0 128
+			AutoHide = 0
+		}
+		{
+			Flag = WINDOW
+			Pos = 58 124 300 345
+			!ID = 999
+			ImageFile = ui/hori/rest.png
+			!EnableBackColor = 1
+			!BackColor = 0 0 0 200
+			ZOrder = 400
+		}
+		{
+			Flag = START_CHILD
+		}
+			!휴게 이미지
+			{
+				Flag = WINDOW_SPR2D
+				Pos = -44 164 0 0
+				FileName = hori/rest.SPR
+				ShowSoundFile = Loss.wav
+			}
+			
+			!Line Clear Info
+			{
+				Flag = WINDOW
+				Pos =56 52 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				!Total Clear
+				{
+					Flag = TEXTBOX
+					ID = 9990
+					Pos = 120 36 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					!EnableBackColor = 1
+					!BackColor = 0 0 255 100
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 38 0 0
+					ImageFile = ui/hori/9_Clearline.png
+					TransparentMouseEvent = 1
+				}
+				!Single
+				{
+					Flag = TEXTBOX
+					ID = 9991
+					Pos = 120 56 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 58 0 0
+					ImageFile = ui/hori/9_Single.png
+					TransparentMouseEvent = 1
+				}
+				!Double
+				{
+					Flag = TEXTBOX
+					ID = 9992
+					Pos = 120 76 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 78 0 0
+					ImageFile = ui/hori/9_Double.png
+					TransparentMouseEvent = 1
+				}
+				!Triple
+				{
+					Flag = TEXTBOX
+					ID = 9993
+					Pos = 120 96 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 98 0 0
+					ImageFile = ui/hori/9_Triple.png
+					TransparentMouseEvent = 1
+				}
+				!Tetris
+				{
+					Flag = TEXTBOX
+					ID = 9994
+					Pos = 120 116 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 118 0 0
+					ImageFile = ui/hori/9_Tetris.png
+					TransparentMouseEvent = 1
+				}
+				!T-Spin Mini
+				{
+					Flag = TEXTBOX
+					ID = 9995
+					Pos = 120 136 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 138 0 0
+					ImageFile = ui/hori/9_TSpin_Mini.png
+					TransparentMouseEvent = 1
+				}
+				!T-Spin Single
+				{
+					Flag = TEXTBOX
+					ID = 9996
+					Pos = 120 156 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 158 0 0
+					ImageFile = ui/hori/9_TSpin_Single.png
+					TransparentMouseEvent = 1
+				}
+				!T-Spin Double
+				{
+					Flag = TEXTBOX
+					ID = 9997
+					Pos = 120 176 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 178 0 0
+					ImageFile = ui/hori/9_TSpin_Double.png
+					TransparentMouseEvent = 1
+				}
+				!T-Spin Triple
+				{
+					Flag = TEXTBOX
+					ID = 9998
+					Pos = 120 196 40 20
+					TextColor = 110 62 22 255
+					Option = DT_RIGHT
+					TransparentMouseEvent = 1
+					FontIndex = 21
+				}
+				{
+					!image
+					Flag = WINDOW
+					Pos = 20 198 0 0
+					ImageFile = ui/hori/9_TSpin_Triple.png
+					TransparentMouseEvent = 1
+				}
+			{
+				Flag = END_CHILD
+			}
+			!계속 하기
+			{
+				Flag = BUTTON
+				ID = 99999
+				Pos = 48 278 206 55
+				ImageFile = ui/hori/btn_continue_default.png
+				FocusImageFile = ui/hori/btn_continue_over.png
+				PressedImageFile = ui/hori/btn_continue_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				ZOrder = 100000
+				HotKey = KEYCODE_SPACE, JOYSTICK_UP
+				!ToolTip = つづける
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+
+	{
+		Flag = WINDOW
+		ID = 101
+		Pos = 0 0 0 0
+	}
+	{
+	!101 에 붙을것을 우선 여기에 붙인다..
+		Flag = WINDOW
+		ID = 102
+		Pos = 0 0 0 0
+	}
+	!결과창
+	{
+		Flag = WINDOW
+		ID = 3000
+		Pos = 0 0 800 600
+		BackColor = 0 0 0 128
+		Modal = 1
+		!EnableBackColor = 1
+		Show = 0
+		ZOrder = $TOP_ZORDER
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = FADE_WINDOW
+			Pos = 0 0 800 600
+			MaxTime = 1000
+			ZOrder = 100 
+			EnableBackColor = 1
+			BackColor = 0 0 0 0
+			TransparentMouseEvent = 1
+			TargetColor = 0 0 0 128
+			AutoHide = 0
+		}
+		{
+			Flag = WINDOW
+			Pos = 126 120 548 340
+			!EnableBackColor = 1
+			!BackColor = 10 10 10 240
+			!EnableBackColorEdge = 1
+			!BackEdgeColor = 255 255 255 192
+			Modal = 1
+			ZOrder = 400
+			ImageFile = ui/hori/result_window.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			!CONGRATULATIONS
+			{
+				Flag = WINDOW_SPR2D
+				ID = 3001
+				Pos = -120 -120 0 0
+				FileName = hori/gameclear.SPR
+				ShowSoundFile = Hori_Clear.wav
+			}
+			!GAME OVER
+			{
+				Flag = WINDOW_SPR2D
+				ID = 3002
+				Pos = -120 -120 0 0
+				FileName = hori/gameover.SPR
+				ShowSoundFile = Hori_Gameover.wav
+			}
+			!LINE
+			{
+				Flag = TEXTBOX
+				ID = 3100
+				Pos = 0 125 548 35
+				TextColor = 0 0 0 255
+				Option = DT_CENTER
+				FontIndex = 12
+				!EnableBackColor = 1
+				!BackColor = 50 0 0 200
+			}
+			!SCORE
+			{
+				Flag = TEXTBOX
+				ID = 3101
+				Pos = 0 165 548 35
+				TextColor = 0 0 0 255
+				Option = DT_CENTER
+				FontIndex = 12
+				!EnableBackColor = 1
+				!BackColor = 50 0 0 200
+			}
+			!TIME
+			{
+				Flag = TEXTBOX
+				ID = 3102
+				Pos = 0 205 548 35
+				TextColor = 0 0 0 255
+				Option = DT_CENTER
+				FontIndex = 12
+				!EnableBackColor = 1
+				!BackColor = 50 0 0 200
+			}
+			{
+				Flag = BUTTON
+				ID = 3110
+				Pos = 174 296 94 27
+				!Text = AGAIN
+				Option = DT_VCENTER | DT_CENTER
+				!TextColor = 255 255 255 200
+				!FocusTextColor = 255 255 255 255
+				!PressedTextColor = 255 255 255 255
+				ImageFile = ui/hori/btn_again_default.png
+				FocusImageFile = ui/hori/btn_again_over.png
+				PressedImageFile = ui/hori/btn_again_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				HotKey = KEYCODE_RETURN, JOYSTICK_UP
+				ZOrder = 200
+			}
+
+			{
+				Flag = BUTTON
+				ID = 3111
+				Pos = 278 296 94 27
+				!Text = STOP
+				Option = DT_VCENTER | DT_CENTER
+				!TextColor = 255 255 255 200
+				!FocusTextColor = 255 255 255 255
+				!PressedTextColor = 255 255 255 255
+				ImageFile = ui/hori/btn_stop_default.png
+				FocusImageFile = ui/hori/btn_stop_over.png
+				PressedImageFile = ui/hori/btn_stop_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				HotKey = KEYCODE_ESCAPE
+				ZOrder = 200
+			}
+		{
+			Flag = END_CHILD
+		}
+
+	{
+		Flag = END_CHILD
+ 	}
+	!READY	
+	{
+		Flag = WINDOW_SPR2D
+		ID = 1061
+		Pos = 110 213 0 0
+		Show = 0
+		FileName = readygo2.spr
+		MotionName = ready2
+		SoundFile = %Voice%/22_Ready.wav
+		ZOrder = $TOP_ZORDER
+	}
+	!GO
+	{
+		Flag = WINDOW_SPR2D
+		ID = 1062
+		Pos = 95 214 0 0
+		Show = 0
+		FileName = readygo2.spr
+		MotionName = go2
+		SoundFile = %Voice%/23_Go.wav
+		ZOrder = $TOP_ZORDER
+	}
+	
+	!+30초
+	{
+		Flag = WINDOW_SPR2D
+		ID = 1063
+		Pos = 116+230 235+250 0 0
+		Show = 0
+		FileName = timebonus.spr
+		MotionName = main
+		SoundFile = Sfx_3t2x.wav
+		ZOrder = $TOP_ZORDER
+	}
+	
+	!3,2,1
+	{
+		Flag = WINDOW_SPR2D
+		ID = 1064
+		Pos = 93 213 0 0
+		Show = 0
+		FileName = readygo2.spr
+		MotionName = 321
+		!SoundFile = %Voice%/22_Ready.wav
+		ZOrder = $TOP_ZORDER
+	}
+
+	!강아지 에니
+	{
+		Flag = WINDOW_SPR2D
+		Pos = 588 168 0 0
+		FileName = hori/hori_dog.SPR
+		MotionName = 0001
+		ZOrder = 1
+	}
+	!두더지 에니
+	{
+		Flag = WINDOW_SPR2D
+		Pos = 514 184 0 0
+		FileName = hori/hori_mogu.SPR
+		MotionName = 0001
+		ZOrder = 1
+	}
+
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_Single_Pause.uis
+	}
+	
+	
+{
+	Flag = END_CHILD
+}
+
+

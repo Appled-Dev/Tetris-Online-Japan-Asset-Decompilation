@@ -1,0 +1,491 @@
+﻿{
+	Flag = WINDOW_TETRIS_PEER
+	ID = 10001
+	Pos = 58 0 0 0
+	BlockSize = 18 18
+	HoldBlockSize = 16 16
+	PlayBlockPos = 0 0 18*10 18*20
+	HoldBlockPos = -71-15 143-96 90 40
+	NextBlockPos0 = 209-15 143-96 90 40
+	NextBlockPos1 = 209-15 208-96 90 40
+	NextBlockPos2 = 209-15 263-96 90 40
+	NextBlockPos3 = 209-15 313-96 90 40
+	NextBlockPos4 = 209-15 363-96 90 40
+	NextBlockPos5 = 209-15 413-96 90 40
+	NextBlockSize0 = 16 16
+	NextBlockSize1 = 14 14
+	NextBlockSize2 = 12 12
+	NextBlockSize3 = 12 12
+	NextBlockSize4 = 12 12
+	NextBlockSize5 = 12 12
+	
+	MinoColor_Yellow = %Mino%/yel_tMino_30px.tga
+	MinoColor_LightBlue = %Mino%/blt_tMino_30px.tga
+	MinoColor_Purple = %Mino%/pur_tMino_30px.tga
+	MinoColor_Orange = %Mino%/or_tMino_30px.tga
+	MinoColor_DarkBlue = %Mino%/bdk_tMino_30px.tga
+	MinoColor_Green = %Mino%/grn_tMino_30px.tga
+	MinoColor_Red = %Mino%/red_tMino_30px.tga
+	MinoColor_Garbage = %Mino%/gry_tMino_30px.tga
+	MinoColor_Concrete = %Mino%/blk_tMino_30px.tga
+	
+	!MinoColor_Yellow_Ghost = %Ghost%/yel_ghost_30px.tga
+	!MinoColor_LightBlue_Ghost = %Ghost%/blt_ghost_30px.tga
+	!MinoColor_Purple_Ghost = %Ghost%/pur_ghost_30px.tga
+	!MinoColor_Orange_Ghost = %Ghost%/or_ghost_30px.tga
+	!MinoColor_DarkBlue_Ghost = %Ghost%/bdk_ghost_30px.tga
+	!MinoColor_Green_Ghost = %Ghost%/grn_ghost_30px.tga
+	!MinoColor_Red_Ghost = %Ghost%/red_ghost_30px.tga
+}
+
+{
+	Flag = WINDOW
+	Pos = 112 -9 0 0
+	!EnableBackColor = 1
+	!BackColor = 32 32 32 192
+	!EnableBackColorEdge = 0
+	!BackEdgeColor = 255 255 255 192
+	TransparentMouseEvent = 1
+}
+{
+	Flag = START_CHILD
+}
+	!	ID Name
+	{
+		Flag = TEXTBOX
+		ID = 10002
+		Pos = -12 -37 114 32
+		!Text = Name
+		FontIndex = 2
+		TextColor = 0 0 0 255
+		ZOrder = 100
+		TransparentMouseEvent = 0
+		TextPos = 30 1 0 0
+		!EnableBackColor = 1
+		!BackColor = 255 0 0 128
+		Option=DT_WORD_ELLIPSIS DT_LEFT DT_TOP
+
+	}
+	!	LV Desc
+	{
+		Flag = TEXTBOX
+		Pos = 18 -21 100 16
+		if$1VS1 1
+			Text = Rating
+		if$1VS1 0
+			Text = LV
+		FontIndex = 2
+		TextColor = 0 0 0 255
+		ZOrder = 100
+
+	}
+	!	LV
+	{
+		Flag = TEXTBOX
+		ID = 100021
+		Pos = 38 -21 100 16
+		!Text = Level
+		FontIndex = 2
+		TextColor = 0 0 0 255
+		ZOrder = 100
+		if$1VS1 1
+			Show = 0
+		if$1VS1 0
+			Show = 1
+	}
+	
+	!Rating
+	{
+		Flag = TEXTBOX
+		ID = 100022
+		Pos = 38+24 -21 100 16
+		FontIndex = 2
+		TextColor = 0 0 0 255
+		ZOrder = 100
+		if$1VS1 1
+			Show = 1
+		if$1VS 0
+			Show = 0
+	}
+
+	!team Color
+	{
+		Flag = WINDOW
+		Pos = -18 -40 0 0
+		ID = 10003
+		!EnableBackColor = 0
+		!BackColor = 32 32 32 192
+		!EnableBackColorEdge = 0
+		!BackEdgeColor = 255 255 255 192
+		!ImageFile =
+		if$1VS1 1
+			ImageFileEx = %Multi%/multi_teamcolor4.png,%Multi%/multi_teamcolor1.png,%Multi%/multi_teamcolor2.png,%Multi%/multi_teamcolor3.png
+		if$1VS1 0
+			ImageFileEx = %Multi%/multi_teamcolor0.png,%Multi%/multi_teamcolor1.png,%Multi%/multi_teamcolor2.png,%Multi%/multi_teamcolor3.png
+		!Show = 1
+		!Modal = 0
+		TransparentMouseEvent = 1
+	}
+	!Room Host Mark
+	{
+		Flag = WINDOW_SPR2D
+		ID = 10007
+		Pos = -15 -38 0 0
+		Show = 0
+		FileName = host3.spr
+		MotionName = start
+		ZOrder = 200
+	}
+	!AI Bot Mark
+	{
+		Flag = WINDOW_SPR2D
+		ID = 100071
+		Pos = -15 -38 0 0
+		Show = 0
+		FileName = host_ai.SPR
+		MotionName = start
+		TransparentMouseEvent = 1
+		ZOrder = 200
+	}
+	!KO Count
+	{
+		Flag = WINDOW_SPR2D
+		ID = 10008
+		Pos = 70 -49 0 0
+		Show = 0
+		FileName = kocount2.spr
+		TransparentMouseEvent = 1
+		ZOrder = 200
+	}
+	
+{
+	Flag = END_CHILD
+}
+!Target
+{
+	Flag = WINDOW_SPR2D
+	ID = 10004
+	Pos = 8 0 0 0
+	Show = 0
+	FileName = target.spr
+	MotionName = target2
+	ZOrder = 100
+}
+!result
+{
+	Flag = WINDOW
+	ID = 10005
+	Pos = 58 -3 0 0
+	Show = 0
+	ImageFile = ui/multi_MRbaseL.png
+	BackImageColor = 255 255 255 128
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = WINDOW
+		ID = 100051
+		Pos = 30 58 0 0
+		!ImageFileEx = ui/multi_Rank_01.png,ui/multi_Rank_02.png,ui/multi_Rank_03.png,ui/multi_Rank_04.png,ui/multi_Rank_05.png,ui/multi_Rank_06.png
+		ImageFileEx = ui/1on1_rank_win.png,ui/1on1_rank_lose.png
+	}
+	!Result Rank
+	{
+		Flag = WINDOW
+		Pos = 0 300 0 0
+		ID = 100060
+		!EnableBackColor = 0
+		!BackColor = 32 32 32 192
+		!EnableBackColorEdge = 0
+		!BackEdgeColor = 255 255 255 192
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Exp DESC
+		{
+			Flag = TEXTBOX
+			Pos = 0 0 0 0
+			Text = EXP
+			TextColor = 255 255 255 255
+			Option = DT_VCENTER | DT_LEFT
+		}
+		{
+		    !Exp
+			Flag = TEXTBOX
+			ID = 100061
+			Pos = 50 90 0 0
+			TextColor = 255 255 255 255
+			FontIndex = 0
+			Option = DT_VCENTER DT_RIGHT
+		}
+		!TP DESC
+		{
+			Flag = TEXTBOX
+			Pos = 10 120 0 0
+			Text = EXP
+			TextColor = 255 255 255 255
+			Option = DT_VCENTER | DT_LEFT
+		}
+		{
+		    !Tp
+			Flag = TEXTBOX
+			ID = 100062
+			Pos = 50 120 0 0
+			TextColor = 255 255 255 255
+			FontIndex = 0
+			Option = DT_VCENTER DT_RIGHT
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+{
+	Flag = END_CHILD
+}
+
+{
+    !queue bar
+	Flag = PROGRESSIVEBAR
+	ID = 10006
+	Pos = 247 0 10 18*20
+	Max = 10 * 20
+	Current = 0
+	BarColor = 255 0 0 255
+	DiffBarColor = 255 143 0 255
+	!EnableBackColor = 1
+	!BackColor = 255 255 255 255
+	AnimateSpeed = 1000
+	Mirror = 1
+	Vertical = 1
+}
+
+/*
+!Room King Mark
+{
+	Flag = WINDOW_SPR2D
+	ID = 10007
+	Pos = -20 -38 0 0
+	Show = 0
+	FileName = host3.spr
+	MotionName = start
+	TransparentMouseEvent = 1
+	ZOrder = 200
+}
+*/
+
+/*
+!AI Bot Mark
+{
+	Flag = WINDOW_SPR2D
+	ID = 100071
+	Pos = -20 -38 0 0
+	Show = 0
+	FileName = host_ai.SPR
+	MotionName = start
+	TransparentMouseEvent = 1
+	ZOrder = 200
+}
+*/
+
+/*
+!kocount
+{
+	Flag = WINDOW_SPR2D
+	ID = 10008
+	Pos = 70 -49 0 0
+	Show = 0
+	FileName = kocount2.spr
+	TransparentMouseEvent = 1
+	ZOrder = 200
+}
+*/
+
+!Chatting Box
+{
+	Flag = WINDOW
+	ID = 10009
+	Pos = 104 -18 0 0
+	ImageFile = %Multi%/chat_fukidashi.png
+	Show = 0
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = LISTBOXW
+		ID = 100091
+		Pos = 0 10 103 72
+		Option = DT_LEFT DT_VCENTER
+		MaxLine = 3
+		BorderSize = 3
+		TextGap = 3
+		!ItemLifeTime = 0
+		!EnableBackColor = 1
+		!BackColor = 0 0 0 128
+		!EnableOutLineText = 1
+		!OutLineTextColor = 0 0 0 255
+		!EnableBackColorEdge = 1
+		!BackEdgeColor = 255 255 255 125
+		EnableCr = 0
+	}
+
+{
+	Flag = END_CHILD
+}
+
+!komark
+{
+	Flag = WINDOW_SPR2D
+	ID = 10010
+	Pos = 114 162 0 0
+	!ImageFile = UI/multi_ko.png
+	Show = 0
+	FileName = ko.SPR
+}
+
+! 이모티콘
+{
+	Flag = WINDOW_SPR2D
+	ID = 10011
+	Pos = 124 -26 0 0
+	Show = 0
+	TransparentMouseEvent = 1
+	ZOrder = 10000
+}
+! 승수 마크
+{
+	Flag = TEXTBOX
+	ID = 10012
+	Pos = 61 313 150 130
+	TextColor = 255 255 255 255
+	FontIndex = 0
+	EnableImageFont = 1
+	!ImageFontWidth = 0
+	ImageFontList = ,,,,,,,,,,,,,,,,ui/winstar_50.png,ui/winstar_10.png,ui/winstar_05.png,ui/winstar_01.png
+	Option = DT_VCENTER DT_LEFT
+}
+
+
+!Effects Window
+{
+	Flag = WINDOW
+	Pos = 98 104 0 0
+}
+{
+	Flag = START_CHILD
+}
+	{
+	    !B2B
+		Flag = WINDOW_SPR2D
+		ID = 1000460
+		Pos = 14 -16-50 100 20
+		!ImageFile = UI/b2b.bmp
+		Show = 0
+		FileName = %EventFX%/backtoback_small.SPR
+		MotionName = backtoback_small
+		ZOrder = 200
+	}
+	{
+	    !TETRIS
+		Flag = WINDOW_SPR2D
+		ID = 1000472
+		Pos = 0 15 100 20
+		!ImageFile = UI/tetriss.bmp
+		Show = 0
+		FileName = %EventFX%/tetris.spr
+		MotionName = tetris
+	}
+	{
+	    !triple
+		Flag = WINDOW_SPR2D
+		ID = 1000471
+		Pos = 18 50 100 20
+		!ImageFile = UI/triples.bmp
+		Show = 0
+		FileName = %EventFX%/triple.spr
+		MotionName = triple
+	}
+	{
+	    !double
+		Flag = WINDOW_SPR2D
+		ID = 1000470
+		Pos = 18 50 100 20
+		!ImageFile = UI/doubles.bmp
+		Show = 0
+		FileName = %EventFX%/double.spr
+		MotionName = double
+	}
+	{
+	    !TSPIN Mini
+		Flag = WINDOW_SPR2D
+		ID = 1000484
+		Pos = 16 34 100 20
+		!ImageFile = UI/tspin0s.bmp
+		Show = 0
+		FileName = %EventFX%/t-spin_small.spr
+		MotionName = T-SPIN MINI
+	}
+	{
+	    !TSPIN Triple
+		Flag = WINDOW_SPR2D
+		ID = 1000483
+		Pos = 16 34 100 20
+		!ImageFile = UI/tspin3s.bmp
+		Show = 0
+		FileName = %EventFX%/t-spin_small.spr
+		MotionName = T-SPIN Triple
+	}
+	{
+	    !TSPIN Double
+		Flag = WINDOW_SPR2D
+		ID = 1000482
+		Pos = 16 34 100 20
+		!ImageFile = UI/tspin2s.bmp
+		Show = 0
+		FileName = %EventFX%/t-spin_small.spr
+		MotionName = T-SPIN Double
+	}
+	{
+	    !TSPIN Single
+		Flag = WINDOW_SPR2D
+		ID = 1000481
+		Pos = 16 34 100 20
+		!ImageFile = UI/tspin1s.bmp
+		Show = 0
+		FileName = %EventFX%/t-spin_small.spr
+		MotionName = T-SPIN Single
+	}
+	{
+	    !TSPIN
+		Flag = WINDOW_SPR2D
+		ID = 1000480
+		Pos = 16 34 100 20
+		!ImageFile = UI/tspins.bmp
+		Show = 0
+		FileName = %EventFX%/t-spin_small.spr
+		MotionName = T-SPIN
+	}
+	{
+	    !COMBO
+		Flag = WINDOW_SPR2D
+		ID = 100049
+		Pos = 22 66-78 50 20
+		Show = 0
+		FileName = %EventFX%/ren_small.spr
+	}
+	{
+		!Perfect Clear
+		Flag = WINDOW_SPR2D
+		ID = 100052
+		Pos = -14 15 0 0
+		!ImageFile = UI/perfectclear.png
+		!ShowSoundFile = skin_test\FX_UNMVE.wav
+		Show = 0
+		FileName = %EventFX%/perfectclear_small.SPR
+		MotionName = perfectclear_small
+	}
+{
+	Flag = END_CHILD
+}

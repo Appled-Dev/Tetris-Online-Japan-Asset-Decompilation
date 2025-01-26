@@ -1,0 +1,298 @@
+﻿{
+	Flag = BUTTON
+	ID = 1001
+	Pos = 0 0 246 96
+	ImageFile = ui/roomlist/room_bg.png
+	FocusImageFile = ui/roomlist/room_over.png
+	PressedImageFile = ui/roomlist/room_down.png
+	FocusSoundFile = button_f.wav
+	PressedSoundFile = button_p.wav
+}
+
+{
+	Flag = START_CHILD
+}
+	!방이름
+	{
+		Flag = TEXTBOX
+		ID = 100101
+		Pos = 96 6 144 18
+		TextColor = 80 80 80 255
+		Text = Default Room Name
+		!EnableOutLine = 1
+		!OutLineTextColor = 100 100 100 255
+	}
+	
+	!인원
+	{
+		Flag = TEXTBOX
+		ID = 100102
+		Pos = 222 6 23 16
+		TextColor = 100 100 150 255
+		!EnableOutLine = 1
+		!OutLineTextColor = 0 0 0 255
+		Show = 0
+	}
+	
+	!방번호
+	{
+		Flag = TEXTBOX
+		ID = 100103
+		Pos = 28 5 32 18
+		Option = DT_CENTER | DT_TOP
+		TextColor = 210 210 210 255
+		EnableOutLine = 1
+		OutLineTextColor = 80 80 80 255
+		!EnableImageFont = 1
+		!ImageFontWidth = 10
+		!ImageFontList = ,,,,,,,,,,,,,,,,ui/room_num_0.png,ui/room_num_1.png,ui/room_num_2.png,ui/room_num_3.png,ui/room_num_4.png,ui/room_num_5.png,ui/room_num_6.png,ui/room_num_7.png,ui/room_num_8.png,ui/room_num_9.png
+		Show = 0
+	}
+	
+	!비밀방 마크
+	{
+		Flag = TEXTBOX
+		ID = 100104
+		Pos = 96 27 0 0
+		ImageFile = ui/Locked.png
+	}
+	
+	!게임방식
+	{
+		Flag = TEXTBOX
+		ID = 100105
+		Pos = 224 28 50 20
+		!Text = NoItem/Item
+		!TextColor = 255 0 255 255
+	}
+	
+	!게임중, 대기중 마크
+	{
+		Flag = WINDOW
+		ID = 100106
+		Pos = 180 27 0 0
+		TransparentMouseEvent = 1
+		ImageFileEx = ui/room_waiting.png,ui/room_nowplaying.png
+	}
+	
+	!맵 마크
+	{
+		Flag = WINDOW
+		ID = 100107
+		Pos = 114 27 0 0
+		ImageFileEx = ui/lobby/map01_off.png,ui/lobby/map02_beginner.png,ui/lobby/map03_elementary.png,ui/lobby/map04_intermediate.png,ui/lobby/map05_advanced.png,ui/lobby/map06_best.png,ui/lobby/map01_off.png,ui/lobby/map01_off.png,ui/lobby/map01_off.png,ui/lobby/map10_ren1.png,ui/lobby/map01_off.png,ui/lobby/map12_ren3.png,ui/lobby/map01_off.png,ui/lobby/map01_off.png,ui/lobby/map01_off.png,ui/lobby/map16_tspin2.png,ui/lobby/map17_classic.png,ui/lobby/map01_off.png,ui/lobby/map01_off.png,ui/lobby/map01_off.png,ui/lobby/map01_off.png,ui/lobby/map22_tetris.png
+	}
+	
+	!1명
+	{
+		Flag = WINDOW
+		ID = 100110
+		Pos = 95 50 0 0
+		ImageFileEx = ui/room_female.png,ui/room_male.png,ui/room_bot.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			ID = 1001100
+			Pos = 0 24 20 14
+			Option = DT_TOP DT_CENTER
+			EnableImageFont = 1
+			ImageFontWidth = 6
+			ImageFontList = ,,,,,,,,,,,,,,,,ui/room_num_0.png,ui/room_num_1.png,ui/room_num_2.png,ui/room_num_3.png,ui/room_num_4.png,ui/room_num_5.png,ui/room_num_6.png,ui/room_num_7.png,ui/room_num_8.png,ui/room_num_9.png
+			ZOrder = $TOP_ZORDER
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				ID = 10011001
+				Pos = -22 0 0 0
+				!ImageFile =  ui/room_num_Lv.png
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	!2명
+	{
+		Flag = WINDOW
+		ID = 100111
+		Pos = 120 50 0 0
+		ImageFileEx = ui/room_female.png,ui/room_male.png,ui/room_bot.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			ID = 1001100
+			Pos = 0 24 20 14
+			Option = DT_TOP DT_CENTER
+			EnableImageFont = 1
+			ImageFontWidth = 6
+			ImageFontList = ,,,,,,,,,,,,,,,,ui/room_num_0.png,ui/room_num_1.png,ui/room_num_2.png,ui/room_num_3.png,ui/room_num_4.png,ui/room_num_5.png,ui/room_num_6.png,ui/room_num_7.png,ui/room_num_8.png,ui/room_num_9.png
+			ZOrder = $TOP_ZORDER
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				ID = 10011001
+				Pos = -22 0 0 0
+				!ImageFile =  ui/room_num_Lv.png
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	!3명
+	{
+		Flag = WINDOW
+		ID = 100112
+		Pos = 145 50 0 0
+		ImageFileEx = ui/room_female.png,ui/room_male.png,ui/room_bot.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			ID = 1001100
+			Pos = 0 24 20 14
+			Option = DT_TOP DT_CENTER
+			EnableImageFont = 1
+			ImageFontWidth = 6
+			ImageFontList = ,,,,,,,,,,,,,,,,ui/room_num_0.png,ui/room_num_1.png,ui/room_num_2.png,ui/room_num_3.png,ui/room_num_4.png,ui/room_num_5.png,ui/room_num_6.png,ui/room_num_7.png,ui/room_num_8.png,ui/room_num_9.png
+			ZOrder = $TOP_ZORDER
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				ID = 10011001
+				Pos = -22 0 0 0
+				!ImageFile =  ui/room_num_Lv.png
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	!4명
+	{
+		Flag = WINDOW
+		ID = 100113
+		Pos = 170 50 0 0
+		ImageFileEx = ui/room_female.png,ui/room_male.png,ui/room_bot.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			ID = 1001100
+			Pos = 0 24 20 14
+			Option = DT_TOP DT_CENTER
+			EnableImageFont = 1
+			ImageFontWidth = 6
+			ImageFontList = ,,,,,,,,,,,,,,,,ui/room_num_0.png,ui/room_num_1.png,ui/room_num_2.png,ui/room_num_3.png,ui/room_num_4.png,ui/room_num_5.png,ui/room_num_6.png,ui/room_num_7.png,ui/room_num_8.png,ui/room_num_9.png
+			ZOrder = $TOP_ZORDER
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				ID = 10011001
+				Pos = -22 0 0 0
+				!ImageFile =  ui/room_num_Lv.png
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	!5명
+	{
+		Flag = WINDOW
+		ID = 100114
+		Pos = 195 50 0 0
+		ImageFileEx = ui/room_female.png,ui/room_male.png,ui/room_bot.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			ID = 1001100
+			Pos = 0 24 20 14
+			Option = DT_TOP DT_CENTER
+			EnableImageFont = 1
+			ImageFontWidth = 6
+			ImageFontList = ,,,,,,,,,,,,,,,,ui/room_num_0.png,ui/room_num_1.png,ui/room_num_2.png,ui/room_num_3.png,ui/room_num_4.png,ui/room_num_5.png,ui/room_num_6.png,ui/room_num_7.png,ui/room_num_8.png,ui/room_num_9.png
+			ZOrder = $TOP_ZORDER
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				ID = 10011001
+				Pos = -22 0 0 0
+				!ImageFile =  ui/room_num_Lv.png
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+	!6명
+	{
+		Flag = WINDOW
+		ID = 100115
+		Pos = 220 50 0 0
+		ImageFileEx = ui/room_female.png,ui/room_male.png,ui/room_bot.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			ID = 1001100
+			Pos = 0 24 20 14
+			Option = DT_TOP DT_CENTER
+			EnableImageFont = 1
+			ImageFontWidth = 6
+			ImageFontList = ,,,,,,,,,,,,,,,,ui/room_num_0.png,ui/room_num_1.png,ui/room_num_2.png,ui/room_num_3.png,ui/room_num_4.png,ui/room_num_5.png,ui/room_num_6.png,ui/room_num_7.png,ui/room_num_8.png,ui/room_num_9.png
+			ZOrder = $TOP_ZORDER
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				ID = 10011001
+				Pos = -22 0 0 0
+				!ImageFile =  ui/room_num_Lv.png
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

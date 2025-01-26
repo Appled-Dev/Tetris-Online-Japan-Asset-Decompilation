@@ -1,0 +1,518 @@
+﻿
+{
+	Flag = COMMAND
+	Command =HELP_ADDR
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/vscom.asp
+}
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	FileName = music/lobby.ogg
+}
+
+{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	ImageFile = UI/bg_vscom.png
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 800 600
+		MaxTime = 400
+		ZOrder = 100 
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		TargetColor = 255 255 255 0
+	}
+	
+	{
+		Flag = WINDOW
+		Pos = 23 24 0 0
+		!EnableBackColor = 1
+		!BackColor = 10 10 10 250
+		ZOrder = 100
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = BUTTON
+			ID = 1001
+			Pos = 63 374 62 62
+			!Text = $VSCOM_LEVEL1
+			ImageFile = ui/training/btn_01_default.png
+			FocusImageFile = ui/training/btn_01_over.png
+			PressedImageFile = ui/training/btn_01_down.png
+			DisabledImageFile = ui/training/btn_01_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1002
+			Pos = 128 288 62 62
+			!Text = $VSCOM_LEVEL2
+			ImageFile = ui/training/btn_02_default.png
+			FocusImageFile = ui/training/btn_02_over.png
+			PressedImageFile = ui/training/btn_02_down.png
+			DisabledImageFile = ui/training/btn_02_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1003
+			Pos = 24 254 62 62
+			!Text = $VSCOM_LEVEL3
+			ImageFile = ui/training/btn_03_default.png
+			FocusImageFile = ui/training/btn_03_over.png
+			PressedImageFile = ui/training/btn_03_down.png
+			DisabledImageFile = ui/training/btn_03_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1004
+			Pos = 114 206 62 62
+			!Text = $VSCOM_LEVEL4
+			ImageFile = ui/training/btn_04_default.png
+			FocusImageFile = ui/training/btn_04_over.png
+			PressedImageFile = ui/training/btn_04_down.png
+			DisabledImageFile = ui/training/btn_04_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1005
+			Pos = 25 129 62 62
+			!Text = $VSCOM_LEVEL5
+			ImageFile = ui/training/btn_05_default.png
+			FocusImageFile = ui/training/btn_05_over.png
+			PressedImageFile = ui/training/btn_05_down.png
+			DisabledImageFile = ui/training/btn_05_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1006
+			Pos = 144 101 62 62
+			!Text = $VSCOM_LEVEL6
+			ImageFile = ui/training/btn_06_default.png
+			FocusImageFile = ui/training/btn_06_over.png
+			PressedImageFile = ui/training/btn_06_down.png
+			DisabledImageFile = ui/training/btn_06_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1007
+			Pos = 210 207 62 62
+			!Text = $VSCOM_LEVEL7
+			ImageFile = ui/training/btn_07_default.png
+			FocusImageFile = ui/training/btn_07_over.png
+			PressedImageFile = ui/training/btn_07_down.png
+			DisabledImageFile = ui/training/btn_07_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1008
+			Pos = 219 322 62 62
+			!Text = $VSCOM_LEVEL8
+			ImageFile = ui/training/btn_08_default.png
+			FocusImageFile = ui/training/btn_08_over.png
+			PressedImageFile = ui/training/btn_08_down.png
+			DisabledImageFile = ui/training/btn_08_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1009
+			Pos = 339 308 62 62
+			!Text = $VSCOM_LEVEL9
+			ImageFile = ui/training/btn_09_default.png
+			FocusImageFile = ui/training/btn_09_over.png
+			PressedImageFile = ui/training/btn_09_down.png
+			DisabledImageFile = ui/training/btn_09_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1010
+			Pos = 328 209 62 62
+			!Text = $VSCOM_LEVEL10
+			ImageFile = ui/training/btn_10_default.png
+			FocusImageFile = ui/training/btn_10_over.png
+			PressedImageFile = ui/training/btn_10_down.png
+			DisabledImageFile = ui/training/btn_10_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1011
+			Pos = 250 132 62 62
+			!Text = $VSCOM_LEVEL11
+			ImageFile = ui/training/btn_11_default.png
+			FocusImageFile = ui/training/btn_11_over.png
+			PressedImageFile = ui/training/btn_11_down.png
+			DisabledImageFile = ui/training/btn_11_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1012
+			Pos = 392 126 62 62
+			!Text = $VSCOM_LEVEL12
+			ImageFile = ui/training/btn_12_default.png
+			FocusImageFile = ui/training/btn_12_over.png
+			PressedImageFile = ui/training/btn_12_down.png
+			DisabledImageFile = ui/training/btn_12_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1013
+			Pos = 444 224 62 62
+			!Text = $VSCOM_LEVEL13
+			ImageFile = ui/training/btn_13_default.png
+			FocusImageFile = ui/training/btn_13_over.png
+			PressedImageFile = ui/training/btn_13_down.png
+			DisabledImageFile = ui/training/btn_13_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1014
+			Pos = 469 311 62 62
+			!Text = $VSCOM_LEVEL14
+			ImageFile = ui/training/btn_14_default.png
+			FocusImageFile = ui/training/btn_14_over.png
+			PressedImageFile = ui/training/btn_14_down.png
+			DisabledImageFile = ui/training/btn_14_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1015
+			Pos = 551 264 62 62
+			!Text = $VSCOM_LEVEL15
+			ImageFile = ui/training/btn_15_default.png
+			FocusImageFile = ui/training/btn_15_over.png
+			PressedImageFile = ui/training/btn_15_down.png
+			DisabledImageFile = ui/training/btn_15_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1016
+			Pos = 605 367 62 62
+			!Text = $VSCOM_LEVEL16
+			ImageFile = ui/training/btn_16_default.png
+			FocusImageFile = ui/training/btn_16_over.png
+			PressedImageFile = ui/training/btn_16_down.png
+			DisabledImageFile = ui/training/btn_16_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1017
+			Pos = 678 298 62 62
+			!Text = $VSCOM_LEVEL17
+			ImageFile = ui/training/btn_17_default.png
+			FocusImageFile = ui/training/btn_17_over.png
+			PressedImageFile = ui/training/btn_17_down.png
+			DisabledImageFile = ui/training/btn_17_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1018
+			Pos = 636 212 62 62
+			!Text = $VSCOM_LEVEL18
+			ImageFile = ui/training/btn_18_default.png
+			FocusImageFile = ui/training/btn_18_over.png
+			PressedImageFile = ui/training/btn_18_down.png
+			DisabledImageFile = ui/training/btn_18_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1019
+			Pos = 537 159 62 62
+			!Text = $VSCOM_LEVEL19
+			ImageFile = ui/training/btn_19_default.png
+			FocusImageFile = ui/training/btn_19_over.png
+			PressedImageFile = ui/training/btn_19_down.png
+			DisabledImageFile = ui/training/btn_19_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1020
+			Pos = 472 99 62 62
+			!Text = $VSCOM_LEVEL20
+			ImageFile = ui/training/btn_20_default.png
+			FocusImageFile = ui/training/btn_20_over.png
+			PressedImageFile = ui/training/btn_20_down.png
+			DisabledImageFile = ui/training/btn_20_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1021
+			Pos = 542 28 62 62
+			!Text = $VSCOM_LEVEL21
+			ImageFile = ui/training/btn_21_default.png
+			FocusImageFile = ui/training/btn_21_over.png
+			PressedImageFile = ui/training/btn_21_down.png
+			DisabledImageFile = ui/training/btn_21_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1022
+			Pos = 597 98 62 62
+			!Text = $VSCOM_LEVEL22
+			ImageFile = ui/training/btn_22_default.png
+			FocusImageFile = ui/training/btn_22_over.png
+			PressedImageFile = ui/training/btn_22_down.png
+			DisabledImageFile = ui/training/btn_22_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1023
+			Pos = 678 140 62 62
+			!Text = $VSCOM_LEVEL23
+			ImageFile = ui/training/btn_23_default.png
+			FocusImageFile = ui/training/btn_23_over.png
+			PressedImageFile = ui/training/btn_23_down.png
+			DisabledImageFile = ui/training/btn_23_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		{
+			Flag = BUTTON
+			ID = 1024
+			Pos = 659 32 62 62
+			!Text = $VSCOM_LEVEL24
+			ImageFile = ui/training/btn_24_default.png
+			FocusImageFile = ui/training/btn_24_over.png
+			PressedImageFile = ui/training/btn_24_down.png
+			DisabledImageFile = ui/training/btn_24_disable.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		
+		!승수 표시 윈도우
+		{
+			Flag = WINDOW
+			Pos = 195 440 0 0
+			!EnableBackColor = 1
+			!BackColor = 0 0 70 100
+			ImageFile = ui/training/level_display.png
+		}
+		!1Win Button
+		{
+			Flag = BUTTON
+			ID = 10011
+			Pos = 411 482 50 23
+			!Text = 1Win
+			ImageFile = ui/training/win_mark_01.png
+			!FocusImageFile = ui/vscom_win.png
+			!PressedImageFile = ui/vscom_win.png
+		}
+		!2Win Button
+		{
+			Flag = BUTTON
+			ID = 10012
+			Pos = 461 482 50 23
+			!Text = 2Win
+			ImageFile = ui/training/win_mark_02.png
+			!FocusImageFile = ui/vscom_win.png
+			!PressedImageFile = ui/vscom_win.png
+		}
+		!3Win Button
+		{
+			Flag = BUTTON
+			ID = 10013
+			Pos = 511 482 50 23
+			!Text = 3Win
+			ImageFile = ui/training/win_mark_03.png
+			!FocusImageFile = ui/vscom_win.png
+			!PressedImageFile = ui/vscom_win.png
+		}
+		!Level Number TextBox
+		{
+			Flag = TEXTBOX
+			ID = 10020
+			Pos = 334 473 40 26
+			!Text = Level
+			TextColor = 255 0 0 255
+			Option = DT_LEFT DT_TOP
+			FontIndex = 11
+			!EnableBackColor = 1
+			!BackColor = 0 200 0 128
+		}
+		!Level Text
+		{
+			Flag = TEXTBOX
+			Pos = 253 442 86 26
+			Text = $VSCOM_LEVEL
+			TextColor = 127 127 127 255
+			Option = DT_LEFT DT_TOP
+			FontIndex = 11
+			!EnableBackColor = 1
+			!BackColor = 255 0 0 128
+			Show = 0
+		}
+		!클리어조건
+		{
+			Flag = TEXTBOX
+			Pos = 350 442 100 20
+			Text = $VSCOM_ENTRY_RESULT_CLEAR
+			TextColor = 255 0 0 255
+			Option = DT_LEFT DT_TOP
+			FontIndex = 16
+			!EnableBackColor = 1
+			!BackColor = 255 0 0 128
+			Show = 0
+		}
+		
+		!T Character
+		{
+	 		Flag = WINDOW_SPR2D
+	 		Pos = 8 417 0 0
+	 		FileName = training/tt_t.SPR
+	 		ZOrder = 1
+	 	}
+	 	!J Character
+		{
+	 		Flag = WINDOW_SPR2D
+	 		Pos = 9 95 0 0
+	 		FileName = training/tt_j.SPR
+	 		ZOrder = 1
+	 	}
+	 	!S Character
+		{
+	 		Flag = WINDOW_SPR2D
+	 		Pos = 276 258 0 0
+	 		FileName = training/tt_s.SPR
+	 	}
+	 	!Z Character
+		{
+	 		Flag = WINDOW_SPR2D
+	 		Pos = 328 94 0 0
+	 		FileName = training/tt_z.SPR
+	 	}
+	 	!I Character
+		{
+	 		Flag = WINDOW_SPR2D
+	 		Pos = 324 375 0 0
+	 		FileName = training/tt_i.SPR
+	 	}
+	 	!O Character
+		{
+	 		Flag = WINDOW_SPR2D
+	 		Pos = 712 76 0 0
+	 		FileName = training/tt_o.SPR
+	 	}
+	 	!L Character
+		{
+	 		Flag = WINDOW_SPR2D
+	 		Pos = 691 368 0 0
+	 		FileName = training/tt_l.SPR
+	 	}
+	 	
+	 	!JamaBlock PR
+		{
+	 		Flag = WINDOW
+	 		Pos = 630 424 0 0
+	 		ImageFile = ui/training/pr_jama.png
+	 	}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!VS COM모드 Main 설명
+	{
+		Flag = WINDOW
+		!ID = 
+		Pos = 0 487 800 84
+		TransparentMouseEvent = 1
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			!ImageFile = ui/entry_notice_3.png
+		}
+	{
+		Flag = END_CHILD
+	}
+
+
+	!BACK BUTTON
+	{
+		Flag = BUTTON
+		ID = 5999
+		Pos = 676 572 94 27
+		ImageFile = %BottomBar%/btn_back_default.png
+		FocusImageFile = %BottomBar%/btn_back_over.png
+		PressedImageFile = %BottomBar%/btn_back_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = BACK
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		ZOrder = 100
+		HotKey = KEYCODE_ESCAPE
+	}
+
+{
+	Flag = END_CHILD
+}

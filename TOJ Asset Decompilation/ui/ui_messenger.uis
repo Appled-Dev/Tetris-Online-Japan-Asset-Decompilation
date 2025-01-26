@@ -1,0 +1,552 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 0 0
+	Show = 1
+}
+{
+	Flag = START_CHILD
+}
+	!Messenger Alarm
+	{
+		Flag = WINDOW_SPR2D
+		ID = 99061
+		Pos = 527 3 0 0
+		FileName = msg_M.spr
+		SoundFile = message.wav
+		ZOrder = $TOP_ZORDER
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		!New Message
+		{
+			Flag = WINDOW_SPR2D
+			ID = 990611
+			Pos = -27 7 0 0
+			FileName = message.SPR
+		}
+		!New Request
+		{
+			Flag = WINDOW_SPR2D
+			ID = 990612
+			Pos = -27 7 0 0
+			FileName = message_request.SPR
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!Main window
+	{
+		Flag = WINDOW
+		ID = 1
+		Pos = 0 0 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			ID = 11010
+			ImageFile = ui/msg_bg01.png
+			Pos = 429 76 370 380
+			!EnableBackColor = 1
+			!BackColor = 0 0 60 192
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Close Button
+			{
+				Flag = BUTTON
+				ID = 9906
+				Pos = 343 8 20 20
+				!Text = Close
+				ImageFile = ui/common/btn_close_default.png
+				FocusImageFile = ui/common/btn_close_over.png
+				PressedImageFile = ui/common/btn_close_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			
+			{
+				Flag = BUTTON
+				ID = 110100
+				Pos = 12 54 112 72
+				!Text = 友達リスト
+				IsCheckButton = 1
+				NextTabOrderID = 110101
+				IsChecked = 1
+				ImageFile = ui/msg_btn_frdlist_default.png
+				FocusImageFile = ui/msg_btn_frdlist_over.png
+				PressedImageFile = ui/msg_btn_frdlist_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 110101
+				Pos = 12 129 112 33
+				Text = 친구1이랑 대화
+				TextPos = 24 0 80 33
+				Option = DT_WORD_ELLIPSIS DT_LEFT DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusTextColor = 255 0 0 255
+				PressedTextColor = 0 0 255 255
+				IsCheckButton = 1
+				NextTabOrderID = 110102
+				ImageFile = ui/msg_btn_chatuser_default.png
+				FocusImageFile = ui/msg_btn_chatuser_over.png
+				PressedImageFile = ui/msg_btn_chatuser_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 110102
+				Pos = 12 163 112 33
+				Text = 친구2랑대화
+				TextPos = 24 0 80 33
+				Option = DT_WORD_ELLIPSIS DT_LEFT DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusTextColor = 255 0 0 255
+				PressedTextColor = 0 0 255 255
+				IsCheckButton = 1
+				NextTabOrderID = 110103
+				ImageFile = ui/msg_btn_chatuser_default.png
+				FocusImageFile = ui/msg_btn_chatuser_over.png
+				PressedImageFile = ui/msg_btn_chatuser_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 110103
+				Pos = 12 197 112 33
+				Text = 친구3랑대화
+				TextPos = 24 0 80 33
+				Option = DT_WORD_ELLIPSIS DT_LEFT DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusTextColor = 255 0 0 255
+				PressedTextColor = 0 0 255 255
+				IsCheckButton = 1
+				NextTabOrderID = 110104
+				ImageFile = ui/msg_btn_chatuser_default.png
+				FocusImageFile = ui/msg_btn_chatuser_over.png
+				PressedImageFile = ui/msg_btn_chatuser_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 110104
+				Pos = 12 231 112 33
+				Text = 친구4랑대화
+				TextPos = 24 0 80 33
+				Option = DT_WORD_ELLIPSIS DT_LEFT DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusTextColor = 255 0 0 255
+				PressedTextColor = 0 0 255 255
+				IsCheckButton = 1
+				NextTabOrderID = 110105
+				ImageFile = ui/msg_btn_chatuser_default.png
+				FocusImageFile = ui/msg_btn_chatuser_over.png
+				PressedImageFile = ui/msg_btn_chatuser_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 110105
+				Pos = 12 265 112 33
+				Text = 친구5랑대화
+				TextPos = 24 0 80 33
+				Option = DT_WORD_ELLIPSIS DT_LEFT DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusTextColor = 255 0 0 255
+				PressedTextColor = 0 0 255 255
+				IsCheckButton = 1
+				NextTabOrderID = 110100
+				ImageFile = ui/msg_btn_chatuser_default.png
+				FocusImageFile = ui/msg_btn_chatuser_over.png
+				PressedImageFile = ui/msg_btn_chatuser_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 110191
+				Pos = 12 301 45 17
+				!Text = ↑
+				ImageFile = ui/msg_btn_listup_default.png
+				FocusImageFile = ui/msg_btn_listup_over.png
+				PressedImageFile = ui/msg_btn_listup_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 110192
+				Pos = 71 301 45 17
+				!Text = ↓
+				ImageFile = ui/msg_btn_listdown_default.png
+				FocusImageFile = ui/msg_btn_listdown_over.png
+				PressedImageFile = ui/msg_btn_listdown_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			
+			!친구목록탭
+			{
+				Flag = WINDOW
+				ID = 110200
+				Pos = 0 0 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 110210
+					Pos = 126 58 208 20
+					Text = ユーザー名
+					TextColor = 255 255 255 255
+					Option = DT_VCENTER DT_CENTER
+					!FontIndex = 2
+				}
+				
+				!Friend List
+				{
+					Flag = LISTVIEW
+					ID = 110220
+					Pos = 129 84 204 226
+					ColumnCount = 2
+					ColumnWidth0 = 16
+					ColumnOption0 = DT_VCENTER,DT_LEFT,DT_WORD_ELLIPSIS
+					ColumnTextColor0 = 0 0 0 255
+					ColumnImageFontList0 = ,,,,,,,,,,,,,,,,ui/msg_btn_listbg_online.png,ui/msg_btn_listbg_offline.png,UI/msg_btn_listbg_waiting.png,UI/msg_btn_listbg_refused.png,UI/msg_btn_listbg_request.png
+					EnableColumnOutline0 = 0
+					ColumnWidth1 = 188
+					ColumnOption1 = DT_VCENTER,DT_LEFT,DT_WORD_ELLIPSIS
+					ColumnTextColor1 = 0 0 0 255
+					EnableColumnOutline1 = 0
+					
+					VScrollBarID = 220100
+					EnableVScrollBar = 1
+					
+					EnableDrawFocusRow = 1
+					EnableDrawSelectRow = 1
+					!DrawFocusRowColor = 255 255 255 20
+					!DrawSelectRowColor = 195 195 195 50
+					ItemHeight = 20
+					ItemBorderSize = 4 3
+					
+					!EnableBackColor = 1
+					!BackColor = 90 0 0 180
+					!EnableBackColorEdge = 1
+					!BackEdgeColor = 0 0 255 155
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					NormalRowImageFile = ui/msg_btn_listbg_default.png
+					FocusRowImageFile = ui/msg_btn_listbg_over.png
+					SelectRowImageFile = ui/msg_btn_listbg_down.png
+				}
+				
+				! Friend List SCROLLBAR
+				{
+					Flag = START_CHILD
+				}
+					{
+						Flag = SCROLLBAR
+						ID = 220100
+						Pos = 208 0 16 226
+						Style = VSCROLL
+						PrevButtonNormalImageFile = ui/msg_btn_scrup_default.png
+						PrevButtonFocusImageFile = ui/msg_btn_scrup_over.png
+						PrevButtonPressedImageFile = ui/msg_btn_scrup_down.png
+						NextButtonNormalImageFile = ui/msg_btn_scrdown_default.png
+						NextButtonFocusImageFile = ui/msg_btn_scrdown_over.png
+						NextButtonPressedImageFile = ui/msg_btn_scrdown_down.png
+						SliderBackColor = 181 237 161 255
+						!EnablSliderBackColorEdge = 1
+						!SliderBackEdgeColor = 181 255 161 255
+						EnableSlider3DEdge = 1
+						!EnableBackColor = 1
+						!BackColor = 181 0 0 100
+						!EnableBackColorEdge = 1
+						!BackEdgeColor = 255 255 255 155
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Name InputBox Edge
+				{
+					Flag = WINDOW
+					Pos = 9 346 254 20
+					EnableBackColorEdge = 1
+					BackEdgeColor = 90 90 90 100
+					TransparentMouseEvent = 1
+				}
+				!Name InputBox
+				{
+					Flag = EDITBOX
+					ID = 110230
+					Pos = 10 347 252 18
+					EnableBackColor = 1
+					BackColor = 255 255 255 255
+					SelectionColor = 0 0 0 255
+					!3DEdge = 1
+					HighlightTextColor = 255 255 255 255
+					TextColor = 0 0 0 255
+					Limit = 20
+					Win32Edit = 1
+					Style = ES_AUTOHSCROLL
+				}
+				!Find Button
+				{
+					Flag = BUTTON
+					ID = 110231
+					Pos = 272 342 94 27
+					!Text = 探す
+					ImageFile = ui/btn_finduser_default.png
+					FocusImageFile = ui/btn_finduser_over.png
+					PressedImageFile = ui/btn_finduser_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					!HotKey=KEYCODE_RETURN
+				}
+			{
+				Flag = END_CHILD
+			}
+			!대화창
+			{
+				Flag = WINDOW
+				ID = 110300
+				Pos = 0 0 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 110310
+					Pos = 126 58 208 20
+					Text = 아무개와의 대화창
+					TextColor = 255 255 255 255
+					Option = DT_WORD_ELLIPSIS DT_VCENTER DT_CENTER
+					!EnableBackColorEdge = 1
+					!BackEdgeColor = 0 0 0 192
+					!FontIndex = 2
+				}
+				{
+					Flag = BUTTON
+					ID = 110320
+					Pos = 338 59 16 17
+					!Text = Chat Close
+					ImageFile = ui/msg_btn_chatclose_default.png
+					FocusImageFile = ui/msg_btn_chatclose_over.png
+					PressedImageFile = ui/msg_btn_chatclose_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Chat OutputBox
+				{
+					Flag = LISTBOXW
+					ID = 110330
+					Pos = 129 84 204 226
+					Option = DT_LEFT DT_VCENTER
+					MaxLine = 128
+					BorderSize = 3
+					TextGap = 1
+					!ItemLifeTime = 0
+					!EnableBackColor = 1
+					!BackColor = 80 0 0 180
+					!EnableOutLineText = 1
+					!OutLineTextColor = 0 0 0 255
+					!EnableBackColorEdge = 1
+					!BackEdgeColor = 255 0 0 125
+					EnableVScrollBar = 1
+					VScrollBarID = 1072000
+					EnableCr = 0
+					!TransparentMouseEvent = 1
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Chat OutputBox SCROLLBAR
+					{
+						Flag = SCROLLBAR
+						ID = 1072000
+						Pos = 208 0 16 226
+						Style = VSCROLL
+						PrevButtonNormalImageFile = ui/msg_btn_scrup_default.png
+						PrevButtonFocusImageFile = ui/msg_btn_scrup_over.png
+						PrevButtonPressedImageFile = ui/msg_btn_scrup_down.png
+						NextButtonNormalImageFile = ui/msg_btn_scrdown_default.png
+						NextButtonFocusImageFile = ui/msg_btn_scrdown_over.png
+						NextButtonPressedImageFile = ui/msg_btn_scrdown_down.png
+						SliderBackColor = 181 237 161 255
+						!EnablSliderBackColorEdge = 1
+						!SliderBackEdgeColor = 181 255 161 255
+						EnableSlider3DEdge = 1
+						!EnableBackColor = 1
+						!BackColor = 181 0 0 100
+						!EnableBackColorEdge = 1
+						!BackEdgeColor = 255 255 255 155
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				!Chat InputBox Edge
+				{
+					Flag = WINDOW
+					Pos = 9 346 254 20
+					EnableBackColorEdge = 1
+					BackEdgeColor = 90 90 90 100
+					TransparentMouseEvent = 1
+				}
+				!Chat InputBox
+				{
+					Flag = EDITBOX
+					ID = 110340
+					Pos = 10 347 252 18
+					SelectionColor = 0 0 255 255
+					HighlightTextColor = 100 100 100 255
+					TextColor = 0 0 0 255
+					FontIndex = 0
+					EnableBackColor = 1
+					BackColor = 255 255 255 255
+					!3DEdge = 1
+					!NextTabOrderID = 202
+					!PrevTabOrderID = 202
+					!IMETextBoxID = 2100
+					EnableDrawIME = 0
+					Win32Edit = 1
+					Limit = 80
+					Style = ES_AUTOHSCROLL
+				}
+				!Send Button
+				{
+					Flag = BUTTON
+					ID = 110341
+					Pos = 306 344 57 24
+					!Text = Send
+					ImageFile = ui/msg_btn_send_default.png
+					FocusImageFile = ui/msg_btn_send_over.png
+					PressedImageFile = ui/msg_btn_send_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		!친구리스트 팝업
+		{
+			Flag = POPUPMENU_WINDOW
+			ID = 2200
+			Pos = 0 0 200 0
+			ItemHeight = 19
+			AutoResize = 1
+			Show = 0
+			TitleTextBoxID = 22001
+			IsActive = 1
+			Item0Id = 4
+		  	Item0Text = チャットを開始
+		  	Item1Id = 2
+		  	Item1Text = 一緒にプレイ
+		  	Item2Id = 1
+		  	Item2Text = ユーザーインフォ
+		  	Item3Id = 3
+		  	Item3Text = 友達削除
+		  	
+		  	ZOrder = $TOP_ZORDER
+			ImageFile = UI/msg_rightclick_bg.png
+			IsPatternImage = 1
+			PatternImageSize = 5
+			NormalRowImageFile = UI/msg_rightclick_btn_default.png
+			FocusRowImageFile = UI/msg_rightclick_btn_over.png
+			DisabledRowImageFile = UI/msg_rightclick_btn_disable.png
+			EnableDrawFocusRow = 1
+			ItemBorderSize = 0 2
+			IconWidth = 16
+			Margin = 3 2
+			
+			ColumnOption1 = DT_LEFT, DT_TOP
+			ColumnTextColor1 = 0 0 0 255
+			EnableColumnOutline1 = 0
+			ColumnDisabledTextColor1 = 163 163 163 255
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = TextBox
+				Pos = 0 -20 200 20
+				ID = 22001
+				TextColor = 255 255 255 255
+				ImageFile = UI/msg_rightclick_name.png
+				Option = DT_VCENTER DT_CENTER
+			}
+		{
+			Flag = END_CHILD
+		}
+		!초대 리스트 팝업
+		{
+			Flag = POPUPMENU_WINDOW
+			ID = 2300
+			Pos = 0 0 200 0
+			ItemHeight = 19
+			AutoResize = 1
+			Show = 0
+			TitleTextBoxID = 23001
+			IsActive = 1
+			ZOrder = $TOP_ZORDER
+			Item0Id = 1
+			Item0Text = ユーザーインフォ
+			Item1Id = 100
+			Item1Text = 受ける
+			Item2Id = 101
+			Item2Text = 断る
+			ImageFile = UI/msg_rightclick_bg.png
+			IsPatternImage = 1
+			PatternImageSize = 5
+			NormalRowImageFile = UI/msg_rightclick_btn_default.png
+			FocusRowImageFile = UI/msg_rightclick_btn_over.png
+			DisabledRowImageFile = UI/msg_rightclick_btn_disable.png
+			EnableDrawFocusRow = 1
+			ItemBorderSize = 0 2
+			IconWidth = 16
+			Margin = 3 2
+			
+			ColumnOption1 = DT_LEFT, DT_TOP
+			ColumnTextColor1 = 0 0 0 255
+			EnableColumnOutline1 = 0
+			ColumnDisabledTextColor1 = 192 192 192 255
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = TextBox
+				Pos = 0 -20 200 20
+				ID = 23001
+				TextColor = 255 255 255 255
+				ImageFile = UI/msg_rightclick_name.png
+				Option = DT_VCENTER DT_CENTER
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

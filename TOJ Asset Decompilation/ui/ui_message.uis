@@ -1,0 +1,66 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 0 0
+	!EnableBackColor = 1
+	!BackColor = 255 255 255 20
+}
+{
+	Flag = START_CHILD
+}
+	!메세지창
+	{
+		Flag = WINDOW
+		Pos = 196 204 408 180
+		!Modal = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = WINDOW
+			Pos = 0 0 0 0
+			ImageFile = ui/notice.png
+		}
+		!TEXT
+		{
+			Flag = TEXTBOX
+			ID = 100
+			Pos = 6 36 394 95
+			TextColor = 60 60 60 255
+			!EnableBackColor = 1
+			!BackColor = 60 0 0 125
+			Option = DT_CENTER DT_VCENTER
+			FontIndex = 0
+		}
+		!OK BUTTON
+		{
+			Flag = BUTTON
+			ID = 110
+			Pos = 110 134 78 27
+			!Text = $OK
+			ImageFile = ui/common/btn_ok_default.png
+			FocusImageFile = ui/common/btn_ok_over.png
+			PressedImageFile = ui/common/btn_ok_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_SPACE,KEYCODE_RETURN
+		}
+		!CANCEL BUTTON
+		{
+			Flag = BUTTON
+			ID = 111
+			Pos = 215 134 78 27
+			!Text = $CANCEL
+			ImageFile = ui/common/btn_cancel_default.png
+			FocusImageFile = ui/common/btn_cancel_over.png
+			PressedImageFile = ui/common/btn_cancel_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_ESCAPE
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

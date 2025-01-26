@@ -1,0 +1,123 @@
+﻿{
+	Flag = WINDOW
+	Pos = 174 180 454 240
+	ImageFile = ui/createroom_bg.png
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = EDITBOX
+		Pos = 164 110 128 16
+		ID = 10002
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		SelectionColor = 0 0 0 255
+		HighlightTextColor = 255 255 255 255
+		TextColor = 0 0 0 255
+		NextTabOrderID = 10003
+		PrevTabOrderID = 10003
+		Limit = 15
+		Win32Edit = 1
+		!Style = ES_AUTOHSCROLL
+	}
+	{
+		Flag = EDITBOX
+		Pos = 164 110+48 128 16
+		ID = 10003
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		SelectionColor = 0 0 0 255
+		HighlightTextColor = 255 255 255 255
+		TextColor = 0 0 0 255
+		NextTabOrderID = 10002
+		PrevTabOrderID = 10002
+		Limit = 10
+		Win32Edit = 1
+		!Style = ES_AUTOHSCROLL
+	}
+	
+	{
+		Flag = TEXTBOX
+		Pos = 30 180 150 18
+		Option = DT_LEFT DT_TOP
+		Text = TYPE
+		TextColor = 255 255 255 255
+		Show = 0
+	}
+	{
+		Flag = BUTTON
+		ID = 10100
+		IsCheckButton = 1
+		Pos = 360 145 20 20
+		!Text = NORMAL
+		ImageFile = ui/common/btn_close_default.png
+		FocusImageFile = ui/common/btn_close_over.png
+		PressedImageFile = ui/common/btn_close_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		TextColor = 255 255 255 200
+		Option = DT_LEFT
+		TextPos = 26 4 200 20
+		Show = 0
+		!NextTabOrderID = 460
+	}
+	
+	{
+		Flag = BUTTON
+		ID = 10101
+		IsCheckButton = 1
+		Pos = 360 175 20 20
+		!Text = COOPERATE MULTI
+		ImageFile = ui/common/btn_close_default.png
+		FocusImageFile = ui/common/btn_close_over.png
+		PressedImageFile = ui/common/btn_close_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		TextColor = 255 255 255 200
+		Option = DT_LEFT
+		TextPos = 26 4 200 20
+		Show = 0
+		!NextTabOrderID = 460
+	}
+	!OK Button
+	{
+		Flag = BUTTON
+		ID = 10090
+		Pos = 150 200 78 27
+		ImageFile = ui/common/btn_ok_default.png
+		FocusImageFile = ui/common/btn_ok_over.png
+		PressedImageFile = ui/common/btn_ok_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!HotKey = KEYCODE_RETURN
+		ZOrder = 10
+	}
+	!Cancel Button
+	{
+		Flag = BUTTON
+		ID = 10091
+		Pos = 236 200 78 27
+		ImageFile = ui/common/btn_cancel_default.png
+		FocusImageFile = ui/common/btn_cancel_over.png
+		PressedImageFile = ui/common/btn_cancel_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_ESCAPE
+		ZOrder = 10
+	}
+	!Close Button
+	{
+		Flag = BUTTON
+		ID = 10091
+		Pos = 424 4 22 22
+		ImageFile = ui/lobby/btn_close2_default.png
+		FocusImageFile = ui/lobby/btn_close2_over.png
+		PressedImageFile = ui/lobby/btn_close2_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ZOrder = 10
+	}
+{
+	Flag = END_CHILD
+}

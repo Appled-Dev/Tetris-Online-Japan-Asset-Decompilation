@@ -1,0 +1,672 @@
+﻿{
+	Flag = WINDOW_TETRIS_VIEW
+	ID = 1000
+	Pos = 112 39 0 0
+	BlockSize = 18 18
+	NextBlockSize = 10 10
+	HoldBlockSize = 14 14
+	PlayBlockPos = 46-31 555-20*20-59 20*10 20*20
+	HoldBlockPos = -71 143 90 40
+	NextBlockPos0 = 209 143 90 40
+	NextBlockPos1 = 209 208 90 40
+	NextBlockPos2 = 209 263 90 40
+	NextBlockPos3 = 209 313 90 40
+	NextBlockPos4 = 209 363 90 40
+	NextBlockPos5 = 209 413 90 40
+	NextBlockSize0 = 14 14
+	NextBlockSize1 = 12 12
+	NextBlockSize2 = 10 10
+	NextBlockSize3 = 10 10
+	NextBlockSize4 = 10 10
+	NextBlockSize5 = 10 10
+	
+	!공격, 상쇄 이펙트에 대한 부분 --
+	!Enemy의 공격  이펙트 시작 위치
+	EnemyAttackEffStartPos0 = 452 262
+	EnemyAttackEffStartPos1 = 575 262
+	EnemyAttackEffStartPos2 = 698 262
+	EnemyAttackEffStartPos3 = 452 493
+	EnemyAttackEffStartPos4 = 575 493	
+
+	!Enemy의 공격  이펙트를 받는 위치
+	EnemyAttackEffDestPos0 = 452 184
+	EnemyAttackEffDestPos1 = 575 184
+	EnemyAttackEffDestPos2 = 698 184
+	EnemyAttackEffDestPos3 = 452 415
+	EnemyAttackEffDestPos4 = 575 415
+	
+	!자신이 상대방에게 공격할때 이펙트의 시작위치
+	MyAttackEnemyEffStartPos = 192 200
+	!상대방이  자신에게 공격할때 이펙트의 받는위치
+	EnemyAttackMeEffDestPos = 292 335
+	
+	!자신이 상쇄 할때의 시작위치와 끝나는 위치
+	MyOffsetEffStartPos = 192 400
+	MyOffsetEffDestPos = 300 250
+	
+	!상대방이 상쇄 할때의 시작위치와 끝나는 위치
+	!EnemyAttackEffStartPos 값에 아래의 값을 더해서 구한다
+	EnemyOffsetEffStartPos = 0 50
+	EnemyOffsetEffDestPos = 50 -40
+		
+	!공격 이펙트 타입 0:등속도 1:가속도 2:포물선
+	AttackEffType = 2
+	!--
+	
+	MinoColor_Yellow = %Mino%/yel_tMino_30px.tga
+	MinoColor_LightBlue = %Mino%/blt_tMino_30px.tga
+	MinoColor_Purple = %Mino%/pur_tMino_30px.tga
+	MinoColor_Orange = %Mino%/or_tMino_30px.tga
+	MinoColor_DarkBlue = %Mino%/bdk_tMino_30px.tga
+	MinoColor_Green = %Mino%/grn_tMino_30px.tga
+	MinoColor_Red = %Mino%/red_tMino_30px.tga
+	MinoColor_Garbage = %Mino%/gry_tMino_30px.tga
+	MinoColor_Concrete = %Mino%/blk_tMino_30px.tga
+	
+	MinoColor_Yellow_Ghost = %Ghost%/yel_ghost_30px.tga
+	MinoColor_LightBlue_Ghost = %Ghost%/blt_ghost_30px.tga
+	MinoColor_Purple_Ghost = %Ghost%/pur_ghost_30px.tga
+	MinoColor_Orange_Ghost = %Ghost%/or_ghost_30px.tga
+	MinoColor_DarkBlue_Ghost = %Ghost%/bdk_ghost_30px.tga
+	MinoColor_Green_Ghost = %Ghost%/grn_ghost_30px.tga
+	MinoColor_Red_Ghost = %Ghost%/red_ghost_30px.tga
+
+	Sfx_Rotate = %SFX%/Sfx_Rotate.wav
+	Sfx_RotateFail =  %SFX%/Sfx_RotateFail.wav
+	Sfx_Lockdown = %SFX%/Sfx_Lockdown.wav
+	Sfx_Hold = %SFX%/Sfx_Hold.wav
+	Sfx_Softdrop = %SFX%/Sfx_Softdrop.wav
+	Sfx_Harddrop = %SFX%/Sfx_HardDrop.wav
+	Sfx_Move = %SFX%/Sfx_Move.wav
+	Sfx_MoveFail = %SFX%/Sfx_MoveFail.wav
+
+	Sfx_Single = %SFX%/Sfx_Single.wav
+	Sfx_Double = %SFX%/Sfx_Double.wav
+	Sfx_Double_Voice = %Voice%/02_Double.wav
+	Sfx_Triple = %SFX%/Sfx_Triple.wav
+	Sfx_Triple_Voice = %Voice%/03_Triple.wav
+	Sfx_Tetris = %SFX%/Sfx_Tetris.wav
+	Sfx_Tetris_Voice = %Voice%/04_Tetris.wav
+	Sfx_TSpin_Zero = %SFX%/Sfx_TSpin_Zero.wav
+	Sfx_TSpin_Zero_Voice = %Voice%/06_TSpin.wav
+	Sfx_TSpin_Mini = %SFX%/Sfx_TSpin_Mini.wav
+	Sfx_TSpin_Mini_Voice = %Voice%/07_TSpinMini.wav
+	Sfx_TSpin_Single = %SFX%/Sfx_TSpin_Single.wav
+	Sfx_TSpin_Single_Voice = %Voice%/08_TSpinSingle.wav
+	Sfx_TSpin_Double = %SFX%/Sfx_TSpin_Double.wav
+	Sfx_TSpin_Double_Voice = %Voice%/09_TSpinDouble.wav
+	Sfx_TSpin_Triple = %SFX%/Sfx_TSpin_Triple.wav
+	Sfx_TSpin_Triple_Voice = %Voice%/10_TSpinTriple.wav
+	Sfx_B2B_Tetris = %SFX%/Sfx_B2B_Tetris.wav
+	Sfx_B2B_Tetris_Voice = %Voice%/05_B2BTetris.wav
+	Sfx_B2B_TSpin_Mini = %SFX%/Sfx_B2B_TSpin_Mini.wav
+	Sfx_B2B_TSpin_Mini_Voice = %Voice%/11_B2BTSpinMini.wav
+	Sfx_B2B_TSpin_Single = %SFX%/Sfx_B2B_TSpin_Single.wav
+	Sfx_B2B_TSpin_Single_Voice = %Voice%/12_B2BTSpinSingle.wav
+	Sfx_B2B_TSpin_Double = %SFX%/Sfx_B2B_TSpin_Double.wav
+	Sfx_B2B_TSpin_Double_Voice = %Voice%/13_B2BTSpinDouble.wav
+	Sfx_B2B_TSpin_Triple = %SFX%/Sfx_B2B_TSpin_Triple.wav
+	Sfx_B2B_TSpin_Triple_Voice = %Voice%/14_B2BTSpinTriple.wav
+
+	Sfx_Combo1 = %SFX%/Sfx_Combo1.wav
+	Sfx_Combo2 = %SFX%/Sfx_Combo2.wav
+	Sfx_Combo2_Voice = %Voice%/15_Combo01.wav
+	Sfx_Combo3 = %SFX%/Sfx_Combo3.wav
+	Sfx_Combo3_Voice = %Voice%/15_Combo01.wav
+	Sfx_Combo4 = %SFX%/Sfx_Combo4.wav
+	Sfx_Combo4_Voice = %Voice%/15_Combo02.wav
+	Sfx_Combo5 = %SFX%/Sfx_Combo5.wav
+	Sfx_Combo5_Voice = %Voice%/15_Combo02.wav
+	Sfx_Combo6 = %SFX%/Sfx_Combo6.wav
+	Sfx_Combo6_Voice = %Voice%/15_Combo03.wav
+	Sfx_Combo7 = %SFX%/Sfx_Combo7.wav
+	Sfx_Combo7_Voice = %Voice%/15_Combo03.wav
+	Sfx_Combo8 = %SFX%/Sfx_Combo8.wav
+	Sfx_Combo8_Voice = %Voice%/15_Combo04.wav
+	Sfx_Combo9 = %SFX%/Sfx_Combo9.wav
+	Sfx_Combo9_Voice = %Voice%/15_Combo04.wav
+	Sfx_Combo10 = %SFX%/Sfx_Combo10.wav
+	Sfx_Combo10_Voice = %Voice%/15_Combo04.wav
+	Sfx_Combo11 = %SFX%/Sfx_Combo11.wav
+	Sfx_Combo11_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo12 = %SFX%/Sfx_Combo12.wav
+	Sfx_Combo12_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo13 = %SFX%/Sfx_Combo13.wav
+	Sfx_Combo13_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo14 = %SFX%/Sfx_Combo14.wav
+	Sfx_Combo14_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo15 = %SFX%/Sfx_Combo15.wav
+	Sfx_Combo15_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo16 = %SFX%/Sfx_Combo16.wav
+	Sfx_Combo16_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo17 = %SFX%/Sfx_Combo17.wav
+	Sfx_Combo17_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo18 = %SFX%/Sfx_Combo18.wav
+	Sfx_Combo18_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo19 = %SFX%/Sfx_Combo19.wav
+	Sfx_Combo19_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo20 = %SFX%/Sfx_Combo20.wav
+	Sfx_Combo20_Voice = %Voice%/15_Combo05.wav
+	
+	Sfx_PerfectClear = %SFX%/Sfx_PerfectClear.wav
+	Sfx_PerfectClear_Voice = %Voice%/16_PerfectClear.wav
+	
+	Sfx_KO1_Voice = %Voice%/21_KO1.wav
+	Sfx_KO2_Voice = %Voice%/21_KO2.wav
+	Sfx_KO3_Voice = %Voice%/21_KO3.wav
+	Sfx_KO4_Voice = %Voice%/21_KO4.wav
+	Sfx_KO5_Voice = %Voice%/21_KO5.wav
+	
+	!SFX_GAME_OVER = %SFX%/
+	!SFX_GAME_OVER_Voice = %Voice%/
+	
+	!SFX_PLAYER_DIE_BY_KO = %SFX%/
+	!SFX_PLAYER_DIE_BY_KO_Voice = %Voice%/
+	
+	Sfx_Rank1_Voice = %Voice%/24_Victory01.wav,%Voice%/24_Victory02.wav,%Voice%/24_Victory03.wav,%Voice%/24_Victory04.wav,%Voice%/24_Victory05.wav
+	
+	Sfx_Killed = %SFX%/Sfx_GameOver.wav
+	Sfx_Killed_Voice = %Voice%/25_Lose01.wav,%Voice%/25_Lose02.wav,%Voice%/25_Lose03.wav,%Voice%/25_Lose04.wav,%Voice%/25_Lose05.wav
+	
+	Sfx_KilledByKO = %SFX%/Sfx_KO.WAV
+	!Sfx_KilledByKO_Voice = %Voice%/
+	
+	!Sfx_DangerusQueue = %SFX%/Sfx_dangerus.WAV
+	Sfx_DangerusQueue = dangerus.WAV
+	
+	MusicFileName = %Music%\*.ogg
+	
+	HardDropEffFileName = %SpecialFX%/harddrop.spr
+	LineClearEffFileName = %SpecialFX%/lineclear_s.SPR
+	MinoLockdownEffFileName = %SpecialFX%/lockdown.SPR
+	MinoTSpinEffFileName = %SpecialFX%/tspin.spr
+	
+	MyAttackEnemyEffFileName = attack01a.spr
+	EnemyAttackMeEffFileName = attack01b.spr
+	MyOffsetEffFileName = attack01c.spr
+	
+	EnemyAttackEnemyEffFileName = attack02a.spr
+	EnemyOffsetEffFileName = attack01c.spr
+	
+	RotateFailEffFileName = item/rotate.spr
+	HardDropFailEffFileName = item/harddrop.spr
+}
+{
+	Flag = START_CHILD
+}
+	!holdcount
+	{
+		Flag = TEXTBOX
+		Pos = -56 133 60 20
+		ID = 100011
+	}
+	!hold가리기
+	{
+		Flag = WINDOW
+		Pos = -56 133 60 60
+		ID = 100010
+		!EnableBackColor = 1
+		!BackColor = 222 222 222 255
+		ImageFile = %Matrix%/Cover60x60.png
+		TransparentMouseEvent = 1
+	}
+	!next0가리기
+	{
+		Flag = WINDOW
+		Pos = 224 133 60 60
+		ID = 100020
+		!EnableBackColor = 1
+		!BackColor = 222 222 222 255
+		ImageFile = %Matrix%/Cover60x60.png
+		TransparentMouseEvent = 1
+	}
+	!next1가리기
+	{
+		Flag = WINDOW
+		Pos = 229 203 50 50
+		ID = 100021
+		!EnableBackColor = 1
+		!BackColor = 222 222 222 255
+		ImageFile = %Matrix%/Cover50x50.png
+		TransparentMouseEvent = 1
+	}
+	!next2가리기
+	{
+		Flag = WINDOW
+		Pos = 234 263 40 40
+		ID = 100022
+		!EnableBackColor = 1
+		!BackColor = 222 222 222 255
+		ImageFile = %Matrix%/Cover40x40.png
+		TransparentMouseEvent = 1
+	}
+	!next3가리기
+	{
+		Flag = WINDOW
+		Pos = 234 313 40 40
+		ID = 100023
+		!EnableBackColor = 1
+		!BackColor = 222 222 222 255
+		ImageFile = %Matrix%/Cover40x40.png
+		TransparentMouseEvent = 1
+	}
+	!next4가리기
+	{
+		Flag = WINDOW
+		Pos = 234 363 40 40
+		ID = 100024
+		!EnableBackColor = 1
+		!BackColor = 222 222 222 255
+		ImageFile = %Matrix%/Cover40x40.png
+		TransparentMouseEvent = 1
+	}
+	!next5가리기
+	{
+		Flag = WINDOW
+		Pos = 234 413 40 40
+		ID = 100025
+		!EnableBackColor = 1
+		!BackColor = 222 222 222 255
+		ImageFile = %Matrix%/Cover40x40.png
+		TransparentMouseEvent = 1
+	}
+	!Hold Success
+	{
+		Flag = WINDOW_SPR2D
+		ID = 100061
+		Pos = -56-10 133-10 0 0
+		Show = 0
+		FileName = ef_square_01_b.SPR
+	}
+	!Hold Fail
+	{
+		Flag = WINDOW_SPR2D
+		ID = 100062
+		Pos = -68 133-10 0 0
+		Show = 0
+		FileName = ef_mark_01.SPR
+		SoundFile = item/kinshi.wav
+	}
+	!Matrix Top Cover
+	{
+		Flag = WINDOW
+		Pos = 15 53 180 43
+		!EnableBackColor = 1
+		!BackColor = 255 0 0 255
+		ImageFile = %Matrix%/Matrix18x18_cover.png
+		TransparentMouseEvent = 1
+	}
+
+!==========Item Mode Effect==========
+	
+	!Plus
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200901
+		Pos = 56 380 0 0
+		Show = 0
+		FileName = item/plus.SPR
+		SoundFile = item/plus.wav
+		ZOrder = 100
+	}
+	!Erase
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200902
+		Pos = 14 136 0 0
+		Show = 0
+		FileName = item/erase.SPR
+		SoundFile = item/erase.wav
+		ZOrder = 100
+	}
+	!Steal
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200903
+		Pos = -63 140 0 0
+		Show = 0
+		FileName = item/steal.SPR
+		SoundFile = item/steal.wav
+		ZOrder = 100
+	}
+	!Next
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200904
+		Pos = 220 128 0 0
+		Show = 0
+		FileName = item/next.SPR
+		ZOrder = 100
+	}
+	!Hold
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200905
+		Pos = -64 130 0 0
+		Show = 0
+		FileName = item/hold.SPR
+		ZOrder = 100
+	}
+	!Rotate
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200906
+		Pos = 46 93 0 0
+		Show = 0
+		FileName = item/rotate.SPR
+		ZOrder = 100
+	}
+	!Harddrop
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200907
+		Pos = 71 93 0 0
+		Show = 0
+		FileName = item/harddrop.SPR
+		ZOrder = 100
+	}
+	!Speed
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200908
+		Pos = 48 96 0 0
+		Show = 0
+		FileName = item/speed.SPR
+		SoundFile = item/speed.wav
+		ZOrder = 100
+	}
+	!Dark
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200909
+		Pos = 14 93 0 0
+		Show = 0
+		FileName = item/dark.SPR
+		SoundFile = item/dark.wav
+		ZOrder = 99
+	}
+	!Heart
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200910
+		Pos = 12 308 0 0
+		Show = 0
+		FileName = item/heart.SPR
+		SoundFile = item/heart.wav
+		ZOrder = 100
+	}
+	!Twist
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200911
+		Pos = 40 330 0 0
+		Show = 0
+		FileName = item/twist.SPR
+		SoundFile = item/twist.wav
+		ZOrder = 100
+	}
+	!Laser
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200912
+		Pos = 14 93 0 0
+		Show = 0
+		FileName = item/laser.SPR
+		SoundFile = item/laser.wav
+		ZOrder = 100
+	}
+	!Missile
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200913
+		Pos = 38 200 0 0
+		Show = 0
+		FileName = item/missile.SPR
+		SoundFile = item/missile.wav
+		ZOrder = 100
+	}
+	!Snow
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200914
+		Pos = 14 94 0 0
+		Show = 0
+		FileName = item/snow.SPR
+		SoundFile = item/snow.wav
+		ZOrder = 99
+	}
+	!Bomb
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200915
+		Pos = 12 346 0 0
+		Show = 0
+		FileName = item/bomb.SPR
+		SoundFile = item/bomb.wav
+		ZOrder = 100
+	}
+	!Minus
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200916
+		Pos = 46 414 0 0
+		Show = 0
+		FileName = item/minus.SPR
+		SoundFile = item/minus.wav
+		ZOrder = 100
+	}
+	!Summon
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200917
+		Pos = 14 93 0 0
+		Show = 0
+		FileName = item/summon.SPR
+		SoundFile = item/summon.wav
+		ZOrder = 100
+	}
+	!Cure
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200918
+		Pos = 12 150 0 0
+		Show = 0
+		FileName = item/cure.SPR
+		SoundFile = item/cure.wav
+		ZOrder = 100
+	}
+	!Cut
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200919
+		Pos = 14 240 0 0
+		Show = 0
+		FileName = item/cut.SPR
+		SoundFile = item/cut.wav
+		ZOrder = 100
+	}
+	!Push
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200920
+		Pos = -114 252 0 0
+		Show = 0
+		FileName = item/push.SPR
+		SoundFile = item/push.wav
+		ZOrder = 100
+	}
+	!Drop
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200921
+		Pos = 30 8 0 0
+		Show = 0
+		FileName = item/drop.SPR
+		SoundFile = item/drop.wav
+		ZOrder = 100
+	}
+	!Clear
+	{
+		Flag = WINDOW_SPR2D
+		ID = 200922
+		Pos = 34 234 0 0
+		Show = 0
+		FileName = item/clear.SPR
+		SoundFile = item/clear.wav
+		ZOrder = 100
+	}
+	
+	
+	!+-Line Count
+	{
+		Flag = TEXTBOX
+		ID = 200980
+		Pos = 14+186 456 30 24
+		!Text = 00
+		FontIndex = 1
+		ZOrder = 100
+		TextColor = 0 0 255 255
+	}
+	
+	
+!=========상태 변화 표시=========
+	
+	!상태 변화 표시 WINDOW
+	{
+		Flag = WINDOW
+		!Pos = -112 80 0 0
+		Pos = 15 458 0 0
+		!ImageFile = ui/item/item_slot.png
+		ZOrder = 10
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Slot 1
+		{
+			Flag = WINDOW
+			ID = 200801
+			!Pos = 6 32 18 18
+			!Pos = 0 0 18 18
+			Pos = 0 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 2
+		{
+			Flag = WINDOW
+			ID = 200802
+			!Pos = 6 50 18 18
+			!Pos = 18 0 18 18
+			Pos = 30 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 3
+		{
+			Flag = WINDOW
+			ID = 200803
+			!Pos = 6 68 18 18
+			!Pos = 36 0 18 18
+			Pos = 60 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 4
+		{
+			Flag = WINDOW
+			ID = 200804
+			!Pos = 6 86 18 18
+			!Pos = 54 0 18 18
+			Pos = 90 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 5
+		{
+			Flag = WINDOW
+			ID = 200805
+			!Pos = 6 104 18 18
+			!Pos = 72 0 18 18
+			Pos = 120 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 6
+		{
+			Flag = WINDOW
+			ID = 200806
+			!Pos = 6 122 18 18
+			!Pos = 90 0 18 18
+			Pos = 150 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 7
+		{
+			Flag = WINDOW
+			ID = 200807
+			!Pos = 6 140 18 18
+			!Pos = 108 0 18 18
+			Pos = 180 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 8
+		{
+			Flag = WINDOW
+			ID = 200808
+			!Pos = 6 158 18 18
+			!Pos = 126 0 18 18
+			Pos = 210 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 9
+		{
+			Flag = WINDOW
+			ID = 200809
+			!Pos = 6 176 18 18
+			!Pos = 144 0 18 18
+			Pos = 240 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+		!Slot 10
+		{
+			Flag = WINDOW
+			ID = 200810
+			!Pos = 6 194 18 18
+			!Pos = 162 0 18 18
+			Pos = 270 0 0 0
+			ImageFileEx = ui/item/item_01.tga,ui/item/item_02.tga,ui/item/item_03.tga,ui/item/item_04.tga,ui/item/item_05.tga,ui/item/item_06.tga,ui/item/item_07.tga,ui/item/item_08.tga,ui/item/item_09.tga,ui/item/item_10.tga,ui/item/item_11.tga,ui/item/item_12.tga,ui/item/item_13.tga,ui/item/item_14.tga,ui/item/item_15.tga,ui/item/item_16.tga,ui/item/item_17.tga,ui/item/item_18.tga,ui/item/item_19.tga,ui/item/item_20.tga,ui/item/item_21.tga,ui/item/item_22.tga
+			!ImageFileEx = ui/item/item_01_plus.png,ui/item/item_02_erase.png,ui/item/item_03_steal.png,ui/item/item_04_next.png,ui/item/item_05_hold.png,ui/item/item_06_rotate.png,ui/item/item_07_harddrop.png,ui/item/item_08_speed.png,ui/item/item_09_dark.png,ui/item/item_10_heart.png,ui/item/item_11_twist.png,ui/item/item_12_laser.png,ui/item/item_13_minus.png,ui/item/item_14_summon.png,ui/item/item_15_cure.png,ui/item/item_16_cut.png,ui/item/item_17_push.png,ui/item/item_18_drop.png,ui/item/item_19_clear.png
+			!ImageFileEx = ui/item/item_01.png,ui/item/item_02.png,ui/item/item_03.png,ui/item/item_04.png,ui/item/item_05.png,ui/item/item_06.png,ui/item/item_07.png,ui/item/item_08.png,ui/item/item_09.png,ui/item/item_10.png,ui/item/item_11.png,ui/item/item_12.png,ui/item/item_13.png,ui/item/item_14.png,ui/item/item_15.png,ui/item/item_16.png,ui/item/item_17.png,ui/item/item_18.png,ui/item/item_19.png
+			Show = 0
+		}
+	{
+		Flag = END_CHILD
+	}
+
+
+{
+	Flag = END_CHILD
+}

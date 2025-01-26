@@ -1,0 +1,508 @@
+﻿!플레이어
+{
+	ID = 67676767
+	Pos = 0 0 30 30
+	Flag = WINDOW_LOBBY_PLAYER
+	ClipRect = 99 118 827 543
+	ZOrder = 1000
+	Show = 0
+}
+
+{
+	Flag = START_CHILD
+}
+	!프레임 뼈대
+	{
+		Flag = WINDOW
+		ID = 585858
+		Pos = 0 0 0 0 
+		Show = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Small frame
+		{
+			Flag = WINDOW
+			ID = 5858580
+			Pos = -15 -95 0 0 
+			ImageFileEx = ui/lobby/prof_frame_w1.png,ui/lobby/prof_frame_m1.png
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			!프로필 사진
+			{
+				Flag = WINDOW
+				ID = 58585801
+				Pos = 4 4 54 69
+				ImageFile = ui/lobby/prof_load_frame_S.png
+				ImageFileEx = ui/lobby/woman1.png,ui/lobby/man1.png
+			}
+			{
+				Flag = START_CHILD
+			}
+				!로딩 에니메이션
+				{
+					Flag = WINDOW_SPR2D
+					Pos = 0 0 0 0
+					FileName = lobby/loading_s.SPR
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!User ID
+			{
+				Flag = WINDOW
+				ID = 58585802
+				Pos = 4 57 0 0
+				ImageFile = ui/lobby/window_name_S.png
+				ZOrder = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 585858020
+					Pos = 10 2 72 16
+					FontIndex = 2
+					TextColor = 50 50 50 255
+					ZOrder = 100
+					TransparentMouseEvent = 0
+					Option = DT_LEFT DT_VCENTER DT_WORD_ELLIPSIS
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!관심 대상
+			{
+				Flag = WINDOW
+				ID = 58585803
+				ImageFile = ui/lobby/prof_frame_kansin1.png
+				Pos = -13 -3 0 0
+				Show = 0
+			}
+			!Aura Effect 01
+			{
+				Flag = WINDOW_SPR2D
+				ID = 58585804
+				Pos = 0 0 0 0
+				FileName = lobby/aura01.SPR
+				MotionName = main
+				Show = 0
+			}
+			!미확인 채팅 수
+			{
+				Flag = WINDOW
+				ID = 10007
+				Pos = -4 -6 0 0
+				ImageFile = ui/lobby/count_back1.png
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+				 	!실제 미확인 채팅 카운트 윈도우
+					Flag = TEXTBOX
+					ID = 100071
+					Pos = 2 4 20 12
+					TextColor = 255 255 255 255
+					FontIndex = 0
+					Option = DT_VCENTER DT_CENTER
+					EnableImageFont = 1
+					ImageFontWidth = 10
+					ImageFontList = ,,,,,,,,,,,,,,,,ui/lobby/count_0.png,ui/lobby/count_1.png,ui/lobby/count_2.png,ui/lobby/count_3.png,ui/lobby/count_4.png,ui/lobby/count_5.png,ui/lobby/count_6.png,ui/lobby/count_7.png,ui/lobby/count_8.png,ui/lobby/count_9.png
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!Chatting Box
+			{
+				Flag = WINDOW
+				ID = 10009
+				Pos = -44 -104 0 0
+				ImageFile = ui/lobby/chat_fukidashi.png
+				ZOrder = 1
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = LISTBOXW
+					ID = 100091
+					Pos = 10 19 110 74
+					Option = DT_CENTER DT_VCENTER
+					MaxLine = 5
+					BorderSize = 1
+					TextGap = 1
+					!TextColor = 40 40 40 255
+					!ItemLifeTime = 0
+					!EnableBackColor = 1
+					!BackColor = 0 0 0 128
+					!EnableOutLineText = 1
+					!OutLineTextColor = 0 0 0 255
+					!EnableBackColorEdge = 1
+					!BackEdgeColor = 255 255 255 125
+					EnableCr = 0
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		
+		!Medium frame
+		{
+			Flag = WINDOW
+			ID = 5858581
+			Pos = -23 -120 0 0 
+			ImageFileEx = ui/lobby/prof_frame_w2.png,ui/lobby/prof_frame_m2.png
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			!프로필 사진
+			{
+				Flag = WINDOW
+				ID = 58585801
+				Pos = 4 4 72 92
+				ImageFile = ui/lobby/prof_load_frame_M.png
+				ImageFileEx = ui/lobby/woman2.png,ui/lobby/man2.png
+			}
+			{
+				Flag = START_CHILD
+			}
+				!로딩 에니메이션
+				{
+					Flag = WINDOW_SPR2D
+					Pos = 0 0 0 0
+					FileName = lobby/loading_m.SPR
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!User ID
+			{
+				Flag = WINDOW
+				ID = 58585802
+				Pos = 4 79 0 0
+				ImageFile = ui/lobby/window_name_M.png
+				ZOrder = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 585858020
+					Pos = 10 2 72 16
+					FontIndex = 2
+					TextColor = 50 50 50 255
+					ZOrder = 100
+					TransparentMouseEvent = 0
+					Option = DT_LEFT DT_VCENTER DT_WORD_ELLIPSIS
+				}
+			{
+				Flag = END_CHILD
+			}
+			!관심 대상
+			{
+				Flag = WINDOW
+				ID = 58585803
+				ImageFile = ui/lobby/prof_frame_kansin2.png
+				Pos = -13 -3 0 0
+				Show = 0
+			}
+			!Aura Effect 01
+			{
+				Flag = WINDOW_SPR2D
+				ID = 58585804
+				Pos = 0 0 0 0
+				FileName = lobby/aura01.SPR
+				MotionName = main
+				Show = 0
+			}
+			!미확인 채팅 수
+			{
+				Flag = WINDOW
+				ID = 10007
+				Pos = -4 -6 0 0
+				ImageFile = ui/lobby/count_back1.png
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+				 	!실제 미확인 채팅 카운트 윈도우
+					Flag = TEXTBOX
+					ID = 100071
+					Pos = 2 4 20 12
+					TextColor = 255 255 255 255
+					FontIndex = 0
+					Option = DT_VCENTER DT_CENTER
+					EnableImageFont = 1
+					ImageFontWidth = 10
+					ImageFontList = ,,,,,,,,,,,,,,,,ui/lobby/count_0.png,ui/lobby/count_1.png,ui/lobby/count_2.png,ui/lobby/count_3.png,ui/lobby/count_4.png,ui/lobby/count_5.png,ui/lobby/count_6.png,ui/lobby/count_7.png,ui/lobby/count_8.png,ui/lobby/count_9.png
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!Chatting Box
+			{
+				Flag = WINDOW
+				ID = 10009
+				Pos = -36 -100 0 0
+				ImageFile = ui/lobby/chat_fukidashi.png
+				ZOrder = 1
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = LISTBOXW
+					ID = 100091
+					Pos = 10 19 110 74
+					Option = DT_CENTER DT_VCENTER
+					MaxLine = 5
+					BorderSize = 1
+					TextGap = 1
+					!TextColor = 40 40 40 255
+					!ItemLifeTime = 0
+					!EnableBackColor = 1
+					!BackColor = 0 0 0 128
+					!EnableOutLineText = 1
+					!OutLineTextColor = 0 0 0 255
+					!EnableBackColorEdge = 1
+					!BackEdgeColor = 255 255 255 125
+					EnableCr = 0
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		
+		!Large frame
+		{
+			Flag = WINDOW
+			ID = 5858582
+			Pos = -33 -141 0 0 
+			ImageFileEx = ui/lobby/prof_frame_w3.png,ui/lobby/prof_frame_m3.png
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			!프로필 사진
+			{
+				Flag = WINDOW
+				ID = 58585801
+				Pos = 4 4 90 115
+				ImageFile = ui/lobby/prof_load_frame_L.png
+				ImageFileEx = ui/lobby/woman3.png,ui/lobby/man3.png
+			}
+			{
+				Flag = START_CHILD
+			}
+				!로딩 에니메이션
+				{
+					Flag = WINDOW_SPR2D
+					Pos = 0 0 0 0
+					FileName = lobby/loading_l.SPR
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!User ID
+			{
+				Flag = WINDOW
+				ID = 58585802
+				Pos = 4 102 0 0
+				ImageFile = ui/lobby/window_name_L.png
+				ZOrder = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 585858020
+					Pos = 10 2 72 16
+					FontIndex = 2
+					TextColor = 50 50 50 255
+					ZOrder = 100
+					TransparentMouseEvent = 0
+					Option = DT_LEFT DT_VCENTER DT_WORD_ELLIPSIS
+				}
+			{
+				Flag = END_CHILD
+			}
+			!관심 대상
+			{
+				Flag = WINDOW
+				ID = 58585803
+				ImageFile = ui/lobby/prof_frame_kansin3.png
+				Pos = -13 -3 0 0
+				Show = 0
+			}
+			!Aura Effect 01
+			{
+				Flag = WINDOW_SPR2D
+				ID = 58585804
+				Pos = 0 0 0 0
+				FileName = lobby/aura01.SPR
+				MotionName = main
+				Show = 0
+			}
+			!미확인 채팅 수
+			{
+				Flag = WINDOW
+				ID = 10007
+				Pos = -4 -6 0 0
+				ImageFile = ui/lobby/count_back1.png
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+				 	!실제 미확인 채팅 카운트 윈도우
+					Flag = TEXTBOX
+					ID = 100071
+					Pos = 2 4 20 12
+					TextColor = 255 255 255 255
+					FontIndex = 0
+					Option = DT_VCENTER DT_CENTER
+					EnableImageFont = 1
+					ImageFontWidth = 10
+					ImageFontList = ,,,,,,,,,,,,,,,,ui/lobby/count_0.png,ui/lobby/count_1.png,ui/lobby/count_2.png,ui/lobby/count_3.png,ui/lobby/count_4.png,ui/lobby/count_5.png,ui/lobby/count_6.png,ui/lobby/count_7.png,ui/lobby/count_8.png,ui/lobby/count_9.png
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!Chatting Box
+			{
+				Flag = WINDOW
+				ID = 10009
+				Pos = -26 -100 0 0
+				ImageFile = ui/lobby/chat_fukidashi.png
+				ZOrder = 1
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = LISTBOXW
+					ID = 100091
+					Pos = 10 19 110 74
+					Option = DT_CENTER DT_VCENTER
+					MaxLine = 5
+					BorderSize = 1
+					TextGap = 1
+					!TextColor = 40 40 40 255
+					!ItemLifeTime = 0
+					!EnableBackColor = 1
+					!BackColor = 0 0 0 128
+					!EnableOutLineText = 1
+					!OutLineTextColor = 0 0 0 255
+					!EnableBackColorEdge = 1
+					!BackEdgeColor = 255 255 255 125
+					EnableCr = 0
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!미노 클릭 메뉴
+	{
+		Flag = POPUPMENU_WINDOW
+		ID = 2899
+		Pos = 0 0 200 0
+		ItemHeight = 19
+		AutoResize = 1
+		Show = 0
+		TitleTextBoxID = 22001
+		IsActive = 1
+		
+		Item0Id = 1
+	  	Item0Text = ユーザーインフォ
+	  	Item1Id = 2
+	  	Item1Text = チェック
+	  	Item2Id = 3
+	  	Item2Text = 友達登録
+	  	
+	  	ZOrder = $TOP_ZORDER
+		ImageFile = UI/msg_rightclick_bg.png
+		IsPatternImage = 1
+		PatternImageSize = 5
+		NormalRowImageFile = UI/msg_rightclick_btn_default.png
+		FocusRowImageFile = UI/msg_rightclick_btn_over.png
+		DisabledRowImageFile = UI/msg_rightclick_btn_disable.png
+		EnableDrawFocusRow = 1
+		ItemBorderSize = 0 2
+		IconWidth = 16
+		Margin = 3 2
+		
+		ColumnOption1 = DT_LEFT, DT_TOP
+		ColumnTextColor1 = 0 0 0 255
+		EnableColumnOutline1 = 0
+		ColumnDisabledTextColor1 = 163 163 163 255	
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TextBox
+			Pos = 0 -20 200 20
+			ID = 22001
+			TextColor = 255 255 255 255
+			ImageFile = UI/msg_rightclick_name.png
+			Option = DT_VCENTER DT_CENTER
+		}
+	{
+		Flag = END_CHILD
+	}	
+	
+	!Rating 레이팅
+	{
+		Flag = TEXTBOX
+		ID = 585858021
+		Pos = 4 7 72 16
+		FontIndex = 2
+		TextColor = 50 50 50 255
+		ZOrder = 100
+		TransparentMouseEvent = 1
+		Option = DT_LEFT DT_VCENTER
+		Show = 0
+	}
+{
+	Flag = END_CHILD
+}

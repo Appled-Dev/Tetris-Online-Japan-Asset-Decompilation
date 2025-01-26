@@ -1,0 +1,60 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	ImageFile = UI/back_selectmode.bmp
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = BUTTON
+		ID = 500
+		Pos = 660 569 100 31
+		ImageFile = %BottomBar%/btn_back_default.png
+		FocusImageFile = %BottomBar%/btn_back_over.png
+		PressedImageFile = %BottomBar%/btn_back_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = BACK
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		HotKey = KEYCODE_ESCAPE
+		!HotKey = KEYCODE_5
+	}
+	{
+		Flag = TEXTBOX
+		Pos = 250 205 600 500
+		!Text =  Producing ... Youm, Eui-Joon (Ace)\n\nGame Design ... Cho, Se-Hyun\n\nClient Programming ... Pu, Seong-An\n\nServer Programming ... Jung, Hyun-Ho\n\nDemo Graphics ... Youm, Eui-Joon (Ace)\n\nHardware Setup ... Jung, Hyun-Ho\n\nQA ... Cho, Se-Hyun
+		Text =  Producer ... Youm, Eui-Joon (Ace)\n\nLead Game Designer ... Youm, Eui-Joon (Ace)\nAssistant Game Designer ... Cho, Se-Hyun\n\nMain Programmer ... Pu, Seong-An\nClient Programming ... Pu, Seong-An\nServer Programming ... Jung, Hyun-Ho\n\nGraphic Artists ... Watanabe, Takeharu\n                    Miyase, Ryo\n                    Ogata, Michiyo\n\nH/W Architecture Design ... Jung, Hyun-Ho\nQuality Assurance ... Cho, Se-Hyun\n\nSpecial Thanks to ... Edward Rogers\n                  ... Matsukata, Tetsuya\n                  ... Everyone in TOJ
+
+		TextColor = 255 255 255 255
+		Option = DT_LEFT DT_TOP
+		!FontIndex = 
+		!EnableImageFont = 0
+		!ImageFontWidth = 32
+		!ImageFontList = 
+		!EnableBackColor = 1
+		!BackColor = 32 32 32 255
+		!Show = 0
+	}
+
+{
+	Flag = END_CHILD
+}
+

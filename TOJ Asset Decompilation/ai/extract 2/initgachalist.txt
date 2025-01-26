@@ -1,0 +1,21 @@
+﻿Id	Name	Number	PriceType	Price	New	Sale	Path0	Path1	Path2	Comment	Comment2
+1	ブロック＜コイン＞	200	1	1	0	1	ui/shop/gacha/gacha_c_block_default.png	ui/shop/gacha/gacha_c_block_over.png	ui/shop/gacha/gacha_c_block_down.png	ui/deco_preview/gacha_preview_01.png	ui/shop/gachatext/gachatext_01.png
+2	フレーム＜コイン＞	200	1	1	0	1	ui/shop/gacha/gacha_c_frame_default.png	ui/shop/gacha/gacha_c_frame_over.png	ui/shop/gacha/gacha_c_frame_down.png	ui/deco_preview/gacha_preview_02.png	ui/shop/gachatext/gachatext_02.png
+3	ひとり背景＜コイン＞	200	1	1	0	0	ui/shop/gacha/gacha_c_bg_default.png	ui/shop/gacha/gacha_c_bg_over.png	ui/shop/gacha/gacha_c_bg_down.png	ui/deco_preview/gacha_preview_03.png	ui/shop/gachatext/gachatext_03.png
+4	みんな背景＜コイン＞	200	1	1	0	1	ui/shop/gacha/gacha_c_bg_default.png	ui/shop/gacha/gacha_c_bg_over.png	ui/shop/gacha/gacha_c_bg_down.png	ui/deco_preview/gacha_preview_04.png	ui/shop/gachatext/gachatext_03.png
+5	ボイス＜TP＞	30	0	100	0	1	ui/shop/gacha/gacha_voice_default.png	ui/shop/gacha/gacha_voice_over.png	ui/shop/gacha/gacha_voice_down.png	ui/deco_preview/gacha_preview_05.png	ui/shop/gachatext/gachatext_04.png
+6	サポートアイテ＜TP＞	20	0	200	0	1	ui/shop/gacha/gacha_support_default.png	ui/shop/gacha/gacha_support_over.png	ui/shop/gacha/gacha_support_down.png	ui/deco_preview/gacha_preview_06.png	ui/shop/gachatext/gachatext_05.png
+7	ブロック　シリーズ１＜TP＞	30	0	100	0	1	ui/shop/gacha/gacha_block_default.png	ui/shop/gacha/gacha_block_over.png	ui/shop/gacha/gacha_block_down.png	ui/deco_preview/gacha_preview_07.png	ui/shop/gachatext/gachatext_06.png
+8	フレーム　シリーズ１＜TP＞	30	0	100	0	1	ui/shop/gacha/gacha_frame_default.png	ui/shop/gacha/gacha_frame_over.png	ui/shop/gacha/gacha_frame_down.png	ui/deco_preview/gacha_preview_08.png	ui/shop/gachatext/gachatext_07.png
+9	ひとり背景　シリーズ１＜TP＞	30	0	100	0	0	ui/shop/gacha/gacha_bg_default.png	ui/shop/gacha/gacha_bg_over.png	ui/shop/gacha/gacha_bg_down.png	ui/deco_preview/gacha_preview_09.png	ui/shop/gachatext/gachatext_08.png
+10	みんな背景　シリーズ１＜TP＞	30	0	100	0	1	ui/shop/gacha/gacha_bg_default.png	ui/shop/gacha/gacha_bg_over.png	ui/shop/gacha/gacha_bg_down.png	ui/deco_preview/gacha_preview_10.png	ui/shop/gachatext/gachatext_08.png
+11	ブロックシリーズ２＜TP＞	30	0	100	0	1	ui/shop/gacha/gacha_block_default.png	ui/shop/gacha/gacha_block_over.png	ui/shop/gacha/gacha_block_down.png	ui/deco_preview/gacha_preview_11.png	ui/shop/gachatext/gachatext_06.png
+12	フレーム　シリーズ２＜TP＞	30	0	100	0	1	ui/shop/gacha/gacha_frame_default.png	ui/shop/gacha/gacha_frame_over.png	ui/shop/gacha/gacha_frame_down.png	ui/deco_preview/gacha_preview_12.png	ui/shop/gachatext/gachatext_07.png
+13	ひとり背景　シリーズ２＜TP＞	30	0	100	0	0	ui/shop/gacha/gacha_bg_default.png	ui/shop/gacha/gacha_bg_over.png	ui/shop/gacha/gacha_bg_down.png	ui/deco_preview/gacha_preview_13.png	ui/shop/gachatext/gachatext_08.png
+14	みんな背景　シリーズ２＜TP＞	30	0	100	0	1	ui/shop/gacha/gacha_bg_default.png	ui/shop/gacha/gacha_bg_over.png	ui/shop/gacha/gacha_bg_down.png	ui/deco_preview/gacha_preview_14.png	ui/shop/gachatext/gachatext_08.png
+21	攻撃パック＜コイン＞	100	1	0	0	1	ui/shop/gacha/itempack_01_1.png	ui/shop/gacha/itempack_01_2.png	ui/shop/gacha/itempack_01_3.png	ui/deco_preview/pack_preview_01.png	ui/shop/gachatext/packtext_01.png
+22	防御パック＜コイン＞	100	1	0	0	1	ui/shop/gacha/itempack_02_1.png	ui/shop/gacha/itempack_02_2.png	ui/shop/gacha/itempack_02_3.png	ui/deco_preview/pack_preview_02.png	ui/shop/gachatext/packtext_02.png
+23	牽制パック＜コイン＞	100	1	0	0	1	ui/shop/gacha/itempack_03_1.png	ui/shop/gacha/itempack_03_2.png	ui/shop/gacha/itempack_03_3.png	ui/deco_preview/pack_preview_03.png	ui/shop/gachatext/packtext_03.png
+24	攻撃パック＜TP＞	40	0	0	0	1	ui/shop/gacha/itempack_01_1.png	ui/shop/gacha/itempack_01_2.png	ui/shop/gacha/itempack_01_3.png	ui/deco_preview/pack_preview_01.png	ui/shop/gachatext/packtext_01.png
+25	防御パック＜TP＞	40	0	0	0	1	ui/shop/gacha/itempack_02_1.png	ui/shop/gacha/itempack_02_2.png	ui/shop/gacha/itempack_02_3.png	ui/deco_preview/pack_preview_02.png	ui/shop/gachatext/packtext_02.png
+26	牽制パック＜TP＞	40	0	0	0	1	ui/shop/gacha/itempack_03_1.png	ui/shop/gacha/itempack_03_2.png	ui/shop/gacha/itempack_03_3.png	ui/deco_preview/pack_preview_03.png	ui/shop/gachatext/packtext_03.png

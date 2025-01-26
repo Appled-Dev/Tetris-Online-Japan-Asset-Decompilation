@@ -1,0 +1,522 @@
+"START_CHILD"
+"END_CHILD"
+"DESKTOP_WINDOW"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag = INCLUDE
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+tv->GetString("FileName")
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="WINDOW"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+tv->GetInt("ID", id) default 0
+tv->GetInt("Pos", &pos[0]) 
+tv->GetInt("Show", bshow) default 1
+tv->GetInt("Enable", benable) default 1
+tv->GetString("ImageFile", str)
+tv->GetString("ImageFileEx", str)
+tv->GetInt("EnableBackColor", i)
+tv->GetInt("EnableBackColorEdge", i)
+"BackEdgeColor"
+tv->GetString("BackColor", backcolor)
+tv->GetString("BackImageColor", backcolor)
+tv->GetInt("TransparentMouseEvent", btransmouse)
+tv->GetInt("3DEdge", i)
+tv->GetInt("Revers3DEdge", i)
+if(tv->GetInt("NextTabOrderID", i))
+if(tv->GetInt("NextTabOrderID", i))
+if(tv->GetInt("IsActive", i))
+tv->GetString("ToolTip")
+tv->GetInt("Modal")
+"ZOrder"
+"ShowSoundFile"
+if(2 == tv->GetIntArray("ImagePos", pos, 2))
+if(tv->GetInt("IsPatternImage", i))
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="BUTTON"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetString("Text", text))
+if(tv->GetString("TextColor", color))
+if(tv->GetInt("FontIndex", i))
+if(tv->GetString("FocusTextColor", color))
+if(tv->GetString("PressedTextColor", color))
+if(tv->GetString("DisabledTextColor", color))
+if(tv->GetString("FocusImageFile", text))
+if(tv->GetString("PressedImageFile", text))
+if(tv->GetString("DisabledImageFile", text))
+if(tv->GetString("IconImageFile", text))
+if(2 == tv->GetIntArray("IconImagePos", pos, 2))
+if(tv->GetString("FocusSoundFile", text))
+if(tv->GetString("PressedSoundFile", text))
+if(tv->GetString("FocusBackColor", color))
+if(tv->GetString("PressedBackColor", color))
+if(tv->GetString("DisabledBackColor", color))
+if(tv->GetString("FocusBackEdgeColor", color))
+if(tv->GetString("PressedBackEdgeColor", color))
+if(tv->GetString("DisabledBackEdgeColor", color))
+
+if(tv->GetString("OutLineTextColor", color))
+if(tv->GetInt("EnableOutLine", i))
+"IsCheckButton"
+"IsChecked"
+if(tv->GetInt("IsBlink", i))
+if(tv->GetString("Option", option))
+{
+	DWORD opt = 0 ;
+	if(strstr(option,"DT_BOTTOM")) opt |= (DT_BOTTOM|DT_SINGLELINE) ;
+	if(strstr(option,"DT_CENTER")) opt |= DT_CENTER ;
+	if(strstr(option,"DT_TOP")) opt |= (DT_TOP|DT_SINGLELINE) ;
+	if(strstr(option,"DT_VCENTER")) 
+		opt |= (DT_VCENTER|DT_SINGLELINE) ;
+	if(strstr(option,"DT_RIGHT")) opt |= DT_RIGHT ;
+	if(strstr(option,"DT_LEFT")) opt |= DT_LEFT ;
+	pW->SetFormat(opt) ;
+}
+"HotKey"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="TEXTBOX"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetString("Text", text))
+if(tv->GetString("TextColor", textcolor))
+if(tv->GetInt("FontIndex", i))
+if(tv->GetString("Option", option))
+{
+	DWORD opt = 0 ;
+	if(strstr(option,"DT_BOTTOM")) opt |= (DT_BOTTOM|DT_SINGLELINE) ;
+	if(strstr(option,"DT_CENTER")) opt |= DT_CENTER ;
+	if(strstr(option,"DT_TOP")) opt |= (DT_TOP|DT_SINGLELINE) ;
+	if(strstr(option,"DT_VCENTER")) 
+		opt |= (DT_VCENTER|DT_SINGLELINE) ;
+	if(strstr(option,"DT_RIGHT")) opt |= DT_RIGHT ;
+	if(strstr(option,"DT_LEFT")) opt |= DT_LEFT ;
+	pW->SetFormat(opt) ;
+}
+if(tv->GetString("OutLineTextColor", textcolor))
+if(tv->GetInt("EnableOutLine", i))
+if(tv->GetInt("EnableImageFont", i))
+	pW->EnableImageFont(!!i) ;
+if(tv->GetInt("ImageFontWidth", i))
+	pW->SetImageFontWidth(i) ;
+if(tv->GetString("ImageFontList", text))
+	pW->SetImageFontContainer(CreateImageContainer(text)) ;
+if(tv->GetIntArray("TextPos", pos, 4) == 4)
+if(tv->GetInt("OutLinePixel", i))
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="WINDOW_IMAGE_LIST"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+{
+CKwonHoWindowImageList *pW = new CKwonHoWindowImageList ;
+char *str ;
+int i ;
+if(tv->GetInt("ImageIndex", i))
+pW->SetImageIndex(i) ;
+if(tv->GetString("ImageList", str))
+pW->SetImageContainer(CreateImageContainer(str)) ;
+pcChild = (CKwonHoWindow *)pW ;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="CAPTION"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetIntArray("ClipRect", i, 4))
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="PROGRESSIVEBAR"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+tv->GetInt("Max", max) ;
+tv->GetInt("Current", current) ; 
+if(tv->GetString("BarColor", barcolor))
+if(tv->GetString("DiffBarColor", barcolor))
+if(tv->GetInt("EnableImageBar", i))
+if(tv->GetString("BarImageFile", strBar[0])
+if(tv->GetString("BarDiffImageFile", strBar[0])
+if(tv->GetInt("SetAnimateBlockTime"
+if(tv->GetInt("AnimateSpeed", i))
+if(tv->GetInt("Mirror", i))
+if(tv->GetInt("Vertical", i))
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="EDITBOX"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetString("Style", str))
+{
+	if(strstr(str,"ES_MULTILINE")) 
+		style |= ES_MULTILINE ;
+	if(strstr(str,"ES_PASSWORD")) 
+		style |= ES_PASSWORD ;
+}
+if(tv->GetInt("FontIndex", i))
+if(tv->GetInt("Limit", limit))
+if(tv->GetString("TextColor", color))
+if(tv->GetString("HighlightTextColor", color))
+if(tv->GetString("SelectionColor", color))
+if(tv->GetInt("IMETextBoxID", i))
+if(tv->GetInt("EnableDrawIME", i))
+"HotKey"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="LISTBOX"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetString("Option", option))
+{
+	DWORD opt = 0 ;
+	if(strstr(option,"DT_BOTTOM")) opt |= (DT_BOTTOM|DT_SINGLELINE) ;
+	if(strstr(option,"DT_CENTER")) opt |= DT_CENTER ;
+	if(strstr(option,"DT_TOP")) opt |= (DT_TOP|DT_SINGLELINE) ;
+	if(strstr(option,"DT_VCENTER")) 
+		opt |= (DT_VCENTER|DT_SINGLELINE) ;
+	if(strstr(option,"DT_RIGHT")) opt |= DT_RIGHT ;
+	if(strstr(option,"DT_LEFT")) opt |= DT_LEFT ;
+	pW->SetDrawTextMode(opt) ;
+}
+if(tv->GetInt("MaxLine", i))
+if(tv->GetInt("BorderSize", i))
+if(tv->GetInt("TextGap", i))
+if(tv->GetInt("EnableVScrollBar", i))
+if(tv->GetInt("VScrollBarID", i))
+if(tv->GetInt("ItemLifeTime", i))
+if(tv->GetInt("EnableOutLineText", i))
+if(tv->GetIntArray("OutLineTextColor", pi, 3) == 3)
+boo::StringFormat(buffer, sizeof(buffer),"Text%d", i) ;
+boo::StringFormat(buffer, sizeof(buffer),"TextColor%d", i) ;
+boo::StringFormat(buffer, sizeof(buffer),"FontIndex%d", i) ;
+boo::StringFormat(buffer, sizeof(buffer),"NewLine%d", i) ;
+boo::StringFormat(buffer, sizeof(buffer), "ImageIndex%d", i) ;
+ex)
+Text0 = 스킬레벨이란?%<text="asdf" color="255 0 0 255" font="0" newline ="0">%<image="0" newline = "0">가나다
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="SCROLLBAR"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetString("Style", str))
+{
+	DWORD style = 0 ;
+	if(strstr(str,"HSCROLL")) style |= CKwonHoScrollBar::STYLE_HSCROLL ;
+	if(strstr(str,"VSCROLL")) style |= CKwonHoScrollBar::STYLE_VSCROLL ;
+}
+if(tv->GetString("PrevButtonNormalImageFile", str))
+if(tv->GetString("PrevButtonFocusImageFile", str))
+if(tv->GetString("PrevButtonPressedImageFile", str))
+if(tv->GetString("PrevButtonFocusSoundFile", str))
+if(tv->GetString("PrevButtonPressedSoundFile", str))
+if(tv->GetString("PrevButtonNormalImageFile", str))
+if(tv->GetString("PrevButtonFocusImageFile", str))
+if(tv->GetString("PrevButtonPressedImageFile", str))
+if(tv->GetString("PrevButtonFocusSoundFile", str))
+if(tv->GetString("PrevButtonPressedSoundFile", str))
+
+
+if(tv->GetString("NextButtonNormalImageFile", str))
+if(tv->GetString("NextButtonFocusImageFile", str))
+if(tv->GetString("NextButtonPressedImageFile", str))
+if(tv->GetString("NextButtonFocusSoundFile", str))
+if(tv->GetString("NextButtonPressedSoundFile", str))
+if(tv->GetString("NextButtonNormalImageFile", str))
+if(tv->GetString("NextButtonFocusImageFile", str))
+if(tv->GetString("NextButtonPressedImageFile", str))
+if(tv->GetString("NextButtonFocusSoundFile", str))
+if(tv->GetString("NextButtonPressedSoundFile", str))
+
+if(tv->GetString("PrevButtonNormalBackColor", str)
+	&& tv->GetString("PrevButtonFocusBackColor", str2)
+	&& tv->GetString("PrevButtonPressedBackColor", str3))
+if(tv->GetString("NextButtonNormalBackColor", str)
+	&& tv->GetString("NextButtonFocusBackColor", str2)
+	&& tv->GetString("NextButtonPressedBackColor", str3))
+if(tv->GetInt("EnablePrevButton3DEdge", i))
+if(tv->GetInt("EnableNextButton3DEdge", i))
+if(tv->GetInt("EnablePrevButtonBackColor", i))
+if(tv->GetInt("EnableNextButtonBackColor", i))
+if(tv->GetString("SliderBackColor", str))
+if(tv->GetInt("EnableSliderBackColor", i))
+if(tv->GetInt("EnableSlider3DEdge", i))
+if(tv->GetInt("MaxRange", i))
+if(tv->GetInt("ViewPageSize", i))
+if(tv->GetInt("CurPos", i))
+if(2 == tv->GetIntArray("ScrollStep", temp, 2))
+SetSliderImage
+if(tv->GetString("PageButtonNormalBackColor", str)
+					&& tv->GetString("PageButtonFocusBackColor", str2)
+					&& tv->GetString("PageButtonPressedBackColor", str3))
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="LISTVIEW"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetInt("ColumnCount", i))
+{
+	for(int j = 0 ; j < i ; ++j)
+	{
+		sprintf(buffer,"ColumnWidth%d", j) ;
+		sprintf(buffer,"ColumnOption%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer),"ColumnTextColor%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer),"ColumnOutlineTextColor%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer),"EnableColumnOutline%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer),"ColumnCustomDraw%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer),"ColumnImageFontWidth%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer),"ColumnImageFontHeight%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer),"ColumnImageFontList%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer),"ColumnTextFont%d", j) ;
+		boo::StringFormat(buffer, sizeof(buffer), "ColumnBackColor%d", j) ;
+		{
+			for(int j = 0 ; ; ++j)
+			{
+				for(int c = 0 ; c < i ; ++c)
+				{
+					boo::StringFormat(buffer, sizeof(buffer),"ItemText%d_%d", j, c) ;
+				}
+			}
+		}
+		
+	}
+}
+if(tv->GetInt("EnableVScrollBar", i))
+if(tv->GetInt("VScrollBarID", i))
+if(tv->GetInt("EnableDrawFocusRow", i))
+if(tv->GetInt("EnableDrawSelectRow", i))
+if(tv->GetString("DrawFocusRowColor", str))
+if(tv->GetString("DrawSelectRowColor", str))
+if(tv->GetInt("ItemHeight", i))
+if(tv->GetIntArray("ItemBorderSize", i, 2) == 2)
+boo::StringFormat(buffer, sizeof(buffer),"ColumnImageFontWidth%d", j) ;
+boo::StringFormat(buffer, sizeof(buffer),"ColumnImageFontList%d", j) ;
+if(tv->GetString("FocusSoundFile", str))
+if(tv->GetString("PressedSoundFile", str))
+if(tv->GetString("FocusRowImageFile", str))
+if(tv->GetString("SelectRowImageFile", str))
+if(tv->GetString("NormalRowImageFile", str))
+ItemText행_열 ="Text"
+("ImageRowOffset", i, 2)
+("Margin", i, 2)
+"ColumnDisabledTextColor"
+
+*/
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="SWF_WINDOW"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+tv->GetString("SwfFileName", str)
+SwfColor
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Flag ="FADE_WINDOW"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetInt("MaxTime", i))
+if(tv->GetInt("TargetAlpha", i))
+if(tv->GetInt("AutoHide", i))
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+"POPUPMENU_WINDOW"
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+if(tv->GetInt("ItemHeight", i))
+if(tv->GetString("FocusColor", str))
+if(tv->GetInt("IconWidth", i))
+if(tv->GetInt("ParentComboBoxButtonID", i))
+"TitleTextBoxID"
+if(tv->GetString("FocusSoundFile", str))
+if(tv->GetString("PressedSoundFile", str))
+
+for(i = 0 ; ; ++i)
+{
+	boo::StringFormat(buffer, sizeof(buffer),"Item%dId", i) ;
+	boo::StringFormat(buffer, sizeof(buffer),"Item%dText", i) ;
+	boo::StringFormat(buffer, sizeof(buffer),"Item%dTextColor", str) ;
+	boo::StringFormat(buffer, sizeof(buffer),"Item%dIcon", i) ;
+	boo::StringFormat(buffer, sizeof(buffer),"Item%dBackImage", i) ;
+	"Item%dSeperator"
+	"Item%dEnable"
+"Item%dTextOption"
+}
+"AutoResize"
+if(tv->GetInt("EnableDrawFocusRow", i))
+if(tv->GetString("NormalRowImageFile", str))
+if(tv->GetString("FocusRowImageFile", str))
+"DisabledRowImageFile"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+"POPUPMENU_BUTTON"
+Button포함
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+"COMBOBOX_BUTTON"
+Button포함
+if(tv->GetInt("PopupMenuWindowID", i))
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//"TREEVIEW"
+if(tv->GetInt("EnableVScrollBar", i))
+if(tv->GetInt("VScrollBarID", i))
+if(tv->GetInt("EnableDrawFocusRow", i))
+if(tv->GetInt("EnableDrawSelectRow", i))
+if(tv->GetString("DrawFocusRowColor", str))
+if(tv->GetString("DrawSelectRowColor", str))
+if(tv->GetString("ItemTextColor", str))
+if(tv->GetString("ItemTextOption", str))
+if(tv->GetInt("ItemHeight", i))
+if(tv->GetInt("IconWidth", i))
+if(tv->GetInt("ChildStartPos", i))
+if(tv->GetString("OpenedImage", str))
+if(tv->GetString("ClosedImage", str))
+if(tv->GetIntArray("ItemGap", gap, 2) == 2)
+if(tv->GetString("FocusSoundFile", str))
+if(tv->GetString("PressedSoundFile", str))
+if(tv->GetInt("CustomDrawItem", i))
+"LineImage"
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//"WINDOW_TETRIS_VIEW"
+sprintf(buffer, "NextBlockPos%d", i) ;
+sprintf(buffer, "NextBlockSize%d", i) ;
+2 != tv->GetIntArray("NextBlockSize", size, 2))
+if(4 == tv->GetIntArray("HoldBlockPos", pos, 4))
+if(4 == tv->GetIntArray("PlayBlockPos", pos, 4))
+if(2 == tv->GetIntArray("BlockSize", pos, 2))
+if(2 == tv->GetIntArray("HoldBlockSize", pos, 2))
+if(tv->GetString("MinoColor_Yellow", str))
+if(tv->GetString("MinoColor_LightBlue", str))
+if(tv->GetString("MinoColor_Purple", str))
+if(tv->GetString("MinoColor_Orange", str))
+if(tv->GetString("MinoColor_DarkBlue", str))
+if(tv->GetString("MinoColor_Green", str))
+if(tv->GetString("MinoColor_Red", str))
+if(tv->GetString("MinoColor_Yellow_Ghost", str))
+if(tv->GetString("MinoColor_LightBlue_Ghost", str))
+if(tv->GetString("MinoColor_Purple_Ghost", str))
+if(tv->GetString("MinoColor_Orange_Ghost", str))
+if(tv->GetString("MinoColor_DarkBlue_Ghost", str))
+if(tv->GetString("MinoColor_Green_Ghost", str))
+if(tv->GetString("MinoColor_Red_Ghost", str))
+if(tv->GetString("MinoColor_Garbage", str))
+if(tv->GetString("MinoColor_Concrete", str))
+LOAD_SFX("Sfx_Rotate", SFX_ROTATE) ;
+LOAD_SFX("Sfx_RotateFail", SFX_ROTATE_FAIL) ;
+LOAD_SFX("Sfx_Move", SFX_MOVE) ;
+LOAD_SFX("Sfx_MoveFail", SFX_MOVE_FAIL) ;
+LOAD_SFX("Sfx_Lockdown", SFX_LOCKDOWN) ;
+LOAD_SFX("Sfx_Hold", SFX_HOLD) ;
+LOAD_SFX("Sfx_Softdrop", SFX_SOFTDROP) ;
+LOAD_SFX("Sfx_Single", SFX_SINGLE) ;
+LOAD_SFX("Sfx_Double", SFX_DOUBLE) ;
+LOAD_SFX("Sfx_Triple", SFX_TRIPLE) ;
+LOAD_SFX("Sfx_Tetris", SFX_TETRIS) ;
+LOAD_SFX("Sfx_TSpin_Zero", SFX_TSPIN_ZERO) ;
+LOAD_SFX("Sfx_TSpin_Mini", SFX_TSPIN_MINI) ;
+LOAD_SFX("Sfx_TSpin_Single", SFX_TSPIN_SINGLE) ;
+LOAD_SFX("Sfx_TSpin_Double", SFX_TSPIN_DOUBLE) ;
+LOAD_SFX("Sfx_TSpin_Triple", SFX_TSPIN_TRIPLE) ;
+LOAD_SFX("Sfx_B2B_Tetris", SFX_B2B_TETRIS) ;
+LOAD_SFX("Sfx_B2B_TSpin_Mini", SFX_B2B_TSPIN_MINI) ;
+LOAD_SFX("Sfx_B2B_TSpin_Single", SFX_B2B_TSPIN_SINGLE) ;
+LOAD_SFX("Sfx_B2B_TSpin_Double", SFX_B2B_TSPIN_DOUBLE) ;
+LOAD_SFX("Sfx_B2B_TSpin_Triple", SFX_B2B_TSPIN_TRIPLE) ;
+LOAD_SFX("Sfx_GameOver", SFX_GAME_OVER) ;
+LOAD_SFX("Sfx_PlayerDie", SFX_PLAYER_DIE) ;
+LOAD_SFX("Sfx_PlayerDieByKO", SFX_PLAYER_DIE_BY_KO) ;
+LOAD_SFX("Sfx_GameResult", SFX_GAME_RESULT) ;
+LOAD_SFX("Sfx_LineAttack", SFX_LINE_ATTACK) ;
+LOAD_SFX("Sfx_PerfectClear", SFX_PERFECT_CLEAR) ;
+LOAD_SFX("Sfx_Killed", SFX_KILLED) ;
+LOAD_SFX("Sfx_KilledByKO", SFX_KILLED_BY_KO) ;
+sprintf(buffer, "Sfx_Combo%d", i-SFX_COMBO_1+1) ;
+sprintf(buffer, "Sfx_KO%d", i-SFX_KO_1+1) ;
+sprintf(buffer, "Sfx_Rank%d", i-SFX_RANK_1+1) ;
+if(tv->GetString("MusicFileName", str))
+if(tv->GetString("LineClearEffFileName", str))
+if(tv->GetString("HardDropEffFileName", str))
+if(tv->GetString("MinoLockdownEffFileName", str))
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+//"UI_KEYCODES"
+	"KEYCODE_A",
+	"KEYCODE_B",
+	"KEYCODE_C",
+	"KEYCODE_D",
+	"KEYCODE_E",
+	"KEYCODE_F",
+	"KEYCODE_G",
+	"KEYCODE_H",
+	"KEYCODE_I",
+	"KEYCODE_J",
+	"KEYCODE_K",
+	"KEYCODE_L",
+	"KEYCODE_M",
+	"KEYCODE_N",
+	"KEYCODE_O",
+	"KEYCODE_P",
+	"KEYCODE_Q",
+	"KEYCODE_R",
+	"KEYCODE_S",
+	"KEYCODE_T",
+	"KEYCODE_U",
+	"KEYCODE_V",
+	"KEYCODE_W",
+	"KEYCODE_X",
+	"KEYCODE_Y",
+	"KEYCODE_Z",
+	"KEYCODE_BACK",
+	"KEYCODE_TAB",
+	"KEYCODE_CLEAR ",
+	"KEYCODE_RETURN",
+	"KEYCODE_SHIFT",
+	"KEYCODE_CONTROL",
+	"KEYCODE_MENU",
+	"KEYCODE_PAUSE",
+	"KEYCODE_CAPITAL",
+	"KEYCODE_ESCAPE",
+	"KEYCODE_SPACE",
+	"KEYCODE_PRIOR",
+	"KEYCODE_NEXT",
+	"KEYCODE_END",
+	"KEYCODE_HOME",
+	"KEYCODE_LEFT",
+	"KEYCODE_UP",
+	"KEYCODE_RIGHT",
+	"KEYCODE_DOWN",
+	"KEYCODE_SELECT",
+	"KEYCODE_PRINT",
+	"KEYCODE_EXECUTE",
+	"KEYCODE_SNAPSHOT",
+	"KEYCODE_INSERT",
+	"KEYCODE_DELETE",
+	"KEYCODE_HELP",
+	"KEYCODE_0",
+	"KEYCODE_1",
+	"KEYCODE_2",
+	"KEYCODE_3",
+	"KEYCODE_4",
+	"KEYCODE_5",
+	"KEYCODE_6",
+	"KEYCODE_7",
+	"KEYCODE_8",
+	"KEYCODE_9",
+	"KEYCODE_NUMPAD0",
+	"KEYCODE_NUMPAD1",
+	"KEYCODE_NUMPAD2",
+	"KEYCODE_NUMPAD3",
+	"KEYCODE_NUMPAD4",
+	"KEYCODE_NUMPAD5",
+	"KEYCODE_NUMPAD6",
+	"KEYCODE_NUMPAD7",
+	"KEYCODE_NUMPAD8",
+	"KEYCODE_NUMPAD9",
+	"KEYCODE_MULTIPLY",
+	"KEYCODE_ADD",
+	"KEYCODE_SEPARATER",
+	"KEYCODE_SUBTRACT",
+	"KEYCODE_DECIMAL",
+	"KEYCODE_DIVIDE",
+	"KEYCODE_F1",
+	"KEYCODE_F2",
+	"KEYCODE_F3",
+	"KEYCODE_F4",
+	"KEYCODE_F5",
+	"KEYCODE_F6",
+	"KEYCODE_F7",
+	"KEYCODE_F8",
+	"KEYCODE_F9",
+	"KEYCODE_F10",
+	"KEYCODE_F11",
+	"KEYCODE_F12",
+	"KEYCODE_NUMLOCK",

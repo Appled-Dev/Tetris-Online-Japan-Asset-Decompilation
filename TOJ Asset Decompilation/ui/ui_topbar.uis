@@ -1,0 +1,196 @@
+﻿!이 윈도우를 잡으면 움직인다.
+{
+	Flag = WINDOW
+	ID = 9901
+	Pos = 0 0 800 24
+	ImageFile = %TopBar%/topbar_bg.png
+	ZOrder = $TOP_ZORDER
+}
+{
+	Flag = START_CHILD
+}
+	!My Info
+	{
+		Flag = BUTTON
+		ID = 9905
+		Pos = 428 2 90 18
+		ImageFile = %TopBar%/topbar_myinfo1.png
+		FocusImageFile = %TopBar%/topbar_myinfo2.png
+		PressedImageFile = %TopBar%/topbar_myinfo3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ToolTip = $TOPBAR_MYINFO
+	}
+	
+	!Options
+	{
+		Flag = BUTTON
+		ID = 9903
+		Pos = 636 2 91 18
+		ImageFile = %TopBar%/topbar_option1.png
+		FocusImageFile = %TopBar%/topbar_option2.png
+		PressedImageFile = %TopBar%/topbar_option3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ToolTip = $TOPBAR_OPTION
+	}
+	
+	!Minimize
+	{
+		Flag = BUTTON
+		ID = 9904
+		Pos = 733 1 19 19
+		ImageFile = %TopBar%/topbar_mini1.png
+		FocusImageFile = %TopBar%/topbar_mini2.png
+		PressedImageFile = %TopBar%/topbar_mini3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ToolTip = $TOPBAR_MINIMIZE
+	}
+	
+	!Fullscreen mode
+	{
+		Flag = BUTTON
+		ID = 99021
+		Pos = 755 1 19 19
+		ImageFile = %TopBar%/topbar_full1.png
+		FocusImageFile = %TopBar%/topbar_full2.png
+		PressedImageFile = %TopBar%/topbar_full3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ToolTip = $TOPBAR_FULLSCREEN
+	}
+	
+	!Window mode
+	{
+		Flag = BUTTON
+		ID = 99022
+		Pos = 755 1 19 19
+		ImageFile = %TopBar%/topbar_window1.png
+		FocusImageFile = %TopBar%/topbar_window2.png
+		PressedImageFile = %TopBar%/topbar_window3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ToolTip = $TOPBAR_WINDOW
+	}
+	
+	!Messenger
+	{
+		Flag = BUTTON
+		ID = 9906
+		Pos = 526 2 102 18
+		ImageFile = %TopBar%/topbar_m1.png
+		FocusImageFile = %TopBar%/topbar_m2.png
+		PressedImageFile = %TopBar%/topbar_m3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ToolTip = $TOPBAR_MESSENGER
+	}
+	
+	!Help
+	{
+		Flag = BUTTON
+		ID = 9907
+		Pos = 646 2 77 18
+		ImageFile = %TopBar%/topbar_help1.png
+		FocusImageFile = %TopBar%/topbar_help2.png
+		PressedImageFile = %TopBar%/topbar_help3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ToolTip = $TOPBAR_HELP
+		Show = 0
+	}
+	
+	!Help
+	{
+		Flag = WINDOW
+		Pos = 646 2 77 18
+		ImageFile = %TopBar%/topbar_help1.png
+		ToolTip = $TOPBAR_HELP_NOTE
+		Show = 0
+	}
+	
+	!Exit
+	{
+		Flag = BUTTON
+		ID = 9909
+		Pos = 777 1 19 19
+		ImageFile = %TopBar%/topbar_close1.png
+		FocusImageFile = %TopBar%/topbar_close2.png
+		PressedImageFile = %TopBar%/topbar_close3.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		ToolTip = $TOPBAR_EXIT
+	}
+	!shop
+	{
+		Flag = BUTTON
+		ID = 9910
+		Pos = 334 2 86 18
+		ImageFile = %TopBar%/topbar_shop1.png
+		FocusImageFile = %TopBar%/topbar_shop2.png
+		PressedImageFile = %TopBar%/topbar_shop3.png
+		DisabledImageFile = %TopBar%/topbar_shop4.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!ToolTip = $TOPBAR_MYINFO
+		Show = 0
+	}
+	
+	
+	!10초짜리 메세지
+	{
+		Flag = FADE_WINDOW
+		ID = 9930
+		Pos = 200 0 0 0
+		MaxTime = 10000
+		EnableBackColor = 1
+		!BackColor = 0 0 0 255
+		!TransparentMouseEvent = 1
+		!TargetColor = 0 0 0 255
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			ID = 99301
+			Pos = 0 3 300 14
+			EnableBackColor = 1
+			BackColor = 0 0 0 255
+			Option = DT_LEFT DT_TOP
+			TextColor = 255 255 255 255
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	{
+		Flag = FADE_WINDOW
+		ID = 9920
+		Pos = 200 0 0 0
+		MaxTime = 5000
+		!BackColor = 0 0 0 255
+		!TransparentMouseEvent = 1
+		!TargetColor = 0 0 0 255
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			ID = 99201
+			Pos = 0 3 300 14
+			EnableBackColor = 1
+			BackColor = 0 0 0 255
+			Option = DT_LEFT DT_TOP
+			TextColor = 255 255 255 255
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

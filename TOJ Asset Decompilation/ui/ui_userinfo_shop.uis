@@ -1,0 +1,773 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	EnableBackColor = 1
+	BackColor = 0 0 0 80
+	Modal = 1
+	Show = 1
+	IsActive = 1
+	ZOrder = $ZORDER_MODAL
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = WINDOW
+		ID = 1300
+		Pos = 100 42 0 0
+		ImageFileEx = ui/userinfo_bg.png,ui/userinfo_bg2.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		/*
+		!Shop 이동 안내
+		{
+			Flag = WINDOW
+			Pos = 349 53 0 0
+			ImageFile = ui/myinfo_info.png
+		}
+		*/
+		
+		!현재위치_ここにいます
+		{
+			Flag = TEXTBOX
+			ID = 1310100
+			Pos = 350 30 210 20
+			TextColor = 95 95 95 255
+			!EnableBackColor = 1
+			!BackColor = 10 0 80 120
+			Option = DT_CENTER DT_VCENTER
+		}
+		!QUIT BUTTON
+		{
+			Flag = BUTTON
+			ID = 13099
+			Pos = 573 8 20 20
+			ImageFile = ui/common/btn_close_default.png
+			FocusImageFile = ui/common/btn_close_over.png
+			PressedImageFile = ui/common/btn_close_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_ESCAPE
+		}
+		!Profile BUTTON
+		{
+			Flag = BUTTON
+			ID = 13001
+			Pos = 10 55 107 32
+			IsCheckButton = 1
+			NextTabOrderID = 13002
+			ImageFile = ui/btn_prof_default.png
+			FocusImageFile = ui/btn_prof_over.png
+			PressedImageFile = ui/btn_prof_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Stats BUTTON
+		{
+			Flag = BUTTON
+			ID = 13002
+			Pos = 118 55 107 32
+			IsCheckButton = 1
+			NextTabOrderID = 13003
+			ImageFile = ui/btn_stats_default.png
+			FocusImageFile = ui/btn_stats_over.png
+			PressedImageFile = ui/btn_stats_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Style BUTTON
+		{
+			Flag = BUTTON
+			ID = 13003
+			Pos = 226 55 108 32
+			IsCheckButton = 1
+			NextTabOrderID = 13004
+			ImageFile = ui/btn_graph_default.png
+			FocusImageFile = ui/btn_graph_over.png
+			PressedImageFile = ui/btn_graph_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Upgrade BUTTON
+		{
+			Flag = BUTTON
+			ID = 13004
+			Pos = 354 55 119 32
+			IsCheckButton = 1
+			NextTabOrderID = 13005
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			Show = 0
+		}
+		!Deco BUTTON
+		{
+			Flag = BUTTON
+			ID = 13005
+			Pos = 474 55 119 32
+			IsCheckButton = 1
+			NextTabOrderID = 13001
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			Show = 0
+		}
+		
+		
+		!Profile Sheet
+		{
+			Flag = WINDOW
+			Pos = 10 87 0 0
+			ID = 13010
+			ImageFile = ui/userinfo_bg_prof.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 18 48 200 200
+				!EnableBackColor = 1
+				!BackColor = 255 255 255 50
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = WINDOW_IEXPLORER
+					ID = 1301009
+					Pos = 0 0 183 230
+					!URL = http://webgame.tetrisonline.jp/avata/avataimg.asp?id=ace
+					!EnableBackColor = 1
+					BackColor = 255 255 255 255
+					TransparentMouseEvent=1
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!LV
+			{
+				Flag = TEXTBOX
+				ID = 130100
+				Pos = 190 19 40 20
+				!Text = LV 0
+				TextColor = 95 95 95 255
+				Option = DT_LEFT DT_TOP
+				FontIndex = 2
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 128
+			}
+			!Nickname
+			{
+				Flag = TEXTBOX
+				ID = 130101
+				Pos = 20 19 120 20
+				!Text = Nickname
+				TextColor = 95 95 95 255
+				Option = DT_WORD_ELLIPSIS DT_LEFT DT_TOP
+				FontIndex = 2
+				TransparentMouseEvent = 0
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 128
+			}
+			{
+				Flag = WINDOW
+				Pos = 200 0 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				!TotalExp
+				{
+					Flag = TEXTBOX
+					ID = 130102
+					Pos = 212 104 150 20
+					!Text = TotalExp
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				!Rank
+				{
+					Flag = TEXTBOX
+					ID = 130103
+					Pos = 212 270 150 20
+					!Text = Rank
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+					Show = 0
+				}
+				!Win(게임전적)
+				{
+					Flag = TEXTBOX
+					ID = 130104
+					Pos = 92 148 270 20
+					!Text = Win
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				!Streak(연승)
+				{
+					Flag = TEXTBOX
+					ID = 130105
+					Pos = 182 285 180 20
+					!Text = Streak
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+					Show = 0
+				}
+				!LPM
+				{
+					Flag = TEXTBOX
+					ID = 130106
+					Pos = 182 300 180 20
+					!Text = LPM
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+					Show = 0
+				}
+				!KO
+				{
+					Flag = TEXTBOX
+					ID = 130107
+					Pos = 162 236 200 20
+					!Text = KO
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				!Disconnect
+				{
+					Flag = TEXTBOX
+					ID = 130108
+					Pos = 212 315 150 20
+					!Text = Disconnect
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+					Show = 0
+				}
+				!TP
+				{
+					Flag = TEXTBOX
+					ID = 130109
+					Pos = 162 280 200 20
+					!Text = TP
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				!Item Mode Rating
+				{
+					Flag = TEXTBOX
+					ID = 130111
+					Pos = 162 202 200 20
+					!Text = Item Mode Rating
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				!Item Mode Win
+				{
+					Flag = TEXTBOX
+					ID = 130112
+					Pos = 162 184 200 20
+					!Text = Item Mode Win
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				!Exp bar
+				{
+					Flag = PROGRESSIVEBAR
+					ID = 130110
+					Pos = 52 47 304 15
+					Max = 100
+					Current = 0
+					BarColor = 255 0 0 255
+					EnableBackColor = 1
+					BackColor = 255 255 255 255
+					BarImageFile = ui/bar_levelup.png
+					EnableImageBar = 1
+					!Vertical = 1
+				}
+				{
+					Flag = START_CHILD
+				}
+					!PERCENT
+					{
+						Flag = TEXTBOX
+						ID = 13011001
+						Pos = 0 2 304 15
+						TextColor = 95 95 95 255
+						Option = DT_CENTER DT_HCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				!친구등록 Button
+				{
+					Flag = BUTTON
+					ID = 131011
+					Pos = -194 290 104 27
+					!Text = 友達リストに追加
+					ImageFile = ui/btn_addlist_default.png
+					FocusImageFile = ui/btn_addlist_over.png
+					PressedImageFile = ui/btn_addlist_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 0
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Arrow Image
+					{
+						Flag = WINDOW
+						Pos = -8 -23 0 0
+						ImageFile = ui/user_arrow.png
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				!같이하기 Button
+				{
+					Flag = BUTTON
+					ID = 131012
+					Pos = -194 290 104 27
+					!Text = 一緒にプレイ
+					ImageFile = ui/btn_playwith_default.png
+					FocusImageFile = ui/btn_playwith_over.png
+					PressedImageFile = ui/btn_playwith_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 0
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Arrow Image
+					{
+						Flag = WINDOW
+						Pos = -8 -23 0 0
+						ImageFile = ui/user_arrow.png
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				!My Page(Web) Button
+				{
+					Flag = BUTTON
+					ID = 131013
+					Pos = -88 290 104 27
+					ImageFile = ui/btn_mypage_default.png
+					FocusImageFile = ui/btn_mypage_over.png
+					PressedImageFile = ui/btn_mypage_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!Stats Sheet
+		{
+			Flag = WINDOW
+			Pos = 10 87 0 0
+			ID = 13020
+			Show = 0
+			ImageFile = ui/userinfo_bg_stats.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = TEXTBOX
+				Pos = 18 48 100 20
+				!Text = Single
+				!TextColor = 255 0 255 255
+				Option = DT_CENTER DT_VCENTER
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 24 122 100 20
+				!Text = Limited
+				!TextColor = 255 0 255 255
+				Option = DT_CENTER DT_VCENTER
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 24 104 100 20
+				!Text = Endless
+				!TextColor = 0 255 255 255
+				Option = DT_CENTER DT_VCENTER
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 180 122 150 20
+				!Text = HighScore :
+				!TextColor = 255 0 255 255
+				Option = DT_LEFT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130201
+				!Pos = 217 80 150 20
+				Pos = 217 126 150 20
+				!Text = SingleChallengeHighScore
+				TextColor = 95 95 95 255
+				Option = DT_RIGHT DT_TOP
+				!FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 380 122 150 20
+				!Text = Rank :
+				!TextColor = 255 0 255 255
+				Option = DT_LEFT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130202
+				!Pos = 408 80 150 20
+				Pos = 408 126 150 20
+				!Text = SingleChallengeRank
+				TextColor = 95 95 95 255
+				Option = DT_RIGHT DT_TOP
+				!FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 180 100 150 20
+				!Text = HighScore :
+				!TextColor = 0 255 255 255
+				Option = DT_LEFT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130203
+				!Pos = 217 126 150 20
+				Pos = 217 172 150 20
+				!Text = SingleMarathonHighScore
+				TextColor = 95 95 95 255
+				Option = DT_RIGHT DT_TOP
+				!FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 380 100 150 20
+				!Text = Rank :
+				!TextColor = 0 255 255 255
+				Option = DT_LEFT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130204
+				!Pos = 408 126 150 20
+				Pos = 408 172 150 20
+				!Text = SingleMarathonRank
+				TextColor = 95 95 95 255
+				Option = DT_RIGHT DT_TOP
+				!FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130220
+				!Pos = 217 172 150 20
+				Pos = 217 80 150 20
+				!Text = SingleSprintHighScore
+				TextColor = 95 95 95 255
+				Option = DT_RIGHT DT_TOP
+				!FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130221
+				!Pos = 408 172 150 20
+				Pos = 408 80 150 20
+				!Text = SingleSprintRank
+				TextColor = 95 95 95 255
+				Option = DT_RIGHT DT_TOP
+				!FontIndex = 2
+			}
+			
+			{
+				Flag = TEXTBOX
+				Pos = 18 148 100 20
+				!Text = FFA
+				!TextColor = 255 0 255 255
+				Option = DT_CENTER DT_VCENTER
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130205
+				Pos = 200 210 170 20
+				Text = FFA_2_Stat
+				TextColor = 255 0 0 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+				Show = 0
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130206
+				Pos = 387 210 170 20
+				Text = FFA_3_Stat
+				TextColor = 255 0 0 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+				Show = 0
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130207
+				Pos = 200 230 170 20
+				Text = FFA_4_Stat
+				TextColor = 255 0 0 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+				Show = 0
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130208
+				Pos = 387 230 170 20
+				Text = FFA_5_Stat
+				TextColor = 255 0 0 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+				Show = 0
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130209
+				Pos = 200 250 170 20
+				Text = FFA_6_Stat
+				TextColor = 255 0 0 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+				Show = 0
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 18 249 100 20
+				!Text = Team
+				!TextColor = 255 0 255 255
+				Option = DT_CENTER DT_VCENTER
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130210
+				Pos = 220 270 150 20
+				Text = Team_2_2_Stat
+				TextColor = 255 0 0 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+				Show = 0
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130211
+				Pos = 407 270 150 20
+				Text = Team_2_2_2_Stat
+				TextColor = 255 0 0 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+				Show = 0
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130212
+				Pos = 220 290 150 20
+				Text = Team_3_3_Stat
+				TextColor = 255 0 0 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+				Show = 0
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!STYLE Sheet
+		{
+			Flag = WINDOW
+			Pos = 10 87 0 0
+			ID = 13030
+			Show = 0
+			ImageFile = ui/userinfo_bg_style.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			!NoMap BUTTON
+			{
+				Flag = BUTTON
+				ID = 1303001
+				Pos = 30 286 82 30
+				IsCheckButton = 1
+				NextTabOrderID = 1303002
+				IsChecked = 1
+				ImageFile = ui/style_mapoff_default.png
+				FocusImageFile = ui/style_mapoff_over.png
+				PressedImageFile = ui/style_mapoff_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!Map BUTTON
+			{
+				Flag = BUTTON
+				ID = 1303002
+				Pos = 220 286 82 30
+				IsCheckButton = 1
+				NextTabOrderID = 1303001
+				ImageFile = ui/style_mapon_default.png
+				FocusImageFile = ui/style_mapon_over.png
+				PressedImageFile = ui/style_mapon_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!Graph
+			{
+				Flag = WINDOW_FILLPOLY
+				ID = 130307
+				Pos = 52 50 224 224
+				FillColor = 255 255 0 255
+				LineColor = 50 50 150 255
+				DrawLine = 1
+				EdgeColor = 200 64 64 255
+				!CircleColor = 64 64 255 255
+				CircleRadius = 15
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 100
+			}
+			
+			{
+				Flag = WINDOW
+				Pos = 300 0 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					Pos = 52 87 100 20
+					!Text = 평속 :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130301
+					Pos = 116 61 150 20
+					!Text = 평속
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 126 100 20
+					!Text = 평공 :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130302
+					Pos = 116 102 150 20
+					!Text = 평공
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 165 100 20
+					!Text = 평균TETRIS :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130303
+					Pos = 116 143 150 20
+					!Text = 평균테트리스
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 204 100 20
+					!Text = 평균콤보 :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130304
+					Pos = 116 184 150 20
+					!Text = 평균콤보
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 243 100 20
+					!Text = 평균TSPIN :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130305
+					Pos = 116 225 150 20
+					!Text = 평균TSPIN
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 282 100 20
+					!Text = 평균B2B :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130306
+					Pos = 116 266 150 20
+					!Text = 평균B2B
+					TextColor = 95 95 95 255
+					Option = DT_RIGHT DT_TOP
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!Upgrade Sheet (사용 안함 - 없애면 클라 죽음)
+		{
+			Flag = WINDOW
+			Pos = 10 87 0 0
+			ID = 13040
+			Show = 0
+			ZOrder = 10
+		}
+		!Deco Sheet (사용 안함 - 없애면 클라 죽음)
+		{
+			Flag = WINDOW
+			Pos = 10 87 0 0
+			ID = 13050
+			Show = 0
+			ZOrder = 10
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

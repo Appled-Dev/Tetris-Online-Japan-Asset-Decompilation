@@ -1,0 +1,69 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	!EnableBackColor = 1
+	BackColor = 255 255 255 20
+	
+}
+{
+	Flag = START_CHILD
+}
+	
+	!무료시간 종료 안내 윈도우
+	{
+		Flag = WINDOW
+		Pos = 194 203 402 168
+		!EnableBackColor = 1
+		!BackColor = 0 0 0 255
+		ImageFile = ui/notice.png
+		Modal =1
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = TEXTBOX
+			Pos = 30 20 340 100
+			Text = 本日の無料プレイ時間が終了しました！\n\nテトリスパスを購入することで、\n引き続きプレイすることが可能です
+			!EnableBackColor = 1
+			!BackColor = 0 70 0 100
+			Option = DT_CENTER DT_VCENTER
+			TextColor = 255 255 255 255
+		}
+		!티켓구입 BUTTON
+		{
+			Flag = BUTTON
+			ID = 110
+			Pos = 34-100 118 166 26
+			EnableBackColor = 1
+			BackColor = 80 180 200 192
+			FocusBackColor = 60 128 150 192
+			PressedBackColor = 138 0 0 160
+			!ImageFile = 
+			!FocusImageFile = 
+			!PressedImageFile = 
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!게임종료  BUTTON
+		{
+			Flag = BUTTON
+			ID = 111
+			Pos = 234+100 118 132 26
+			EnableBackColor = 1
+			BackColor = 80 180 200 192
+			FocusBackColor = 60 128 150 192
+			PressedBackColor = 138 0 0 160
+			!ImageFile = 
+			!FocusImageFile = 
+			!PressedImageFile = 
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+	{
+		Flag = END_CHILD
+	}
+
+{
+	Flag = END_CHILD
+}

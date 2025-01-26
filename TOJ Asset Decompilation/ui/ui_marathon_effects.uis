@@ -1,0 +1,223 @@
+﻿/*
+{
+    !B2B TETRIS
+	Flag = WINDOW
+	ID = 100460
+	Pos = 10 20 100 20
+	ImageFile = UI/b2b.bmp
+	Show = 0
+}
+
+{
+    !TETRIS
+	Flag = WINDOW
+	ID = 100472
+	Pos = 10 30 100 20
+	ImageFile = UI/tetriss.bmp
+	Show = 0
+}
+
+{
+    !triple
+	Flag = WINDOW
+	ID = 100471
+	Pos = 10 30 100 20
+	ImageFile = UI/triples.bmp
+	Show = 0
+}
+
+{
+    !double
+	Flag = WINDOW
+	ID = 100470
+	Pos = 10 30 100 20
+	ImageFile = UI/doubles.bmp
+	Show = 0
+}
+
+{
+    !TSPIN Triple
+	Flag = WINDOW
+	ID = 100483
+	Pos = 10 40 100 20
+	ImageFile = UI/tspin3s.bmp
+	Show = 0
+	
+}
+{
+    !TSPIN Double
+	Flag = WINDOW
+	ID = 100482
+	Pos = 10 40 100 20
+	ImageFile = UI/tspin2s.bmp
+	Show = 0
+	
+}
+{
+    !TSPIN Single
+	Flag = WINDOW
+	ID = 100481
+	Pos = 10 40 100 20
+	ImageFile = UI/tspin1s.bmp
+	Show = 0
+	
+}
+{
+    !TSPIN
+	Flag = WINDOW
+	ID = 100480
+	Pos = 10 40 100 20
+	ImageFile = UI/tspins.bmp
+	Show = 0
+}
+{
+    !COMBO
+	Flag = TEXTBOX
+	ID = 10049
+	Pos = -25 80 50 20
+	TextColor = 0 0 0 255
+	FontIndex = 0
+	Show = 0
+	Option = DT_VCENTER DT_RIGHT
+	EnableImageFont = 1
+	ImageFontWidth = 16
+	ImageFontList = ,,,,,,,,,,,,,,,,ui/num_s0.png,ui/num_s1.png,ui/num_s2.png,ui/num_s3.png,ui/num_s4.png,ui/num_s5.png,ui/num_s6.png,ui/num_s7.png,ui/num_s8.png,ui/num_s9.png
+}
+*/
+
+    !B2B
+{
+	Flag = WINDOW_SPR2D
+	ID = 100460
+	Pos = 1 214 100 20
+	Show = 0
+	FileName = %EventFX%/backtoback.spr
+	MotionName = backtoback
+	ZOrder = 1000
+}
+
+    ! TETRIS
+{
+	Flag = WINDOW_SPR2D
+	ID = 100472
+	Pos = -2 296 100 20
+	Show = 0
+	FileName = %EventFX%/tetris.spr
+	MotionName = tetris
+	ZOrder = 1000
+}
+
+    ! TRIPLE
+{
+	Flag = WINDOW_SPR2D
+	ID = 100471
+	Pos = 9 334 100 20
+	Show = 0
+	FileName = %EventFX%/triple.spr
+	MotionName = triple
+	ZOrder = 1000
+}
+{
+    ! DOUBLE
+	Flag = WINDOW_SPR2D
+	ID = 100470
+	Pos = 9 334 100 20
+	Show = 0
+	FileName = %EventFX%/double.spr
+	MotionName = double
+	ZOrder = 1000
+}
+{
+    !TSPIN Triple
+	Flag = WINDOW_SPR2D
+	ID = 100483
+	Pos = -2 328 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN Triple
+	ZOrder = 1000
+}
+{
+    !TSPIN Double
+	Flag = WINDOW_SPR2D
+	ID = 100482
+	Pos = -2 328 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN Double
+	ZOrder = 1000
+}
+{
+    !TSPIN Single
+	Flag = WINDOW_SPR2D
+	ID = 100481
+	Pos = -2 328 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN Single
+	ZOrder = 1000
+}
+{
+    !TSPIN Mini
+	Flag = WINDOW_SPR2D
+	ID = 100484
+	Pos = -2 328 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN Mini
+	ZOrder = 1000
+}
+{
+    !TSPIN
+	Flag = WINDOW_SPR2D
+	ID = 100480
+	Pos = -2 328 100 20
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN
+	ZOrder = 1000
+}
+{
+    !COMBO
+	Flag = WINDOW_SPR2D
+	ID = 10049
+	!Pos = 160 140 50 20
+	Pos = 20 286 0 0
+	Show = 0
+	!FileName = %EventFX%/ren_large.spr
+	FileName = %EventFX%/ren_small.spr
+	ZOrder = 1000
+}
+{
+    !anti-miss-drop
+	Flag = WINDOW_SPR2D
+	ID = 10050
+	Pos = 7 24 0 0
+	!ImageFile = UI/antimissdrop.png
+	Show = 0
+	FileName = %EventFX%/antimissdrop.SPR
+	MotionName = antimissdrop
+	SoundFile = FX_UNMVE.wav
+	ZOrder = 1000
+}
+{
+    !Perfect Clear
+	Flag = WINDOW_SPR2D
+	ID = 10052
+	Pos = 87 210 0 0
+	!ImageFile = UI/perfectclear.png
+	Show = 0
+	FileName = %EventFX%/perfectclear.SPR
+	MotionName = perfectclear
+	ZOrder = 1000
+}
+{
+    !Speed Level UP
+	Flag = WINDOW_SPR2D
+	ID = 10053
+	Pos = 540 332 0 0
+	Show = 0
+	FileName = levelup_01_b.SPR
+	MotionName = main
+	ZOrder = 1000
+}

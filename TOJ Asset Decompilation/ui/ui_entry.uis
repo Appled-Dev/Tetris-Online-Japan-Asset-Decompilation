@@ -1,0 +1,146 @@
+﻿$XPOS = 400
+$YPOS = 300
+$WHITE = 255 255 255 255
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	FileName = music/Waiting.ogg
+}
+
+
+	
+{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	ImageFile = UI/login_base.png
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+
+{
+	Flag = START_CHILD
+}
+! 	{
+! 		Flag = WINDOW_SPR2D
+! 		Pos = 100 100 0 0
+! 		FileName = target.spr
+! 		MotionName = START
+! 	}
+	{
+		Flag = BUTTON
+		ID = 300
+		Pos = 660 500 100 20
+		EnableBackColor = 1
+		BackColor = 80 180 200 192
+		FocusBackColor = 60 128 150 192
+		PressedBackColor = 138 0 0 160
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		Text = MARATHON
+		TextColor = $WHITE
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		!HotKey = KEYCODE_1
+		Show = 0
+	}
+
+	{
+		Flag = BUTTON
+		ID = 400
+		Pos = 260 348 74 22
+		ImageFile = ui/common/btn_ok_default.png
+		FocusImageFile = ui/common/btn_ok_over.png
+		PressedImageFile = ui/common/btn_ok_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!Text = LOGIN
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		!HotKey = KEYCODE_RETURN
+	}
+	{
+		Flag = EDITBOX
+		ID = 401
+		Pos = 260 317 200 20
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		Text = guest
+		Win32Edit = 1
+		IsActive = 1
+		!IMETextBoxID = 10001
+		!EnableDrawIME = 1
+	}
+	{
+		Flag = BUTTON
+		ID = 100
+		Pos = 660 530 100 20
+		EnableBackColor = 1
+		BackColor = 80 180 200 192
+		FocusBackColor = 60 128 150 192
+		PressedBackColor = 138 0 0 160
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		Text = VS CPU UTIL
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		!HotKey = KEYCODE_3
+		Show = 0
+	}
+        
+	{
+		Flag = BUTTON
+		ID = 500
+		Pos = 660 564 100 20
+		EnableBackColor = 1
+		BackColor = 80 180 200 192
+		FocusBackColor = 60 128 150 192
+		PressedBackColor = 138 0 0 160
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		Text = LOAD UI
+		TextColor = 255 255 255 255
+		EnableOutLine = 1
+		OutLineTextColor = 0 0 0 255
+		FocusTextColor = 255 0 0 255
+		PressedTextColor = 0 255 0 255
+		FontIndex = 0
+		Optio  n = DT_VCENTER DT_CENTER
+		!HotKey = KEYCODE_5
+		Show = 1
+	}
+	!{
+	!	Flag = WINDOW_FILLPOLY
+	!	Pos = 300 0 200 200
+	!	BackColor = 64 64 64 64
+	!	EnableBackColor =1
+	!}
+	!{
+	!	Flag = INCLUDE
+	!	FileName = UI/UI_Multi_UserInfo.uis
+	!}
+{
+	Flag = END_CHILD
+}

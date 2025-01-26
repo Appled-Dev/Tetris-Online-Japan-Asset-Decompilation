@@ -1,0 +1,296 @@
+﻿/*
+{
+	Flag = WINDOW
+	Pos = -25 150 0 0
+}
+{
+	Flag = START_CHILD
+}
+	{
+	    !Stats average line per minute
+		Flag = TEXTBOX
+		ID = 10040
+		Pos = -105 0 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats average attack per minute
+		Flag = TEXTBOX
+		ID = 10041
+		Pos = -105 15 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+		!Stats single 
+		Flag = TEXTBOX
+		ID = 10000
+		Pos = -105 40 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats double
+		Flag = TEXTBOX
+		ID = 10001
+		Pos = -105 55 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats triple
+		Flag = TEXTBOX
+		ID = 10002
+		Pos = -105 70 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats tetris
+		Flag = TEXTBOX
+		ID = 10003
+		Pos = -105 85 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats combo1
+		Flag = TEXTBOX
+		ID = 10010
+		Pos = -105 110 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats combo2
+		Flag = TEXTBOX
+		ID = 10011
+		Pos = -105 125 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats combo3
+		Flag = TEXTBOX
+		ID = 10012
+		Pos = -105 140 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats combo4
+		Flag = TEXTBOX
+		ID = 10013
+		Pos = -105 155 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+	{
+	    !Stats curCombo
+		Flag = TEXTBOX
+		ID = 10020
+		Pos = -105 175 100 20
+		TextColor = 255 255 255 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_LEFT
+	}
+{
+	Flag = END_CHILD
+}
+*/
+/*
+{
+
+    !queue
+	Flag = TEXTBOX
+	ID = 10044
+	Pos = 190 365 100 20
+	TextColor = 0 0 0 255
+	FontIndex = 0
+	Option = DT_VCENTER DT_LEFT
+}
+{
+    !Stats level
+	Flag = TEXTBOX
+	ID = 10043
+	Pos = -100 -65 100 20
+	TextColor = 255 255 255 255
+	FontIndex = 0
+	Option = DT_VCENTER DT_LEFT
+	}
+
+{
+    !Stats wins
+	Flag = TEXTBOX
+	ID = 10042
+	Pos = -100 -80 100 20
+	TextColor = 255 255 255 255
+	FontIndex = 0
+	Option = DT_VCENTER DT_LEFT
+}
+*/
+{
+    !queue bar
+	Flag = PROGRESSIVEBAR
+	ID = 10045
+	Pos = 154 22 10 18*20
+	Max = 10 * 20
+	Current = 0
+	BarColor = 255 0 0 255
+	DiffBarColor = 255 143 0 255
+	!EnableBackColor = 1
+	!BackColor = 255 255 255 255
+	AnimateSpeed = 1000
+	Mirror = 1
+	Vertical = 1
+	TransparentMouseEvent = 1
+}
+{
+    !B2B
+	Flag = WINDOW_SPR2D
+	ID = 100460
+	Pos = -134 140 100 20
+	!ImageFile = UI/b2b.bmp
+	Show = 0
+	FileName = %EventFX%/backtoback.spr
+	MotionName = backtoback
+	ZOrder = 100
+}
+{
+    !TETRIS
+	Flag = WINDOW_SPR2D
+	ID = 100472
+	Pos = -132 222 100 20
+	!ImageFile = UI/tetriss.bmp
+	Show = 0
+	FileName = %EventFX%/tetris.spr
+	MotionName = tetris
+	ZOrder = 100
+}
+{
+    !triple
+	Flag = WINDOW_SPR2D
+	ID = 100471
+	Pos = -124 260 100 20
+	!ImageFile = UI/triples.bmp
+	Show = 0
+	FileName = %EventFX%/triple.spr
+	MotionName = triple
+	ZOrder = 100
+}
+{
+    !double
+	Flag = WINDOW_SPR2D
+	ID = 100470
+	Pos = -124 260 100 20
+	!ImageFile = UI/doubles.bmp
+	Show = 0
+	FileName = %EventFX%/double.spr
+	MotionName = double
+	ZOrder = 100
+}
+{
+    !TSPIN Mini
+	Flag = WINDOW_SPR2D
+	ID = 100484
+	Pos = -133 254 100 20
+	!ImageFile = UI/tspin3s.bmp
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN MINI
+	ZOrder = 100
+}
+
+{
+    !TSPIN Triple
+	Flag = WINDOW_SPR2D
+	ID = 100483
+	Pos = -133 254 100 20
+	!ImageFile = UI/tspin3s.bmp
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN Triple
+	ZOrder = 100
+	
+}
+{
+    !TSPIN Double
+	Flag = WINDOW_SPR2D
+	ID = 100482
+	Pos = -133 254 100 20
+	!ImageFile = UI/tspin2s.bmp
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN Double
+	ZOrder = 100
+	
+}
+{
+    !TSPIN Single
+	Flag = WINDOW_SPR2D
+	ID = 100481
+	Pos = -133 254 100 20
+	!ImageFile = UI/tspin1s.bmp
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN Single
+	ZOrder = 100
+	
+}
+{
+    !TSPIN
+	Flag = WINDOW_SPR2D
+	ID = 100480
+	Pos = -133 254 100 20
+	!ImageFile = UI/tspins.bmp
+	Show = 0
+	FileName = %EventFX%/t-spin.spr
+	MotionName = T-SPIN
+	ZOrder = 100
+}
+{
+    !COMBO / Ren
+	Flag = WINDOW_SPR2D
+	ID = 10049
+	!Pos = -160 330 137 74
+	!Pos = 6 50 50 20
+	Pos = -120 212 0 0
+	Show = 0
+	ZOrder = 100
+	FileName = %EventFX%/ren_small.spr
+}
+
+{
+    !anti-miss-drop
+	Flag = WINDOW_SPR2D
+	ID = 10050
+	Pos = -130 -52 0 0
+	!ImageFile = UI/antimissdrop.png
+	Show = 0
+	FileName = %EventFX%/antimissdrop.SPR
+	MotionName = antimissdrop
+	SoundFile = FX_UNMVE.wav
+	ZOrder = 100
+}
+{
+    !Perfect Clear
+	Flag = WINDOW_SPR2D
+	ID = 10052
+	Pos = -60 132 0 0
+	!ImageFile = UI/perfectclear.png
+	Show = 0
+	FileName = %EventFX%/perfectclear.SPR
+	MotionName = perfectclear
+	ZOrder = 100
+}

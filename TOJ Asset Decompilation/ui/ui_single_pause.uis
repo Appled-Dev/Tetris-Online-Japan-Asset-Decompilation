@@ -1,0 +1,79 @@
+﻿{
+	Flag = WINDOW
+	ID = 31000
+	Pos = 0 0 800 600
+	EnableBackColor = 1
+	BackColor = 0 0 0 120
+	Modal = 1
+	Show = 0
+	ZOrder = $ZORDER_MODAL
+}
+
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = WINDOW
+		Pos = 196 204 408 180
+		ImageFile = ui/pause_bg.png
+		!EnableBackColor = 1
+		!BackColor = 0 220 220 128
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			! Paused TEXTBOX
+			Flag = TEXTBOX
+			Pos = 10 56 388 30
+			Text = $SINGLE_PAUSE
+			TextColor = 60 60 60 255
+			FontIndex = 15
+			Option = DT_VCENTER | DT_CENTER
+			!EnableBackColor = 1
+			!BackColor = 0 0 220 128
+		}
+		{
+			! Remain Paused
+			Flag = TEXTBOX
+			ID = 31013
+			Pos = 10 84 388 30
+			ConstText0 = $SINGLE_PAUSE_COUNT
+			TextColor = 60 60 60 255
+			Option = DT_VCENTER | DT_CENTER
+			!EnableBackColor = 1
+			!BackColor = 0 0 220 128
+		}
+		{
+			! Resume BUTTON
+			Flag = BUTTON
+			ID = 31011
+			Pos = 80 132 94 27
+			!Text = Resume
+			ImageFile = ui/btn_resume_default.png
+			FocusImageFile = ui/btn_resume_over.png
+			PressedImageFile = ui/btn_resume_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_ANYKEY
+			ZOrder = 10
+		}
+		{
+			! Quit BUTTON
+			Flag = BUTTON
+			ID = 31012
+			Pos = 236 132 94 27
+			!Text = Quit
+			ImageFile = ui/btn_quit_default.png
+			FocusImageFile = ui/btn_quit_over.png
+			PressedImageFile = ui/btn_quit_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 10
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

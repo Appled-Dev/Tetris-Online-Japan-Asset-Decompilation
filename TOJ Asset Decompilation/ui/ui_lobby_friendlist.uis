@@ -1,0 +1,370 @@
+﻿
+	{
+		Flag = WINDOW
+		Pos = 180 110 448 374
+		!ImageFile = 
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		EnableBackColorEdge = 1
+		!BackEdgeColor = 0 0 0 192
+		!3DEdge = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		/*
+		!TitleTextBox
+		{
+			Flag = TEXTBOX
+			Pos = 0 0 448 20
+			Text = 友達リスト
+			TextColor = 0 0 0 255
+			Option = DT_VCENTER DT_CENTER
+			EnableBackColorEdge = 1
+			BackEdgeColor = 0 0 0 192
+			!FontIndex = 2
+			!EnableBackColor = 1
+			!BackColor = 256 256 256 256
+			!Show = 0
+		}
+		*/
+	
+		!Close Button
+		{
+			Flag = BUTTON
+			ID = 21099
+			Pos = 350 338 90 24
+			!Text = Close
+			!Text = X
+			!TextColor = 255 255 255 255
+			!EnableBackColor = 1
+			!BackColor = 0 0 0 192
+			!FocusBackColor = 138 128 128 192
+			!PressedBackColor = 138 0 0 255
+			!3DEdge = 1
+			ImageFile = ui/common/btn_cancel_default.png
+			FocusImageFile = ui/common/btn_cancel_over.png
+			PressedImageFile = ui/common/btn_cancel_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_ESCAPE
+		}
+		{
+			! Sub Cancel
+			Flag = BUTTON
+			ID = 21099
+			Pos = 424 6 20 20
+			ImageFile = ui/common/btn_close_default.png
+			FocusImageFile = ui/common/btn_close_over.png
+			PressedImageFile = ui/common/btn_close_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_ESCAPE
+			ZOrder = 10
+		}
+
+		
+		!Friend Tab Button
+		{
+			Flag = BUTTON
+			ID = 21001
+			Pos = 8 51 101 25
+			!Text = 友達
+			!TextColor = 255 255 255 255
+			EnableBackColor = 1
+			BackColor = 64 64 64 192
+			FocusBackColor = 138 128 128 192
+			PressedBackColor = 200 200 200 192
+			!3DEdge = 1
+			IsCheckButton = 1
+			NextTabOrderID = 21002
+			!ImageFile = ui/btn_msg_default.png
+			!FocusImageFile = ui/btn_msg_over.png
+			!PressedImageFile = ui/btn_msg_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Invitation Tab Button
+		{
+			Flag = BUTTON
+			ID = 21002
+			Pos = 109 51 100 25
+			!Text = 招待
+			!TextColor = 255 255 255 255
+			EnableBackColor = 1
+			BackColor = 64 64 64 192
+			FocusBackColor = 138 128 128 192
+			PressedBackColor = 200 200 200 192
+			!3DEdge = 1
+			IsCheckButton = 1
+			NextTabOrderID = 21001
+			!ImageFile = ui/btn_invitation_default.png
+			!FocusImageFile = ui/btn_invitation_over.png
+			!PressedImageFile = ui/btn_invitation_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		
+		!Name Input Box
+		{
+			Flag = EDITBOX
+			ID = 21011
+			Pos = 16 339 224 22
+			EnableBackColor = 1
+			BackColor = 255 255 255 255
+			SelectionColor = 0 0 0 255
+			3DEdge = 1
+			HighlightTextColor = 255 255 255 255
+			TextColor = 0 0 0 255
+			Limit = 20
+			Win32Edit = 1
+		}
+		!Find Button
+		{
+			Flag = BUTTON
+			ID = 21012
+			Pos = 254 338 90 24
+			!Text = 探す
+			!TextColor = 255 255 255 255
+			EnableBackColor = 1
+			BackColor = 100 100 100 192
+			FocusBackColor = 138 128 128 192
+			PressedBackColor = 138 0 0 255
+			!3DEdge = 1
+			!ImageFile = ui/btn_finduser_default.png
+			!FocusImageFile = ui/btn_finduser_over.png
+			!PressedImageFile = ui/btn_finduser_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey=KEYCODE_RETURN
+		}
+		
+		
+		!Friend Sheet
+		{
+			Flag = WINDOW
+			Pos = 8 76 400 202
+			ID = 21010
+			EnableBackColor = 1
+			BackColor = 0 0 200 192
+			!EnableBackColorEdge = 1
+			!BackEdgeColor = 255 255 255 192
+			!3DEdge = 1
+			!ImageFile = ui/friendlist_bg.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			/*
+			!Name Input Box
+			{
+				Flag = EDITBOX
+				ID = 21011
+				Pos = 8 176 184 20
+				EnableBackColor = 1
+				BackColor = 255 255 255 255
+				SelectionColor = 0 0 0 255
+				3DEdge = 1
+				HighlightTextColor = 255 255 255 255
+				TextColor = 0 0 0 255
+				Limit = 20
+				Win32Edit = 1
+			}
+			!Find Button
+			{
+				Flag = BUTTON
+				ID = 21012
+				Pos = 196 176 84 20
+				Text = Find User
+				TextColor = 255 255 255 255
+				EnableBackColor = 1
+				BackColor = 64 64 64 192
+				FocusBackColor = 138 128 128 192
+				PressedBackColor = 138 0 0 255
+				3DEdge = 1
+				!ImageFile = ui/btn_close_default.png
+				!FocusImageFile = ui/btn_close_over.png
+				!PressedImageFile = ui/btn_close_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				HotKey=KEYCODE_RETURN
+			}
+			*/
+		
+			!Friend List
+			{
+				Flag = LISTVIEW
+				ID = 2201
+				Pos = 10 10 400 202
+				ColumnCount = 1
+				ColumnWidth0 = 300
+				ColumnOption0 = DT_VCENTER,DT_LEFT
+				ColumnTextColor0 = 0 0 0 255
+				EnableColumnOutline0 = 0
+				VScrollBarID = 220100
+				EnableVScrollBar = 1
+				
+				EnableDrawFocusRow = 1
+				EnableDrawSelectRow = 1
+				!DrawFocusRowColor = 255 255 255 20
+				!DrawSelectRowColor = 195 195 195 50
+				ItemHeight = 20
+				ItemBorderSize = 16 4
+		
+				!EnableBackColor = 1
+				!BackColor = 100 0 0 128
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 155
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				NormalRowImageFile = ui/friendlist_list_default.png
+				FocusRowImageFile = ui/friendlist_list_over.png
+				SelectRowImageFile = ui/friendlist_list_down.png
+				ToolTip = 左クリック : ユーザーインフォ\n右クリック : メニュ―
+			}
+				
+			!SCROLLBAR
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = SCROLLBAR
+					ID = 220100
+					Pos = 396 -4 20 210
+					Style = VSCROLL
+					PrevButtonNormalImageFile = ui/multi_page-btn_1a.png
+					PrevButtonFocusImageFile = ui/multi_page-btn_1b.png
+					PrevButtonPressedImageFile = ui/multi_page-btn_1c.png
+					NextButtonNormalImageFile = ui/multi_page-btn_2a.png
+					NextButtonFocusImageFile = ui/multi_page-btn_2b.png
+					NextButtonPressedImageFile = ui/multi_page-btn_2c.png
+					SliderBackColor = 128 128 128 40
+					EnableSlider3DEdge = 1
+					EnableSlider = 1
+					TransparentMouseEvent = 1
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!Invitation Sheet
+		{
+			Flag = WINDOW
+			Pos = 8 76 400 202
+			ID = 21020
+			EnableBackColor = 1
+			BackColor = 200 200 200 192
+			!EnableBackColorEdge = 1
+			!BackEdgeColor = 255 255 255 192
+			!3DEdge = 1
+			!ImageFile = ui/invitation_bg.png
+		}
+		{
+			Flag = START_CHILD
+		}
+
+			!Invitation List
+			{
+				Flag = LISTVIEW
+				ID = 3201
+				Pos = 10 10 400 202
+				ColumnCount = 1
+				ColumnWidth0 = 300
+				ColumnOption0 = DT_VCENTER,DT_LEFT
+				ColumnTextColor0 = 0 0 0 255
+				EnableColumnOutline0 = 0
+				VScrollBarID = 320100
+				EnableVScrollBar = 1
+				
+				EnableDrawFocusRow = 1
+				EnableDrawSelectRow = 1
+				!DrawFocusRowColor = 255 255 255 20
+				!DrawSelectRowColor = 195 195 195 50
+				ItemHeight = 20
+				ItemBorderSize = 16 4
+		
+				!EnableBackColor = 1
+				!BackColor = 50 0 0 188
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 155
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				NormalRowImageFile = ui/friendlist_list_default.png
+				FocusRowImageFile = ui/friendlist_list_over.png
+				SelectRowImageFile = ui/friendlist_list_down.png
+				ToolTip = 右クリック : メニュ―
+			}
+				
+			!SCROLLBAR
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = SCROLLBAR
+					ID = 320100
+					Pos = 396 -4 20 210
+					Style = VSCROLL
+					PrevButtonNormalImageFile = ui/multi_page-btn_1a.png
+					PrevButtonFocusImageFile = ui/multi_page-btn_1b.png
+					PrevButtonPressedImageFile = ui/multi_page-btn_1c.png
+					NextButtonNormalImageFile = ui/multi_page-btn_2a.png
+					NextButtonFocusImageFile = ui/multi_page-btn_2b.png
+					NextButtonPressedImageFile = ui/multi_page-btn_2c.png
+					SliderBackColor = 128 128 128 40
+					EnableSlider3DEdge = 1
+					EnableSlider = 1
+					TransparentMouseEvent = 1
+				}
+			{
+				Flag = END_CHILD
+			}
+		
+			/*
+			!Accept Button
+			{
+				Flag = BUTTON
+				ID = 21021
+				Pos = 8 176 84 20
+				Text = Accept
+				TextColor = 255 255 255 255
+				EnableBackColor = 1
+				BackColor = 64 64 64 192
+				FocusBackColor = 138 128 128 192
+				PressedBackColor = 138 0 0 255
+				3DEdge = 1
+				!ImageFile = ui/btn_close_default.png
+				!FocusImageFile = ui/btn_close_over.png
+				!PressedImageFile = ui/btn_close_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!Refuse Button
+			{
+				Flag = BUTTON
+				ID = 21022
+				Pos = 94 176 84 20
+				Text = Refuse
+				TextColor = 255 255 255 255
+				EnableBackColor = 1
+				BackColor = 64 64 64 192
+				FocusBackColor = 138 128 128 192
+				PressedBackColor = 138 0 0 255
+				3DEdge = 1
+				!ImageFile = ui/btn_close_default.png
+				!FocusImageFile = ui/btn_close_over.png
+				!PressedImageFile = ui/btn_close_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			*/
+
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}

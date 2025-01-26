@@ -1,0 +1,85 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	!Pos = 0 20 1024 748
+	Pos = 0 20 0 0
+	!EnableBackColor = 1
+	!BackColor = 0 0 0 128
+	!Modal = 1
+	Show = 1
+	!IsActive = 1
+	!ZOrder = $ZORDER_MODAL
+}
+
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = WINDOW
+		ID = 1300
+		Pos = 600 110 422 523
+		!EnableBackColorEdge = 1
+		!BackEdgeColor = 255 255 255 255
+		!EnableBackColor = 1
+		!BackColor = 0 0 0 128
+		TransparentMouseEvent = 1
+		ImageFile = ui/lobby/practice_bg.png
+	}
+	
+	{
+		Flag = START_CHILD
+	}
+		{
+			!1P MATRIX
+			Flag = WINDOW
+			!Pos = 0 0 376 450
+			Pos = 24 60 376 450
+			ImageFile = ui/lobby/matrix/Matrix18x18.png
+			TransparentMouseEvent = 1
+		}
+		
+		{
+		    	!Field
+			Flag = WINDOW
+			Pos = -28+24 -49+50 0 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI\UI_Multi_Practice_Matrix.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		{	!Practice Start Button
+			Flag = BUTTON
+			ID = 13001
+			Pos = 108 8 207 57
+			ImageFile = ui/lobby/practice_start_default.png
+			FocusImageFile = ui/lobby/practice_start_over.png
+			PressedImageFile = ui/lobby/practice_start_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_SPACE
+		}
+		
+		{	! BACK
+			Flag = BUTTON
+			ID = 999
+			Pos = 378 8 37 37
+			ImageFile = ui/lobby/practice_close_default.png
+			FocusImageFile = ui/lobby/practice_close_over.png
+			PressedImageFile = ui/lobby/practice_close_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_ESCAPE
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+{
+	Flag = END_CHILD
+}

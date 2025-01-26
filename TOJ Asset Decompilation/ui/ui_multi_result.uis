@@ -1,0 +1,332 @@
+{
+	Flag = WINDOW
+	ID = 1400
+	Pos = 0 0 800 600
+	EnableBackColor = 1
+	!EnableBackColorEdge=1
+	BackColor = 0 0 0 128
+	!BackEdgeColor=0 0 0 255
+	Modal = 1
+	Show = 0
+	ZOrder = $ZORDER_MODAL
+}
+
+{
+	Flag = START_CHILD
+}
+
+	{
+		Flag = WINDOW
+		Pos = 126 100 548 340
+		ImageFile = ui/result_window.png
+		!EnableBackColor = 1
+		!BackColor = 0 0 0 128
+		!EnableBackColorEdge=1
+		!BackEdgeColor=0 0 0 255
+	}
+
+	{
+		Flag = START_CHILD
+	}
+		
+		!Results SPR
+		{
+			Flag = WINDOW_SPR2D
+			!Pos = 273 128 0 0
+			Pos = 147 10 0 0
+			!Pos = 61 -4 0 0
+			!Show = 0
+			FileName = results_res.SPR
+			ZOrder = 1000
+		}
+		
+		! Red Team Win Effect
+		{
+			Flag = WINDOW
+			ID = 1501
+			Pos = 80 -50 351 50
+			ImageFile = ui/teamwinner_01.png
+			!EnableBackColor = 1
+			!BackColor = 64 0 0 255
+			!EnableBackColorEdge=1
+			!BackEdgeColor=0 0 0 255
+			TransparentMouseEvent = 1
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = -60 0 485 0
+				ImageFile = ui/teamwinner-e_01.png
+				!EnableBackColor = 1
+				!BackColor = 64 0 0 255
+				!EnableBackColorEdge=1
+				!BackEdgeColor=0 0 0 255
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+
+		! Green Team Win Effect
+		{
+			Flag = WINDOW
+			ID = 1502
+			Pos = 80 -50 351 50
+			ImageFile = ui/teamwinner_02.png
+			!EnableBackColor = 1
+			!BackColor = 0 64 0 255
+			!EnableBackColorEdge=1
+			!BackEdgeColor=0 0 0 255
+			TransparentMouseEvent = 1
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = -60 0 485 0
+				ImageFile = ui/teamwinner-e_02.png
+				!EnableBackColor = 1
+				!BackColor = 64 0 0 255
+				!EnableBackColorEdge=1
+				!BackEdgeColor=0 0 0 255
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+
+		! Blue Team Win Effect
+		{
+			Flag = WINDOW
+			ID = 1503
+			Pos = 80 -50 351 50
+			ImageFile = ui/teamwinner_03.png
+			!EnableBackColor = 1
+			!BackColor = 0 0 64 255
+			!EnableBackColorEdge=1
+			!BackEdgeColor=0 0 0 255
+			TransparentMouseEvent = 1
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = -60 0 485 0
+				ImageFile = ui/teamwinner-e_03.png
+				!EnableBackColor = 1
+				!BackColor = 64 0 0 255
+				!EnableBackColorEdge=1
+				!BackEdgeColor=0 0 0 255
+				TransparentMouseEvent = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		! Result Title
+		{
+			Flag = WINDOW
+			Pos = 94 32 360 30
+			ImageFile = ui/result_result.png
+			!EnableBackColor = 1
+			!BackColor = 0 0 0 128
+			!EnableBackColorEdge=1
+			!BackEdgeColor=0 0 0 255
+		}
+
+		! DRAW
+		{
+			Flag = WINDOW
+			ID = 1504
+			Pos = 94 32 360 30
+			ImageFile = ui/result_draw.png
+			!EnableBackColor = 1
+			!BackColor = 0 0 64 255
+			!EnableBackColorEdge=1
+			!BackEdgeColor=0 0 0 255
+			TransparentMouseEvent = 1
+		}		
+
+		{
+			Flag = LISTVIEW
+			ID = 14001
+			Pos = 51 70 446 190
+			!EnableBackColor = 1
+			!BackColor = 0 0 220 128
+			!EnableBackColorEdge=1
+			!BackEdgeColor=255 0 0 255
+			TransparentMouseEvent = 1
+			
+			ColumnCount = 8
+			ColumnNameHeight=30
+			
+			ColumnName0=Rank
+			ColumnNameTextColor0 = 0 0 0 255
+			ColumnWidth0 = 52
+			ColumnOption0 = DT_VCENTER,DT_LEFT
+			ColumnTextColor0 = 0 0 0 255
+			EnableColumnOutline0 = 0
+			
+			ColumnName1=ID
+			ColumnNameTextColor1 = 0 0 0 255
+			ColumnWidth1 = 164
+			ColumnOption1 = DT_VCENTER,DT_LEFT
+			ColumnTextColor1 = 0 0 0 255
+			EnableColumnOutline1 = 0
+			
+			ColumnName2=Lv
+			ColumnNameTextColor2 = 0 0 0 255
+			ColumnWidth2 = 36
+			ColumnOption2 = DT_VCENTER,DT_LEFT
+			ColumnTextColor2 = 0 0 0 255
+			EnableColumnOutline2 = 0
+			
+			ColumnName3=KO
+			ColumnNameTextColor3 = 0 0 0 255
+			if$1VS1 1
+			ColumnWidth3 = 0
+			if$1VS1 0
+			ColumnWidth3 = 36
+			ColumnOption3 = DT_VCENTER,DT_LEFT
+			ColumnTextColor3 = 0 0 0 255
+			EnableColumnOutline3 = 0
+			
+			ColumnName4=Exp
+			ColumnNameTextColor4 = 0 0 0 255
+			ColumnWidth4 = 50
+			ColumnOption4 = DT_VCENTER,DT_LEFT
+			ColumnTextColor4 = 0 0 0 255
+			EnableColumnOutline4 = 0
+			
+			ColumnName5=TP
+			ColumnNameTextColor5 = 0 0 0 255
+			ColumnWidth5 = 44
+			ColumnOption5 = DT_VCENTER,DT_LEFT
+			ColumnTextColor5 = 0 0 0 255
+			EnableColumnOutline5 = 0
+			
+			!ColumnName6=Charge
+			ColumnNameTextColor6 = 0 0 0 255
+			ColumnWidth6 = 0
+			ColumnOption6 = DT_VCENTER,DT_LEFT
+			ColumnTextColor6 = 0 0 0 255
+			EnableColumnOutline6 = 0
+			ColumnImageFontList6 = ,,,,,,,,,,,,,,,,ui/result_ticket.png
+			
+			ColumnName7=Rating
+			ColumnNameTextColor7 = 0 0 0 255
+			if$1VS1 1
+			ColumnWidth7 = 70
+			if$1VS1 0
+			ColumnWidth7 = 0
+			ColumnOption7 = DT_VCENTER,DT_LEFT
+			ColumnTextColor7 = 0 0 0 255
+			EnableColumnOutline7 = 0
+			
+			EnableDrawFocusRow = 0
+			EnableDrawSelectRow = 1
+			!DrawFocusRowColor = 60 255 60 255
+			!DrawSelectRowColor = 195 195 195 255
+			NormalRowImageFile = ui/multi_result_tile.png
+			!FocusRowImageFile = ui/multi_result_tile.png
+			SelectRowImageFile = ui/multi_result_tile2.png
+				
+			ItemHeight = 26
+			ItemBorderSize = 10 4
+
+		}
+		{
+			! OK BUTTON
+			Flag = BUTTON
+			ID = 14099
+			Pos = 230 294 94 27
+			!Text = $MSG_OK
+			!TextColor = 255 255 255 255
+			!EnableBackColor = 1
+			!BackColor = 64 64 64 192
+			!FocusBackColor = 138 128 128 192
+			!PressedBackColor = 138 0 0 255
+			!3DEdge = 1
+			ImageFile = ui/common/btn_close2_default.png
+			FocusImageFile = ui/common/btn_close2_over.png
+			PressedImageFile = ui/common/btn_close2_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			HotKey = KEYCODE_ESCAPE,KEYCODE_RETURN
+			ZOrder = 10
+		}
+
+		! CURRENT STREAK
+		{
+			ID = 1507	
+			Flag = WINDOW_SPR2D
+			FileName = result_window_banner1.SPR
+			Pos = -80 60 340 40
+		}
+		{
+			Flag = START_CHILD
+		}
+		!     연승 표시
+		{
+			Flag = TEXTBOX
+			ID = 1505
+			Pos = 38 20 20 40
+			TextColor = 255 255 255 255
+			FontIndex = 0
+			Option = DT_VCENTER DT_RIGHT
+			EnableImageFont = 1
+			ImageFontWidth = 20
+			ImageFontList = ,,,,,,,,,,,,,,,,%Multi%/result_num_0.png,%Multi%/result_num_1.png,%Multi%/result_num_2.png,%Multi%/result_num_3.png,%Multi%/result_num_4.png,%Multi%/result_num_5.png,%Multi%/result_num_6.png,%Multi%/result_num_7.png,%Multi%/result_num_8.png,%Multi%/result_num_9.png
+			ZOrder = 100	
+		}
+		{
+			Flag = END_CHILD
+		}
+
+		! ALL KO
+		{
+			ID = 1506
+			Flag = WINDOW_SPR2D
+			FileName = result_window_banner2.SPR
+			Pos = 493 74 340 40
+		}
+		/*
+		{
+			Flag = TEXTBOX
+			ID = 1506
+			Pos = 550 25 590 40
+			TextColor = 255 255 255 255
+			FontIndex = 0
+			Text = ALL KO
+			Option = DT_VCENTER DT_LEFT
+		}
+		*/
+		
+		{
+			Flag = END_CHILD
+		}
+
+!		{
+!			Flag = START_CHILD
+!		}		
+		! ALL KO
+!		{
+!			Flag = TEXTBOX
+!			ID = 1505
+!			Pos = 300 25 340 40
+!			TextColor = 255 255 255 255
+!			FontIndex = 0
+!			Option = DT_VCENTER DT_LEFT
+!		}
+!		{
+!			Flag = END_CHILD
+!		}
+
+{
+	Flag = END_CHILD
+}

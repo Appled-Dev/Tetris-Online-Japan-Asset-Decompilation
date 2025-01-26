@@ -1,0 +1,229 @@
+﻿Set	Category	Type	Id	Name	Path	PreviewFileName	Comment
+0	0	1	1	標準設定	Default	ui/deco_preview/mino_default.png	
+0	7	1	2	ビート	mino_01	ui/deco_preview/mino_01.png	
+0	7	1	3	スター	mino_02	ui/deco_preview/mino_02.png	
+0	7	1	4	トイ	mino_03	ui/deco_preview/mino_03.png	
+0	1	1	5	ハート	mino_04	ui/deco_preview/mino_04.png	
+0	7	1	6	ブロック	mino_05	ui/deco_preview/mino_05.png	
+0	7	1	7	ピラミッド	mino_06	ui/deco_preview/mino_06.png	
+0	7	1	8	クリスタル	mino_07	ui/deco_preview/mino_07.png	
+0	11	1	9	クラシック1	mino_08	ui/deco_preview/mino_08.png	
+0	11	1	10	クラシック2	mino_09	ui/deco_preview/mino_09.png	
+0	11	1	11	クラシック3	mino_10	ui/deco_preview/mino_10.png	
+0	1	1	12	フェイス	mino_11	ui/deco_preview/mino_11.png	
+0	7	1	13	ネオン	mino_12	ui/deco_preview/mino_12.png	
+0	7	1	14	セラミック	mino_13	ui/deco_preview/mino_13.png	
+0	1	1	15	ロゼンジ	mino_14	ui/deco_preview/mino_14.png	
+0	1	1	16	グロッシー	mino_15	ui/deco_preview/mino_15.png	
+0	7	1	17	ツートーン	mino_16	ui/deco_preview/mino_16.png	
+0	11	1	18	タイル	mino_17	ui/deco_preview/mino_17.png	
+0	7	1	19	スクエア	mino_18	ui/deco_preview/mino_18.png	
+0	11	1	20	ボルト	mino_19	ui/deco_preview/mino_19.png	
+0	1	1	21	チェック	mino_20	ui/deco_preview/mino_20.png	
+0	99	1	22	カエル	mino_21	ui/deco_preview/mino_21.png	
+0	99	1	23	クリスマス	mino_22	ui/deco_preview/mino_22.png	
+0	99	1	24	テトティ	mino_23	ui/deco_preview/mino_23.png	
+0	1	1	25	スペード	mino_24	ui/deco_preview/mino_24.png	
+0	1	1	26	ダイヤ	mino_25	ui/deco_preview/mino_25.png	
+0	1	1	27	クラブ	mino_26	ui/deco_preview/mino_26.png	
+0	11	1	28	シェイク	mino_27	ui/deco_preview/mino_27.png	
+0	11	1	29	スノー	mino_28	ui/deco_preview/mino_28.png	
+0	11	1	30	シンプル	mino_29	ui/deco_preview/mino_29.png	
+0	99	1	31	2009 お正月	mino_30	ui/deco_preview/mino_30.png	
+0	11	1	32	シンプル2	mino_31	ui/deco_preview/mino_31.png	
+1	99	1	33	クマクー	mino_32	ui/deco_preview/mino_32.png	
+2	99	1	34	うんつく	mino_33	ui/deco_preview/mino_33.png	
+3	99	1	35	タイニータネ	mino_34	ui/deco_preview/mino_34.png	
+4	99	1	36	でこねこ	mino_35	ui/deco_preview/mino_35.png	
+5	99	1	37	テトティ	mino_36	ui/deco_preview/mino_36.png	
+6	99	1	38	BE@RBRICK	mino_37	ui/deco_preview/mino_37.png	
+7	99	1	39	BE@RBRICK	mino_38	ui/deco_preview/mino_38.png	
+8	99	1	40	BE@RBRICK	mino_39	ui/deco_preview/mino_39.png	
+9	99	1	41	BE@RBRICK	mino_40	ui/deco_preview/mino_40.png	
+10	99	1	42	TETRIS 1989	mino_41	ui/deco_preview/mino_41.png	
+11	99	1	43	BLACK	mino_42	ui/deco_preview/mino_42.png	
+12	99	1	44	なつやすみ	mino_43	ui/deco_preview/mino_43.png	
+13	99	1	45	TETOCUIT：C	mino_44	ui/deco_preview/mino_44.png	
+14	99	1	46	TETOCUIT：M	mino_45	ui/deco_preview/mino_45.png	
+0	0	2	1	標準設定	Default	ui/deco_preview/single_back_default.png	
+0	3	2	2	パピヨン	single_back_01	ui/deco_preview/single_back_01.png	
+0	3	2	3	ピュアハート	single_back_02	ui/deco_preview/single_back_02.png	
+0	3	2	4	リボン	single_back_03	ui/deco_preview/single_back_03.png	
+0	9	2	5	レース	single_back_04	ui/deco_preview/single_back_04.png	
+0	9	2	6	ストロベリー	single_back_05	ui/deco_preview/single_back_05.png	
+0	9	2	7	ローズ	single_back_06	ui/deco_preview/single_back_06.png	
+0	9	2	8	リーフ	single_back_07	ui/deco_preview/single_back_07.png	
+0	13	2	9	フォレスト	single_back_08	ui/deco_preview/single_back_08.png	
+0	9	2	10	リップル	single_back_09	ui/deco_preview/single_back_09.png	
+0	9	2	11	ねこ	single_back_10	ui/deco_preview/single_back_10.png	
+0	9	2	12	金魚	single_back_11	ui/deco_preview/single_back_11.png	
+0	3	2	13	マカロン	single_back_12	ui/deco_preview/single_back_12.png	
+0	9	2	14	フルーツ	single_back_13	ui/deco_preview/single_back_13.png	
+0	13	2	15	ペイズリー	single_back_14	ui/deco_preview/single_back_14.png	
+0	3	2	16	チョコ	single_back_15	ui/deco_preview/single_back_15.png	
+0	9	2	17	あじさい	single_back_16	ui/deco_preview/single_back_16.png	
+0	9	2	18	トランプ	single_back_17	ui/deco_preview/single_back_17.png	
+0	99	2	19	富士	single_back_18	ui/deco_preview/single_back_18.png	
+0	99	2	20	鯉	single_back_19	ui/deco_preview/single_back_19.png	
+0	99	2	21	カエル	single_back_20	ui/deco_preview/single_back_20.png	
+0	99	2	22	トランプ2	single_back_21	ui/deco_preview/single_back_21.png	
+0	99	2	23	クリスマス	single_back_22	ui/deco_preview/single_back_22.png	
+0	99	2	24	テトティ	single_back_23	ui/deco_preview/single_back_23.png	
+0	3	2	25	アゲハ	single_back_24	ui/deco_preview/single_back_24.png	
+0	3	2	26	星空	single_back_25	ui/deco_preview/single_back_25.png	
+0	3	2	27	水墨画	single_back_26	ui/deco_preview/single_back_26.png	
+0	13	2	28	ねこ2	single_back_27	ui/deco_preview/single_back_27.png	
+0	13	2	29	キューブ	single_back_28	ui/deco_preview/single_back_28.png	
+0	13	2	30	トーン	single_back_29	ui/deco_preview/single_back_29.png	
+0	13	2	31	スノー	single_back_30	ui/deco_preview/single_back_30.png	
+0	13	2	32	シンプル	single_back_31	ui/deco_preview/single_back_31.png	
+0	13	2	33	2009 お正月	single_back_32	ui/deco_preview/single_back_32.png	
+0	13	2	34	シンプル2	single_back_33	ui/deco_preview/single_back_33.png	
+0	0	3	1	標準設定	Default	ui/deco_preview/multi_back_default.png	
+0	4	3	2	パピヨン	multi_back_01	ui/deco_preview/multi_back_01.png	
+0	4	3	3	ピュアハート	multi_back_02	ui/deco_preview/multi_back_02.png	
+0	4	3	4	リボン	multi_back_03	ui/deco_preview/multi_back_03.png	
+0	10	3	5	レース	multi_back_04	ui/deco_preview/multi_back_04.png	
+0	10	3	6	ストロベリー	multi_back_05	ui/deco_preview/multi_back_05.png	
+0	10	3	7	ローズ	multi_back_06	ui/deco_preview/multi_back_06.png	
+0	10	3	8	リーフ	multi_back_07	ui/deco_preview/multi_back_07.png	
+0	14	3	9	フォレスト	multi_back_08	ui/deco_preview/multi_back_08.png	
+0	10	3	10	リップル	multi_back_09	ui/deco_preview/multi_back_09.png	
+0	10	3	11	ねこ	multi_back_10	ui/deco_preview/multi_back_10.png	
+0	10	3	12	金魚	multi_back_11	ui/deco_preview/multi_back_11.png	
+0	4	3	13	マカロン	multi_back_12	ui/deco_preview/multi_back_12.png	
+0	10	3	14	フルーツ	multi_back_13	ui/deco_preview/multi_back_13.png	
+0	14	3	15	ペイズリー	multi_back_14	ui/deco_preview/multi_back_14.png	
+0	4	3	16	チョコ	multi_back_15	ui/deco_preview/multi_back_15.png	
+0	10	3	17	あじさい	multi_back_16	ui/deco_preview/multi_back_16.png	
+0	10	3	18	トランプ	multi_back_17	ui/deco_preview/multi_back_17.png	
+0	99	3	19	富士	multi_back_18	ui/deco_preview/multi_back_18.png	
+0	99	3	20	鯉	multi_back_19	ui/deco_preview/multi_back_19.png	
+0	99	3	21	カエル	multi_back_20	ui/deco_preview/multi_back_20.png	
+0	99	3	22	トランプ2	multi_back_21	ui/deco_preview/multi_back_21.png	
+0	99	3	23	クリスマス	multi_back_22	ui/deco_preview/multi_back_22.png	
+0	99	3	24	テトティ	multi_back_23	ui/deco_preview/multi_back_23.png	
+0	4	3	25	アゲハ	multi_back_24	ui/deco_preview/multi_back_24.png	
+0	4	3	26	星空	multi_back_25	ui/deco_preview/multi_back_25.png	
+0	4	3	27	水墨画	multi_back_26	ui/deco_preview/multi_back_26.png	
+0	14	3	28	ねこ2	multi_back_27	ui/deco_preview/multi_back_27.png	
+0	14	3	29	キューブ	multi_back_28	ui/deco_preview/multi_back_28.png	
+0	14	3	30	トーン	multi_back_29	ui/deco_preview/multi_back_29.png	
+0	14	3	31	スノー	multi_back_30	ui/deco_preview/multi_back_30.png	
+0	14	3	32	シンプル	multi_back_31	ui/deco_preview/multi_back_31.png	
+0	14	3	33	2009 お正月	multi_back_32	ui/deco_preview/multi_back_32.png	
+0	14	3	34	シンプル2	multi_back_33	ui/deco_preview/multi_back_33.png	
+1	99	3	35	クマクー	multi_back_34	ui/deco_preview/multi_back_34.png	
+2	99	3	36	うんつく	multi_back_35	ui/deco_preview/multi_back_35.png	
+3	99	3	37	タイニータネ	multi_back_36	ui/deco_preview/multi_back_36.png	
+4	99	3	38	でこねこ	multi_back_37	ui/deco_preview/multi_back_37.png	
+5	99	3	39	テトティ	multi_back_38	ui/deco_preview/multi_back_38.png	
+6	99	3	40	BE@RBRICK	multi_back_39	ui/deco_preview/multi_back_39.png	
+7	99	3	41	BE@RBRICK	multi_back_40	ui/deco_preview/multi_back_40.png	
+8	99	3	42	BE@RBRICK	multi_back_41	ui/deco_preview/multi_back_41.png	
+9	99	3	43	BE@RBRICK	multi_back_42	ui/deco_preview/multi_back_42.png	
+10	99	3	44	TETRIS 1989	multi_back_43	ui/deco_preview/multi_back_43.png	
+11	99	3	45	BLACK	multi_back_44	ui/deco_preview/multi_back_44.png	
+12	99	3	46	なつやすみ	multi_back_45	ui/deco_preview/multi_back_45.png	
+13	99	3	47	TETOCUIT：C	multi_back_46	ui/deco_preview/multi_back_46.png	
+14	99	3	48	TETOCUIT：M	multi_back_47	ui/deco_preview/multi_back_47.png	
+0	0	4	1	標準設定	Default	ui/deco_preview/voice_default.png	05_B2BTetris.wav
+0	5	4	2	女性#01	voice_01	ui/deco_preview/voice_01.png	05_B2BTetris.wav
+0	5	4	3	女性#02	voice_02	ui/deco_preview/voice_02.png	05_B2BTetris.wav
+0	5	4	4	女性#03	voice_03	ui/deco_preview/voice_03.png	05_B2BTetris.wav
+0	5	4	5	女性#04	voice_04	ui/deco_preview/voice_04.png	05_B2BTetris.wav
+0	0	5	1	標準設定	Default	ui/deco_preview/matrix_default.png	
+0	12	5	2	クリムゾン	matrix_01	ui/deco_preview/matrix_01.png	
+0	8	5	3	フェアリー	matrix_02	ui/deco_preview/matrix_02.png	
+0	12	5	4	シャンパン	matrix_03	ui/deco_preview/matrix_03.png	
+0	99	5	5	バブルブルー	matrix_04	ui/deco_preview/matrix_04.png	
+0	99	5	6	ゼブラ	matrix_05	ui/deco_preview/matrix_05.png	
+0	12	5	7	アクアブルー	matrix_06	ui/deco_preview/matrix_06.png	
+0	99	5	8	プラム	matrix_07	ui/deco_preview/matrix_07.png	
+0	8	5	9	ディープシー	matrix_08	ui/deco_preview/matrix_08.png	
+0	12	5	10	ボーダー	matrix_09	ui/deco_preview/matrix_09.png	
+0	8	5	11	コスモス	matrix_10	ui/deco_preview/matrix_10.png	
+0	99	5	12	ガーデン	matrix_11	ui/deco_preview/matrix_11.png	
+0	8	5	13	リーフ	matrix_12	ui/deco_preview/matrix_12.png	
+0	8	5	14	ローズ	matrix_13	ui/deco_preview/matrix_13.png	
+0	8	5	15	ストロベリー	matrix_14	ui/deco_preview/matrix_14.png	
+0	2	5	16	リボン	matrix_15	ui/deco_preview/matrix_15.png	
+0	99	5	17	カシミア	matrix_16	ui/deco_preview/matrix_16.png	
+0	2	5	18	ピュアハート	matrix_17	ui/deco_preview/matrix_17.png	
+0	2	5	19	パピヨン	matrix_18	ui/deco_preview/matrix_18.png	
+0	12	5	20	ゴシック	matrix_19	ui/deco_preview/matrix_19.png	
+0	2	5	21	ゴシック/白	matrix_20	ui/deco_preview/matrix_20.png	
+0	8	5	22	金魚	matrix_21	ui/deco_preview/matrix_21.png	
+0	2	5	23	マカロン	matrix_22	ui/deco_preview/matrix_22.png	
+0	8	5	24	フルーツ	matrix_23	ui/deco_preview/matrix_23.png	
+0	12	5	25	ペイズリー	matrix_24	ui/deco_preview/matrix_24.png	
+0	2	5	26	クッキー	matrix_25	ui/deco_preview/matrix_25.png	
+0	8	5	27	あじさい	matrix_26	ui/deco_preview/matrix_26.png	
+0	8	5	28	トランプ	matrix_27	ui/deco_preview/matrix_27.png	
+0	99	5	29	富士	matrix_28	ui/deco_preview/matrix_28.png	
+0	99	5	30	鯉	matrix_29	ui/deco_preview/matrix_29.png	
+0	99	5	31	カエル	matrix_30	ui/deco_preview/matrix_30.png	
+0	99	5	32	トランプ2	matrix_31	ui/deco_preview/matrix_31.png	
+0	99	5	33	クリスマス	matrix_32	ui/deco_preview/matrix_32.png	
+0	99	5	34	テトティ	matrix_33	ui/deco_preview/matrix_33.png	
+0	2	5	35	アゲハ	matrix_34	ui/deco_preview/matrix_34.png	
+0	2	5	36	星空	matrix_35	ui/deco_preview/matrix_35.png	
+0	2	5	37	水墨画	matrix_36	ui/deco_preview/matrix_36.png	
+0	12	5	38	スノー	matrix_37	ui/deco_preview/matrix_37.png	
+0	12	5	39	シンプル	matrix_38	ui/deco_preview/matrix_38.png	
+0	12	5	40	2009 お正月	matrix_39	ui/deco_preview/matrix_39.png	
+0	12	5	41	シンプル2	matrix_40	ui/deco_preview/matrix_40.png	
+1	99	5	42	クマクー	matrix_41	ui/deco_preview/matrix_41.png	
+2	99	5	43	うんつく	matrix_42	ui/deco_preview/matrix_42.png	
+3	99	5	44	タイニータネ	matrix_43	ui/deco_preview/matrix_43.png	
+4	99	5	45	でこねこ	matrix_44	ui/deco_preview/matrix_44.png	
+5	99	5	46	テトティ	matrix_45	ui/deco_preview/matrix_45.png	
+6	99	5	47	BE@RBRICK	matrix_46	ui/deco_preview/matrix_46.png	
+7	99	5	48	BE@RBRICK	matrix_47	ui/deco_preview/matrix_47.png	
+8	99	5	49	BE@RBRICK	matrix_48	ui/deco_preview/matrix_48.png	
+9	99	5	50	BE@RBRICK	matrix_49	ui/deco_preview/matrix_49.png	
+10	99	5	51	TETRIS 1989	matrix_50	ui/deco_preview/matrix_50.png	
+11	99	5	52	BLACK	matrix_51	ui/deco_preview/matrix_51.png	
+12	99	5	53	なつやすみ	matrix_52	ui/deco_preview/matrix_52.png	
+13	99	5	54	TETOCUIT：C	matrix_53	ui/deco_preview/matrix_53.png	
+14	99	5	55	TETOCUIT：M	matrix_54	ui/deco_preview/matrix_54.png	
+0	99	11	1				
+0	6	11	2	じゃまブロック T-Spin		ui/deco_preview/jama_tspin.png	T-Spinをした時、一定の確率で\n特殊パターンを送ります
+0	6	11	3	じゃまブロック Tetris		ui/deco_preview/jama_tetris.png	Tetrisをした時、一定の確率で\n特殊パターンを送ります
+0	6	11	4	じゃまブロック REN		ui/deco_preview/jama_ren.png	RENをした時、一定の確率で\n特殊パターンを送ります
+0	6	11	5	じゃまブロック B2B		ui/deco_preview/jama_b2b.png	B2Bをした時、一定の確率で\n特殊パターンを送ります
+0	99	12	1				
+0	6	12	2	アンチミス		ui/deco_preview/antimiss_default.png	
+0	99	13	1				
+0	99	13	2	AI Help			
+0	99	16	1				
+0	99	16	2	通常パック		ui/deco_preview/itempack_01.png	
+0	99	16	3	攻撃パック		ui/deco_preview/itempack_02.png	
+0	99	16	4	防御パック		ui/deco_preview/itempack_03.png	
+0	99	16	5	じゃまパック		ui/deco_preview/itempack_04.png	
+0	99	50	1	プラス		ui/item/	1ライン上がる
+0	99	50	2	消しゴム		ui/item/	アイテムブロック消去
+0	99	50	3	スチール		ui/item/	所持アイテム消去
+0	99	50	4	Next禁止		ui/item/	ネクストが見えない
+0	99	50	5	Hold禁止		ui/item/	ホールド禁止
+0	99	50	6	回転禁止		ui/item/	回転禁止
+0	99	50	7	HardDrop禁止		ui/item/	ハードドロップ禁止
+0	99	50	8	スピード		ui/item/	落下速度アップ
+0	99	50	9	暗黒		ui/item/	暗闇で見えなくなる
+0	99	50	10	ハート		ui/item/	ハート模様になる
+0	99	50	11	ツイスト		ui/item/	ジグザグにする
+0	99	50	12	レーザー		ui/item/	縦4列の穴をあける
+0	99	50	13	ミサイル		ui/item/	いくつか穴を開ける
+0	99	50	14	スノー		ui/item/	雪で見づらくする
+0	99	50	15	爆弾		ui/item/	穴だらけにする
+0	99	50	16	マイナス		ui/item/	1ライン消す
+0	99	50	17	AI		ui/item/	オートプレイ
+0	99	50	18	キュア		ui/item/	効果を無効にする
+0	99	50	19	つるぎ		ui/item/	上4ラインを消す
+0	99	50	20	ゴッドハンド		ui/item/	右側に寄せる
+0	99	50	21	ドロップ		ui/item/	連鎖して消える
+0	99	50	22	クリア		ui/item/	ブロック全消し
+0	88	1	99	HORI	mino_HORI	ui/deco_preview/mino_19.png	HORI
+0	88	3	99	HORI	multi_back_HORI	ui/deco_preview/single_back_18.png	HORI
+0	88	5	99	HORI	matrix_HORI	ui/deco_preview/Matrix_28.png	HORI
+0	98	3	98	Item	multi_back_item	ui/deco_preview/multi_back_default.png	Item

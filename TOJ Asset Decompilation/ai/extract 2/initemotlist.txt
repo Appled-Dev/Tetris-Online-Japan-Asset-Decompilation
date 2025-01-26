@@ -1,0 +1,17 @@
+﻿Guid	index	SprFileName	ImgFileName	Shortcut1	Shortcut2
+0	0	emot_hi.SPR	emot_hi_btn.SPR	/こんにちは	/今日は
+1	1	emot_tears.SPR	emot_tears_btn.SPR	/なき	/泣き
+2	2	emot_huk.SPR	emot_huk_btn.SPR	/どくろ	/ドクロ
+3	3	emot_bingbing.SPR	emot_bingbing_btn.SPR	/ぐるぐる	/グルグル
+4	4	emot_ok.SPR	emot_ok_btn.SPR	/おーけー	/オーケー
+5	5	emot_sokoda.SPR	emot_sokoda_btn.SPR	/そこだ	/ソコダ
+6	6	emot_ike.SPR	emot_ike_btn.SPR	/いけ	/行け
+7	7	emot_bye.SPR	emot_bye_btn.SPR	/ばいばい	/バイバイ
+8	8	emot_smile.SPR	emot_smile_btn.SPR	/わらい	/笑い
+9	9	emot_weak.SPR	emot_weak_btn.SPR	/よわった	/弱った
+10	10	emot_feelbad.SPR	emot_feelbad_btn.SPR	/ふきげん	/不機嫌
+11	11	emot_smirk.SPR	emot_smirk_btn.SPR	/にやにや	/ニヤニヤ
+12	12	emot_angry.SPR	emot_angry_btn.SPR	/おこり	/怒り
+13	13	emot_ganbare.SPR	emot_ganbare_btn.SPR	/がんばれ	/頑張れ
+14	14	emot_kita.SPR	emot_kita_btn.SPR	/きた	/キタ
+15	15	emot_laugh.SPR	emot_laugh_btn.SPR	/おおわらい	/大笑い

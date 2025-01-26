@@ -1,0 +1,94 @@
+﻿	/*
+	!Movie Frame
+	{
+		Flag = WINDOW
+		Pos = 450 40 0 0
+		ImageFile = %Single%/marathon_movie.png
+	}
+	*/
+	
+	!Speed & Goal & Score Image
+	{
+		Flag = WINDOW
+		Pos = 442 324 0 0
+		ImageFile = %Single%/marathon_info.png
+	}
+	
+	!THIS TURN SCORE +
+	{
+		Flag = WINDOW
+		ID = 11004
+		Pos = 127 527 210 35
+		Option = DT_VCENTER DT_LEFT
+	}
+	
+	!Time & Score (TimeAttack & Challenge:Time, Marathon:Score)
+	{
+		Flag = WINDOW
+		Pos = 91 506 0 0
+		ImageFile = %Single%/marathon_time.png
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		!THIS TURN SCORE or Time
+		{
+			Flag = TEXTBOX
+			ID = 11003
+			Pos = 0 10 259 32
+			Option = DT_VCENTER DT_CENTER
+			EnableImageFont = 1
+			ImageFontWidth = 20
+			ImageFontList = ,,,,,,,,,,,%Single%/num_or_plus.png,,,,,%Single%/num_or_0.png,%Single%/num_or_1.png,%Single%/num_or_2.png,%Single%/num_or_3.png,%Single%/num_or_4.png,%Single%/num_or_5.png,%Single%/num_or_6.png,%Single%/num_or_7.png,%Single%/num_or_8.png,%Single%/num_or_9.png,%Single%/time-num_colon.png
+			ZOrder = $TOP_ZORDER
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!SPEED LV
+	{
+		Flag = WINDOW_SPR2D_ANI_TEXT
+		ID = 11002
+		Pos = 460 355 246 35
+		MotionName = 0
+		Option = DT_VCENTER DT_RIGHT
+		ImageFontWidth = 20
+		!FileName = num_anm_01.SPR
+		FileName = num_anm_02.SPR
+		ZOrder = 100
+	}
+	!GOAL
+	{
+		Flag = WINDOW_SPR2D_ANI_TEXT
+		ID = 11001
+		Pos = 460 434 246 35
+		MotionName = 0
+		Option = DT_VCENTER DT_RIGHT
+		ImageFontWidth = 20
+		!FileName = num_anm_01.SPR
+		FileName = num_anm_02.SPR
+		ZOrder = 100	
+	}
+	!SCORE
+	{
+		Flag = WINDOW_SPR2D_ANI_TEXT
+		ID = 11000
+		Pos = 460 513 246 35
+		Option = DT_VCENTER DT_RIGHT
+		EnableImageFont = 1
+		ImageFontWidth = 20
+		!FileName = num_anm_01.SPR
+		FileName = num_anm_02.SPR
+		ZOrder = 100	
+	}
+	
+	!Single Mode Mark
+	{
+		Flag = WINDOW
+		ID = 11005
+		Pos = 130 66 0 0
+		ImageFileEx = ui/modemark_marathon.png,ui/modemark_challenge.png,ui/modemark_timeattack.png
+		ZOrder = 1000
+	}

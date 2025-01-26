@@ -1,0 +1,1001 @@
+﻿
+{
+	Flag = COMMAND
+	Command = HELP_ADDR
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/multi.asp
+}
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	FileName = music/Lobby.ogg
+}
+
+{
+	Flag = DESKTOP_WINDOW
+	ID = 1
+	Pos = 0 0 1024 768
+	ImageFile = UI/bg_multi.png
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+{
+	Flag = START_CHILD
+}
+	!사이드 효과
+	{
+ 		Flag = WINDOW_SPR2D
+ 		Pos = 0 0 0 0
+ 		FileName = lobby/lobby_frame.SPR
+ 		MotionName = main
+ 		TransparentMouseEvent = 1
+ 	}
+	
+	{
+		! ALL Chat
+		Flag = BUTTON
+		ID = 5959001
+		Pos = -36 500 174 29
+		ImageFile = ui/lobby/btn_lobby_all_default.png
+		FocusImageFile = ui/lobby/btn_lobby_all_over.png
+		PressedImageFile = ui/lobby/btn_lobby_all_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		NextTabOrderID = 5959002
+		IsCheckButton = 1
+		!ZOrder = 10
+	}
+	{
+		! Interest
+		Flag = BUTTON
+		ID = 5959002
+		Pos = -36 540 174 29
+		ImageFile = ui/lobby/btn_lobby_interest_default.png
+		FocusImageFile = ui/lobby/btn_lobby_interest_over.png
+		PressedImageFile = ui/lobby/btn_lobby_interest_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		NextTabOrderID = 5959001
+		IsCheckButton = 1
+		!ZOrder = 10
+	}
+	{
+		! Chat Open
+		Flag = BUTTON
+		ID = 5959003
+		Pos = -36 590 174 29
+		ImageFile = ui/lobby/btn_lobby_chatopen_default.png
+		FocusImageFile = ui/lobby/btn_lobby_chatopen_over.png
+		PressedImageFile = ui/lobby/btn_lobby_chatopen_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!ZOrder = 10
+		Show = 0
+	}
+	{
+		! Chat Close
+		Flag = BUTTON
+		ID = 5959004
+		Pos = -36 590 174 29
+		ImageFile = ui/lobby/btn_lobby_chatclose_default.png
+		FocusImageFile = ui/lobby/btn_lobby_chatclose_over.png
+		PressedImageFile = ui/lobby/btn_lobby_chatclose_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		!ZOrder = 10
+		Show = 1
+	}
+	
+	!현재대기자표시（待機人数）
+	{
+		Flag = TEXTBOX
+		ID = 702
+		Pos = 914 114 124 24
+		TextColor = 63 63 63 255
+		FontIndex = 0
+		Option = DT_VCENTER DT_CENTER
+		Show = 1
+	}
+	
+	!매칭 대기중 안내
+	{
+		Flag = WINDOW_SPR2D
+		ID = 703
+		Pos = 367 140 0 0
+		FileName = lobby/matching_w.SPR
+		Show = 0
+	}
+	
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 1024 768
+		MaxTime = 400
+		ZOrder = 100 
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		TargetColor = 255 255 255 0
+	}
+	
+	!mino UI
+	{
+		ID = 56565656
+		Pos = 0 0 0 0
+		Flag = WINDOW
+		ZOrder = 1
+	}
+	
+	{
+		!채팅 시작버튼
+		Flag = BUTTON
+		ID = 1089
+		Pos = 0 0 0 0
+		HotKey = KEYCODE_RETURN
+	}
+	
+	{
+		!Chat 프레임
+		ID = 108000
+		Flag = CAPTION
+		Pos = 150 460 351 270
+		ImageFile = ui/lobby/lobby_chat_window.png
+		ClipRect = 0 24 1024 768+216
+		ZOrder = 1000
+		!EnableBackColor = 1
+		!BackColor = 200 0 200 140
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			!채팅에디트박스
+			Flag = WINDOW
+			ID = 108
+			Pos = 40 243  270 20
+			Show = 1
+			!EnableBackColor = 1
+			!BackColor = 200 0 200 140
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Chat Input
+			{
+				Flag = EDITBOX
+				ID = 1081
+				Pos = 2 2 266 16
+				SelectionColor = 255 255 255 255
+				HighlightTextColor = 100 100 100 255
+				TextColor = 255 255 255 255
+				FontIndex = 0
+				EnableDrawIME = 0
+				Win32Edit = 1
+				Limit = 32
+				Style = ES_AUTOHSCROLL
+				!EnableBackColor = 1
+				!BackColor = 200 0 200 140
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!Public Chatting Window (전체 체팅)
+		{
+			Flag = LISTBOXW
+			ID = 107
+			Pos = 6 31 330 208
+			Option = DT_LEFT DT_VCENTER
+			MaxLine = 128
+			BorderSize = 3
+			TextGap = 1
+			EnableOutLineText = 1
+			OutLineTextColor = 0 0 0 255
+			EnableVScrollBar = 1
+			VScrollBarID = 1072000
+			!EnableBackColor = 1
+			!BackColor = 255 0 255 150
+			EnableCr = 0
+			TransparentMouseEvent = 1
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = SCROLLBAR
+				ID = 1072000
+				Pos = 331 1 8 206
+				Style = VSCROLL
+				PrevButtonNormalImageFile = %Multi%/chat_scroll_btn1a.png
+				PrevButtonFocusImageFile = %Multi%/chat_scroll_btn1b.png
+				PrevButtonPressedImageFile = %Multi%/chat_scroll_btn1c.png
+				NextButtonNormalImageFile = %Multi%/chat_scroll_btn2a.png
+				NextButtonFocusImageFile = %Multi%/chat_scroll_btn2b.png
+				NextButtonPressedImageFile = %Multi%/chat_scroll_btn2c.png
+				SliderBackColor = 50 255 70 70
+				!EnableSlider3DEdge = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		! Interest Chatting Window(관심 체팅)
+		{
+			Flag = LISTBOXW
+			ID = 109
+			Pos = 6 31 330 208
+			Option = DT_LEFT DT_VCENTER
+			MaxLine = 128
+			BorderSize = 3
+			TextGap = 1
+			EnableOutLineText = 1
+			OutLineTextColor = 0 0 0 255
+			EnableVScrollBar = 1
+			VScrollBarID = 1092000
+			!EnableBackColor = 1
+			!BackColor = 255 0 255 150
+			EnableCr = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = SCROLLBAR
+				ID = 1092000
+				Pos = 331 1 8 206
+				Style = VSCROLL
+				PrevButtonNormalImageFile = %Multi%/chat_scroll_btn1a.png
+				PrevButtonFocusImageFile = %Multi%/chat_scroll_btn1b.png
+				PrevButtonPressedImageFile = %Multi%/chat_scroll_btn1c.png
+				NextButtonNormalImageFile = %Multi%/chat_scroll_btn2a.png
+				NextButtonFocusImageFile = %Multi%/chat_scroll_btn2b.png
+				NextButtonPressedImageFile = %Multi%/chat_scroll_btn2c.png
+				SliderBackColor = 50 255 50 40
+				!EnableSlider3DEdge = 1
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+	{
+		Flag = END_CHILD
+	}
+	
+	!바로가기 채널1 (Single?)
+	{
+		Flag = WINDOW
+		ID = 1001
+		Pos = 103 105 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			! Solo QuickStart
+			Flag = BUTTON
+			ID = 201
+			Pos = 0 0 152 58
+			ImageFile = ui/btn_solo_default.png
+			FocusImageFile = ui/btn_solo_over.png
+			PressedImageFile = ui/btn_solo_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!바로가기 채널2 (No Item)
+	{
+		Flag = WINDOW
+		ID = 1002
+		Pos = 350 40 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			! Matching Start
+			Flag = BUTTON
+			ID = 201
+			Pos = 10 -4 186 68
+			ImageFile = ui/lobby/btn_match_default.png
+			FocusImageFile = ui/lobby/btn_match_down.png
+			PressedImageFile = ui/lobby/btn_match_over.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			!ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		
+		{
+			! Matching Cancel
+			Flag = BUTTON
+			ID = 2011
+			Pos = 10 -4 186 68
+			ImageFile = ui/lobby/btn_match_cancel_default.png
+			FocusImageFile = ui/lobby/btn_match_cancel_over.png
+			PressedImageFile = ui/lobby/btn_match_cancel_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			Show = 0
+			!ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		
+		{
+			! Practice Game
+			Flag = BUTTON
+			ID = 202
+			Pos = 204 -4 120 68
+			ImageFile = ui/lobby/btn_practice_default.png
+			FocusImageFile = ui/lobby/btn_practice_over.png
+			PressedImageFile = ui/lobby/btn_practice_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			!ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!바로가기 채널3  (1ON1)
+	{
+		Flag = WINDOW
+		ID = 1003
+		Pos = 350 40 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		/*
+		{
+			! Solo QuickStart
+			Flag = BUTTON
+			ID = 201
+			Pos = 0 0 152 58
+			ImageFile = ui/btn_1on1quick_default.png
+			FocusImageFile = ui/btn_1on1quick_over.png
+			PressedImageFile = ui/btn_1on1quick_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			!ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		{
+			! Team QuickStart
+			Flag = BUTTON
+			ID = 202
+			Pos = 160 0 152 58
+			ImageFile = ui/btn_team_default.png
+			FocusImageFile = ui/btn_team_over.png
+			PressedImageFile = ui/btn_team_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_TEAM_QUICKSTART_BTN
+			Show = 0
+		}
+		*/
+
+		/*
+		{
+			Flag = BUTTON
+			ID = 203
+			Pos = 200 0 92 20
+			Text = Solo\n\nQuick\nStart
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			Option = DT_LEFT DT_TOP
+			3DEdge = 1
+		}
+		{
+			Flag = BUTTON
+			ID = 204
+			Pos = 290 65 92 20
+			Text = Solo\n\nQuick\nStart
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			Option = DT_LEFT DT_TOP
+			3DEdge = 1
+		}
+		*/
+		
+		/*
+		{
+			! Create Room
+			Flag = BUTTON
+			ID = 205
+			Pos = 160 0 152 58
+			!Pos = 330 0 152 58
+			ImageFile = ui/btn_room_default.png
+			FocusImageFile = ui/btn_room_over.png
+			PressedImageFile = ui/btn_room_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+		*/
+		
+		{
+			! Matching Start
+			Flag = BUTTON
+			ID = 201
+			Pos = 10 -4 186 68
+			ImageFile = ui/lobby/btn_match_default.png
+			FocusImageFile = ui/lobby/btn_match_down.png
+			PressedImageFile = ui/lobby/btn_match_over.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			!ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		
+		{
+			! Matching Cancel
+			Flag = BUTTON
+			ID = 2011
+			Pos = 10 -4 186 68
+			ImageFile = ui/lobby/btn_match_cancel_default.png
+			FocusImageFile = ui/lobby/btn_match_cancel_over.png
+			PressedImageFile = ui/lobby/btn_match_cancel_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			Show = 0
+			!ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		
+		{
+			! Practice Game
+			Flag = BUTTON
+			ID = 202
+			Pos = 204 -4 120 68
+			ImageFile = ui/lobby/btn_practice_default.png
+			FocusImageFile = ui/lobby/btn_practice_over.png
+			PressedImageFile = ui/lobby/btn_practice_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			!ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	!바로가기 채널4 (Item Battle)
+	{
+		Flag = WINDOW
+		ID = 1004
+		Pos = 103 105 0 0
+		Show = 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			! Solo QuickStart
+			Flag = BUTTON
+			ID = 201
+			Pos = 0 0 152 58
+			ImageFile = ui/btn_solo_default.png
+			FocusImageFile = ui/btn_solo_over.png
+			PressedImageFile = ui/btn_solo_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_SOLO_QUICKSTART_BTN
+		}
+		{
+			! Team QuickStart
+			Flag = BUTTON
+			ID = 202
+			Pos = 160 0 152 58
+			ImageFile = ui/btn_team_default.png
+			FocusImageFile = ui/btn_team_over.png
+			PressedImageFile = ui/btn_team_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			ToolTip = $LOBBY_TEAM_QUICKSTART_BTN
+		}
+
+		/*
+		{
+			Flag = BUTTON
+			ID = 203
+			Pos = 200 0 92 20
+			Text = Solo\n\nQuick\nStart
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			Option = DT_LEFT DT_TOP
+			3DEdge = 1
+		}
+		{
+			Flag = BUTTON
+			ID = 204
+			Pos = 290 65 92 20
+			Text = Solo\n\nQuick\nStart
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			Option = DT_LEFT DT_TOP
+			3DEdge = 1
+		}
+		*/
+
+		{
+			! Create Room
+			Flag = BUTTON
+			ID = 205
+			Pos = 330 0 152 58
+			ImageFile = ui/btn_room_default.png
+			FocusImageFile = ui/btn_room_over.png
+			PressedImageFile = ui/btn_room_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	
+	! 채널 바꾸기
+	{
+		Flag = WINDOW
+		Pos = 740 50 0 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		!현재채널표시
+		{
+			Flag = WINDOW
+			ID = 701
+			Pos = 0 0 197 40
+			!EnableBackColor = 1
+			!BackColor = 0 0 50 100
+			ImageFileEx = ui/lobby/mode_01.png,ui/lobby/mode_01.png,ui/lobby/mode_02.png,ui/lobby/mode_03.png
+		}
+		! Change Channel BUTTON
+		{
+			Flag = BUTTON
+			ID = 301
+			Pos = 196 -4 62 56
+			ImageFile = ui/lobby/btn_changemode_default.png
+			FocusImageFile = ui/lobby/btn_changemode_over.png
+			PressedImageFile = ui/lobby/btn_changemode_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	! Bottom Menu
+	{	! BACK
+		Flag = BUTTON
+		ID = 901
+		!Pos = 890 720 94 27
+		Pos = 927 737 94 27
+		ImageFile = %BottomBar%/btn_back_default.png
+		FocusImageFile = %BottomBar%/btn_back_over.png
+		PressedImageFile = %BottomBar%/btn_back_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+		HotKey = KEYCODE_ESCAPE		
+		ToolTip = $COMMON_PAGE_PREV
+	}
+	/*
+	{	! QUIT
+		Flag = BUTTON
+		ID = 9909
+		Pos = 685 572 80 35
+		ImageFile = %BottomBar%/btn_quit_default.png
+		FocusImageFile = %BottomBar%/btn_quit_over.png
+		PressedImageFile = %BottomBar%/btn_quit_down.png
+		FocusSoundFile = button_f.wav
+		PressedSoundFile = button_p.wav
+	}
+	*/
+	
+	! 룸 리스트
+	{
+		Flag = WINDOW
+		Pos = 92 197 0 0
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			! Prev Button
+			Flag = BUTTON
+			ID = 191
+			Pos = -47 85 57 63
+			ImageFile = ui/btn_prev_default.png
+			FocusImageFile = ui/btn_prev_over.png
+			PressedImageFile = ui/btn_prev_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10			
+			Show=0
+		}
+
+		{
+			! Next Button
+			Flag = BUTTON
+			ID = 192
+			Pos = 607 85 57 63
+			ImageFile = ui/btn_next_default.png
+			FocusImageFile = ui/btn_next_over.png
+			PressedImageFile = ui/btn_next_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			!Option = DT_VCENTER DT_CENTER
+			!HotKey = KEYCODE_2
+			ZOrder = 10
+			Show=0
+		}
+		
+		{
+			Flag = BUTTON
+			ID = 1932
+			Pos = 0 450 100 20
+			Text = List Waiting
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			Show = 0
+			3DEdge = 1
+		}
+		/*
+		{
+			Flag = BUTTON
+			ID = 1941
+			Pos = 0 450 100 20
+			Text = List NoItem
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			3DEdge = 1
+		}
+		{
+			Flag = BUTTON
+			ID = 1942
+			Pos = 0 450 100 20
+			Text = List Item
+			BackColor = 128 128 128 255
+			TextColor = 255 255 255 255
+			EnableOutLine = 1
+			OutLineTextColor = 0 0 0 255
+			FocusTextColor = 255 0 0 255
+			PressedTextColor = 0 255 0 255
+			FontIndex = 0
+			EnableBackColor = 1
+			Show = 0
+			3DEdge = 1
+		}
+		*/
+	
+		!방목록 1
+		{
+			Flag = WINDOW
+			ID = 101
+			Pos = 20 2 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 2
+		{
+			Flag = WINDOW
+			ID = 102
+			Pos = 20+300 2 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 3
+		{
+			Flag = WINDOW
+			ID = 103
+			Pos = 20 2+92 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 4
+		{
+			Flag = WINDOW
+			ID = 104
+			Pos = 20+300 2+92 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 5
+		{
+			Flag = WINDOW
+			ID = 105
+			Pos = 20 2+184 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+		!방목록 6
+		{
+			Flag = WINDOW
+			ID = 106
+			Pos = 20+300 2+184 0 0
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = INCLUDE
+				FileName = UI/UI_Lobby_RoomList.uis
+			}
+		{
+			Flag = END_CHILD
+		}
+	
+	{
+		Flag = END_CHILD
+	}
+
+	!방만들기 다이얼로그
+
+	{
+		Flag = WINDOW
+		ID = 1010
+		Pos = 0 0 800 600
+		EnableBackColor = 1
+		BackColor = 0 0 0 128
+		Modal = 1
+		Show = 0
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = INCLUDE
+			FileName = UI/UI_Lobby_MakeRoom.uis
+		}
+	
+	{
+		Flag = END_CHILD
+	}
+	
+	!비번 입력 다이얼로그
+	{
+		Flag = WINDOW
+		ID = 1020
+		Pos = 0 0 800 600
+		EnableBackColor = 1
+		BackColor = 0 0 0 128
+		Modal = 1
+		Show = 0
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = INCLUDE
+			FileName = UI/UI_Lobby_InputRoomPassword.uis
+		}
+	
+	{
+		Flag = END_CHILD
+	}
+
+	!채널 리스트
+	{
+		Flag = WINDOW
+		ID = 2400
+		Pos = 0 0 1024 768
+		EnableBackColor = 1
+		BackColor = 0 0 0 100
+		Modal = 1
+		Show = 0
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = INCLUDE
+			FileName = UI/UI_Lobby_ChannelList.uis
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	!Change 방정보 MouseOver
+	{
+		Flag = WINDOW
+		ID = 1001001
+		Pos = 60 110 250 185
+		!EnableBackColor = 1
+		!BackColor = 100 100 100 130
+		ImageFile = ui/minishop_dialog_bg.png
+		IsPatternImage = 1
+		PatternImageSize = 10
+		Show = 0
+		Modal = 0
+		ZOrder = 10000
+	}	
+	
+	{
+		Flag = START_CHILD
+	}
+		!타이틀 이미지 WINDOW
+		{
+			Flag = WINDOW
+			Pos = 11 9 228 23
+			ImageFile = ui/roominfo_title.png
+		}
+
+		{
+			Flag = LISTVIEW
+			ID = 1001002
+			Pos = 13 40 230 140
+			!EnableBackColor = 1
+			BackColor = 64 64 64 192
+			ItemHeight = 20
+			ColumnCount = 2
+			ColumnNameHeight = 20
+				
+			!Name
+			ColumnName0 =  \名前
+			ColumnNameTextFormat0 = DT_CENTER DT_TOP
+			ColumnNameTextColor0 = 95 95 95 255
+			ColumnNameTextFont0 =0
+			ColumnOption0 = DT_WORD_ELLIPSIS DT_LEFT DT_TOP
+			ColumnNameOutlineTextColor0 = 180 180 180 255
+			EnableColumnNameOutline0 = 1
+			ColumnWidth0 = 150
+			ColumnTextColor0 = 95 95 95 255
+			EnableColumnOutline0 = 0
+				
+			!Level
+			ColumnName1 = level
+			ColumnNameTextFormat1 = DT_CENTER DT_TOP
+			ColumnNameTextColor1 = 95 95 95 255
+			ColumnNameTextFont1 =0
+			ColumnOption1 = DT_WORD_ELLIPSIS DT_CENTER DT_TOP
+			ColumnNameOutlineTextColor1 = 180 180 180 255
+			EnableColumnNameOutline1= 1
+			ColumnWidth1 = 50
+			ColumnTextColor1 = 95 95 95 255
+			EnableColumnOutline1 = 0
+			
+			EnableDrawFocusRow = 0
+			EnableDrawSelectRow = 0
+		}	
+	
+
+	{
+		Flag = END_CHILD
+	}	
+{
+	Flag = END_CHILD
+}
+

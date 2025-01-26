@@ -1,0 +1,261 @@
+﻿{
+    !Matrix Elements
+	Flag = WINDOW_TETRIS_VIEW
+	ID = 1000
+	Pos = -35 21 0 0
+	BlockSize = 18 18
+	NextBlockSize0 = 16 16
+	NextBlockSize1 = 14 14
+	NextBlockSize2 = 12 12
+	NextBlockSize3 = 12 12
+	NextBlockSize4 = 12 12
+	NextBlockSize5 = 12 12
+	HoldBlockSize = 16 16
+	PlayBlockPos = 0 0 10*18 20*18
+	HoldBlockPos = -86 48 90 40
+	NextBlockPos0 = 194 48 90 40
+	NextBlockPos1 = 194 113 90 40
+	NextBlockPos2 = 194 167 90 40
+	NextBlockPos3 = 194 217 90 40
+	NextBlockPos4 = 194 267 90 40
+	NextBlockPos5 = 194 317 90 40
+
+	EnableDrawBest = 1
+	EnableDrawGhost = 1
+	
+	MinoColor_Yellow = %Mino%/yel_tMino_30px.tga
+	!Animate를 하기위해..초당 30프레임으로 돌린다.
+	!MinoColor_Yellow = IMAGE\minos\test_ani2.tga 
+	MinoColor_LightBlue = %Mino%/blt_tMino_30px.tga
+	MinoColor_Purple = %Mino%/pur_tMino_30px.tga
+	MinoColor_Orange = %Mino%/or_tMino_30px.tga
+	MinoColor_DarkBlue = %Mino%/bdk_tMino_30px.tga
+	MinoColor_Green = %Mino%/grn_tMino_30px.tga
+	MinoColor_Red = %Mino%/red_tMino_30px.tga
+	MinoColor_Garbage = %Mino%/gry_tMino_30px.tga
+	
+	MinoColor_Yellow_Ghost = %Ghost%/yel_ghost_30px.tga
+	MinoColor_LightBlue_Ghost = %Ghost%/blt_ghost_30px.tga
+	MinoColor_Purple_Ghost = %Ghost%/pur_ghost_30px.tga
+	MinoColor_Orange_Ghost = %Ghost%/or_ghost_30px.tga
+	MinoColor_DarkBlue_Ghost = %Ghost%/bdk_ghost_30px.tga
+	MinoColor_Green_Ghost = %Ghost%/grn_ghost_30px.tga
+	MinoColor_Red_Ghost = %Ghost%/red_ghost_30px.tga
+	
+	Sfx_Rotate = %SFX%/Sfx_Rotate.wav
+	Sfx_RotateFail =  %SFX%/Sfx_RotateFail.wav
+	Sfx_Lockdown = %SFX%/Sfx_Lockdown.wav
+	Sfx_Hold = %SFX%/Sfx_Hold.wav
+	Sfx_Softdrop = %SFX%/Sfx_Softdrop.wav
+	Sfx_Harddrop = %SFX%/Sfx_HardDrop.wav
+	Sfx_Move = %SFX%/Sfx_Move.wav
+	Sfx_MoveFail = %SFX%/Sfx_MoveFail.wav
+
+	Sfx_Single = %SFX%/Sfx_Single.wav
+	Sfx_Double = %SFX%/Sfx_Double.wav
+	Sfx_Double_Voice = %Voice%/02_Double.wav
+	Sfx_Triple = %SFX%/Sfx_Triple.wav
+	Sfx_Triple_Voice = %Voice%/03_Triple.wav
+	Sfx_Tetris = %SFX%/Sfx_Tetris.wav
+	Sfx_Tetris_Voice = %Voice%/04_Tetris.wav
+	Sfx_TSpin_Zero = %SFX%/Sfx_TSpin_Zero.wav
+	Sfx_TSpin_Zero_Voice = %Voice%/06_TSpin.wav
+	Sfx_TSpin_Mini = %SFX%/Sfx_TSpin_Mini.wav
+	Sfx_TSpin_Mini_Voice = %Voice%/07_TSpinMini.wav
+	Sfx_TSpin_Single = %SFX%/Sfx_TSpin_Single.wav
+	Sfx_TSpin_Single_Voice = %Voice%/08_TSpinSingle.wav
+	Sfx_TSpin_Double = %SFX%/Sfx_TSpin_Double.wav
+	Sfx_TSpin_Double_Voice = %Voice%/09_TSpinDouble.wav
+	Sfx_TSpin_Triple = %SFX%/Sfx_TSpin_Triple.wav
+	Sfx_TSpin_Triple_Voice = %Voice%/10_TSpinTriple.wav
+	Sfx_B2B_Tetris = %SFX%/Sfx_B2B_Tetris.wav
+	Sfx_B2B_Tetris_Voice = %Voice%/05_B2BTetris.wav
+	Sfx_B2B_TSpin_Mini = %SFX%/Sfx_B2B_TSpin_Mini.wav
+	Sfx_B2B_TSpin_Mini_Voice = %Voice%/11_B2BTSpinMini.wav
+	Sfx_B2B_TSpin_Single = %SFX%/Sfx_B2B_TSpin_Single.wav
+	Sfx_B2B_TSpin_Single_Voice = %Voice%/12_B2BTSpinSingle.wav
+	Sfx_B2B_TSpin_Double = %SFX%/Sfx_B2B_TSpin_Double.wav
+	Sfx_B2B_TSpin_Double_Voice = %Voice%/13_B2BTSpinDouble.wav
+	Sfx_B2B_TSpin_Triple = %SFX%/Sfx_B2B_TSpin_Triple.wav
+	Sfx_B2B_TSpin_Triple_Voice = %Voice%/14_B2BTSpinTriple.wav
+
+	Sfx_Combo1 = %SFX%/Sfx_Combo1.wav
+	Sfx_Combo2 = %SFX%/Sfx_Combo2.wav
+	Sfx_Combo2_Voice = %Voice%/15_Combo01.wav
+	Sfx_Combo3 = %SFX%/Sfx_Combo3.wav
+	Sfx_Combo3_Voice = %Voice%/15_Combo01.wav
+	Sfx_Combo4 = %SFX%/Sfx_Combo4.wav
+	Sfx_Combo4_Voice = %Voice%/15_Combo02.wav
+	Sfx_Combo5 = %SFX%/Sfx_Combo5.wav
+	Sfx_Combo5_Voice = %Voice%/15_Combo02.wav
+	Sfx_Combo6 = %SFX%/Sfx_Combo6.wav
+	Sfx_Combo6_Voice = %Voice%/15_Combo03.wav
+	Sfx_Combo7 = %SFX%/Sfx_Combo7.wav
+	Sfx_Combo7_Voice = %Voice%/15_Combo03.wav
+	Sfx_Combo8 = %SFX%/Sfx_Combo8.wav
+	Sfx_Combo8_Voice = %Voice%/15_Combo04.wav
+	Sfx_Combo9 = %SFX%/Sfx_Combo9.wav
+	Sfx_Combo9_Voice = %Voice%/15_Combo04.wav
+	Sfx_Combo10 = %SFX%/Sfx_Combo10.wav
+	Sfx_Combo10_Voice = %Voice%/15_Combo04.wav
+	Sfx_Combo11 = %SFX%/Sfx_Combo11.wav
+	Sfx_Combo11_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo12 = %SFX%/Sfx_Combo12.wav
+	Sfx_Combo12_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo13 = %SFX%/Sfx_Combo13.wav
+	Sfx_Combo13_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo14 = %SFX%/Sfx_Combo14.wav
+	Sfx_Combo14_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo15 = %SFX%/Sfx_Combo15.wav
+	Sfx_Combo15_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo16 = %SFX%/Sfx_Combo16.wav
+	Sfx_Combo16_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo17 = %SFX%/Sfx_Combo17.wav
+	Sfx_Combo17_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo18 = %SFX%/Sfx_Combo18.wav
+	Sfx_Combo18_Voice = %Voice%/15_Combo05.wav
+	Sfx_Combo19 = %SFX%/Sfx_Combo19.wav
+	Sfx_Combo19_Voice = %Voice%/15_Combo05.wav	
+	Sfx_Combo20 = %SFX%/Sfx_Combo20.wav
+	Sfx_Combo20_Voice = %Voice%/15_Combo05.wav
+	
+	Sfx_PerfectClear = %SFX%/Sfx_PerfectClear.wav
+	Sfx_PerfectClear_Voice = %Voice%/16_PerfectClear.wav
+	
+	Sfx_KO1_Voice = %Voice%/21_KO1.wav
+	Sfx_KO2_Voice = %Voice%/21_KO2.wav
+	Sfx_KO3_Voice = %Voice%/21_KO3.wav
+	Sfx_KO4_Voice = %Voice%/21_KO4.wav
+	Sfx_KO5_Voice = %Voice%/21_KO5.wav
+	
+	!SFX_GAME_OVER = %SFX%/
+	!SFX_GAME_OVER_Voice = %Voice%/
+	
+	!SFX_PLAYER_DIE_BY_KO = %SFX%/
+	!SFX_PLAYER_DIE_BY_KO_Voice = %Voice%/
+	
+	Sfx_Rank1_Voice = %Voice%/24_Victory01.wav,%Voice%/24_Victory02.wav,%Voice%/24_Victory03.wav,%Voice%/24_Victory04.wav,%Voice%/24_Victory05.wav
+	
+	Sfx_Killed = %SFX%/Sfx_GameOver.wav
+	Sfx_Killed_Voice = %Voice%/25_Lose01.wav,%Voice%/25_Lose02.wav,%Voice%/25_Lose03.wav,%Voice%/25_Lose04.wav,%Voice%/25_Lose05.wav
+	
+	Sfx_KilledByKO = %SFX%/Sfx_KO.WAV
+	!Sfx_KilledByKO_Voice = %Voice%/			
+	
+	Sfx_DangerusQueue = dangerus.WAV
+
+	!MusicFileName = %Music%/1115.ogg,%Music%/1201.ogg,%Music%/1220.ogg,%Music%/1225.ogg,%Music%/1229.ogg
+	MusicFileName = %Music%\*.ogg
+
+	HardDropEffFileName = %SpecialFX%/harddrop.spr
+	LineClearEffFileName = %SpecialFX%/lineclear_s.SPR
+	MinoLockdownEffFileName = %SpecialFX%/lockdown.SPR
+	MinoTSpinEffFileName = %SpecialFX%/tspin.spr
+}
+{
+	Flag = START_CHILD
+}
+	!holdcount
+	{
+		Flag = TEXTBOX
+		Pos = -71 37 60 20
+		ID = 100011
+	}
+	!hold가리기
+	{
+		Flag = WINDOW
+		Pos = -71 37 60 60
+		ID = 100010
+		!EnableBackColor = 1
+		!BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		ImageFile = %Matrix%/Cover60x60.png
+	}
+	!next0가리기
+	{
+		Flag = WINDOW
+		Pos = 209 37 60 60
+		ID = 100020
+		!EnableBackColor = 1
+		!BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		ImageFile = %Matrix%/Cover60x60.png
+	}
+	!next1가리기
+	{
+		Flag = WINDOW
+		Pos = 214 107 50 50
+		ID = 100021
+		!EnableBackColor = 1
+		!BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		ImageFile = %Matrix%/Cover50x50.png
+	}
+	!next2가리기
+	{
+		Flag = WINDOW
+		Pos = 219 167 40 40
+		ID = 100022
+		!EnableBackColor = 1
+		!BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		ImageFile = %Matrix%/Cover40x40.png
+	}
+	!next3가리기
+	{
+		Flag = WINDOW
+		Pos = 219 217 40 40
+		ID = 100023
+		!EnableBackColor = 1
+		!BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		ImageFile = %Matrix%/Cover40x40.png
+	}
+	!next4가리기
+	{
+		Flag = WINDOW
+		Pos = 219 267 40 40
+		ID = 100024
+		!EnableBackColor = 1
+		!BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		ImageFile = %Matrix%/Cover40x40.png
+	}
+	!next5가리기
+	{
+		Flag = WINDOW
+		Pos = 219 317 40 40
+		ID = 100025
+		!EnableBackColor = 1
+		!BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		ImageFile = %Matrix%/Cover40x40.png
+	}
+	!Hold Success
+	{
+		Flag = WINDOW_SPR2D
+		ID = 100061
+		Pos = -71-10 37-10 0 0
+		Show = 0
+		FileName = ef_square_01_b.SPR
+	}
+	!Hold Fail
+	{
+		Flag = WINDOW_SPR2D
+		ID = 100062
+		Pos = -84 37-10 0 0
+		Show = 0
+		FileName = ef_mark_01.SPR
+	}
+	!Matrix Top Cover
+	{
+		Flag = WINDOW
+		Pos = 0 -43 180 43
+		!EnableBackColor = 1
+		!BackColor = 255 0 0 255
+		ImageFile = %Matrix%/Matrix18x18_cover.png
+		TransparentMouseEvent = 1
+	}
+{
+	Flag = END_CHILD
+}

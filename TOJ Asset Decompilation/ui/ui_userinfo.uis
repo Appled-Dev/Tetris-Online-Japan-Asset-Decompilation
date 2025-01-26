@@ -1,0 +1,796 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 20 800 580
+	EnableBackColor = 1
+	BackColor = 0 0 0 128
+	Modal = 1
+	Show = 1
+	IsActive = 1
+	ZOrder = $ZORDER_MODAL
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = WINDOW
+		ID = 1300
+		Pos = 100 100 600 400
+		!EnableBackColorEdge = 1
+		!BackEdgeColor = 255 255 255 255
+		ImageFileEx = ui/userinfo_bg.png,ui/userinfo_bg2.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+			Flag = BUTTON
+			ID = 13099
+			Pos = 506 389 90 24
+			!Text = QUIT
+			!TextColor = 255 255 255 255
+			!EnableBackColor = 1
+			!BackColor = 64 64 64 192
+			!FocusBackColor = 138 128 128 192
+			!PressedBackColor = 138 0 0 255
+			ImageFile = ui/class_btn_close_default.png
+			FocusImageFile = ui/class_btn_close_over.png
+			PressedImageFile = ui/class_btn_close_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_ESCAPE
+		}
+	
+	
+		{
+			Flag = BUTTON
+			ID = 13001
+			Pos = 9 32 93 26
+			!Text = Profile
+			!TextColor = 255 255 255 255
+			!EnableBackColor = 1
+			!BackColor = 64 64 64 192
+			!FocusBackColor = 138 128 128 192
+			!PressedBackColor = 138 0 0 255
+			!IsCheckButton = 1
+			NextTabOrderID = 13002
+			ImageFile = ui/btn_prof_default.png
+			FocusImageFile = ui/btn_prof_over.png
+			PressedImageFile = ui/btn_prof_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 1000
+		}
+		{
+			Flag = BUTTON
+			ID = 13002
+			Pos = 107 32 93 26
+			!Text = Stats
+			!TextColor = 255 255 255 255
+			!EnableBackColor = 1
+			!BackColor = 64 64 64 192
+			!FocusBackColor = 138 128 128 192
+			!PressedBackColor = 138 0 0 255
+			!IsCheckButton = 1
+			NextTabOrderID = 13003
+			ImageFile = ui/btn_stats_default.png
+			FocusImageFile = ui/btn_stats_over.png
+			PressedImageFile = ui/btn_stats_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 1000
+		}
+		{
+			Flag = BUTTON
+			ID = 13003
+			Pos = 205 32 93 26
+			!Text = Style
+			!TextColor = 255 255 255 255
+			!EnableBackColor = 1
+			!BackColor = 64 64 64 192
+			!FocusBackColor = 138 128 128 192
+			!PressedBackColor = 138 0 0 255
+			!IsCheckButton = 1
+			NextTabOrderID = 13001
+			ImageFile = ui/btn_style_default.png
+			FocusImageFile = ui/btn_style_over.png
+			PressedImageFile = ui/btn_style_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			ZOrder = 1000
+		}
+		
+		!Profile Sheet
+		{
+			Flag = WINDOW
+			Pos = 9 32 0 0
+			ID = 13010
+			ImageFile = ui/userinfo_bg_prof.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 18 84 0 0
+				!EnableBackColor = 1
+				!BackColor = 255 255 255 50
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = WINDOW_IEXPLORER
+					ID = 1301009
+					Pos = 0 0 194 254
+					!URL = http://webgame.tetrisonline.jp/avata/avataimg.asp?id=ace
+					!EnableBackColor = 1
+					BackColor = 255 255 255 255
+					TransparentMouseEvent=1
+				}
+			{
+				Flag = END_CHILD
+			}
+
+
+			!LV
+			{
+				Flag = TEXTBOX
+				ID = 130100
+				Pos = 174 58 40 20
+				!Text = LV 0
+				TextColor = 255 255 255 255
+				Option = DT_LEFT DT_TOP
+				FontIndex = 2
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 128
+			}
+			!Nickname
+			{
+				Flag = TEXTBOX
+				ID = 130101
+				Pos = 20 58 120 20
+				!Text = Nickname
+				TextColor = 255 255 255 255
+				Option = DT_WORD_ELLIPSIS DT_LEFT DT_TOP
+				FontIndex = 2
+				TransparentMouseEvent = 0
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 128
+			}
+			{
+				Flag = WINDOW
+				Pos = 200 0 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+			
+				{
+					Flag = TEXTBOX
+					Pos = 45 120 100 20
+					!Text = TotalExp
+					!TextColor = 255 255 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					ID = 130102
+					Pos = 212 120 150 20
+					!Text = TotalExp
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 45 149 100 20
+					!Text = Rank
+					!TextColor = 255 255 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					ID = 130103
+					Pos = 212 149 150 20
+					!Text = Rank
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 45 178 100 20
+					!Text = Win
+					!TextColor = 255 255 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130104
+					Pos = 92 178 270 20
+					!Text = Win
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					Pos = 45 207 100 20
+					!Text = Streak
+					!TextColor = 255 255 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					ID = 130105
+					Pos = 182 207 180 20
+					!Text = Streak
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					Pos = 45 236 100 20
+					!Text = LPM
+					!TextColor = 255 255 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					ID = 130106
+					Pos = 182 236 180 20
+					!Text = LPM
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					Pos = 45 265 100 20
+					!Text = KO
+					!TextColor = 255 255 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130107
+					Pos = 162 265 200 20
+					!Text = KO
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					Pos = 45 294 150 20
+					!Text = Disconnect
+					!TextColor = 255 255 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					ID = 130108
+					Pos = 212 294 150 20
+					!Text = Disconnect
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					Pos = 45 323 150 20
+					!Text = TP
+					!TextColor = 255 255 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				
+				{
+					Flag = TEXTBOX
+					ID = 130109
+					Pos = 162 323 200 20
+					!Text = TP
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				!Exp bar
+				{
+					Flag = PROGRESSIVEBAR
+					ID = 130110
+					Pos = 63 79 292 14
+					Max = 100
+					Current = 0
+					BarColor = 255 0 0 255
+					EnableBackColor = 1
+					BackColor = 255 255 255 255
+					BarImageFile = ui/bar_levelup.png
+					EnableImageBar = 1
+					!Vertical = 1
+				}
+				{
+					Flag = START_CHILD
+				}
+					!PERCENT
+					{
+						Flag = TEXTBOX
+						ID = 13011001
+						Pos = 0 0 292 14
+						TextColor = 0 0 0 255
+						Option = DT_CENTER DT_HCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				!현재위치
+				{
+					Flag = TEXTBOX
+					Pos = -200 358 44 24
+					Text = 現在
+					TextColor = 255 255 255 255
+					FontIndex = 15
+					EnableOutLine = 1
+					OutLineTextColor = 255 55 0 255
+					EnableBackColor = 1
+					BackColor = 60 0 0 192
+					ImageFile = ui/user_position.png
+					Option = DT_VCENTER DT_CENTER
+				}
+				!현재위치
+				{
+					Flag = TEXTBOX
+					ID = 1310100
+					Pos = -130 360 120 20
+					!Text = Online
+					TextColor = 255 255 255 255
+					!EnableBackColor = 1
+					!BackColor = 255 0 80 100
+					Option = DT_LEFT DT_VCENTER
+				}
+				!친구등록 Button
+				{
+					Flag = BUTTON
+					ID = 131011
+					Pos = 39 357 125 24
+					!Text = 友達登録
+					!TextColor = 255 255 255 255
+					!EnableBackColor = 1
+					!BackColor = 64 64 64 192
+					!FocusBackColor = 138 128 128 192
+					!PressedBackColor = 138 0 0 255
+					!DisabledBackColor = 0 0 0 0 255
+					!3DEdge = 1
+					Show = 0
+					ImageFile = ui/btn_addlist_default.png
+					FocusImageFile = ui/btn_addlist_over.png
+					PressedImageFile = ui/btn_addlist_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!같이하기 Button
+				{
+					Flag = BUTTON
+					ID = 131012
+					Pos = 172 357 117 24
+					!Text = 一緒にプレイ
+					!TextColor = 255 255 255 255
+					!EnableBackColor = 1
+					!BackColor = 64 64 64 192
+					!FocusBackColor = 138 128 128 192
+					!PressedBackColor = 138 0 0 255
+					!DisabledBackColor = 0 0 0 0 255
+					!3DEdge = 1
+					Show = 0
+					ImageFile = ui/btn_play_default.png
+					FocusImageFile = ui/btn_play_over.png
+					PressedImageFile = ui/btn_play_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+
+			{
+				Flag = END_CHILD
+			}
+			
+			
+		{
+			Flag = END_CHILD
+		}
+		
+		!Stats Sheet
+		{
+			Flag = WINDOW
+			Pos = 9 32 0 0
+			ID = 13020
+			Show = 0
+			ImageFile = ui/userinfo_bg_stats.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = TEXTBOX
+				Pos = 18 48 100 20
+				!Text = Single
+				!TextColor = 255 0 255 255
+				Option = DT_CENTER DT_VCENTER
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 255
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 24 122 100 20
+				!Text = Limited
+				!TextColor = 255 0 255 255
+				Option = DT_CENTER DT_VCENTER
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 255
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 24 104 100 20
+				!Text = Endless
+				!TextColor = 0 255 255 255
+				Option = DT_CENTER DT_VCENTER
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 255
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 180 122 150 20
+				!Text = HighScore :
+				!TextColor = 255 0 255 255
+				Option = DT_LEFT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130201
+				Pos = 217 100 150 20
+				!Text = SingleChallengeHighScore
+				TextColor = 255 255 255 255
+				Option = DT_RIGHT DT_TOP
+				FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 380 122 150 20
+				!Text = Rank :
+				!TextColor = 255 0 255 255
+				Option = DT_LEFT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130202
+				Pos = 408 100 150 20
+				!Text = SingleChallengeRank
+				TextColor = 255 255 255 255
+				Option = DT_RIGHT DT_TOP
+				FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 180 100 150 20
+				!Text = HighScore :
+				!TextColor = 0 255 255 255
+				Option = DT_LEFT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130203
+				Pos = 217 122 150 20
+				!Text = SingleMarathonHighScore
+				TextColor = 255 255 255 255
+				Option = DT_RIGHT DT_TOP
+				FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 380 100 150 20
+				!Text = Rank :
+				!TextColor = 0 255 255 255
+				Option = DT_LEFT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130204
+				Pos = 408 122 150 20
+				!Text = SingleMarathonRank
+				TextColor = 255 255 255 255
+				Option = DT_RIGHT DT_TOP
+				FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130220
+				Pos = 217 100-22 150 20
+				!Text = SingleSprintHighScore
+				TextColor = 255 255 255 255
+				Option = DT_RIGHT DT_TOP
+				FontIndex = 2
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130221
+				Pos = 408 100-22 150 20
+				!Text = SingleSprintRank
+				TextColor = 255 255 255 255
+				Option = DT_RIGHT DT_TOP
+				FontIndex = 2
+			}
+			
+			{
+				Flag = TEXTBOX
+				Pos = 18 148 100 20
+				!Text = FFA
+				!TextColor = 255 0 255 255
+				Option = DT_CENTER DT_VCENTER
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 255
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130205
+				Pos = 112 178 170 20
+				Text = FFA_2_Stat
+				TextColor = 255 255 255 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130206
+				Pos = 387 178 170 20
+				Text = FFA_3_Stat
+				TextColor = 255 255 255 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130207
+				Pos = 112 199 170 20
+				Text = FFA_4_Stat
+				TextColor = 255 255 255 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130208
+				Pos = 387 199 170 20
+				Text = FFA_5_Stat
+				TextColor = 255 255 255 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130209
+				Pos = 112 220 170 20
+				Text = FFA_6_Stat
+				TextColor = 255 255 255 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 18 249 100 20
+				!Text = Team
+				!TextColor = 255 0 255 255
+				Option = DT_CENTER DT_VCENTER
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 255
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130210
+				Pos = 132 278 150 20
+				Text = Team_2_2_Stat
+				TextColor = 255 255 255 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130211
+				Pos = 407 278 150 20
+				Text = Team_2_2_2_Stat
+				TextColor = 255 255 255 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+			}
+			{
+				Flag = TEXTBOX
+				ID = 130212
+				Pos = 132 309 150 20
+				Text = Team_3_3_Stat
+				TextColor = 255 255 255 255
+				FontIndex = 2
+				Option = DT_RIGHT DT_TOP
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!STYLE Sheet
+		{
+			Flag = WINDOW
+			Pos = 9 32 0 0
+			ID = 13030
+			Show = 0
+			ImageFile = ui/userinfo_bg_style.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = BUTTON
+				ID = 1303001
+				Pos = 346 42 82 30
+				!Text = NoMap
+				!TextColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 64 64 64 192
+				!FocusBackColor = 138 128 128 192
+				!PressedBackColor = 138 0 0 255
+				IsCheckButton = 1
+				NextTabOrderID = 1303002
+				IsChecked = 1
+				ImageFile = ui/style_mapoff_default.png
+				FocusImageFile = ui/style_mapoff_over.png
+				PressedImageFile = ui/style_mapoff_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = BUTTON
+				ID = 1303002
+				Pos = 438 42 82 30
+				!Text = Map
+				!TextColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 64 64 64 192
+				!FocusBackColor = 138 128 128 192
+				!PressedBackColor = 138 0 0 255
+				IsCheckButton = 1
+				NextTabOrderID = 1303001
+				ImageFile = ui/style_mapon_default.png
+				FocusImageFile = ui/style_mapon_over.png
+				PressedImageFile = ui/style_mapon_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			
+			{
+				Flag = WINDOW_FILLPOLY
+				ID = 130307
+				Pos = 37 61 264 264
+				FillColor = 255 255 0 255
+				LineColor = 50 50 150 255
+				DrawLine = 1
+				EdgeColor = 200 64 64 255
+				!CircleColor = 64 64 255 255
+				CircleRadius = 15
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 255
+				!EnableBackColor = 1
+				!BackColor = 255 255 255 100
+			}
+			
+			{
+				Flag = WINDOW
+				Pos = 300 0 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					Pos = 52 87 100 20
+					!Text = 평속 :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+			
+				{
+					Flag = TEXTBOX
+					ID = 130301
+					Pos = 116 87 150 20
+					!Text = 평속
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 126 100 20
+					!Text = 평공 :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130302
+					Pos = 116 126 150 20
+					!Text = 평공
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 165 100 20
+					!Text = 평균TETRIS :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130303
+					Pos = 116 165 150 20
+					!Text = 평균테트리스
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 204 100 20
+					!Text = 평균콤보 :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130304
+					Pos = 116 204 150 20
+					!Text = 평균콤보
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 243 100 20
+					!Text = 평균TSPIN :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130305
+					Pos = 116 243 150 20
+					!Text = 평균TSPIN
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					Pos = 52 282 100 20
+					!Text = 평균B2B :
+					!TextColor = 255 0 255 255
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130306
+					Pos = 116 282 150 20
+					!Text = 평균B2B
+					TextColor = 255 255 255 255
+					Option = DT_RIGHT DT_TOP
+				}
+				
+				
+			{
+				Flag = END_CHILD
+			}
+			
+				
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

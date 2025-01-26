@@ -1,0 +1,108 @@
+﻿	{
+		!Movie Frame
+		Flag = WINDOW
+		Pos = 434 35 344 253
+		ImageFile =  ui/hori/logo_horitetris.png
+		TransparentMouseEvent = 1
+	}
+	{
+		!Score/Level Info
+		Flag = WINDOW
+		Pos = 445 278 344 253
+		ImageFile =  ui/hori/hori_info.png
+		TransparentMouseEvent = 1
+	}
+	{
+	    !THIS TURN SCORE +
+		Flag = WINDOW
+		ID = 11004
+		Pos = 127 527 210 35
+		!ImageFile = ui/num_or_plus.png
+		Option = DT_VCENTER DT_LEFT
+	}
+	
+	{
+	    !Hori time Window
+		Flag = WINDOW
+		Pos = 480 514 200 35
+		!EnableBackColor = 1
+		!BackColor = 100 100 0 100
+		ZOrder = 1000
+	}
+	{
+		Flag = START_CHILD
+	}
+		{
+		    !Hori time
+			Flag = TEXTBOX
+			ID = 11003
+			!Pos = 0 11 210 35
+			Pos = 0 0 200 35
+			Option = DT_VCENTER DT_RIGHT
+			EnableImageFont = 1
+			ImageFontWidth = 20
+			ImageFontList = ,,,,,,,,,,,%Single%/num_or_plus.png,,,,,%Single%/num_or_0.png,%Single%/num_or_1.png,%Single%/num_or_2.png,%Single%/num_or_3.png,%Single%/num_or_4.png,%Single%/num_or_5.png,%Single%/num_or_6.png,%Single%/num_or_7.png,%Single%/num_or_8.png,%Single%/num_or_9.png,%Single%/time-num_colon.png
+			ZOrder = $TOP_ZORDER
+		}
+	{
+		Flag = END_CHILD
+	}
+	
+	{
+	    !휴게까지 남은 라인수
+		Flag = WINDOW_SPR2D_ANI_TEXT
+		ID = 11002
+		Pos = 480 308 200 33
+		MotionName = 0
+		Option = DT_VCENTER DT_RIGHT
+		ImageFontWidth = 20
+		FileName = num_anm_01.SPR
+		!FileName = num_anm_02.SPR
+		ZOrder = 100
+	}
+	{
+	    !전체 GOAL LINE
+		Flag = WINDOW_SPR2D_ANI_TEXT
+		ID = 11001
+		Pos = 480 378 200 35
+		MotionName = 0
+		Option = DT_VCENTER DT_RIGHT
+		ImageFontWidth = 20
+		FileName = num_anm_01.SPR
+		!FileName = num_anm_02.SPR
+		ZOrder = 100	
+	}
+	
+	{
+	    !SCORE
+		Flag = WINDOW_SPR2D_ANI_TEXT
+		ID = 11000
+		Pos = 480 448 200 35
+		Option = DT_VCENTER DT_RIGHT
+		EnableImageFont = 1
+		ImageFontWidth = 20
+		FileName = num_anm_01.SPR
+		!FileName = num_anm_02.SPR
+		ZOrder = 100	
+	}
+	
+	{
+	    !Hori Course Mark
+		Flag = WINDOW
+		ID = 11005
+		Pos = 114 68 233 27
+		!EnableBackColor = 1
+		!BackColor = 0 0 50 100
+		ImageFile = ui/hori/coursemark_easy.png
+		ImageFileEx = ui/hori/coursemark_easy.png,ui/hori/coursemark_normal.png,ui/hori/coursemark_hard.png,ui/hori/coursemark_veryhard.png
+		ZOrder = 1000
+		Show = 0
+	}
+	{
+	    !깊이 표시
+		Flag = WINDOW_SPR2D
+		ID = 11006
+		Pos = 120 102 0 0
+		FileName = hori/deep_bar.SPR
+		ZOrder = 999
+	}

@@ -1,0 +1,673 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	EnableBackColor = 1
+	BackColor = 0 0 0 80
+	Modal = 1
+	Show = 1
+	IsActive = 1
+	ZOrder = $ZORDER_MODAL
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = WINDOW
+		Pos = 175 42 450 418
+		ImageFile = ui/gameoption.png
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Game Setting
+		{
+			Flag = BUTTON
+			ID = 8000
+			Pos = 10 55 107 32
+			IsCheckButton = 1
+			NextTabOrderID = 8001
+			IsChecked = 1
+			ImageFile = ui/btn_option01_default.png
+			FocusImageFile = ui/btn_option01_over.png
+			PressedImageFile = ui/btn_option01_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Key Setting
+		{
+			Flag = BUTTON
+			ID = 8001
+			Pos = 118 55 107 32
+			IsCheckButton = 1
+			NextTabOrderID = 8000
+			ImageFile = ui/btn_option02_default.png
+			FocusImageFile = ui/btn_option02_over.png
+			PressedImageFile = ui/btn_option02_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		
+		!Game Setting Tab
+		{
+			Flag = WINDOW
+			Pos = 10 87 0 0
+			ID = 800
+			ImageFile = ui/option_bg01.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 20 18 0 0
+				EnableBackColor = 1
+				BackColor = 0 0 90 58
+			}
+			{
+				Flag = START_CHILD
+			}
+				!BGM볼륨
+				{
+					Flag = SCROLLBAR
+					ID = 200
+					Pos = 109 83 276 22
+					Style = HSCROLL
+					MaxRange = 100+11
+					ViewRange = 11
+					ScrollStep = 1 5
+					!PrevButtonNormalImageFile = ui/vol_1a.png
+					!PrevButtonFocusImageFile = ui/vol_1b.png
+					!PrevButtonPressedImageFile = ui/vol_1b.png
+					!NextButtonNormalImageFile = ui/vol_2a.png
+					!NextButtonFocusImageFile = ui/vol_2b.png
+					!NextButtonPressedImageFile = ui/vol_2b.png
+					!EnableSliderBackColor = 1
+					!SliderBackColor = 255 255 255 100
+					!EnableSlider3DEdge = 1
+					SliderImageFile = ui/option_vol.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					PageButtonNormalBackColor  = 0 0 0 0
+					PageButtonFocusBackColor = 0 0 0 0
+					PageButtonPressedBackColor = 0 0 0 0
+				}
+				
+				!SE 볼륨
+				{
+					Flag = SCROLLBAR
+					ID = 210
+					Pos = 109 122 276 22
+					Style = HSCROLL
+					!MaxRange는 원하는값 + ViewRange..
+					MaxRange = 100+11
+					ViewRange = 11
+					ScrollStep = 1 5
+					!PrevButtonNormalImageFile = ui/vol_1a.png
+					!PrevButtonFocusImageFile = ui/vol_1b.png
+					!PrevButtonPressedImageFile = ui/vol_1b.png
+					!NextButtonNormalImageFile = ui/vol_2a.png
+					!NextButtonFocusImageFile = ui/vol_2b.png
+					!NextButtonPressedImageFile = ui/vol_2b.png
+					!EnableSliderBackColor = 1
+					!SliderBackColor = 255 255 255 255
+					!EnableSlider3DEdge = 1
+					SliderImageFile = ui/option_vol.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					PageButtonNormalBackColor  = 0 0 0 0
+					PageButtonFocusBackColor = 0 0 0 0
+					PageButtonPressedBackColor = 0 0 0 0
+				}
+				
+				!Voice on/off
+				{
+					Flag = BUTTON
+					ID = 230
+					IsCheckButton = 1
+					Pos = 329 147 38 38
+					ImageFile = ui/option_checkbtn_default.png
+					!FocusImageFile = ui/option_checkbtn_over.png
+					PressedImageFile = ui/option_checkbtn_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Full Mode, Window Mode on/off
+				{
+					Flag = BUTTON
+					ID = 240
+					IsCheckButton = 1
+					Pos = 329 185 38 38
+					ImageFile = ui/option_checkbtn_default.png
+					!FocusImageFile = ui/option_checkbtn_over.png
+					PressedImageFile = ui/option_checkbtn_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Ghost on/off
+				{
+					Flag = BUTTON
+					ID = 250
+					IsCheckButton = 1
+					Pos = 329 14 38 38
+					ImageFile = ui/option_checkbtn_default.png
+					!FocusImageFile = ui/option_checkbtn_over.png
+					PressedImageFile = ui/option_checkbtn_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Web Pop Up on/off
+				{
+					Flag = BUTTON
+					ID = 260
+					IsCheckButton = 1
+					Pos = 329 224 38 38
+					ImageFile = ui/option_checkbtn_default.png
+					!FocusImageFile = ui/option_checkbtn_over.png
+					PressedImageFile = ui/option_checkbtn_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!Key Setting Tab
+		{
+			Flag = WINDOW
+			Pos = 10 87 0 0
+			ID = 801
+			ImageFile = ui/option_bg02.png
+		}
+		{
+			Flag = START_CHILD
+		}
+			{
+				Flag = WINDOW
+				Pos = 20 18 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					Pos = 0 20 100 20
+					Option = DT_LEFT DT_TOP
+					!Text = キータイプ
+				}
+				{
+					Flag = BUTTON
+					ID = 1100
+					IsCheckButton = 1	
+					NextTabOrderID = 1101
+					Pos = 80 20 65 18
+					!Text = タイプ1
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					TextColor = 255 255 255 200
+					DisabledTextColor = 100 100 100 255
+					Option = DT_LEFT
+					TextPos = 21 3 100 20
+					Enable=0
+				}
+				{
+					Flag = BUTTON
+					ID = 1101
+					IsCheckButton = 1	
+					NextTabOrderID = 1102
+					Pos = 80+70 20 65 18
+					!Text = タイプ2
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					TextColor = 255 255 255 200
+					DisabledTextColor = 100 100 100 255
+					Option = DT_LEFT
+					TextPos = 21 3 100 20
+					Enable=0
+				}
+				{
+					Flag = BUTTON
+					ID = 1102
+					IsCheckButton = 1	
+					NextTabOrderID = 1100
+					Pos = 80+70*2 20 65 18
+					!Text = タイプ3
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					TextColor = 255 255 255 200
+					DisabledTextColor = 100 100 100 255
+					Option = DT_LEFT
+					TextPos = 21 3 100 20
+					Enable=0
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			{
+				Flag = TEXTBOX
+				Pos = 161 63 100 20
+				Option = DT_CENTER DT_VCENTER
+				Text =キーボード
+				TextColor = 255 0 0 155
+				Show = 0
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 281 63 100 20
+				Option = DT_CENTER DT_VCENTER
+				Text =ゲームパッド
+				TextColor = 255 0 0 155
+				Show = 0
+			}
+			
+			{
+				Flag = TEXTBOX
+				Pos = 41 98 100 20
+				Option = DT_LEFT DT_TOP
+				Text =左へ移動
+				Show = 0
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1000
+				Pos = 161 98 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1001
+				Pos = 281 98 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 41 118 100 20
+				Option = DT_LEFT DT_TOP
+				Text =右へ移動
+				Show = 0
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1010
+				Pos = 161 118 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1011
+				Pos = 281 118 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 41 138 100 20
+				Option = DT_LEFT DT_TOP
+				Text =右回転
+				Show = 0
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1020
+				Pos = 161 138 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1021
+				Pos = 281 138 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 41 158 100 20
+				Option = DT_LEFT DT_TOP
+				Text =左回転
+				Show = 0
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1030
+				Pos = 161 158 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1031
+				Pos = 281 158 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 41 178 120 20
+				Option = DT_LEFT DT_TOP
+				Text =ソフトドロップ
+				Show = 0
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1040
+				Pos = 161 178 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1041
+				Pos = 281 178 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 41 198 120 20
+				Option = DT_LEFT DT_TOP
+				Text =ハードドロップ
+				Show = 0
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1050
+				Pos = 161 198 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1051
+				Pos = 281 198 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 41 218 100 20
+				Option = DT_LEFT DT_TOP
+				Text =ホールド
+				Show = 0
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1060
+				Pos = 161 218 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1061
+				Pos = 281 218 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = TEXTBOX
+				Pos = 41 238 100 20
+				Option = DT_LEFT DT_TOP
+				Text = アイテム自動使用
+				Show = 0
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1070
+				Pos = 161 238 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			{
+				Flag = INPUT_KEY_BUTTON
+				ID = 1071
+				Pos = 281 238 100 20
+				Option = DT_CENTER DT_VCENTER
+				TextColor = 0 0 0 255
+				FocusBackColor = 157 199 0 255
+				EnableBackColor = 1
+				BackColor = 249 249 249 188
+				PressedBackColor = 255 0 0 255
+				EnableBackColorEdge = 1
+				BackEdgeColor = 102 102 102 255
+				FocusBackEdgeColor = 102 102 102 255
+				PressedBackEdgeColor = 102 102 102 255
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		!적용,리셋,취소,확인
+		{
+			Flag = WINDOW
+			Pos = 20 376 0 0
+			ZOrder = 100
+		}
+		{
+			Flag = START_CHILD
+		}
+			!適用
+			{
+				Flag = BUTTON
+				ID = 996
+				Pos = 304 0 78 27
+				ImageFile = ui/common/btn_apply_default.png
+				FocusImageFile = ui/common/btn_apply_over.png
+				PressedImageFile = ui/common/btn_apply_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!リセット
+			{
+				Flag = BUTTON
+				ID = 997
+				Pos = 212 0 78 27
+				ImageFile = ui/common/btn_reset_default.png
+				FocusImageFile = ui/common/btn_reset_over.png
+				PressedImageFile = ui/common/btn_reset_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!キャンセル
+			{
+				Flag = BUTTON
+				ID = 998
+				Pos = 120 0 78 27
+				ImageFile = ui/common/btn_cancel_default.png
+				FocusImageFile = ui/common/btn_cancel_over.png
+				PressedImageFile = ui/common/btn_cancel_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				HotKey = KEYCODE_ESCAPE
+			}
+			!OK（変更）
+			{
+				Flag = BUTTON
+				ID = 999
+				Pos = 28 0 78 27
+				ImageFile = ui/common/btn_ok_default.png
+				FocusImageFile = ui/common/btn_ok_over.png
+				PressedImageFile = ui/common/btn_ok_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			
+			!Close
+			{
+				Flag = BUTTON
+				ID = 998
+				Pos = 401 -367 20 20
+				ImageFile = ui/common/btn_close_default.png
+				FocusImageFile = ui/common/btn_close_over.png
+				PressedImageFile = ui/common/btn_close_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				HotKey = KEYCODE_ESCAPE
+			}
+		{
+			Flag = END_CHILD
+		}
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

@@ -1,0 +1,4684 @@
+﻿{
+	Flag = COMMAND
+	Command =HELP_ADDR
+	Addr = http://webgame.tetrisonline.jp/Guide/Guide2/vscom.asp
+}
+
+{
+	Flag = COMMAND
+	Command = PLAY_MUSIC
+	FileName = music/lobby.ogg
+}
+
+{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	ImageFile = UI/shop/bg_shop.png
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = INCLUDE
+		FileName = UI/UI_TopBar.uis
+	}
+{
+	Flag = END_CHILD
+}
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 800 600
+		MaxTime = 400
+		ZOrder = 100 
+		EnableBackColor = 1
+		BackColor = 255 255 255 255
+		TransparentMouseEvent = 1
+		TargetColor = 255 255 255 0
+	}
+	
+	
+	!Main Window
+	{
+		Flag = WINDOW
+		Pos = 10 30 780 540
+		!EnableBackColorEdge = 1
+		!BackEdgeColor = 0 0 0 0
+		TransparentMouseEvent = 1
+	}
+	{
+		Flag = START_CHILD
+	}
+		!Preview Window
+		{
+			Flag = WINDOW
+			ID = 669
+			Modal = 1
+			Show = 0
+			Pos = -10 -30 0 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			!BG Preview Popup Window
+			{
+				Flag = WINDOW
+				ID = 6697
+				!Modal = 1
+				!Show = 0
+				Pos = 0 0 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = INCLUDE
+					FileName = %Back%/bg0001.uis
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Close BUTTON
+			{
+				Flag = BUTTON
+				ID = 669701
+				Pos = 676 540 94 27
+				!Text = Close
+				ImageFile = %BottomBar%/btn_back_default.png
+				FocusImageFile = %BottomBar%/btn_back_over.png
+				PressedImageFile = %BottomBar%/btn_back_down.png
+				ZOrder = 10
+			}
+			
+			!배경 확인중 Window
+			{
+		 		Flag = WINDOW_SPR2D
+		 		Pos = 295 270 0 0
+		 		FileName = trial_window.SPR
+		 		MotionName = main
+		 		TransparentMouseEvent = 1
+		 		ZOrder = 10
+		 	}
+		{
+			Flag = END_CHILD
+		}
+		
+		
+		!Gacha Shop Button (가차 구입 페이지 버튼)
+		{
+			Flag = BUTTON
+			ID = 101
+			Pos = 204 15 131 29
+			!Text = Shop
+			IsCheckButton = 1
+			NextTabOrderID = 102
+			ImageFile = ui/shop/btn_shop_default.png
+			FocusImageFile = ui/shop/btn_shop_over.png
+			PressedImageFile = ui/shop/btn_shop_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Tuning Button (튜닝 페이지 버튼)
+		{
+			Flag = BUTTON
+			ID = 102
+			Pos = 479 15 141 29
+			!Text = Tuning
+			IsCheckButton = 1
+			NextTabOrderID = 103
+			ImageFile = ui/shop/btn_tuning_default.png
+			FocusImageFile = ui/shop/btn_tuning_over.png
+			PressedImageFile = ui/shop/btn_tuning_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Deco Button (보유 아이템 페이지 버튼)
+		{
+			Flag = BUTTON
+			ID = 103
+			Pos = 620 15 140 29
+			!Text = Deco
+			IsCheckButton = 1
+			NextTabOrderID = 104
+			ImageFile = ui/shop/btn_deco_default.png
+			FocusImageFile = ui/shop/btn_deco_over.png
+			PressedImageFile = ui/shop/btn_deco_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		!Item Pack Button (아이템 팩 구입 페이지 버튼)
+		{
+			Flag = BUTTON
+			ID = 104
+			Pos = 334 15 131 29
+			!Text = Item Pack
+			IsCheckButton = 1
+			NextTabOrderID = 101
+			ImageFile = ui/shop/btn_packshop_01.png
+			FocusImageFile = ui/shop/btn_packshop_02.png
+			PressedImageFile = ui/shop/btn_packshop_03.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+		}
+		
+		!Back Button (もどる)
+		{
+			Flag = BUTTON
+			ID = 109
+			Pos = 666 542 94 27
+			!Text = Back
+			ImageFile = %BottomBar%/btn_back_default.png
+			FocusImageFile = %BottomBar%/btn_back_over.png
+			PressedImageFile = %BottomBar%/btn_back_down.png
+			FocusSoundFile = button_f.wav
+			PressedSoundFile = button_p.wav
+			HotKey = KEYCODE_ESCAPE
+		}
+		
+		
+		!TP 부족 WINDOW
+		{
+			Flag = WINDOW
+			ID = 13059
+			Pos = 242 180 300 150
+			!EnableBackColor = 1
+			!BackColor = 100 100 100 150
+			ImageFile = ui/minishop_dialog_bg.png
+			IsPatternImage = 1
+			PatternImageSize = 10
+			Show = 0
+			Modal = 1
+			ZOrder = 10
+		}
+		{
+			Flag = START_CHILD
+		}
+			!타이틀 이미지 WINDOW
+			{
+				Flag = WINDOW
+				Pos = 36 9 228 23
+				ImageFile = ui/shop/shop_dialog_notice.png
+			}
+			
+			!TP 부족 맨트
+			{
+				Flag = TEXTBOX
+				!ID = 
+				Pos = 10 40 280 40
+				Text = $USERINFO_SHOP_TP_NOT
+				TextColor = 95 95 95 255
+				!FontIndex = 2
+				Option = DT_CENTER DT_TOP
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 128
+			}
+			
+			!TP
+			{
+				Flag = TEXTBOX
+				ID = 1305911
+				Pos = 10 80 280 20
+				!Text = TP
+				TextColor = 255 0 0 255
+				!FontIndex = 2
+				Option = DT_CENTER DT_TOP
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 128
+			}
+			
+			!Close Button
+			{
+				Flag = BUTTON
+				ID = 130591
+				Pos = 196 118 94 27
+				!Text = Close
+				ImageFile = ui/common/btn_close2_default.png
+				FocusImageFile = ui/common/btn_close2_over.png
+				PressedImageFile = ui/common/btn_close2_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			
+			!TP Scratch Buy Button
+			{
+				Flag = BUTTON
+				ID = 130592
+				Pos = 10 118 176 27
+				!Text = TP Scratch Buy
+				ImageFile = ui/shop/btn_buyscratch_default.png
+				FocusImageFile = ui/shop/btn_buyscratch_over.png
+				PressedImageFile = ui/shop/btn_buyscratch_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+			!Coin Buy Button
+			{
+				Flag = BUTTON
+				ID = 130593
+				Pos = 10 118 176 27
+				!Text = Coin Buy
+				ImageFile = ui/shop/btn_buycoin_default.png
+				FocusImageFile = ui/shop/btn_buycoin_over.png
+				PressedImageFile = ui/shop/btn_buycoin_down.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		
+		
+		!Shop Sheet (구입 페이지)
+		{
+			Flag = WINDOW
+			Pos = 19 50 741 450
+			ID = 1001
+			ImageFile = ui/shop/shop_bg1.png
+			!EnableBackColor = 1
+			!BackColor = 200 20 255 100
+			TransparentMouseEvent = 1
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Shop Guide Window
+			{
+				Flag = WINDOW
+				Pos = 90 180 578 254
+				EnableBackColor = 1
+				BackColor = 20 20 80 60
+				TransparentMouseEvent = 1
+				!EnableBackColorEdge = 1
+				!BackEdgeColor = 255 255 255 255
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				!내용 Window
+				{
+					Flag = WINDOW
+					Pos = 0 0 578 230
+					ID = 10018
+					!EnableBackColor = 1
+					!BackColor = 20 20 80 100
+					TransparentMouseEvent = 1
+					ImageFile = ui/shop/shop_guide_01.png
+					ImageFileEx = ui/shop/shop_guide_01.png,ui/shop/shop_guide_02.png,ui/shop/shop_guide_03.png
+					!Show = 1
+				}
+				!Previous Button
+				{
+					Flag = BUTTON
+					ID = 1001801
+					Pos = 512 231 22 22
+					ImageFile = ui/shop/btn_previcon_defautl.png
+					FocusImageFile = ui/shop/btn_previcon_over.png
+					PressedImageFile = ui/shop/btn_previcon_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Next Button
+				{
+					Flag = BUTTON
+					ID = 1001802
+					Pos = 546 231 22 22
+					ImageFile = ui/shop/btn_nexticon_default.png
+					FocusImageFile = ui/shop/btn_nexticon_over.png
+					PressedImageFile = ui/shop/btn_nexticon_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!TP Scratch Buy Button
+			{
+				Flag = BUTTON
+				ID = 10014
+				Pos = 549 448 174 26
+				!Text = TP Scratch Buy
+				ImageFile = ui/shop/point_btn_tp_01.png
+				FocusImageFile = ui/shop/point_btn_tp_02.png
+				PressedImageFile = ui/shop/point_btn_tp_03.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				ZOrder = 1
+			}
+			!Coin Buy Button
+			{
+				Flag = BUTTON
+				ID = 10015
+				Pos = 187 448 174 26
+				!Text = Coin Buy
+				ImageFile = ui/shop/point_btn_cc_01.png
+				FocusImageFile = ui/shop/point_btn_cc_02.png
+				PressedImageFile = ui/shop/point_btn_cc_03.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				ZOrder = 1
+			}
+			
+			
+			!Gacha List Window
+			{
+				Flag = WINDOW
+				Pos = -10 54 760 310
+				TransparentMouseEvent = 1
+				!EnableBackColor = 1
+				!BackColor = 0 255 255 50
+			}
+			{
+				Flag = START_CHILD
+			}
+				!Title Window (デコレーションガチャ)
+				{
+					Flag = WINDOW
+					Pos = 90 0 577 22
+					!ImageFile = ui/shop/shop_settingtitle_gacha.png
+					TransparentMouseEvent = 1
+					Show = 0
+				}
+				
+				!Previous Button
+				{
+					Flag = BUTTON
+					ID = 100191
+					!Pos = 20 130 57 63
+					Pos = 20 130 0 0
+					!Text = Pre
+					!ImageFile = ui/btn_prev_default.png
+					!FocusImageFile = ui/btn_prev_over.png
+					!PressedImageFile = ui/btn_prev_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 0
+				}
+				!Next Button
+				{
+					Flag = BUTTON
+					ID = 100192
+					!Pos = 690 130 57 63
+					Pos = 690 130 0 0
+					!Text = Next
+					!ImageFile = ui/btn_next_default.png
+					!FocusImageFile = ui/btn_next_over.png
+					!PressedImageFile = ui/btn_next_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 0
+				}
+				
+				
+				!GachaButton 1
+				{
+					Flag = BUTTON
+					ID = 100101
+					Pos = 202 -13 81 125
+					!Text = Gacha 1
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = 1コイン 200ゲーム
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 1
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101011
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 1
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101012
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 1
+					{
+						Flag = TEXTBOX
+						ID = 1001011
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						!EnableBackColor = 1
+						!BackColor = 64 64 64 192
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 2
+				{
+					Flag = BUTTON
+					ID = 100102
+					Pos = 306 -13 81 125
+					!Text = Gacha 2
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = フレーム
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 2
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101021
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 2
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101022
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 2
+					{
+						Flag = TEXTBOX
+						ID = 1001021
+						Pos = 0 82 114 24
+						!Text = Gacha 2 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 3
+				{
+					Flag = BUTTON
+					ID = 100103
+					Pos = 408 -13 81 125
+					!Text = Gacha 3
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ひとり背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 3
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101031
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 3
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101032
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 3
+					{
+						Flag = TEXTBOX
+						ID = 1001031
+						Pos = 0 82 114 24
+						!Text = Gacha 3 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 4
+				{
+					Flag = BUTTON
+					ID = 100104
+					Pos = 510 -13 81 125
+					!Text = Gacha 4
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = みんな背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 4
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101041
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 4
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101042
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 4
+					{
+						Flag = TEXTBOX
+						ID = 1001041
+						Pos = 0 82 114 24
+						!Text = Gacha 4 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 5
+				{
+					Flag = BUTTON
+					ID = 100105
+					Pos = 613 -13 81 125
+					!Text = Gacha 5
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ボイス
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 5
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101051
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 5
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101052
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 5
+					{
+						Flag = TEXTBOX
+						ID = 1001051
+						Pos = 0 82 114 24
+						!Text = Gacha 5 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 6
+				{
+					Flag = BUTTON
+					ID = 100106
+					Pos = 202 122 81 125
+					!Text = Gacha 6
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = サポート
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 6
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101061
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 6
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101062
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 6
+					{
+						Flag = TEXTBOX
+						ID = 1001061
+						Pos = 0 82 114 24
+						!Text = Gacha 6 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 7
+				{
+					Flag = BUTTON
+					ID = 100107
+					Pos = 306 122 81 125
+					!Text = Gacha 7
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ブロック
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 7
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101071
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 7
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101072
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 7
+					{
+						Flag = TEXTBOX
+						ID = 1001071
+						Pos = 0 82 114 24
+						!Text = Gacha 7 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 8
+				{
+					Flag = BUTTON
+					ID = 100108
+					Pos = 408 122 81 125
+					!Text = Gacha 8
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = フレーム
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 8
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101081
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 8
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101082
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 8
+					{
+						Flag = TEXTBOX
+						ID = 1001081
+						Pos = 0 82 114 24
+						!Text = Gacha 8 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 9
+				{
+					Flag = BUTTON
+					ID = 100109
+					Pos = 202 256 81 125
+					!Pos = 510 122 81 125(원래9번위치)
+					!Text = Gacha 9
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ひとり背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 9
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101091
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 9
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101092
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 9
+					{
+						Flag = TEXTBOX
+						ID = 1001091
+						Pos = 0 82 114 24
+						!Text = Gacha 9 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 10
+				{
+					Flag = BUTTON
+					ID = 100110
+					Pos = 306 256 81 125
+					!Pos = 613 122 81 125(원래10번위치)
+					!Text = Gacha 10
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = みんな背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 10
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101101
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 10
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101102
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 10
+					{
+						Flag = TEXTBOX
+						ID = 1001101
+						Pos = 0 82 114 24
+						!Text = Gacha 10 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 11
+				{
+					Flag = BUTTON
+					ID = 100111
+					Pos = 408 256 81 125
+					!Pos = 202 256 81 125(원래11번위치)
+					!Text = Gacha 11
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ブロック
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 11
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101111
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 11
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101112
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 11
+					{
+						Flag = TEXTBOX
+						ID = 1001111
+						Pos = 0 82 100 24
+						!Text = Gacha 11 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 12
+				{
+					Flag = BUTTON
+					ID = 100112
+					Pos = 510 122 81 125
+					!Pos = 306 256 81 125(원래12번위치)
+					!Text = Gacha 12
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = フレーム
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 12
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101121
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 12
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101122
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 12
+					{
+						Flag = TEXTBOX
+						ID = 1001121
+						Pos = 0 82 114 24
+						!Text = Gacha 12 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 13
+				{
+					Flag = BUTTON
+					ID = 100113
+					Pos = 306 256 81 125
+					!Pos = 408 256 81 125(원래13번위치)
+					!Text = Gacha 13
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ひとり背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 13
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101131
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 13
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101132
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 13
+					{
+						Flag = TEXTBOX
+						ID = 1001131
+						Pos = 0 82 114 24
+						!Text = Gacha 13 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 14
+				{
+					Flag = BUTTON
+					ID = 100114
+					Pos = 510 256 81 125
+					!Text = Gacha 14
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = みんな背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 14
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101141
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 14
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101142
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 14
+					{
+						Flag = TEXTBOX
+						ID = 1001141
+						Pos = 0 82 114 24
+						!Text = Gacha 14 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!GachaButton 15
+				{
+					Flag = BUTTON
+					ID = 100115
+					Pos = 613 256 81 125
+					!Text = Gacha 15
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Gacha New Mark 15
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100101151
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Gacha Free Mark 15
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100101152
+						ImageFile = ui/shop/shop_gacha_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Gacha text 15 
+					{
+						Flag = TEXTBOX
+						ID = 1001151
+						Pos = 0 82 114 24
+						!Text = Gacha 15 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!My TP Window
+			{
+				Flag = WINDOW
+				Pos = 376 445 0 0
+				ImageFile = ui/shop/point_bg_tp.png
+				TransparentMouseEvent = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 10011
+					Pos = 58 15 88 16
+					!Text = My TP
+					!TextColor = 0 0 0 255
+					Option = DT_RIGHT DT_VCENTER
+					TransparentMouseEvent =1
+					!EnableBackColor = 1
+					!BackColor = 100 100 100 100
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			/*
+			!My Coupon Window
+			{
+				Flag = WINDOW
+				Pos = 480 442 160 24
+				ImageFile = ui/shop/point_bg_coupon.png
+				TransparentMouseEvent = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 10012
+					Pos = 58 15 88 16
+					!Text = My Coupon
+					!TextColor = 0 0 0 255
+					Option = DT_RIGHT DT_VCENTER
+					TransparentMouseEvent =1
+					!Show = 0
+				}
+			{
+				Flag = END_CHILD
+			}
+			*/
+			
+			!My COIN Window
+			{
+				Flag = WINDOW
+				Pos = 14 445 0 0
+				ImageFile = ui/shop/point_bg_coin.png
+				TransparentMouseEvent = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 10013
+					Pos = 58 15 88 16
+					!Text = My COIN
+					!TextColor = 0 0 0 255
+					Option = DT_RIGHT DT_VCENTER
+					TransparentMouseEvent =1
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!Gacha Comment
+			{
+				Flag = WINDOW
+				ID = 10016
+				Pos = 6 200 0 0
+				ImageFile = ui/shop/gachatext/gachatext_00.png
+			}
+			
+			!Gacha Animation Window
+			{
+				Flag = WINDOW_SPR2D
+				ID = 13049
+				Pos = 131-29 32 538 400
+				ImageFile = ui/shop/shop_gacha_bg2.png
+				FileName = gacha.SPR
+				MotionName = anim
+				SoundFile = Gacha.wav
+				Modal = 1
+				ZOrder = 1001
+				Show = 0
+			}
+			
+			
+			!Gacha Click
+			{
+				Flag = WINDOW
+				ID = 13060
+				Pos = 131-29 32 538 400
+				ImageFile = ui/shop/shop_gacha_bg1.png
+				Modal = 1
+				ZOrder = 10
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				!타이틀 이미지 WINDOW
+				{
+					Flag = WINDOW
+					ID = 130601
+					Pos = 16 16 400 30
+					ImageFile = ui/shop/shop_title_tpgacha.png
+					ImageFileEx = ui/shop/shop_title_tpgacha.png,ui/shop/shop_title_coingacha.png,ui/shop/shop_title_coupongacha.png
+					TransparentMouseEvent =1
+					Show = 0
+				}
+				!아이템 이름
+				{
+					Flag = TEXTBOX
+					ID = 1306001
+					Pos = 0 0 150 18
+					TextColor = 80 80 80 255
+					FontIndex = 0
+					!Text = 아이템 이름
+					Option = DT_LEFT DT_VCENTER
+					Show = 0
+				}
+				!아이템 가격
+				{
+					Flag = TEXTBOX
+					ID = 1306002
+					Pos = 260 24 150 18
+					TextColor = 80 80 80 255
+					FontIndex = 20
+					!Text = 아이템 가격
+					Option = DT_LEFT DT_VCENTER
+					TransparentMouseEvent =1
+					Show = 0
+				}
+				!Gacha Preview
+				{
+					Flag = WINDOW
+					ID = 1306005
+					Pos = 8 49 0 0
+					TransparentMouseEvent = 1
+				}
+				
+				!Yes Button
+				{
+					Flag = BUTTON
+					ID = 1306003
+					Pos = 144 336 253 46
+					!Text = Yes
+					ImageFile = ui/shop/btn_gacha_default.png
+					FocusImageFile = ui/shop/btn_gacha_over.png
+					PressedImageFile = ui/shop/btn_gacha_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!No Button
+				{
+					Flag = BUTTON
+					ID = 1306004
+					Pos = 500 8 30 28
+					!Text = No
+					ImageFile = ui/shop/btn_popup_gacha_close_default.png
+					FocusImageFile = ui/shop/btn_popup_gacha_close_over.png
+					PressedImageFile = ui/shop/btn_popup_gacha_close_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!Gacha Result
+			{
+				Flag = WINDOW
+				ID = 13061
+				!Pos = 165 58 438 327
+				Pos = 131-29 32 538 400
+				ImageFile = ui/shop/shop_gacha_bg3.png
+				Modal = 1
+				ZOrder = 10
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				!타이틀 이미지 WINDOW
+				{
+					Flag = WINDOW
+					ID = 130611
+					Pos = 16 16 400 30
+					ImageFile = ui/shop/shop_title_tpgacha.png
+					ImageFileEx = ui/shop/shop_title_tpgacha.png,ui/shop/shop_title_coingacha.png,ui/shop/shop_title_coupongacha.png
+					Show = 0
+				}
+				{
+					Flag = TEXTBOX
+					ID = 1306101
+					Pos = 70 118 400 40
+					!Text = 획득 아이템 이름 InitDecoList Name
+					TextColor = 95 95 95 255
+					FontIndex = 20
+					Option = DT_CENTER DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 1306102
+					Pos = 13 78 230 60
+					!Text = 획득 아이템 설명 InitDecoList Comment
+					!TextColor = 0 0 0 255
+					FontIndex = 2
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = LISTBOXW
+					Pos = 13 40 230 170
+					!Text0 = $ITEM_Change_Mino_Result
+					TextColor0 = 95 95 95 255
+					TextGap = 1
+					FontIndex0 = 2
+					Option = DT_LEFT DT_TOP
+					TransparentMouseEvent =1
+				}
+				/*
+				!지금 적용?
+				{
+					Flag = TEXTBOX
+					Pos = 13 204 230 20
+					Text = $ITEM_Apply_Now
+					TextColor = 255 153 0 255
+					FontIndex = 2
+					Option = DT_LEFT DT_TOP
+				}
+				*/
+				!Preview Window
+				{
+					Flag = WINDOW
+					ID = 1306103
+					!Pos = 159 132 80 80
+					Pos = 212 170 80 80
+					TransparentMouseEvent =1
+					!EnableBackColor = 1
+					!BackColor = 120 120 120 130
+				}
+				{
+					Flag = START_CHILD
+				}
+					{
+						Flag = WINDOW
+						Pos = 0 72 114 38
+						ImageFile = ui/shop/deco_preview_cover.png
+						TransparentMouseEvent =1
+						!EnableBackColor = 1
+						!BackColor = 100 100 100 130
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				!Yes Button
+				{
+					Flag = BUTTON
+					ID = 1306104
+					Pos = 140 346 94 27
+					!Text = Yes
+					ImageFile = ui/shop/btn_ok2_default.png
+					FocusImageFile = ui/shop/btn_ok2_over.png
+					PressedImageFile = ui/shop/btn_ok2_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!No Button
+				{
+					Flag = BUTTON
+					ID = 1306105
+					Pos = 302 346 94 27
+					!Text = No
+					ImageFile = ui/shop/btn_cancel2_default.png
+					FocusImageFile = ui/shop/btn_cancel2_over.png
+					PressedImageFile = ui/shop/btn_cancel2_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!Bottom Notice
+			{
+				Flag = TEXTBOX
+				Pos = 157 472 450 20
+				Text = $SHOP_SHOP_BOTTOM
+				TextColor = 100 100 100 255
+				FontIndex = 3
+				Option = DT_CENTER DT_VCENTER
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 128
+				TransparentMouseEvent = 1
+				Show = 0
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!튜닝
+		
+		!Tuning Sheet (튜닝 페이지)
+		{
+			Flag = WINDOW
+			Pos = 19 50 741 450
+			ID = 1002
+			ImageFile = ui/shop/shop_bg2.png
+			TransparentMouseEvent = 1
+			!EnableBackColor = 1
+			!BackColor = 80 20 20 60
+		}
+		{
+			Flag = START_CHILD
+		}
+			!Tuning Guide Window
+			{
+				Flag = WINDOW
+				Pos = 12 310 330 150
+				ImageFile = ui/shop/shop_guide_tuning.png
+				TransparentMouseEvent = 1
+				!EnableBackColor = 1
+				!BackColor = 20 20 80 60
+			}
+			!Tuning Window
+			{
+				Flag = WINDOW
+				Pos = 0 64 365 230
+				TransparentMouseEvent = 1
+				!EnableBackColor = 1
+				!BackColor = 20 20 60 60
+			}
+			{
+				Flag = START_CHILD
+			}
+				!튜닝 버튼들
+				{
+					Flag = WINDOW
+					Pos = 2 49 350 180
+					TransparentMouseEvent = 1
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Next Show Count
+					{
+						Flag = TEXTBOX
+						Pos = 10 10 126 20
+						!Text = Next 표시 개수
+						TextColor = 255 0 255 255
+						Option = DT_LEFT DT_VCENTER
+					}
+					{
+						Flag = BUTTON
+						ID = 1304001
+						Pos = 139 10 40 21
+						!Text = UP1
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304002
+						Pos = 182 10 40 21
+						!Text = UP2
+						IsCheckButton = 1
+						!NextTabOrderID = 1304003
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304003
+						Pos = 225 10 40 21
+						!Text = UP3
+						IsCheckButton = 1
+						!NextTabOrderID = 1304001
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304004
+						Pos = 268 10 40 21
+						!Text = UP4
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						!Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304005
+						Pos = 311 10 40 21
+						!Text = UP5
+						IsCheckButton = 1
+						!NextTabOrderID = 1304003
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304006
+						Pos = 345 10 40 21
+						!Text = UP6
+						IsCheckButton = 1
+						!NextTabOrderID = 1304001
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					
+					
+					!Move Left/Right Speed
+					{
+						Flag = TEXTBOX
+						Pos = 10 46 126 20
+						!Text = 좌우이동스피드
+						TextColor = 255 0 255 255
+						Option = DT_LEFT DT_VCENTER
+					}
+					{
+						Flag = BUTTON
+						ID = 1304011
+						Pos = 139 46 40 21
+						!Text = UP1
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304012
+						Pos = 182 46 40 21
+						!Text = UP2
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304013
+						Pos = 225 46 40 21
+						!Text = UP3
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304014
+						Pos = 268 46 40 21
+						!Text = UP4
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304015
+						Pos = 311 46 40 21
+						!Text = UP5
+						IsCheckButton = 1
+						!NextTabOrderID = 1304003
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304016
+						Pos = 345 46 40 21
+						!Text = UP6
+						IsCheckButton = 1
+						!NextTabOrderID = 1304001
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					
+					
+					!Soft Drop Speed
+					{
+						Flag = TEXTBOX
+						Pos = 10 82 126 20
+						!Text = 소프트드롭스피드
+						TextColor = 255 0 255 255
+						Option = DT_LEFT DT_VCENTER
+					}
+					{
+						Flag = BUTTON
+						ID = 1304021
+						Pos = 139 82 40 21
+						!Text = UP1
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304022
+						Pos = 182 82 40 21
+						!Text = UP2
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304023
+						Pos = 225 82 40 21
+						!Text = UP3
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304024
+						Pos = 268 82 40 21
+						!Text = UP4
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304025
+						Pos = 311 82 40 21
+						!Text = UP5
+						IsCheckButton = 1
+						!NextTabOrderID = 1304003
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304026
+						Pos = 345 82 40 21
+						!Text = UP6
+						IsCheckButton = 1
+						!NextTabOrderID = 1304001
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					
+					
+					!Line Clear Speed
+					{
+						Flag = TEXTBOX
+						Pos = 10 118 126 20
+						!Text = 라인클리어스피드
+						TextColor = 255 0 255 255
+						Option = DT_LEFT DT_VCENTER
+					}
+					{
+						Flag = BUTTON
+						ID = 1304031
+						Pos = 139 118 40 21
+						!Text = UP1
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304032
+						Pos = 182 118 40 21
+						!Text = UP2
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304033
+						Pos = 225 118 40 21
+						!Text = UP3
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304034
+						Pos = 268 118 40 21
+						!Text = UP4
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304035
+						Pos = 311 118 40 21
+						!Text = UP5
+						IsCheckButton = 1
+						!NextTabOrderID = 1304003
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304036
+						Pos = 345 118 40 21
+						!Text = UP6
+						IsCheckButton = 1
+						!NextTabOrderID = 1304001
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					
+					
+					!Lock Down Time
+					{
+						Flag = TEXTBOX
+						Pos = 10 154 126 20
+						!Text = 미노이동가능회수
+						TextColor = 255 0 255 255
+						Option = DT_LEFT DT_VCENTER
+					}
+					{
+						Flag = BUTTON
+						ID = 1304041
+						Pos = 139 154 40 21
+						!Text = UP1
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304042
+						Pos = 182 154 40 21
+						!Text = UP2
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304043
+						Pos = 225 154 40 21
+						!Text = UP3
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304044
+						Pos = 268 154 40 21
+						!Text = UP4
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304045
+						Pos = 311 154 40 21
+						!Text = UP5
+						IsCheckButton = 1
+						!NextTabOrderID = 1304003
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+					}
+					{
+						Flag = BUTTON
+						ID = 1304046
+						Pos = 345 154 40 21
+						!Text = UP6
+						IsCheckButton = 1
+						!NextTabOrderID = 1304001
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					
+					
+					!Bag System
+					{
+						Flag = TEXTBOX
+						Pos = 10 190 126 20
+						!Text = Bag
+						TextColor = 255 0 255 255
+						Option = DT_LEFT DT_VCENTER
+					}
+					{
+						Flag = BUTTON
+						ID = 1304051
+						Pos = 139 190 40 21
+						!Text = UP1
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304052
+						Pos = 182 190 40 21
+						!Text = UP2
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304053
+						Pos = 225 190 40 21
+						!Text = UP3
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304054
+						Pos = 268 190 40 21
+						!Text = UP4
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304055
+						Pos = 311 190 40 21
+						!Text = UP5
+						IsCheckButton = 1
+						!NextTabOrderID = 1304003
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304056
+						Pos = 345 190 40 21
+						!Text = UP6
+						IsCheckButton = 1
+						!NextTabOrderID = 1304001
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					
+					
+					!Hold Count
+					{
+						Flag = TEXTBOX
+						Pos = 10 226 126 20
+						!Text = Hold가능회수
+						TextColor = 255 0 255 255
+						Option = DT_LEFT DT_VCENTER
+					}
+					{
+						Flag = BUTTON
+						ID = 1304061
+						Pos = 139 226 40 21
+						!Text = UP1
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304062
+						Pos = 182 226 40 21
+						!Text = UP2
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304063
+						Pos = 225 226 40 21
+						!Text = UP3
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304064
+						Pos = 268 226 40 21
+						!Text = UP4
+						IsCheckButton = 1
+						!NextTabOrderID = 1304002
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304065
+						Pos = 311 226 40 21
+						!Text = UP5
+						IsCheckButton = 1
+						!NextTabOrderID = 1304003
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+					{
+						Flag = BUTTON
+						ID = 1304066
+						Pos = 345 226 40 21
+						!Text = UP6
+						IsCheckButton = 1
+						!NextTabOrderID = 1304001
+						ImageFile = ui/tuning/tuning_default.png
+						FocusImageFile = ui/tuning/tuning_over.png
+						PressedImageFile = ui/tuning/tuning_down.png
+						FocusSoundFile = button_f.wav
+						PressedSoundFile = button_p.wav
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!튜닝 확인 다이얼로그
+			{
+				Flag = WINDOW
+				ID = 13041
+				Pos = 10 10 250 150
+				!EnableBackColor = 1
+				!BackColor = 100 100 100 130
+				ImageFile = ui/minishop_dialog_bg.png
+				IsPatternImage = 1
+				PatternImageSize = 10
+				Show = 0
+				Modal = 1
+				ZOrder = 11
+			}
+			{
+				Flag = START_CHILD
+			}
+				!타이틀 이미지 WINDOW
+				{
+					Flag = WINDOW
+					Pos = 11 9 228 23
+					ImageFile = ui/shop/shop_dialog_tuning.png
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130411
+					Pos = 10 40 230 30
+					Text = チューニング内容
+					TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+					!ImageFile = ui/deco_item_bg.png
+				}
+				
+				{
+					Flag = TEXTBOX
+					ID = 130412
+					Pos = 10 70 230 20
+					Text = 必要 TP:
+					TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+					!ImageFile = ui/deco_item_bg.png
+				}
+				{
+					Flag = TEXTBOX
+					!ID = 
+					Pos = 10 90 230 20
+					Text = 本当にしますか？
+					TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+					!ImageFile = ui/deco_item_bg.png
+				}
+				
+				!Yes Button
+				{
+					Flag = BUTTON
+					ID = 1304111
+					Pos = 32 118 78 27
+					!Text = Yes
+					ImageFile = ui/common/btn_ok_default.png
+					FocusImageFile = ui/common/btn_ok_over.png
+					PressedImageFile = ui/common/btn_ok_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!No Button
+				{
+					Flag = BUTTON
+					ID = 1304112
+					Pos = 138 118 78 27
+					!Text = No
+					ImageFile = ui/common/btn_cancel_default.png
+					FocusImageFile = ui/common/btn_cancel_over.png
+					PressedImageFile = ui/common/btn_cancel_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!튜닝 성공 다이얼로그
+			{
+				Flag = WINDOW
+				ID = 13042
+				Pos = 248 130 250 150
+				!EnableBackColor = 1
+				!BackColor = 100 100 100 130
+				ImageFile = ui/minishop_dialog_bg.png
+				IsPatternImage = 1
+				PatternImageSize = 10
+				Show = 0
+				Modal = 1
+				ZOrder = 11
+			}
+			{
+				Flag = START_CHILD
+			}
+				!타이틀 이미지 WINDOW
+				{
+					Flag = WINDOW
+					Pos = 11 9 228 23
+					ImageFile = ui/shop/shop_dialog_tuning_success.png
+				}
+				{
+					Flag = TEXTBOX
+					!ID = 
+					Pos = 10 20 230 20
+					!Text = チューニング成功!!
+					TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+					!ImageFile = ui/deco_item_bg.png
+				}
+				{
+					Flag = TEXTBOX
+					ID = 130421
+					Pos = 10 40 230 30
+					Text = チューニング成功内容
+					TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+					!ImageFile = ui/deco_item_bg.png
+				}
+				{
+					Flag = TEXTBOX
+					!ID = 
+					Pos = 10 70 230 20
+					Text = になりました
+					TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+					!ImageFile = ui/deco_item_bg.png
+				}
+				!OK Button
+				{
+					Flag = BUTTON
+					ID = 1304211
+					Pos = 85 118 78 27
+					!Text = OK
+					ImageFile = ui/common/btn_ok_default.png
+					FocusImageFile = ui/common/btn_ok_over.png
+					PressedImageFile = ui/common/btn_ok_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!튜닝 실패 다이얼로그
+			{
+				Flag = WINDOW
+				ID = 13043
+				Pos = 165 110 250 150
+				!EnableBackColor = 1
+				!BackColor = 100 100 100 130
+				ImageFile = ui/minishop_dialog_bg.png
+				IsPatternImage = 1
+				PatternImageSize = 10
+				Show = 0
+				Modal = 1
+				ZOrder = 11
+			}
+			{
+				Flag = START_CHILD
+			}
+				!타이틀 이미지 WINDOW
+				{
+					Flag = WINDOW
+					Pos = 11 9 228 23
+					ImageFile = ui/minishop_dialog_title_fault.png
+				}
+				{
+					Flag = TEXTBOX
+					!ID = 
+					Pos = 10 20 230 20
+					!Text = チューニング失敗!!
+					!TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+					!ImageFile = ui/deco_item_bg.png
+				}
+				!튜닝 실패 레벨 표시
+				{
+					Flag = TEXTBOX
+					ID = 130431
+					Pos = 10 40 230 30
+					!Text = チューニングを失敗しました
+					!TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					!ID = 
+					Pos = 10 70 230 20
+					Text = チューニングを失敗しました
+					!TextColor = 95 95 95 255
+					!FontIndex = 19
+					Option = DT_CENTER DT_TOP
+					!ImageFile = ui/deco_item_bg.png
+				}
+				!OK Button
+				{
+					Flag = BUTTON
+					ID = 1304311
+					Pos = 85 118 78 27
+					!Text = OK
+					ImageFile = ui/common/btn_ok_default.png
+					FocusImageFile = ui/common/btn_ok_over.png
+					PressedImageFile = ui/common/btn_ok_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!기능계 아이템(Change Garbage, Anti Miss) Select Window
+			{
+				Flag = WINDOW
+				Pos = 368 45 370 50
+				TransparentMouseEvent = 1
+				!EnableBackColor = 1
+				!BackColor = 40 40 120 100
+			}
+			{
+				Flag = START_CHILD
+			}
+				/*
+				!My Setting Button
+				{
+					Flag = BUTTON
+					ID = 1002101
+					Pos = 10 10 150 20
+					Text = My Setting
+					!ImageFile = ui/btn_addlist_default.png
+					!FocusImageFile = ui/btn_addlist_over.png
+					!PressedImageFile = ui/btn_addlist_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				*/
+				!Change Garbage List Button (자마 블럭)
+				{
+					Flag = BUTTON
+					ID = 1002102
+					Pos = 18 10 113 29
+					!Text = Change Garbage
+					ImageFile = ui/shop/tuning_garbage_default.png
+					FocusImageFile = ui/shop/tuning_garbage_over.png
+					PressedImageFile = ui/shop/tuning_garbage_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Anti Miss List Button
+				{
+					Flag = BUTTON
+					ID = 1002103
+					Pos = 131 10 109 29
+					!Text = Anti Miss
+					ImageFile = ui/shop/tuning_amiss_default.png
+					FocusImageFile = ui/shop/tuning_amiss_over.png
+					PressedImageFile = ui/shop/tuning_amiss_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!ItemPack List Button
+				{
+					Flag = BUTTON
+					ID = 1002104
+					Pos = 240 10 111 29
+					!Text = ItemPack
+					ImageFile = ui/shop/tuning_itempack_default.png
+					FocusImageFile = ui/shop/tuning_itempack_over.png
+					PressedImageFile = ui/shop/tuning_itempack_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!기능계 아이템(Change Garbage, Anti Miss) List Window
+			{
+				Flag = WINDOW
+				Pos = 368 112 375 330
+				TransparentMouseEvent = 1
+				!EnableBackColor = 1
+				!BackColor = 40 40 120 100
+				ZOrder = 10
+			}
+			{
+				Flag = START_CHILD
+			}
+				!Change Garbage 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10021021
+					ImageFile = ui/shop/shop_settingtitle_garbage.png
+					Show = 0
+				}
+				!Anti Miss 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10021031
+					ImageFile = ui/shop/shop_settingtitle_antimiss.png
+					Show = 0
+				}
+				!ItemPack 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10021041
+					ImageFile = ui/shop/shop_settingtitle_itempack.png
+					Show = 0
+				}
+				
+				/*
+				!Previous Button
+				{
+					Flag = BUTTON
+					ID = 1002291
+					Pos = -12 160 22 22
+					!Text = <
+					ImageFile = ui/shop/btn_previcon_defautl.png
+					FocusImageFile = ui/shop/btn_previcon_over.png
+					PressedImageFile = ui/shop/btn_previcon_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				*/
+				/*
+				!Next Button
+				{
+					Flag = BUTTON
+					ID = 1002292
+					Pos = 364 160 22 22
+					!Text = >
+					ImageFile = ui/shop/btn_nexticon_default.png
+					FocusImageFile = ui/shop/btn_nexticon_over.png
+					PressedImageFile = ui/shop/btn_nexticon_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				*/
+				
+				
+				! Item List Button 1
+				{
+					Flag = BUTTON
+					ID = 1002201
+					Pos = 10 8 114 110
+					!Text = Item 1
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 1
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220131
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 1
+					{
+						Flag = TEXTBOX
+						ID = 10022011
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				! Item List Button 2
+				{
+					Flag = BUTTON
+					ID = 1002202
+					Pos = 130 8 114 110
+					!Text = Item 2
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 2
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220231
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 2
+					{
+						Flag = TEXTBOX
+						ID = 10022021
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				! Item List Button 3
+				{
+					Flag = BUTTON
+					ID = 1002203
+					Pos = 250 8 114 110
+					!Text = Item 3
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 3
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220331
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 3
+					{
+						Flag = TEXTBOX
+						ID = 10022031
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				! Item List Button 4
+				{
+					Flag = BUTTON
+					ID = 1002204
+					Pos = 10 122 114 110
+					!Text = Item 4
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 4
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220431
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 4
+					{
+						Flag = TEXTBOX
+						ID = 10022041
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				! Item List Button 5
+				{
+					Flag = BUTTON
+					ID = 1002205
+					Pos = 130 122 114 110
+					!Text = Item 5
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 5
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220531
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 5
+					{
+						Flag = TEXTBOX
+						ID = 10022051
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				! Item List Button 6
+				{
+					Flag = BUTTON
+					ID = 1002206
+					Pos = 250 122 114 110
+					!Text = Item 6
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 6
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220631
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 6
+					{
+						Flag = TEXTBOX
+						ID = 10022061
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				! Item List Button 7
+				{
+					Flag = BUTTON
+					ID = 1002207
+					Pos = 10 236 114 110
+					!Text = Item 7
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 7
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220731
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 7
+					{
+						Flag = TEXTBOX
+						ID = 10022071
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				! Item List Button 8
+				{
+					Flag = BUTTON
+					ID = 1002208
+					Pos = 130 236 114 110
+					!Text = Item 8
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 8
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220831
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 8
+					{
+						Flag = TEXTBOX
+						ID = 10022081
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				! Item List Button 9
+				{
+					Flag = BUTTON
+					ID = 1002209
+					Pos = 250 236 114 110
+					!Text = Item 9
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					! Item 선택 Mark 9
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100220931
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					! Item Name text 9
+					{
+						Flag = TEXTBOX
+						ID = 10022091
+						Pos = 0 82 114 24
+						!Text = Item 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!Apply, Cancel, BG Show Button Window
+			{
+				Flag = WINDOW
+				Pos = 394 442 320 30
+				TransparentMouseEvent = 1
+				!EnableBackColor = 1
+				!BackColor = 40 40 120 255
+			}
+			{
+				Flag = START_CHILD
+			}
+				/*
+				!Apply Button
+				{
+					Flag = BUTTON
+					ID = 1002301
+					Pos = 100 4 80 20
+					Text = Apply
+					!ImageFile = ui/btn_addlist_default.png
+					!FocusImageFile = ui/btn_addlist_over.png
+					!PressedImageFile = ui/btn_addlist_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				*/
+				!Cancel Button
+				{
+					Flag = BUTTON
+					ID = 1002302
+					Pos = 0 0 320 28
+					!Text = OFF
+					ImageFile = ui/shop/btn_off_default.png
+					FocusImageFile = ui/shop/btn_off_over.png
+					PressedImageFile = ui/shop/btn_off_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!Bottom Notice
+			{
+				Flag = TEXTBOX
+				Pos = 157 472 450 20
+				Text = $SHOP_TUNE_BOTTOM
+				TextColor = 100 100 100 255
+				FontIndex = 3
+				Option = DT_CENTER DT_VCENTER
+				TransparentMouseEvent = 1
+				Show = 0
+			}
+			
+			
+		{
+			Flag = END_CHILD
+		}
+		
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!데코
+		
+		!Deco Sheet (보유 데코 아이템 페이지)
+		{
+			Flag = WINDOW
+			Pos = 19 50 741 450
+			ID = 1003
+			ImageFile = ui/shop/shop_bg3.png
+			!EnableBackColor = 1
+			!BackColor = 40 40 120 50
+			TransparentMouseEvent = 1
+		}
+		{
+			Flag = START_CHILD
+		}
+			!MATRIX
+			{
+				Flag = WINDOW
+				Pos = -20 32 0 0
+				ID = 10031
+				ImageFile = %Matrix%\Matrix18x18.png
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = INCLUDE
+					FileName = UI/UI_Shop_Matrix.uis
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!Deco Type Select Window
+			{
+				Flag = WINDOW
+				Pos = 368 45 0 0
+				!EnableBackColor = 1
+				!BackColor = 40 40 120 100
+			}
+			{
+				Flag = START_CHILD
+			}
+				!My Setting Button
+				{
+					Flag = BUTTON
+					ID = 1003101
+					Pos = -284 400 160 29
+					!Text = My Setting
+					IsCheckButton = 1
+					NextTabOrderID = 1003102
+					ImageFile = ui/shop/btn_mysetting_default.png
+					FocusImageFile = ui/shop/btn_mysetting_over.png
+					PressedImageFile = ui/shop/btn_mysetting_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Block List Button
+				{
+					Flag = BUTTON
+					ID = 1003102
+					Pos = 0 10 75 29
+					!Text = Block
+					IsCheckButton = 1
+					NextTabOrderID = 1003103
+					ImageFile = ui/shop/deco_block_default.png
+					FocusImageFile = ui/shop/deco_block_over.png
+					PressedImageFile = ui/shop/deco_block_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Frame(Matrix) List Button
+				{
+					Flag = BUTTON
+					ID = 1003103
+					Pos = 75 10 74 29
+					!Text = Frame(Matrix)
+					IsCheckButton = 1
+					NextTabOrderID = 1003104
+					ImageFile = ui/shop/deco_matrix_default.png
+					FocusImageFile = ui/shop/deco_matrix_over.png
+					PressedImageFile = ui/shop/deco_matrix_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Single BG List Button
+				{
+					Flag = BUTTON
+					ID = 1003104
+					Pos = 149 10 74 29
+					!Text = Single BG
+					IsCheckButton = 1
+					NextTabOrderID = 1003105
+					!ImageFile = ui/shop/
+					!FocusImageFile = ui/
+					!PressedImageFile = ui/
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 0
+				}
+				!Multi BG List Button
+				{
+					Flag = BUTTON
+					ID = 1003105
+					Pos = 149 10 74 29
+					!Text = Multi BG
+					IsCheckButton = 1
+					NextTabOrderID = 1003106
+					ImageFile = ui/shop/deco_Mbg_default.png
+					FocusImageFile = ui/shop/deco_Mbg_over.png
+					PressedImageFile = ui/shop/deco_Mbg_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Voice List Button
+				{
+					Flag = BUTTON
+					ID = 1003106
+					Pos = 223 10 74 29
+					!Text = Voice
+					IsCheckButton = 1
+					!NextTabOrderID = 1003101
+					NextTabOrderID = 1003107
+					ImageFile = ui/shop/deco_voice_default.png
+					FocusImageFile = ui/shop/deco_voice_over.png
+					PressedImageFile = ui/shop/deco_voice_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Pack List Button
+				{
+					Flag = BUTTON
+					ID = 1003107
+					Pos = 297 10 75 29
+					!Text = Pack
+					IsCheckButton = 1
+					NextTabOrderID = 1003101
+					ImageFile = ui/shop/deco_pack_default.png
+					FocusImageFile = ui/shop/deco_pack_over.png
+					PressedImageFile = ui/shop/deco_pack_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!Deco List Window
+			{
+				Flag = WINDOW
+				Pos = 368 112 375 330
+				TransparentMouseEvent = 1
+				!EnableBackColor = 1
+				!BackColor = 40 80 120 150
+				ZOrder = 10
+			}
+			{
+				Flag = START_CHILD
+			}
+				!My Setting 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 375 34
+					ID = 10031011
+					ImageFile = ui/shop/shop_settingtitle_mysetting.png
+					!EnableBackColor = 1
+					!BackColor = 40 40 120 255
+					TransparentMouseEvent = 1
+					Show = 0
+					ZOrder = 1
+				}
+				!Block 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10031021
+					ImageFile = ui/shop/shop_settingtitle_block.png
+					Show = 0
+				}
+				!Frame 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10031031
+					ImageFile = ui/shop/shop_settingtitle_frame.png
+					Show = 0
+				}
+				!Single BG 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10031041
+					!ImageFile = ui/shop/
+					Show = 0
+				}
+				!Multi BG 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10031051
+					ImageFile = ui/shop/shop_settingtitle_bgmuti.png
+					Show = 0
+				}
+				!Voice 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10031061
+					ImageFile = ui/shop/shop_settingtitle_voice.png
+					Show = 0
+				}
+				!Pack 타이틀 윈도우
+				{
+					Flag = WINDOW
+					Pos = 0 -32 0 0
+					ID = 10031071
+					ImageFile = ui/shop/shop_settingtitle_pack.png
+					Show = 0
+				}
+				
+				!Previous Button
+				{
+					Flag = BUTTON
+					ID = 1003291
+					Pos = -12 160 22 22
+					!Text = <
+					ImageFile = ui/shop/btn_previcon_defautl.png
+					FocusImageFile = ui/shop/btn_previcon_over.png
+					PressedImageFile = ui/shop/btn_previcon_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Next Button
+				{
+					Flag = BUTTON
+					ID = 1003292
+					Pos = 364 160 22 22
+					!Text = >
+					ImageFile = ui/shop/btn_nexticon_default.png
+					FocusImageFile = ui/shop/btn_nexticon_over.png
+					PressedImageFile = ui/shop/btn_nexticon_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				
+				
+				! Item List Button 1
+				{
+					Flag = BUTTON
+					ID = 1003201
+					Pos = 10 8 114 110
+					!Text = DECO Item 1
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 1
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320121
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 1
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320151
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 1
+					{
+						Flag = TEXTBOX
+						ID = 10032011
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				! Item List Button 2
+				{
+					Flag = BUTTON
+					ID = 1003202
+					Pos = 130 8 114 110
+					!Text = DECO Item 2
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 2
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320122
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 2
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320152
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 2
+					{
+						Flag = TEXTBOX
+						ID = 10032012
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				! Item List Button 3
+				{
+					Flag = BUTTON
+					ID = 1003203
+					Pos = 250 8 114 110
+					!Text = DECO Item 3
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 3
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320123
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 3
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320153
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 3
+					{
+						Flag = TEXTBOX
+						ID = 10032013
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				! Item List Button 4
+				{
+					Flag = BUTTON
+					ID = 1003204
+					Pos = 10 122 114 110
+					!Text = DECO Item 4
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 4
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320124
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 4
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320154
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 4
+					{
+						Flag = TEXTBOX
+						ID = 10032014
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				! Item List Button 5
+				{
+					Flag = BUTTON
+					ID = 1003205
+					Pos = 130 122 114 110
+					!Text = DECO Item 5
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 5
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320125
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 5
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320155
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 5
+					{
+						Flag = TEXTBOX
+						ID = 10032015
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				! Item List Button 6
+				{
+					Flag = BUTTON
+					ID = 1003206
+					Pos = 250 122 114 110
+					!Text = DECO Item 6
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 6
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320126
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 6
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320156
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 6
+					{
+						Flag = TEXTBOX
+						ID = 10032016
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				! Item List Button 7
+				{
+					Flag = BUTTON
+					ID = 1003207
+					Pos = 10 236 114 110
+					!Text = DECO Item 7
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 7
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320127
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 7
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320157
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 7
+					{
+						Flag = TEXTBOX
+						ID = 10032017
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				! Item List Button 8
+				{
+					Flag = BUTTON
+					ID = 1003208
+					Pos = 130 236 114 110
+					!Text = DECO Item 8
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 8
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320128
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 8
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320158
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 8
+					{
+						Flag = TEXTBOX
+						ID = 10032018
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+				! Item List Button 9
+				{
+					Flag = BUTTON
+					ID = 1003209
+					Pos = 250 236 114 110
+					!Text = DECO Item 9
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Deco 사용중 Mark 9
+					{
+						Flag = WINDOW
+						Pos = 0 0 114 110
+						ID = 100320129
+						ImageFile = ui/shop/shop_selected.png
+						TransparentMouseEvent = 1
+					}
+					!Deco 선택 Mark 9
+					{
+						Flag = WINDOW
+						Pos = 0 0 80 80
+						ID = 100320159
+						ImageFile = ui/shop/shop_check.png
+						TransparentMouseEvent = 1
+					}
+					!Deco Name text 9
+					{
+						Flag = TEXTBOX
+						ID = 10032019
+						Pos = 0 82 114 24
+						!Text = Gacha 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+					}
+				{
+					Flag = END_CHILD
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!Apply, Cancel, BG Show Button Window
+			{
+				Flag = WINDOW
+				Pos = 394 460 320 30
+				TransparentMouseEvent = 1
+				!EnableBackColor = 1
+				!BackColor = 40 40 120 255
+			}
+			{
+				Flag = START_CHILD
+			}
+				/*
+				!Apply Button
+				{
+					Flag = BUTTON
+					ID = 1003301
+					Pos = 11 2 78 27
+					!Text = Apply
+					ImageFile = ui/common/btn_apply_default.png
+					FocusImageFile = ui/common/btn_apply_over.png
+					PressedImageFile = ui/common/btn_apply_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 0
+				}
+				*/
+				
+				/*
+				!Cancel Button
+				{
+					Flag = BUTTON
+					!ID = 1003302
+					Pos = 200 2 80 26
+					Text = Cancel
+					!ImageFile = ui/btn_addlist_default.png
+					!FocusImageFile = ui/btn_addlist_over.png
+					!PressedImageFile = ui/btn_addlist_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				*/
+				
+				!BG Show
+				{
+					Flag = BUTTON
+					ID = 1003303
+					Pos = 0 0 320 28
+					!Text = BG show
+					PressedBackColor = 138 0 0 255
+					ImageFile = ui/shop/btn_bgcheck_default.png
+					FocusImageFile = ui/shop/btn_bgcheck_over.png
+					PressedImageFile = ui/shop/btn_bgcheck_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			!Bottom Notice
+			{
+				Flag = TEXTBOX
+				Pos = 157 472 450 20
+				Text = $SHOP_DECO_BOTTOM
+				TextColor = 100 100 100 255
+				FontIndex = 3
+				Option = DT_CENTER DT_VCENTER
+				!EnableBackColor = 1
+				!BackColor = 255 0 0 128
+				TransparentMouseEvent = 1
+				Show = 0
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+	!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!아이템 팩
+		
+		!Item Pack Sheet (아이템 팩 구입 페이지)
+		{
+			Flag = WINDOW
+			Pos = 19 50 741 450
+			ID = 1004
+			ImageFile = ui/shop/shop_bg4.png
+			!EnableBackColor = 1
+			!BackColor = 200 20 255 100
+			TransparentMouseEvent = 1
+			Show = 0
+		}
+		{
+			Flag = START_CHILD
+		}
+			!TP Scratch Buy Button
+			{
+				Flag = BUTTON
+				ID = 10014
+				Pos = 549 448 174 26
+				!Text = TP Scratch Buy
+				ImageFile = ui/shop/point_btn_tp_01.png
+				FocusImageFile = ui/shop/point_btn_tp_02.png
+				PressedImageFile = ui/shop/point_btn_tp_03.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				ZOrder = 1
+			}
+			!Coin Buy Button
+			{
+				Flag = BUTTON
+				ID = 10015
+				Pos = 187 448 174 26
+				!Text = Coin Buy
+				ImageFile = ui/shop/point_btn_cc_01.png
+				FocusImageFile = ui/shop/point_btn_cc_02.png
+				PressedImageFile = ui/shop/point_btn_cc_03.png
+				FocusSoundFile = button_f.wav
+				PressedSoundFile = button_p.wav
+				ZOrder = 1
+			}
+			
+			!Premium Merit Image
+			{
+				Flag = WINDOW
+				Pos = 354 52 0 0
+				ImageFile = ui/shop/shop_pmark.png
+			}
+			
+			!Item Pack List Window
+			{
+				Flag = WINDOW
+				Pos = -10 54 0 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				!Previous Button
+				{
+					Flag = BUTTON
+					ID = 100491
+					Pos = 20 130 0 0
+					!Text = Pre
+					!ImageFile = ui/btn_prev_default.png
+					!FocusImageFile = ui/btn_prev_over.png
+					!PressedImageFile = ui/btn_prev_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 0
+				}
+				!Next Button
+				{
+					Flag = BUTTON
+					ID = 100492
+					Pos = 690 130 0 0
+					!Text = Next
+					!ImageFile = ui/btn_next_default.png
+					!FocusImageFile = ui/btn_next_over.png
+					!PressedImageFile = ui/btn_next_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 0
+				}
+				
+				
+				!Item Pack Button 1
+				{
+					Flag = BUTTON
+					ID = 100401
+					Pos = 91 234 92 91
+					!Text = Item Pack 1
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = 1コイン 200ゲーム
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 1
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401011
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 1
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401012
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack Price Window 1
+					{
+						Flag = WINDOW
+						Pos = 3 94 0 0
+						ImageFile = ui/shop/dis_cc.png
+						TransparentMouseEvent = 1
+						Show = 1
+					}
+					!Item Pack text 1
+					{
+						Flag = TEXTBOX
+						ID = 1004011
+						Pos = 0 82 114 24
+						!Text = Item Pack 1 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						!EnableBackColor = 1
+						!BackColor = 64 64 64 192
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 2
+				{
+					Flag = BUTTON
+					ID = 100402
+					Pos = 189 234 92 91
+					!Text = Item Pack 2
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = フレーム
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 2
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401021
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 2
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401022
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack Price Window 2
+					{
+						Flag = WINDOW
+						Pos = 3 94 0 0
+						ImageFile = ui/shop/dis_cc.png
+						TransparentMouseEvent = 1
+						Show = 1
+					}
+					!Item Pack text 2
+					{
+						Flag = TEXTBOX
+						ID = 1004021
+						Pos = 0 82 114 24
+						!Text = Item Pack 2 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 3
+				{
+					Flag = BUTTON
+					ID = 100403
+					Pos = 287 234 92 91
+					!Text = Item Pack 3
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ひとり背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 3
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401031
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 3
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401032
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack Price Window 3
+					{
+						Flag = WINDOW
+						Pos = 3 94 0 0
+						ImageFile = ui/shop/dis_cc.png
+						TransparentMouseEvent = 1
+						Show = 1
+					}
+					!Item Pack text 3
+					{
+						Flag = TEXTBOX
+						ID = 1004031
+						Pos = 0 82 114 24
+						!Text = Item Pack 3 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 4
+				{
+					Flag = BUTTON
+					ID = 100404
+					Pos = 385 234 92 91
+					!Text = Item Pack 4
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = みんな背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 4
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401041
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 4
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401042
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack Price Window 4
+					{
+						Flag = WINDOW
+						Pos = 3 94 0 0
+						ImageFile = ui/shop/dis_tp.png
+						TransparentMouseEvent = 1
+						Show = 1
+					}
+					!Item Pack text 4
+					{
+						Flag = TEXTBOX
+						ID = 1004041
+						Pos = 0 82 114 24
+						!Text = Item Pack 4 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 5
+				{
+					Flag = BUTTON
+					ID = 100405
+					Pos = 484 234 92 91
+					!Text = Item Pack 5
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ボイス
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 5
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401051
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 5
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401052
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack Price Window 5
+					{
+						Flag = WINDOW
+						Pos = 3 94 0 0
+						ImageFile = ui/shop/dis_tp.png
+						TransparentMouseEvent = 1
+						Show = 1
+					}
+					!Item Pack text 5
+					{
+						Flag = TEXTBOX
+						ID = 1004051
+						Pos = 0 82 114 24
+						!Text = Item Pack 5 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 6
+				{
+					Flag = BUTTON
+					ID = 100406
+					Pos = 581 234 92 91
+					!Text = Item Pack 6
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = サポート
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 6
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401061
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 6
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401062
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack Price Window 6
+					{
+						Flag = WINDOW
+						Pos = 3 94 0 0
+						ImageFile = ui/shop/dis_tp.png
+						TransparentMouseEvent = 1
+						Show = 1
+					}
+					!Item Pack text 6
+					{
+						Flag = TEXTBOX
+						ID = 1004061
+						Pos = 0 82 114 24
+						!Text = Item Pack 6 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 7
+				{
+					Flag = BUTTON
+					ID = 100407
+					Pos = 220 100 92 91
+					!Text = Item Pack 7
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ブロック
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 7
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401071
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 7
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401072
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 7
+					{
+						Flag = TEXTBOX
+						ID = 1004071
+						Pos = 0 82 114 24
+						!Text = Item Pack 7 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 8
+				{
+					Flag = BUTTON
+					ID = 100408
+					Pos = 340 100 92 91
+					!Text = Item Pack 8
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = フレーム
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 8
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401081
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 8
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401082
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 8
+					{
+						Flag = TEXTBOX
+						ID = 1004081
+						Pos = 0 82 114 24
+						!Text = Item Pack 8 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 9
+				{
+					Flag = BUTTON
+					ID = 100409
+					Pos = 460 100 92 91
+					!Text = Item Pack 9
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ひとり背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 9
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401091
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 9
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401092
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 9
+					{
+						Flag = TEXTBOX
+						ID = 1004091
+						Pos = 0 82 114 24
+						!Text = Item Pack 9 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 10
+				{
+					Flag = BUTTON
+					ID = 100410
+					Pos = 580 100 92 91
+					!Text = Item Pack 10
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = みんな背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 10
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401101
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 10
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401102
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 10
+					{
+						Flag = TEXTBOX
+						ID = 1004101
+						Pos = 0 82 114 24
+						!Text = Item Pack 10 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 11
+				{
+					Flag = BUTTON
+					ID = 100411
+					Pos = 100 100 92 91
+					!Text = Item Pack 11
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ブロック
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 11
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401111
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 11
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401112
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 11
+					{
+						Flag = TEXTBOX
+						ID = 1004111
+						Pos = 0 82 100 24
+						!Text = Item Pack 11 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 12
+				{
+					Flag = BUTTON
+					ID = 100412
+					Pos = 220 100 92 91
+					!Text = Item Pack 12
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = フレーム
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 12
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401121
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 12
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401122
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 12
+					{
+						Flag = TEXTBOX
+						ID = 1004121
+						Pos = 0 82 114 24
+						!Text = Item Pack 12 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 13
+				{
+					Flag = BUTTON
+					ID = 100413
+					Pos = 340 100 92 91
+					!Text = Item Pack 13
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = ひとり背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 13
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401131
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 13
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401132
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 13
+					{
+						Flag = TEXTBOX
+						ID = 1004131
+						Pos = 0 82 114 24
+						!Text = Item Pack 13 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 14
+				{
+					Flag = BUTTON
+					ID = 100414
+					Pos = 460 100 92 91
+					!Text = Item Pack 14
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+					!ToolTip = みんな背景
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 14
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401141
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 14
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401142
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 14
+					{
+						Flag = TEXTBOX
+						ID = 1004141
+						Pos = 0 82 114 24
+						!Text = Item Pack 14 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+				!Item Pack Button 15
+				{
+					Flag = BUTTON
+					ID = 100415
+					Pos = 580 100 92 91
+					!Text = Item Pack 15
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+					Show = 1
+				}
+				{
+					Flag = START_CHILD
+				}
+					!Item Pack New Mark 15
+					{
+				 		Flag = WINDOW_SPR2D
+				 		Pos = 66 4 40 15
+				 		ID = 100401151
+				 		FileName = newmark.SPR
+				 		MotionName = newmark
+				 		TransparentMouseEvent = 1
+				 		Show = 0
+				 	}
+					!Item Pack Free Mark 15
+					{
+						Flag = WINDOW
+						Pos = 0 50 40 22
+						ID = 100401152
+						!ImageFile = ui/shop/shop_Item Pack_free.png
+						TransparentMouseEvent = 1
+						Show = 0
+					}
+					!Item Pack text 15
+					{
+						Flag = TEXTBOX
+						ID = 1004151
+						Pos = 0 82 114 24
+						!Text = Item Pack 15 text
+						TextColor = 0 0 0 255
+						FontIndex = 18
+						Option = DT_CENTER DT_VCENTER
+						Show = 0
+					}
+				{
+					Flag = END_CHILD
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!My TP Window
+			{
+				Flag = WINDOW
+				Pos = 376 445 160 24
+				ImageFile = ui/shop/point_bg_tp.png
+				TransparentMouseEvent = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 10011
+					Pos = 58 15 88 16
+					!Text = My TP
+					!TextColor = 0 0 0 255
+					Option = DT_RIGHT DT_VCENTER
+					TransparentMouseEvent =1
+					!EnableBackColor = 1
+					!BackColor = 100 100 100 100
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			/*
+			!My Coupon Window
+			{
+				Flag = WINDOW
+				Pos = 480 442 160 24
+				ImageFile = ui/shop/point_bg_coupon.png
+				TransparentMouseEvent = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 10012
+					Pos = 24 18 88 16
+					!Text = My Coupon
+					!TextColor = 0 0 0 255
+					Option = DT_RIGHT DT_VCENTER
+					TransparentMouseEvent =1
+					!Show = 0
+				}
+			{
+				Flag = END_CHILD
+			}
+			*/
+			
+			!My COIN Window
+			{
+				Flag = WINDOW
+				Pos = 14 445 160 24
+				ImageFile = ui/shop/point_bg_coin.png
+				TransparentMouseEvent = 1
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 10013
+					Pos = 58 15 88 16
+					!Text = My COIN
+					!TextColor = 0 0 0 255
+					Option = DT_RIGHT DT_VCENTER
+					TransparentMouseEvent =1
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!Item Pack Comment
+			{
+				Flag = WINDOW
+				ID = 10046
+				Pos = 108 170 0 0
+				ImageFile = ui/shop/gachatext/packtext_00.png
+			}
+			
+			!Item Pack Animation Window
+			{
+				Flag = WINDOW_SPR2D
+				ID = 14049
+				Pos = 131-29 32 538 400
+				ImageFile = ui/shop/shop_gacha_bg2.png
+				FileName = gacha.SPR
+				MotionName = anim
+				SoundFile = Gacha.wav
+				Modal = 1
+				ZOrder = 1001
+				Show = 0
+			}
+			
+			
+			!Item Pack Click
+			{
+				Flag = WINDOW
+				ID = 14060
+				Pos = 80-29 32 640 357
+				ImageFile = ui/shop/shop_pack_bg1.png
+				Modal = 1
+				ZOrder = 10
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				!아이템 이름
+				{
+					Flag = TEXTBOX
+					ID = 1406001
+					Pos = 0 0 150 18
+					TextColor = 80 80 80 255
+					FontIndex = 0
+					!Text = 아이템 이름
+					Option = DT_LEFT DT_VCENTER
+					Show = 0
+				}
+				!아이템 가격
+				{
+					Flag = TEXTBOX
+					ID = 1406002
+					Pos = 260 24 150 18
+					TextColor = 80 80 80 255
+					FontIndex = 20
+					!Text = 아이템 가격
+					Option = DT_LEFT DT_VCENTER
+					TransparentMouseEvent =1
+					Show = 0
+				}
+				!Gacha Preview
+				{
+					Flag = WINDOW
+					ID = 1406005
+					Pos = 14 12 0 0
+				}
+				
+				!Buy Button
+				{
+					Flag = BUTTON
+					ID = 1406003
+					Pos = 218 290 203 42
+					!Text = Yes
+					ImageFile = ui/shop/btn_packbuy_default.png
+					FocusImageFile = ui/shop/btn_packbuy_over.png
+					PressedImageFile = ui/shop/btn_packbuy_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!Close Button
+				{
+					Flag = BUTTON
+					ID = 1406004
+					Pos = 601 9 29 29
+					!Text = No
+					ImageFile = ui/shop/btn_packclose_default.png
+					FocusImageFile = ui/shop/btn_packclose_over.png
+					PressedImageFile = ui/shop/btn_packclose_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+			
+			
+			!Item Pack Result
+			{
+				Flag = WINDOW
+				ID = 14061
+				Pos = 80-29 32 640 357
+				ImageFile = ui/shop/shop_pack_bg2.png
+				Modal = 1
+				ZOrder = 10
+				Show = 0
+			}
+			{
+				Flag = START_CHILD
+			}
+				{
+					Flag = TEXTBOX
+					ID = 1406101
+					Pos = 70 118 400 40
+					!Text = 획득 아이템 이름 InitDecoList Name
+					TextColor = 95 95 95 255
+					FontIndex = 20
+					Option = DT_CENTER DT_TOP
+				}
+				{
+					Flag = TEXTBOX
+					ID = 1406102
+					Pos = 13 78 230 60
+					!Text = 획득 아이템 설명 InitDecoList Comment
+					!TextColor = 0 0 0 255
+					FontIndex = 2
+					Option = DT_LEFT DT_TOP
+				}
+				{
+					Flag = LISTBOXW
+					Pos = 13 40 230 170
+					!Text0 = $ITEM_Change_Mino_Result
+					TextColor0 = 95 95 95 255
+					TextGap = 1
+					FontIndex0 = 2
+					Option = DT_LEFT DT_TOP
+					TransparentMouseEvent =1
+				}
+				/*
+				!지금 적용?
+				{
+					Flag = TEXTBOX
+					Pos = 13 204 230 20
+					Text = $ITEM_Apply_Now
+					TextColor = 255 153 0 255
+					FontIndex = 2
+					Option = DT_LEFT DT_TOP
+				}
+				*/
+				!Preview Window
+				{
+					Flag = WINDOW
+					ID = 1406103
+					Pos = 260 120 80 80
+					TransparentMouseEvent =1
+					!EnableBackColor = 1
+					!BackColor = 120 120 120 130
+				}
+				{
+					Flag = START_CHILD
+				}
+					{
+						Flag = WINDOW
+						Pos = 0 72 0 0
+						ImageFile = ui/shop/deco_preview_cover.png
+					}
+				{
+					Flag = END_CHILD
+				}
+				
+				!Yes Button
+				{
+					Flag = BUTTON
+					ID = 1406104
+					Pos = 140 300 163 34
+					!Text = Yes
+					ImageFile = ui/shop/btn_setting_default.png
+					FocusImageFile = ui/shop/btn_setting_over.png
+					PressedImageFile = ui/shop/btn_setting_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+				!No Button
+				{
+					Flag = BUTTON
+					ID = 1406105
+					Pos = 330 300 163 34
+					!Text = No
+					ImageFile = ui/shop/btn_nosetting_default.png
+					FocusImageFile = ui/shop/btn_nosetting_over.png
+					PressedImageFile = ui/shop/btn_nosetting_down.png
+					FocusSoundFile = button_f.wav
+					PressedSoundFile = button_p.wav
+				}
+			{
+				Flag = END_CHILD
+			}
+		{
+			Flag = END_CHILD
+		}
+		
+		
+	{
+		Flag = END_CHILD
+	}
+{
+	Flag = END_CHILD
+}

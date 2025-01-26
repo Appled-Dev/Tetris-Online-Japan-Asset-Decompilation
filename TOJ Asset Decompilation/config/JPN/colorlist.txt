@@ -1,0 +1,9 @@
+'.': None 
+'Y': Yellow
+'B': Blue
+'P': Purple
+'O': Orange
+'K': DarkBlue
+'G': Green
+'R': Red
+'#': Garbage

@@ -1,0 +1,32 @@
+﻿{
+	Flag = DESKTOP_WINDOW
+	Pos = 0 0 800 600
+	!BackColor = 255 255 255 128
+	!EnableBackColor = 1
+	ImageFile = UI/bg_mainmenu.png
+}
+
+{
+	Flag = COMMAND
+	Command =HELP_ADDR	
+	Addr = http://www.tetrisonline.co.jp
+}
+
+/*
+{
+	Flag = START_CHILD
+}
+	{
+		Flag = FADE_WINDOW
+		Pos = 0 0 800 600
+		MaxTime = 1000
+		ZOrder = 100 
+		EnableBackColor = 1
+		BackColor = 0 0 0 255
+		TransparentMouseEvent = 1
+		TargetColor = 0 0 0 0
+	}
+{
+	Flag = END_CHILD
+}
+*/
